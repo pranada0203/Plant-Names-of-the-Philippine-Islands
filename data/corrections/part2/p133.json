@@ -29,8 +29,18 @@
  "entries": [
   {
    "page": 133,
+   "was": "?. BUNIUS",
+   "name": "A. bunius"
+  },
+  {
+   "page": 133,
    "was": "A. cumineiI",
    "name": "A. cumingii"
+  },
+  {
+   "page": 133,
+   "was": "?. GHAESEMBILLA",
+   "name": "A. ghaesembilla"
   },
   {
    "page": 133,
@@ -40,8 +50,48 @@
   },
   {
    "page": 133,
+   "was": "?. HUMILIS",
+   "name": "A. humilis"
+  },
+  {
+   "page": 133,
+   "was": "?. PERROTTETIANA",
+   "name": "A. perrottetiana"
+  },
+  {
+   "page": 133,
+   "was": "?. PHILIPPINENSIS",
+   "name": "A. philippinensis"
+  },
+  {
+   "page": 133,
+   "was": "?. PYRAMIDALIS",
+   "name": "A. pyramidalis"
+  },
+  {
+   "page": 133,
+   "was": "?. SERRATA",
+   "name": "A. serrata"
+  },
+  {
+   "page": 133,
+   "was": "?. ALBA",
+   "name": "A. alba"
+  },
+  {
+   "page": 133,
    "was": "A. carecnu",
    "name": "A. catechu"
+  },
+  {
+   "page": 133,
+   "was": "?. NIBUNG",
+   "name": "A. nibung"
+  },
+  {
+   "page": 133,
+   "was": "?. niTIDA",
+   "name": "A. nitida"
   }
  ]
 }

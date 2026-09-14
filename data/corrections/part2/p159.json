@@ -30,8 +30,23 @@
  "entries": [
   {
    "page": 159,
+   "was": "?. HISPIDA",
+   "name": "F. hispida"
+  },
+  {
+   "page": 159,
    "was": "F. rnpica",
    "name": "F. indica"
+  },
+  {
+   "page": 159,
+   "was": "?. LUZONENSIS",
+   "name": "F. luzonensis"
+  },
+  {
+   "page": 159,
+   "was": "?. MINNAHASSAE",
+   "name": "F. minnahassae"
   },
   {
    "page": 159,
@@ -40,8 +55,13 @@
   },
   {
    "page": 159,
-   "was": "F. QurrRcIroLIA",
+   "was": "?. QurrRcIroLIA",
    "name": "F. quercifolia"
+  },
+  {
+   "page": 159,
+   "was": "?. RADICANS",
+   "name": "F. radicans"
   },
   {
    "page": 159,
@@ -56,9 +76,19 @@
   },
   {
    "page": 159,
+   "was": "?. SEPIARIA",
+   "name": "F. sepiaria"
+  },
+  {
+   "page": 159,
    "was": "FLAGELLARIA INDICA",
    "name": "Flagellaria indica",
    "family": "Flagellariaceae"
+  },
+  {
+   "page": 159,
+   "was": "?. STROBILIFERA",
+   "name": "F. strobilifera"
   },
   {
    "page": 159,
@@ -70,6 +100,11 @@
    "page": 159,
    "was": "F. rvstienis",
    "name": "F. insignis"
+  },
+  {
+   "page": 159,
+   "was": "?. LUZONENSIS",
+   "name": "F. luzonensis"
   }
  ]
 }

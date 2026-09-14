@@ -30,6 +30,41 @@
  "entries": [
   {
    "page": 200,
+   "was": "?. CAPRIOLATA",
+   "name": "V. capriolata"
+  },
+  {
+   "page": 200,
+   "was": "?. caRNoSA",
+   "name": "V. carnosa"
+  },
+  {
+   "page": 200,
+   "was": "?. GENICULATA",
+   "name": "V. geniculata"
+  },
+  {
+   "page": 200,
+   "was": "?. LATIFOLIA",
+   "name": "V. latifolia"
+  },
+  {
+   "page": 200,
+   "was": "?. LANCEOLARIA",
+   "name": "V. lanceolaria"
+  },
+  {
+   "page": 200,
+   "was": "?. QUADRANGULARIS",
+   "name": "V. quadrangularis"
+  },
+  {
+   "page": 200,
+   "was": "?. REPENS",
+   "name": "V. repens"
+  },
+  {
+   "page": 200,
    "was": "WIKSTROEMIA INDICA",
    "name": "Wikstroemia indica",
    "family": "Thymelaeaceae"

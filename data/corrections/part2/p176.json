@@ -27,6 +27,16 @@
  "entries": [
   {
    "page": 176,
+   "was": "?. PENTAPHYLLA",
+   "name": "M. pentaphylla"
+  },
+  {
+   "page": 176,
+   "was": "?. COCHINCHINENSIS",
+   "name": "M. cochinchinensis"
+  },
+  {
+   "page": 176,
    "was": "MOoNOCARPIA BLANCO!",
    "name": "Monocarpia blancoi",
    "family": "Anonaceae"
@@ -39,7 +49,7 @@
   },
   {
    "page": 176,
-   "was": "M. vAGInatis",
+   "was": "?. vAGInatis",
    "name": "M. vaginalis"
   },
   {
@@ -49,12 +59,28 @@
   },
   {
    "page": 176,
-   "was": "M. tIncrorIA",
+   "was": "?. tIncrorIA",
    "name": "M. tinctoria"
   },
   {
    "page": 176,
-   "was": "M. niveEA",
+   "was": "?. UMBELLATA",
+   "name": "M. umbellata"
+  },
+  {
+   "page": 176,
+   "was": "Morus AatBa",
+   "name": "Morus alba",
+   "family": "Urticaceae"
+  },
+  {
+   "page": 176,
+   "was": "?. MonospeRMA",
+   "name": "M. monosperma"
+  },
+  {
+   "page": 176,
+   "was": "?. niveEA",
    "name": "M. nivea"
   },
   {

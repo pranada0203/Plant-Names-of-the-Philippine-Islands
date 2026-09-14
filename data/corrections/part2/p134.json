@@ -27,12 +27,12 @@
  "entries": [
   {
    "page": 134,
-   "was": "A. oporATIssImus",
+   "was": "?. oporATIssImus",
    "name": "A. odoratissimus"
   },
   {
    "page": 134,
-   "was": "A. yuLGARIS",
+   "was": "?. yuLGARIS",
    "name": "A. vulgaris"
   },
   {
@@ -43,8 +43,18 @@
   },
   {
    "page": 134,
-   "was": "A. BLUME!",
+   "was": "?. BLUME!",
    "name": "A. blumei"
+  },
+  {
+   "page": 134,
+   "was": "?. CAMANSI",
+   "name": "A. camansi"
+  },
+  {
+   "page": 134,
+   "was": "?. CUMINGIANA",
+   "name": "A. cumingiana"
   },
   {
    "page": 134,
@@ -53,8 +63,28 @@
   },
   {
    "page": 134,
+   "was": "?. INTEGRIFOLIA",
+   "name": "A. integrifolia"
+  },
+  {
+   "page": 134,
+   "was": "?. LAMELLOSA",
+   "name": "A. lamellosa"
+  },
+  {
+   "page": 134,
+   "was": "?. LANCEOLATA",
+   "name": "A. lanceolata"
+  },
+  {
+   "page": 134,
    "was": "A. nitipA",
    "name": "A. nitida"
+  },
+  {
+   "page": 134,
+   "was": "?. ODORATISSIMA",
+   "name": "A. odoratissima"
   },
   {
    "page": 134,

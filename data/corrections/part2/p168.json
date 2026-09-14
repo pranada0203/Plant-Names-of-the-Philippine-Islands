@@ -27,6 +27,11 @@
  "entries": [
   {
    "page": 168,
+   "was": "?. coccinEA",
+   "name": "I. coccinea"
+  },
+  {
+   "page": 168,
    "was": "V. FULGENS",
    "name": "I. fulgens"
   },
@@ -42,14 +47,49 @@
   },
   {
    "page": 168,
+   "was": "?. LUZONIENSIS",
+   "name": "J. luzoniensis"
+  },
+  {
+   "page": 168,
+   "was": "?. MARIANUM",
+   "name": "J. marianum"
+  },
+  {
+   "page": 168,
+   "was": "?. SAMBAC",
+   "name": "J. sambac"
+  },
+  {
+   "page": 168,
+   "was": "?. MULTIFIDA",
+   "name": "J. multifida"
+  },
+  {
+   "page": 168,
+   "was": "?. SUFFRUTICOSA",
+   "name": "J. suffruticosa"
+  },
+  {
+   "page": 168,
    "was": "JUSTICIA",
    "name": "Justicia",
    "family": "Acanthaceae"
   },
   {
    "page": 168,
-   "was": "J. picHortoMA",
+   "was": "?. picHortoMA",
    "name": "J. dichotoma"
+  },
+  {
+   "page": 168,
+   "was": "?. GENDARUSSA",
+   "name": "J. gendarussa"
+  },
+  {
+   "page": 168,
+   "was": "?. spATHULATA",
+   "name": "K. spathulata"
   },
   {
    "page": 168,

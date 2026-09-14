@@ -34,9 +34,24 @@
   },
   {
    "page": 189,
+   "was": "?. VERTICILLATUM",
+   "name": "R. verticillatum"
+  },
+  {
+   "page": 189,
    "was": "RoureEa",
    "name": "Rourea",
    "family": "Connaraceae"
+  },
+  {
+   "page": 189,
+   "was": "?. HETEROPHYLLA",
+   "name": "R. heterophylla"
+  },
+  {
+   "page": 189,
+   "was": "?. MULTITFLORA",
+   "name": "R. multitflora"
   },
   {
    "page": 189,
@@ -46,7 +61,12 @@
   },
   {
    "page": 189,
-   "was": "R. pARvirLorus",
+   "was": "?. GLoMERATUS",
+   "name": "R. glomeratus"
+  },
+  {
+   "page": 189,
+   "was": "?. pARvirLorus",
    "name": "R. parviflorus"
   },
   {

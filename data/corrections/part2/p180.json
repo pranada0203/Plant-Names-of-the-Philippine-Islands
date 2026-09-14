@@ -25,6 +25,21 @@
  "entries": [
   {
    "page": 180,
+   "was": "?. ENTEROCARPOIDEA",
+   "name": "O. enterocarpoidea"
+  },
+  {
+   "page": 180,
+   "was": "?. PULCHERRIMUM",
+   "name": "O. pulcherrimum"
+  },
+  {
+   "page": 180,
+   "was": "?. SPECTABILIS",
+   "name": "O. spectabilis"
+  },
+  {
+   "page": 180,
    "was": "OTTELIA ALISMOIDES",
    "name": "Ottelia alismoides",
    "family": "Hydrocharidaceae"
@@ -37,7 +52,7 @@
   },
   {
    "page": 180,
-   "was": "O. cCoRNICULATA",
+   "was": "?. cCoRNICULATA",
    "name": "O. corniculata"
   }
  ]

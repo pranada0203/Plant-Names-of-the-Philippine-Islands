@@ -32,13 +32,18 @@
   },
   {
    "page": 175,
-   "was": "M. TrepHROcARPUM",
+   "was": "?. TrepHROcARPUM",
    "name": "M. tephrocarpum"
   },
   {
    "page": 175,
-   "was": "M. sericeEA",
+   "was": "?. sericeEA",
    "name": "M. sericea"
+  },
+  {
+   "page": 175,
+   "was": "?. spLenDENS",
+   "name": "M. splendens"
   },
   {
    "page": 175,
@@ -71,6 +76,11 @@
   },
   {
    "page": 175,
+   "was": "?. HETEROPHYLLA",
+   "name": "M. heterophylla"
+  },
+  {
+   "page": 175,
    "was": "M. parmata",
    "name": "M. palmata"
   },
@@ -92,7 +102,7 @@
   },
   {
    "page": 175,
-   "was": "M. oprositrroLtiA",
+   "was": "?. oprositrroLtiA",
    "name": "M. oppositifolia"
   }
  ]

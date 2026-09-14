@@ -33,13 +33,38 @@
  "entries": [
   {
    "page": 148,
-   "was": "C. rorMosuM",
+   "was": "?. BLANCOI",
+   "name": "C. blancoi"
+  },
+  {
+   "page": 148,
+   "was": "?. cELEBICUM",
+   "name": "C. celebicum"
+  },
+  {
+   "page": 148,
+   "was": "?. FLoRIBUNDUM",
+   "name": "C. floribundum"
+  },
+  {
+   "page": 148,
+   "was": "?. rorMosuM",
    "name": "C. formosum"
+  },
+  {
+   "page": 148,
+   "was": "?. AMOENUM",
+   "name": "C. amoenum"
   },
   {
    "page": 148,
    "was": "C. astaticum",
    "name": "C. asiaticum"
+  },
+  {
+   "page": 148,
+   "was": "?. PRATENSE",
+   "name": "C. pratense"
   },
   {
    "page": 148,
@@ -54,8 +79,38 @@
   },
   {
    "page": 148,
-   "was": "C. Tia~ttum",
+   "was": "?. QUINQUEFOLIA",
+   "name": "C. quinquefolia"
+  },
+  {
+   "page": 148,
+   "was": "?. vERRUCOSA",
+   "name": "C. verrucosa"
+  },
+  {
+   "page": 148,
+   "was": "?. CONSANGUINEUS",
+   "name": "C. consanguineus"
+  },
+  {
+   "page": 148,
+   "was": "?. LEIOPHYLLUS",
+   "name": "C. leiophyllus"
+  },
+  {
+   "page": 148,
+   "was": "?. MuRIcATUM",
    "name": "C. muricatum"
+  },
+  {
+   "page": 148,
+   "was": "C. Tia~ttum",
+   "name": "C. tiglium"
+  },
+  {
+   "page": 148,
+   "was": "?. PANICULATA",
+   "name": "C. paniculata"
   },
   {
    "page": 148,
@@ -65,12 +120,17 @@
   },
   {
    "page": 148,
+   "was": "?. DENSIFLORA",
+   "name": "C. densiflora"
+  },
+  {
+   "page": 148,
    "was": "C. m1ocana",
    "name": "C. ilocana"
   },
   {
    "page": 148,
-   "was": "C. VILLARIT",
+   "was": "?. VILLARIT",
    "name": "C. villarii"
   }
  ]

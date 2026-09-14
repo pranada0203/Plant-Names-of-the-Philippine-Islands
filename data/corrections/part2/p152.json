@@ -43,8 +43,53 @@
   },
   {
    "page": 152,
+   "was": "?. HIRSUTA",
+   "name": "D. hirsuta"
+  },
+  {
+   "page": 152,
+   "was": "?. PENTAPHYLLA",
+   "name": "D. pentaphylla"
+  },
+  {
+   "page": 152,
+   "was": "?. BLANCOI",
+   "name": "D. blancoi"
+  },
+  {
+   "page": 152,
+   "was": "?. cunALON",
+   "name": "D. cunalon"
+  },
+  {
+   "page": 152,
    "was": "D. piscotor",
    "name": "D. discolor"
+  },
+  {
+   "page": 152,
+   "was": "?. EBENASTER",
+   "name": "D. ebenaster"
+  },
+  {
+   "page": 152,
+   "was": "?. EMBRYOPTERIS",
+   "name": "D. embryopteris"
+  },
+  {
+   "page": 152,
+   "was": "?. MALAcAPAI",
+   "name": "D. malacapai"
+  },
+  {
+   "page": 152,
+   "was": "?. MULTIFLORA",
+   "name": "D. multiflora"
+  },
+  {
+   "page": 152,
+   "was": "?. PILOSANTHERA",
+   "name": "D. pilosanthera"
   }
  ]
 }

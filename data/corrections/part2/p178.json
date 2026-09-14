@@ -61,6 +61,11 @@
   },
   {
    "page": 178,
+   "was": "?. PURPUREA",
+   "name": "N. purpurea"
+  },
+  {
+   "page": 178,
    "was": "N. atata",
    "name": "N. alata"
   },
@@ -68,6 +73,11 @@
    "page": 178,
    "was": "N. eracitis",
    "name": "N. gracilis"
+  },
+  {
+   "page": 178,
+   "was": "?. vENTRICOSA",
+   "name": "N. ventricosa"
   },
   {
    "page": 178,
@@ -81,9 +91,31 @@
   },
   {
    "page": 178,
+   "was": "?. LONGANA",
+   "name": "N. longana"
+  },
+  {
+   "page": 178,
+   "was": "Nicorrana TABACUM",
+   "name": "Nicotiana tabacum",
+   "family": "Solanaceae"
+  },
+  {
+   "page": 178,
+   "was": "Nipa FRUCTICANS",
+   "name": "Nipa fructicans",
+   "family": "Palmae"
+  },
+  {
+   "page": 178,
    "was": "NympH2A torus",
    "name": "Nymphaea lotus",
    "family": "Nymphaeaceae"
+  },
+  {
+   "page": 178,
+   "was": "?. STELLATA",
+   "name": "N. stellata"
   }
  ]
 }

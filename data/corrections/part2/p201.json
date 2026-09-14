@@ -32,9 +32,19 @@
   },
   {
    "page": 201,
+   "was": "?. DEHISCENS",
+   "name": "X. dehiscens"
+  },
+  {
+   "page": 201,
    "was": "NYLOSMA CUMINGII",
    "name": "Xylosma cumingii",
    "family": "Bixaceae"
+  },
+  {
+   "page": 201,
+   "was": "?. GRANATUM",
+   "name": "X. granatum"
   },
   {
    "page": 201,
@@ -44,14 +54,44 @@
   },
   {
    "page": 201,
-   "was": "Z. OXYPIHYLLUM",
+   "was": "?. OXYPIHYLLUM",
    "name": "Z. oxyphyllum"
+  },
+  {
+   "page": 201,
+   "was": "?. OFFICINALE",
+   "name": "Z. officinale"
+  },
+  {
+   "page": 201,
+   "was": "?. ZERUMBET",
+   "name": "Z. zerumbet"
   },
   {
    "page": 201,
    "was": "Zizyepuus",
    "name": "Zizyphus",
    "family": "Rhamnaceae"
+  },
+  {
+   "page": 201,
+   "was": "?. ARBOREA",
+   "name": "Z. arborea"
+  },
+  {
+   "page": 201,
+   "was": "?. DALANTA",
+   "name": "Z. dalanta"
+  },
+  {
+   "page": 201,
+   "was": "?. TRINERVIS",
+   "name": "Z. trinervis"
+  },
+  {
+   "page": 201,
+   "was": "?. JuJUBA",
+   "name": "Z. jujuba"
   }
  ]
 }

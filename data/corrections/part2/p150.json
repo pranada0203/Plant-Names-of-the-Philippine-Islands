@@ -28,8 +28,23 @@
  "entries": [
   {
    "page": 150,
+   "was": "?. INAEQUALIFOLIA",
+   "name": "C. inaequalifolia"
+  },
+  {
+   "page": 150,
+   "was": "?. RAMIFLORA",
+   "name": "C. ramiflora"
+  },
+  {
+   "page": 150,
    "was": "C. pirrorMis",
    "name": "C. difformis"
+  },
+  {
+   "page": 150,
+   "was": "?. ELATUS",
+   "name": "C. elatus"
   },
   {
    "page": 150,
@@ -41,6 +56,16 @@
    "was": "DACTYLOCTENIUM A:GYPTIUM",
    "name": "Dactyloctenium aegyptium",
    "family": "Gramineae"
+  },
+  {
+   "page": 150,
+   "was": "?. FERRUGINEA",
+   "name": "D. ferruginea"
+  },
+  {
+   "page": 150,
+   "was": "?. LANCEOLARIA",
+   "name": "D. lanceolaria"
   },
   {
    "page": 150,
@@ -65,8 +90,13 @@
   },
   {
    "page": 150,
-   "was": "D. BLANcor",
+   "was": "?. BLANcor",
    "name": "D. blancoi"
+  },
+  {
+   "page": 150,
+   "was": "?. PANICULATUM",
+   "name": "D. paniculatum"
   }
  ]
 }

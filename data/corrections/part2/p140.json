@@ -36,8 +36,18 @@
   },
   {
    "page": 140,
+   "was": "?. comMuNE",
+   "name": "C. commune"
+  },
+  {
+   "page": 140,
    "was": "C. cuminelt",
    "name": "C. cumingii"
+  },
+  {
+   "page": 140,
+   "was": "?. MULTIPINNATUM",
+   "name": "C. multipinnatum"
   },
   {
    "page": 140,
@@ -55,6 +65,21 @@
    "was": "CANSCORA DIFFUSA",
    "name": "Canscora diffusa",
    "family": "Gentianaceae"
+  },
+  {
+   "page": 140,
+   "was": "?. ARBOREUM",
+   "name": "C. arboreum"
+  },
+  {
+   "page": 140,
+   "was": "?. conFERTUM",
+   "name": "C. confertum"
+  },
+  {
+   "page": 140,
+   "was": "?. HorRIDUM",
+   "name": "C. horridum"
   }
  ]
 }

@@ -35,9 +35,54 @@
   },
   {
    "page": 170,
+   "was": "?. ACULEATA",
+   "name": "L. aculeata"
+  },
+  {
+   "page": 170,
+   "was": "?. JAVANICA",
+   "name": "L. javanica"
+  },
+  {
+   "page": 170,
+   "was": "?. RUBRA",
+   "name": "L. rubra"
+  },
+  {
+   "page": 170,
+   "was": "?. SAMBUCINA",
+   "name": "L. sambucina"
+  },
+  {
+   "page": 170,
+   "was": "?. LUZONIAE",
+   "name": "L. luzoniae"
+  },
+  {
+   "page": 170,
+   "was": "?. PERROTTETII",
+   "name": "L. perrottetii"
+  },
+  {
+   "page": 170,
    "was": "Lrucas",
    "name": "Leucas",
    "family": "Labiatae"
+  },
+  {
+   "page": 170,
+   "was": "?. ASPERA",
+   "name": "L. aspera"
+  },
+  {
+   "page": 170,
+   "was": "?. LINIFOLIA",
+   "name": "L. linifolia"
+  },
+  {
+   "page": 170,
+   "was": "?. HISPIDISSIMA",
+   "name": "L. hispidissima"
   }
  ]
 }

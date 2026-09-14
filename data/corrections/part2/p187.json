@@ -27,9 +27,19 @@
  "entries": [
   {
    "page": 187,
+   "was": "?. TETRAGONOLOBUS",
+   "name": "P. tetragonolobus"
+  },
+  {
+   "page": 187,
    "was": "Psycuorria",
    "name": "Psychotria",
    "family": "Rubiaceae"
+  },
+  {
+   "page": 187,
+   "was": "?. MALAYANA",
+   "name": "P. malayana"
   },
   {
    "page": 187,
@@ -39,18 +49,43 @@
   },
   {
    "page": 187,
+   "was": "?. BLANCOI",
+   "name": "P. blancoi"
+  },
+  {
+   "page": 187,
    "was": "P. rnpicus",
    "name": "P. indicus"
   },
   {
    "page": 187,
-   "was": "P. AcerrFoLIuM",
+   "was": "?. VIDALIANUS",
+   "name": "P. vidalianus"
+  },
+  {
+   "page": 187,
+   "was": "?. AcerrFoLIuM",
    "name": "P. acerifolium"
+  },
+  {
+   "page": 187,
+   "was": "?. BLUMEANUM",
+   "name": "P. blumeanum"
+  },
+  {
+   "page": 187,
+   "was": "?. DIVERSIFOLIUM",
+   "name": "P. diversifolium"
   },
   {
    "page": 187,
    "was": "P. optiguuM",
    "name": "P. obliquum"
+  },
+  {
+   "page": 187,
+   "was": "?. PHASEOLOIDES",
+   "name": "P. phaseoloides"
   },
   {
    "page": 187,

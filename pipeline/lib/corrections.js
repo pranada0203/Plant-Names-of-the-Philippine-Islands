@@ -106,6 +106,49 @@ function applyPartI(corrections, entries) {
   );
 }
 
+/**
+ * Part I taxon strings: correct the scientific name printed on a native-name
+ * line. Keyed by page plus the scanner's reading of the *headword*, with an
+ * occurrence index for a headword the page repeats, so it stays in step with
+ * the headword corrections rather than depending on the taxon itself -- which
+ * is the very thing being replaced.
+ *
+ * Must run after applyPartI, which is what sets `ocrHeadword`.
+ */
+function applyPartITaxa(corrections, entries) {
+  if (!corrections) return { applied: 0, stale: [] };
+
+  const seen = new Map();          // key -> occurrences walked so far
+  let applied = 0;
+
+  for (const e of entries) {
+    const key = keyOf(e.page, e.ocrHeadword || e.headword);
+    const n = seen.get(key) || 0;
+    seen.set(key, n + 1);
+
+    const queue = corrections.byKey.get(key);
+    if (!queue) continue;
+    const c = queue.find((x) => (x.occurrence || 0) === n);
+    if (!c) continue;
+
+    corrections.applied.add(key + '#' + queue.indexOf(c));
+    applied++;
+    if (c.drop) { e.drop = true; continue; }
+    e.ocrTaxa = e.taxa;
+    e.taxa = c.taxa;
+    e.taxaCorrected = true;
+    e.flags = e.flags.filter((f) => f !== 'taxon-suspect');
+  }
+
+  const stale = [];
+  for (const [key, queue] of corrections.byKey) {
+    queue.forEach((c, i) => {
+      if (!corrections.applied.has(key + '#' + i)) stale.push(c);
+    });
+  }
+  return { applied, stale };
+}
+
 /** Part II: correct the scientific name, and the family where one was read. */
 function applyPartII(corrections, entries) {
   return applyWith(
@@ -132,4 +175,4 @@ function applyPartII(corrections, entries) {
   );
 }
 
-module.exports = { load, applyPartI, applyPartII, keyOf };
+module.exports = { load, applyPartI, applyPartITaxa, applyPartII, keyOf };

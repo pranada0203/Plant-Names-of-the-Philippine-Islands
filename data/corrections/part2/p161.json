@@ -32,6 +32,16 @@
  "entries": [
   {
    "page": 161,
+   "was": "?. PARVIFLORA",
+   "name": "G. parviflora"
+  },
+  {
+   "page": 161,
+   "was": "?. STROBILIFERA",
+   "name": "G. strobilifera"
+  },
+  {
+   "page": 161,
    "was": "'GLocHIDION",
    "name": "Glochidion",
    "family": "Euphorbiaceae"
@@ -49,13 +59,28 @@
   },
   {
    "page": 161,
-   "was": "G. AstaTIcA",
+   "was": "?. PENTAPHYLLA",
+   "name": "G. pentaphylla"
+  },
+  {
+   "page": 161,
+   "was": "?. AstaTIcA",
    "name": "G. asiatica"
   },
   {
    "page": 161,
-   "was": "G. InpIcuM",
+   "was": "?. viLLosA",
+   "name": "G. villosa"
+  },
+  {
+   "page": 161,
+   "was": "?. InpIcuM",
    "name": "G. indicum"
+  },
+  {
+   "page": 161,
+   "was": "?. LUTEO-ALBUM",
+   "name": "G. luteo-album"
   },
   {
    "page": 161,
@@ -65,9 +90,29 @@
   },
   {
    "page": 161,
+   "was": "?. SCANDENS",
+   "name": "G. scandens"
+  },
+  {
+   "page": 161,
    "was": "GomMPHIA",
    "name": "Gomphia",
    "family": "Ochnaceae"
+  },
+  {
+   "page": 161,
+   "was": "?. ANGUSTIFOLIA",
+   "name": "G. angustifolia"
+  },
+  {
+   "page": 161,
+   "was": "?. GIGANTEUS",
+   "name": "G. giganteus"
+  },
+  {
+   "page": 161,
+   "was": "?. TARLACENSE",
+   "name": "G. tarlacense"
   }
  ]
 }

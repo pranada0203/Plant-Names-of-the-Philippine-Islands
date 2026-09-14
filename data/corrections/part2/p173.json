@@ -34,14 +34,24 @@
  "entries": [
   {
    "page": 173,
+   "was": "?. TANARIUS",
+   "name": "M. tanarius"
+  },
+  {
+   "page": 173,
    "was": "Massa",
    "name": "Maesa",
    "family": "Myrsinaceae"
   },
   {
    "page": 173,
-   "was": "M. gAupicHaupiI,",
+   "was": "?. gAupicHaupiI,",
    "name": "M. gaudichaudii"
+  },
+  {
+   "page": 173,
+   "was": "?. HAENKEANA",
+   "name": "M. haenkeana"
   },
   {
    "page": 173,
@@ -127,7 +137,7 @@
   },
   {
    "page": 173,
-   "was": "M. pratrystieaMA",
+   "was": "?. pratrystieaMA",
    "name": "M. platystigma"
   },
   {

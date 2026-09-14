@@ -28,12 +28,17 @@
  "entries": [
   {
    "page": 199,
-   "was": "V. LeEPIpOTA",
+   "was": "?. oDORATISSIMUM",
+   "name": "V. odoratissimum"
+  },
+  {
+   "page": 199,
+   "was": "?. LeEPIpOTA",
    "name": "V. lepidota"
   },
   {
    "page": 199,
-   "was": "V. NAvesr",
+   "was": "?. NAvesr",
    "name": "V. navesii"
   },
   {
@@ -44,8 +49,48 @@
   },
   {
    "page": 199,
-   "was": "V. opovaTtaA",
+   "was": "?. cATJANG",
+   "name": "V. catjang"
+  },
+  {
+   "page": 199,
+   "was": "?. FRUTESCENS",
+   "name": "V. frutescens"
+  },
+  {
+   "page": 199,
+   "was": "?. AHERNIANA",
+   "name": "V. aherniana"
+  },
+  {
+   "page": 199,
+   "was": "?. HETEROPHYLLA",
+   "name": "V. heterophylla"
+  },
+  {
+   "page": 199,
+   "was": "?. LITTORALIS",
+   "name": "V. littoralis"
+  },
+  {
+   "page": 199,
+   "was": "?. opovaTtaA",
    "name": "V. obovata"
+  },
+  {
+   "page": 199,
+   "was": "?. NEGUNDO",
+   "name": "V. negundo"
+  },
+  {
+   "page": 199,
+   "was": "?. PHILIPPINENSIS",
+   "name": "V. philippinensis"
+  },
+  {
+   "page": 199,
+   "was": "?. TRiFoLIA",
+   "name": "V. trifolia"
   }
  ]
 }

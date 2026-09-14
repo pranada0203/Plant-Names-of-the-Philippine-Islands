@@ -28,7 +28,12 @@
  "entries": [
   {
    "page": 185,
-   "was": "P. moLtuccaNA",
+   "was": "?. HorRIDA",
+   "name": "P. horrida"
+  },
+  {
+   "page": 185,
+   "was": "?. moLtuccaNA",
    "name": "P. moluccana"
   },
   {
@@ -39,15 +44,30 @@
   },
   {
    "page": 185,
+   "was": "?. HEYNEANUS",
+   "name": "P. heyneanus"
+  },
+  {
+   "page": 185,
    "was": "PoOLYALTHIA",
    "name": "Polyalthia",
    "family": "Anonaceae"
   },
   {
    "page": 185,
+   "was": "?. LANCEOLATA",
+   "name": "P. lanceolata"
+  },
+  {
+   "page": 185,
    "was": "PotyeonuM",
    "name": "Polygonum",
    "family": "Polygonaceae"
+  },
+  {
+   "page": 185,
+   "was": "?. BARBATUM",
+   "name": "P. barbatum"
   },
   {
    "page": 185,
@@ -62,7 +82,7 @@
   },
   {
    "page": 185,
-   "was": "P. quEerciroLiUmM",
+   "was": "?. quEerciroLiUmM",
    "name": "P. quercifolium"
   }
  ]

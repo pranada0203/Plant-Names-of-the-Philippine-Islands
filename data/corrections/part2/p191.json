@@ -34,9 +34,39 @@
   },
   {
    "page": 191,
+   "was": "?. cRENATA",
+   "name": "S. crenata"
+  },
+  {
+   "page": 191,
+   "was": "?. DASYANTHERA",
+   "name": "S. dasyanthera"
+  },
+  {
+   "page": 191,
+   "was": "?. ROXBURGHII",
+   "name": "S. roxburghii"
+  },
+  {
+   "page": 191,
    "was": "ScopartA puLtctis",
    "name": "Scoparia dulcis",
    "family": "Scrophulariaceae"
+  },
+  {
+   "page": 191,
+   "was": "?. CAULESCENS",
+   "name": "S. caulescens"
+  },
+  {
+   "page": 191,
+   "was": "?. ANACARDIUM",
+   "name": "S. anacardium"
+  },
+  {
+   "page": 191,
+   "was": "?. GIGANTIFOLIA",
+   "name": "S. gigantifolia"
   },
   {
    "page": 191,
@@ -45,8 +75,13 @@
   },
   {
    "page": 191,
-   "was": "S. PERROTTETIT",
+   "was": "?. PERROTTETIT",
    "name": "S. perrottetii"
+  },
+  {
+   "page": 191,
+   "was": "?. GRANDIFLORA",
+   "name": "S. grandiflora"
   }
  ]
 }

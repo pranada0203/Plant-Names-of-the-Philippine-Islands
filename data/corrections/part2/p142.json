@@ -21,7 +21,7 @@
  "entries": [
   {
    "page": 142,
-   "was": "C. mMoLtuccANA",
+   "was": "?. mMoLtuccANA",
    "name": "C. moluccana"
   },
   {
@@ -31,17 +31,22 @@
   },
   {
    "page": 142,
-   "was": "C. occipenTALIS",
+   "was": "?. FistuLA",
+   "name": "C. fistula"
+  },
+  {
+   "page": 142,
+   "was": "?. occipenTALIS",
    "name": "C. occidentalis"
   },
   {
    "page": 142,
-   "was": "C. TrorA",
+   "was": "?. TrorA",
    "name": "C. tora"
   },
   {
    "page": 142,
-   "was": "C. orisTATA",
+   "was": "?. orisTATA",
    "name": "C. cristata"
   }
  ]

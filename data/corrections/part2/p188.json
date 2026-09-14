@@ -39,13 +39,43 @@
   },
   {
    "page": 188,
-   "was": "Q. JORDAN",
+   "was": "?. ARBOREUM",
+   "name": "P. arboreum"
+  },
+  {
+   "page": 188,
+   "was": "?. LATIFOLIUM",
+   "name": "P. latifolium"
+  },
+  {
+   "page": 188,
+   "was": "?. BLANCoI",
+   "name": "Q. blancoi"
+  },
+  {
+   "page": 188,
+   "was": "?. CASTELLARANAUIANA",
+   "name": "Q. castellaranauiana"
+  },
+  {
+   "page": 188,
+   "was": "?. JORDAN",
    "name": "Q. jordanae"
   },
   {
    "page": 188,
-   "was": "Q. tLANosII",
+   "was": "?. tLANosII",
    "name": "Q. llanosii"
+  },
+  {
+   "page": 188,
+   "was": "?. PHILIPPINENSIS",
+   "name": "Q. philippinensis"
+  },
+  {
+   "page": 188,
+   "was": "?. SOLERIANA",
+   "name": "Q. soleriana"
   },
   {
    "page": 188,
@@ -60,7 +90,17 @@
   },
   {
    "page": 188,
-   "was": "R. aMSoNI@¥FOLIA",
+   "was": "?. CUMINGIANA",
+   "name": "R. cumingiana"
+  },
+  {
+   "page": 188,
+   "was": "?. DUMETORUM",
+   "name": "R. dumetorum"
+  },
+  {
+   "page": 188,
+   "was": "?. aMSoNI@¥FOLIA",
    "name": "R. amsoniaefolia"
   },
   {
@@ -73,6 +113,16 @@
    "page": 188,
    "was": "R. wigHtir",
    "name": "R. wightii"
+  },
+  {
+   "page": 188,
+   "was": "?. MONTANA",
+   "name": "R. montana"
+  },
+  {
+   "page": 188,
+   "was": "?. perTuSA",
+   "name": "R. pertusa"
   },
   {
    "page": 188,

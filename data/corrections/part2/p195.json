@@ -46,8 +46,33 @@
   },
   {
    "page": 195,
-   "was": "T. RUMPHII,",
+   "was": "?. PANDACAQUI",
+   "name": "T. pandacaqui"
+  },
+  {
+   "page": 195,
+   "was": "?. PALMATA",
+   "name": "T. palmata"
+  },
+  {
+   "page": 195,
+   "was": "?. PINNATIFIDA",
+   "name": "T. pinnatifida"
+  },
+  {
+   "page": 195,
+   "was": "?. RUMPHII,",
    "name": "T. rumphii"
+  },
+  {
+   "page": 195,
+   "was": "?. ANGATENSIS",
+   "name": "T. angatensis"
+  },
+  {
+   "page": 195,
+   "was": "?. vILLARIANA",
+   "name": "T. villariana"
   }
  ]
 }

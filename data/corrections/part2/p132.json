@@ -24,9 +24,29 @@
  "entries": [
   {
    "page": 132,
+   "was": "?. MuRICATUS",
+   "name": "A. muricatus"
+  },
+  {
+   "page": 132,
    "was": "ANISOPTER",
    "name": "Anisoptera",
    "family": "Dipterocarpaceae"
+  },
+  {
+   "page": 132,
+   "was": "?. OBLONGA",
+   "name": "A. oblonga"
+  },
+  {
+   "page": 132,
+   "was": "?. THURIFERA",
+   "name": "A. thurifera"
+  },
+  {
+   "page": 132,
+   "was": "?. RETICULATA",
+   "name": "A. reticulata"
   },
   {
    "page": 132,

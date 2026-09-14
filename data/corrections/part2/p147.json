@@ -29,7 +29,7 @@
  "entries": [
   {
    "page": 147,
-   "was": "C. commMuNIS",
+   "was": "?. commMuNIS",
    "name": "C. communis"
   },
   {
@@ -40,9 +40,44 @@
   },
   {
    "page": 147,
+   "was": "?. FERRUGINEUS",
+   "name": "C. ferrugineus"
+  },
+  {
+   "page": 147,
+   "was": "?. ACUMINATUS",
+   "name": "C. acuminatus"
+  },
+  {
+   "page": 147,
+   "was": "?. ERECTUS",
+   "name": "C. erectus"
+  },
+  {
+   "page": 147,
+   "was": "?. SUAVEOLENS",
+   "name": "C. suaveolens"
+  },
+  {
+   "page": 147,
+   "was": "?. cApsuLARIs",
+   "name": "C. capsularis"
+  },
+  {
+   "page": 147,
    "was": "CorpIA BLANCO",
    "name": "Cordia blancoi",
    "family": "Boraginaceae"
+  },
+  {
+   "page": 147,
+   "was": "?. suBcorDATA",
+   "name": "C. subcordata"
+  },
+  {
+   "page": 147,
+   "was": "?. UMBRACULIFERA",
+   "name": "C. umbraculifera"
   }
  ]
 }

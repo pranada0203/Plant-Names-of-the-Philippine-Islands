@@ -41,9 +41,39 @@
   },
   {
    "page": 192,
+   "was": "?. MALAANONAN",
+   "name": "S. malaanonan"
+  },
+  {
+   "page": 192,
+   "was": "?. MANGACHAPUY",
+   "name": "S. mangachapuy"
+  },
+  {
+   "page": 192,
    "was": "SmpA CARPINIFOLIA",
    "name": "Sida carpinifolia",
    "family": "Malvaceae"
+  },
+  {
+   "page": 192,
+   "was": "?. FRUTESCENS",
+   "name": "S. frutescens"
+  },
+  {
+   "page": 192,
+   "was": "?. RHOMBIFOLIA",
+   "name": "S. rhombifolia"
+  },
+  {
+   "page": 192,
+   "was": "?. BALITBITAN",
+   "name": "S. balitbitan"
+  },
+  {
+   "page": 192,
+   "was": "?. cINEREUM",
+   "name": "S. cinereum"
   },
   {
    "page": 192,
@@ -58,7 +88,7 @@
   },
   {
    "page": 192,
-   "was": "S. wWALLicHii",
+   "was": "?. wWALLicHii",
    "name": "S. wallichii"
   },
   {
@@ -74,7 +104,7 @@
   },
   {
    "page": 192,
-   "was": "S. pivartcATA",
+   "was": "?. pivartcATA",
    "name": "S. divaricata"
   },
   {
@@ -84,7 +114,7 @@
   },
   {
    "page": 192,
-   "was": "S. LATIFOoLIA",
+   "was": "?. LATIFOoLIA",
    "name": "S. latifolia"
   },
   {
@@ -97,6 +127,11 @@
    "page": 192,
    "was": "S. rerox",
    "name": "S. ferox"
+  },
+  {
+   "page": 192,
+   "was": "?. MELONGENA",
+   "name": "S. melongena"
   }
  ]
 }

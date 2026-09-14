@@ -31,7 +31,27 @@
  "entries": [
   {
    "page": 171,
-   "was": "L. roxBureII",
+   "was": "?. ELEGANS",
+   "name": "L. elegans"
+  },
+  {
+   "page": 171,
+   "was": "?. SPECTABILIS",
+   "name": "L. spectabilis"
+  },
+  {
+   "page": 171,
+   "was": "?. MENTHASTRUM",
+   "name": "L. menthastrum"
+  },
+  {
+   "page": 171,
+   "was": "?. REPENS",
+   "name": "L. repens"
+  },
+  {
+   "page": 171,
+   "was": "?. roxBureII",
    "name": "L. roxburgii"
   },
   {
@@ -39,6 +59,16 @@
    "was": "LinocreraA",
    "name": "Linociera",
    "family": "Oleaceae"
+  },
+  {
+   "page": 171,
+   "was": "?. CORIACEA",
+   "name": "L. coriacea"
+  },
+  {
+   "page": 171,
+   "was": "?. CUMINGIANA",
+   "name": "L. cumingiana"
   },
   {
    "page": 171,
@@ -86,6 +116,16 @@
    "page": 171,
    "was": "Pe.ePeeERROTTETII B.",
    "name": "L. perrottetii"
+  },
+  {
+   "page": 171,
+   "was": "?. PAPUANA",
+   "name": "L. papuana"
+  },
+  {
+   "page": 171,
+   "was": "?. ROTUNDIFOLIA",
+   "name": "L. rotundifolia"
   }
  ]
 }

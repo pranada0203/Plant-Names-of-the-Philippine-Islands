@@ -28,6 +28,11 @@
  "entries": [
   {
    "page": 136,
+   "was": "?. RAcEMOSA",
+   "name": "B. racemosa"
+  },
+  {
+   "page": 136,
    "was": "?. BINNATA",
    "name": "B. binnata"
   },
@@ -53,7 +58,7 @@
   },
   {
    "page": 136,
-   "was": "B. TomentTosA",
+   "was": "?. TomentTosA",
    "name": "B. purpurea"
   },
   {
@@ -72,6 +77,11 @@
    "was": "3EGONIA RHOMBICARPA",
    "name": "Begonia rhombicarpa",
    "family": "Begoniaceae"
+  },
+  {
+   "page": 136,
+   "was": "?. MADANG",
+   "name": "B. madang"
   }
  ]
 }

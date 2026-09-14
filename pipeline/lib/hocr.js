@@ -119,3 +119,4 @@ function pageConfidence(page) {
 }
 
 module.exports = { parseHocr, alignPages, pageConfidence, similarity };
+

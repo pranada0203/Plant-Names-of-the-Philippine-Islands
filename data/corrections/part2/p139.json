@@ -27,8 +27,23 @@
  "entries": [
   {
    "page": 139,
+   "was": "?. BoNDUCELLA",
+   "name": "C. bonducella"
+  },
+  {
+   "page": 139,
    "was": "C. nuca",
    "name": "C. nuga"
+  },
+  {
+   "page": 139,
+   "was": "?. PuLCHERRIMA",
+   "name": "C. pulcherrima"
+  },
+  {
+   "page": 139,
+   "was": "?. sAPPAN",
+   "name": "C. sappan"
   },
   {
    "page": 139,
@@ -69,8 +84,18 @@
   },
   {
    "page": 139,
-   "was": "C. BIcotor",
+   "was": "?. ANGUSTA",
+   "name": "C. angusta"
+  },
+  {
+   "page": 139,
+   "was": "?. BIcotor",
    "name": "C. bicolor"
+  },
+  {
+   "page": 139,
+   "was": "?. cunEATUM",
+   "name": "C. cuneatum"
   },
   {
    "page": 139,
@@ -81,6 +106,11 @@
    "page": 139,
    "was": "C. vipat",
    "name": "C. vidalii"
+  },
+  {
+   "page": 139,
+   "was": "?. WALLIcHIANUM",
+   "name": "C. wallichianum"
   }
  ]
 }

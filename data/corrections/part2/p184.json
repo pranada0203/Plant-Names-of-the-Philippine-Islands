@@ -27,13 +27,48 @@
  "entries": [
   {
    "page": 184,
+   "was": "?. coryListacHyon",
+   "name": "P. corylistachyon"
+  },
+  {
+   "page": 184,
    "was": "P. nickuM",
    "name": "P. nigrum"
   },
   {
    "page": 184,
+   "was": "?. PHILIPPINUM",
+   "name": "P. philippinum"
+  },
+  {
+   "page": 184,
+   "was": "?. SUBPELTATUM",
+   "name": "P. subpeltatum"
+  },
+  {
+   "page": 184,
+   "was": "?. INERMIS",
+   "name": "P. inermis"
+  },
+  {
+   "page": 184,
+   "was": "?. UMBELLATA",
+   "name": "P. umbellata"
+  },
+  {
+   "page": 184,
+   "was": "?. AcLE",
+   "name": "P. acle"
+  },
+  {
+   "page": 184,
    "was": "P. putce",
    "name": "P. dulce"
+  },
+  {
+   "page": 184,
+   "was": "?. LoBATUM",
+   "name": "P. lobatum"
   },
   {
    "page": 184,
@@ -45,6 +80,16 @@
    "was": "PiTTosPporUM",
    "name": "Pittosporum",
    "family": "Pittosporaceae"
+  },
+  {
+   "page": 184,
+   "was": "?. FERNANDEZII",
+   "name": "P. fernandezii"
+  },
+  {
+   "page": 184,
+   "was": "?. FLORIBUNDUM",
+   "name": "P. floribundum"
   }
  ]
 }

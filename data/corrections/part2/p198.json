@@ -30,12 +30,12 @@
  "entries": [
   {
    "page": 198,
-   "was": "U. nookErI",
+   "was": "?. nookErI",
    "name": "U. hookeri"
   },
   {
    "page": 198,
-   "was": "U. oporaTA",
+   "was": "?. oporaTA",
    "name": "U. odorata"
   },
   {
@@ -56,13 +56,23 @@
   },
   {
    "page": 198,
+   "was": "?. ovALIFOLIA",
+   "name": "U. ovalifolia"
+  },
+  {
+   "page": 198,
+   "was": "?. PURPUREA",
+   "name": "U. purpurea"
+  },
+  {
+   "page": 198,
    "was": "VACCINIUM BARANDANUM",
    "name": "Vaccinium barandanum",
    "family": "Ericaceae"
   },
   {
    "page": 198,
-   "was": "V. iInpuTUM",
+   "was": "?. iInpuTUM",
    "name": "V. indutum"
   },
   {
@@ -76,6 +86,21 @@
    "was": "VatTica",
    "name": "Vatica",
    "family": "Dipterocarpaceae"
+  },
+  {
+   "page": 198,
+   "was": "?. MANGACHAPOI",
+   "name": "V. mangachapoi"
+  },
+  {
+   "page": 198,
+   "was": "?. ARBOREA",
+   "name": "V. arborea"
+  },
+  {
+   "page": 198,
+   "was": "?. CHINENSIS",
+   "name": "V. chinensis"
   },
   {
    "page": 198,

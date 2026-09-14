@@ -35,6 +35,36 @@
   },
   {
    "page": 158,
+   "was": "?. FRAGRANS",
+   "name": "F. fragrans"
+  },
+  {
+   "page": 158,
+   "was": "?. MORINDEAFOLIA",
+   "name": "F. morindeafolia"
+  },
+  {
+   "page": 158,
+   "was": "?. voLUBILIS",
+   "name": "F. volubilis"
+  },
+  {
+   "page": 158,
+   "was": "?. ampeLAS",
+   "name": "F. ampelas"
+  },
+  {
+   "page": 158,
+   "was": "?. ASPERA",
+   "name": "F. aspera"
+  },
+  {
+   "page": 158,
+   "was": "?. cAULOCARPA",
+   "name": "F. caulocarpa"
+  },
+  {
+   "page": 158,
    "was": "F. cLusiomwes",
    "name": "F. clusioides"
   },
@@ -45,7 +75,17 @@
   },
   {
    "page": 158,
-   "was": "F. wirTA",
+   "was": "?. GLOMERATA",
+   "name": "F. glomerata"
+  },
+  {
+   "page": 158,
+   "was": "?. HETEROPHYLLA",
+   "name": "F. heterophylla"
+  },
+  {
+   "page": 158,
+   "was": "?. wirTA",
    "name": "F. hirta"
   }
  ]

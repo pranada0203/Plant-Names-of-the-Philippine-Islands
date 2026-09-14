@@ -29,9 +29,19 @@
  "entries": [
   {
    "page": 138,
+   "was": "?. ceRNUA",
+   "name": "B. cernua"
+  },
+  {
+   "page": 138,
    "was": "BRWELIA",
    "name": "Bridelia",
    "family": "Euphorbiaceae"
+  },
+  {
+   "page": 138,
+   "was": "?. STIPULARIS",
+   "name": "B. stipularis"
   },
   {
    "page": 138,
@@ -41,12 +51,22 @@
   },
   {
    "page": 138,
-   "was": "B. eyMNorrHizA",
+   "was": "?. CARYOPHYLLOIDES",
+   "name": "B. caryophylloides"
+  },
+  {
+   "page": 138,
+   "was": "?. ERIOPETALA",
+   "name": "B. eriopetala"
+  },
+  {
+   "page": 138,
+   "was": "?. eyMNorrHizA",
    "name": "B. gymnorrhiza"
   },
   {
    "page": 138,
-   "was": "B. parvirLtorA",
+   "was": "?. parvirLtorA",
    "name": "B. parviflora"
   },
   {
@@ -61,13 +81,18 @@
   },
   {
    "page": 138,
+   "was": "?. LuciDA",
+   "name": "B. lucida"
+  },
+  {
+   "page": 138,
    "was": "BuppLEIA ASIATICA",
    "name": "Buddleia asiatica",
    "family": "Loganiaceae"
   },
   {
    "page": 138,
-   "was": "B. sAvVANICA",
+   "was": "?. sAvVANICA",
    "name": "B. javanica"
   },
   {

@@ -33,19 +33,54 @@
   },
   {
    "page": 160,
-   "was": "F. DUODECANDRA",
+   "was": "?. CORNEA",
+   "name": "G. cornea"
+  },
+  {
+   "page": 160,
+   "was": "?. DUODECANDRA",
    "name": "G. duodecandra"
   },
   {
    "page": 160,
-   "was": "G. opscurRA",
+   "was": "?. MANGOSTANA",
+   "name": "G. mangostana"
+  },
+  {
+   "page": 160,
+   "was": "?. OVALIFOLIA",
+   "name": "G. ovalifolia"
+  },
+  {
+   "page": 160,
+   "was": "?. VENULOSA",
+   "name": "G. venulosa"
+  },
+  {
+   "page": 160,
+   "was": "?. opscurRA",
    "name": "G. obscura"
+  },
+  {
+   "page": 160,
+   "was": "?. PSEUDOPSIDIUM",
+   "name": "G. pseudopsidium"
   },
   {
    "page": 160,
    "was": "Garuca",
    "name": "Garuga",
    "family": "Burseraceae"
+  },
+  {
+   "page": 160,
+   "was": "?. FLORIBUNDA",
+   "name": "G. floribunda"
+  },
+  {
+   "page": 160,
+   "was": "?. GLOMERULATUM",
+   "name": "G. glomerulatum"
   }
  ]
 }

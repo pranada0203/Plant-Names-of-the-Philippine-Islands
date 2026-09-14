@@ -31,6 +31,31 @@
  "entries": [
   {
    "page": 181,
+   "was": "?. cuNEATUM",
+   "name": "P. cuneatum"
+  },
+  {
+   "page": 181,
+   "was": "?. LANCEOLATUM",
+   "name": "P. lanceolatum"
+  },
+  {
+   "page": 181,
+   "was": "?. LATIFOLIUM",
+   "name": "P. latifolium"
+  },
+  {
+   "page": 181,
+   "was": "?. LUZONIENSE",
+   "name": "P. luzoniense"
+  },
+  {
+   "page": 181,
+   "was": "?. OLEIFERUM",
+   "name": "P. oleiferum"
+  },
+  {
+   "page": 181,
    "was": "?. DUBIUS",
    "name": "P. dubius"
   },
@@ -46,6 +71,21 @@
   },
   {
    "page": 181,
+   "was": "?. RADICANS",
+   "name": "P. radicans"
+  },
+  {
+   "page": 181,
+   "was": "?. SABOTAN",
+   "name": "P. sabotan"
+  },
+  {
+   "page": 181,
+   "was": "?. SYLVESTRIS",
+   "name": "P. sylvestris"
+  },
+  {
+   "page": 181,
    "was": "P. cotonum,L",
    "name": "P. colonum"
   },
@@ -56,7 +96,7 @@
   },
   {
    "page": 181,
-   "was": "P. rLavipuM",
+   "was": "?. rLavipuM",
    "name": "P. flavidum"
   },
   {

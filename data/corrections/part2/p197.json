@@ -28,6 +28,16 @@
  "entries": [
   {
    "page": 197,
+   "was": "?. ARGENTEA",
+   "name": "T. argentea"
+  },
+  {
+   "page": 197,
+   "was": "?. SARMENTOSA",
+   "name": "T. sarmentosa"
+  },
+  {
+   "page": 197,
    "was": "TRIANTHEMA MONOGYNA",
    "name": "Trianthema monogyna",
    "family": "Ficoideae"
@@ -45,7 +55,12 @@
   },
   {
    "page": 197,
-   "was": "T. rrirottaTaA",
+   "was": "?. GLoBosA",
+   "name": "T. globosa"
+  },
+  {
+   "page": 197,
+   "was": "?. rrirottaTaA",
    "name": "T. trifoliata"
   },
   {

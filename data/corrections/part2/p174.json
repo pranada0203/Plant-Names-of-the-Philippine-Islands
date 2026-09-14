@@ -37,8 +37,13 @@
   },
   {
    "page": 174,
-   "was": "M. ImsBricatuM",
+   "was": "?. ImsBricatuM",
    "name": "M. imbricatum"
+  },
+  {
+   "page": 174,
+   "was": "?. MALABATRICUM",
+   "name": "M. malabatricum"
   },
   {
    "page": 174,
@@ -53,8 +58,13 @@
   },
   {
    "page": 174,
-   "was": "M. azeparAcH",
+   "was": "?. azeparAcH",
    "name": "M. azedarach"
+  },
+  {
+   "page": 174,
+   "was": "?. CANDOLLEI",
+   "name": "M. candollei"
   },
   {
    "page": 174,
@@ -69,6 +79,11 @@
   },
   {
    "page": 174,
+   "was": "?. ArBorEA",
+   "name": "M. arborea"
+  },
+  {
+   "page": 174,
    "was": "M. corcHorrotia",
    "name": "M. corchorfolia"
   },
@@ -77,6 +92,21 @@
    "was": "MELOTHRIA INDICA",
    "name": "Melothria indica",
    "family": "Cucurbitaceae"
+  },
+  {
+   "page": 174,
+   "was": "?. EDULE",
+   "name": "M. edule"
+  },
+  {
+   "page": 174,
+   "was": "?. FLORIBUNDA",
+   "name": "M. floribunda"
+  },
+  {
+   "page": 174,
+   "was": "?. PANICULATUM",
+   "name": "M. paniculatum"
   },
   {
    "page": 174,
@@ -92,7 +122,7 @@
   },
   {
    "page": 174,
-   "was": "M. eLasrumM",
+   "was": "?. eLasrumM",
    "name": "M. glabrum"
   }
  ]

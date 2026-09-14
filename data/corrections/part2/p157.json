@@ -27,12 +27,12 @@
  "entries": [
   {
    "page": 157,
-   "was": "K. OPERCULATA",
+   "was": "?. OPERCULATA",
    "name": "E. operculata"
   },
   {
    "page": 157,
-   "was": "K. TeTRAGoNA",
+   "was": "?. TeTRAGoNA",
    "name": "E. tetragona"
   },
   {
@@ -43,19 +43,28 @@
   },
   {
    "page": 157,
-   "was": "K. NerrotiaA",
+   "was": "?. NerrotiaA",
    "name": "E. neriifolia"
   },
   {
    "page": 157,
-   "was": "E. TiRvcALLI",
+   "was": "?. PILULIFERA",
+   "name": "E. pilulifera"
+  },
+  {
+   "page": 157,
+   "was": "?. PuLCHERRIMA",
+   "name": "E. pulcherrima"
+  },
+  {
+   "page": 157,
+   "was": "?. TiRvcALLI",
    "name": "E. tirucalli"
   },
   {
    "page": 157,
-   "was": "Catuit,-T. Eurya",
-   "name": "Eurya japonica",
-   "family": "Ternstroemiaceae"
+   "was": "?. SYLVESTRIS",
+   "name": "E. sylvestris"
   },
   {
    "page": 157,
@@ -73,6 +82,21 @@
    "page": 157,
    "was": "E. warvirortaA",
    "name": "E. latifolia"
+  },
+  {
+   "page": 157,
+   "was": "?. MINDANAENSIS",
+   "name": "E. mindanaensis"
+  },
+  {
+   "page": 157,
+   "was": "?. ROXBURGHIANA",
+   "name": "E. roxburghiana"
+  },
+  {
+   "page": 157,
+   "was": "?. TRIPHYLLA",
+   "name": "E. triphylla"
   },
   {
    "page": 157,

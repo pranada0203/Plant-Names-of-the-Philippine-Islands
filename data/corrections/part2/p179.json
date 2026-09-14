@@ -24,13 +24,23 @@
  "entries": [
   {
    "page": 179,
+   "was": "?. PENTAPETALUS",
+   "name": "O. pentapetalus"
+  },
+  {
+   "page": 179,
    "was": "OcimMuUM BASILIcuUM",
    "name": "Ocimum basilicum",
    "family": "Labiatae"
   },
   {
    "page": 179,
-   "was": "O. sANotuM",
+   "was": "?. GRATISSIMUM",
+   "name": "O. gratissimum"
+  },
+  {
+   "page": 179,
+   "was": "?. sANotuM",
    "name": "O. sanctum"
   },
   {
@@ -41,7 +51,7 @@
   },
   {
    "page": 179,
-   "was": "O. ImpBricaATA",
+   "was": "?. ImpBricaATA",
    "name": "O. imbricata"
   },
   {

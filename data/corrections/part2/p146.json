@@ -29,14 +29,30 @@
   },
   {
    "page": 146,
+   "was": "Corx LACHRYMA-JoBI",
+   "name": "Coix lachryma-jobi",
+   "family": "Gramineae"
+  },
+  {
+   "page": 146,
    "was": "Coteus",
    "name": "Coleus",
    "family": "Labiatae"
   },
   {
    "page": 146,
-   "was": "C. aroMaATIus",
+   "was": "?. AcUMINATUS",
+   "name": "C. acuminatus"
+  },
+  {
+   "page": 146,
+   "was": "?. aroMaATIus",
    "name": "C. aromatius"
+  },
+  {
+   "page": 146,
+   "was": "?. ATROPURPUREUS",
+   "name": "C. atropurpureus"
   },
   {
    "page": 146,
@@ -46,13 +62,23 @@
   },
   {
    "page": 146,
+   "was": "?. SERRATIFOLIA",
+   "name": "C. serratifolia"
+  },
+  {
+   "page": 146,
    "was": "CoNNAROPSIS PHILIPPICA",
    "name": "Connaropsis philippica",
    "family": "Geraniaceae"
   },
   {
    "page": 146,
-   "was": "C. squAMOsSUmM",
+   "was": "?. ovALIFoLIUM",
+   "name": "C. ovalifolium"
+  },
+  {
+   "page": 146,
+   "was": "?. squAMOsSUmM",
    "name": "C. squamosum"
   }
  ]

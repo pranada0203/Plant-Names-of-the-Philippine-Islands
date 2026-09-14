@@ -60,6 +60,16 @@
   },
   {
    "page": 172,
+   "was": "?. AMARA",
+   "name": "L. amara"
+  },
+  {
+   "page": 172,
+   "was": "?. GRANDIFLORA",
+   "name": "L. grandiflora"
+  },
+  {
+   "page": 172,
    "was": "Lycopopium",
    "name": "Lycopodium",
    "family": "Lycopodiaceae"
@@ -69,6 +79,11 @@
    "was": "LyagopIum picHotoMuM",
    "name": "Lygodium dichotomum",
    "family": "Filices"
+  },
+  {
+   "page": 172,
+   "was": "?. SCANDENS",
+   "name": "L. scandens"
   },
   {
    "page": 172,

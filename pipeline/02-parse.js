@@ -260,6 +260,24 @@ const DAMAGED_INITIAL =
   /^\s*[A-Za-z&>«»|]{0,6}[^A-Za-z\s.][A-Za-z&>«»|]{0,6}\.\s+(?=[A-Za-zé]*[A-ZÉ][A-Za-zé]*[A-ZÉ])/;
 
 /**
+ * An epithet as the scan renders it: set in small caps, so four letters or more
+ * carrying at least two capitals ("SYLVESTRIS", "NuciFERA", "MACROSTEGIUM").
+ * An authority never looks like this -- "Gray", "Br", "Salisb" have one capital.
+ */
+// Hyphens included: "LACHRYMA-JoBI" is one epithet, and without them Coix
+// lachryma-jobi is not recognised as a heading at all.
+const EPITHET_SHAPED = '(?=[A-Za-zé-]*[A-ZÉ][A-Za-zé-]*[A-ZÉ])[A-Za-zé-]{4,}';
+
+/**
+ * The initial can also survive as one or two *letters* -- "KE." for E.,
+ * "Qa." for C. -- which DAMAGED_INITIAL misses because it looks for a
+ * non-letter. A real genus is never one or two letters, so a short all-letter
+ * token before the period, followed by something epithet-shaped, is the same
+ * case. Kept separate from DAMAGED_INITIAL so the length bound stays explicit.
+ */
+const SHORT_INITIAL = new RegExp('^\\s*[A-Za-z]{1,2}\\.\\s+(?=' + EPITHET_SHAPED + ')');
+
+/**
  * And sometimes the initial vanishes entirely, leaving the epithet indented a
  * few columns where the "I." used to be:
  *
@@ -277,6 +295,7 @@ const SHIFTED_EPITHET = /^\s{1,4}(?=[A-ZÉ]{4,}\s+[A-ZÉ][a-zé.])/;
 const normaliseLostInitial = (line) => {
   if (LOST_INITIAL.test(line)) return line.replace(LOST_INITIAL, '?. ');
   if (DAMAGED_INITIAL.test(line)) return line.replace(DAMAGED_INITIAL, '?. ');
+  if (SHORT_INITIAL.test(line)) return line.replace(SHORT_INITIAL, '?. ');
   if (SHIFTED_EPITHET.test(line)) return line.replace(SHIFTED_EPITHET, '?. ');
   return line;
 };
@@ -298,16 +317,22 @@ function isPartIIHead(line) {
   if (letters.length < 3) return false;
   const upper = (letters.match(/[A-Z]/g) || []).length;
   if (upper >= 2) return true;                            // caps or mangled small caps
+  if (!/^[A-Z][a-zé]/.test(first)) return false;
+
   // Titlecase genus standing alone ("Cyperus.", "Agaricus.", "Berrya.").
   // The period matters: a heading's first token ends in one, while a wrapped
   // native-name list ends its first token with a comma or semicolon
   // ("Mobóti, V.;", "Cachtimba, Il.;", "Pamp.; Ligos;"). Without that test
   // those lines become headings, and -- worse -- the genus for every
-  // abbreviated species beneath them, giving taxa like "Mobóti, bunius"
+  // abbreviated species beneath them, giving taxa like "Mobóti bunius"
   // where the book says Antidesma bunius.
-  return /^[A-Z][a-zé]/.test(first) &&
-    /\.$/.test(first) &&
-    /^[(A-Z]/.test(tokens[1] || '');
+  if (/\.$/.test(first) && /^[(A-Z]/.test(tokens[1] || '')) return true;
+
+  // A Titlecase genus carries no period when the epithet follows it directly:
+  // "Cocos NuciFERA Linn." That is still a heading, and the epithet is what
+  // says so -- small caps, so two or more capitals. "Mobóti, V.;" fails it,
+  // because "V.;" is one capital in two characters.
+  return new RegExp('^' + EPITHET_SHAPED + '$').test((tokens[1] || '').replace(/[.,;]+$/, ''));
 }
 
 /**
@@ -613,6 +638,23 @@ function main() {
     for (const s of resI.stale.slice(0, 5)) {
       console.log('          stale: p.' + s.page + ' "' + s.was + '" -> "' + s.headword + '"');
     }
+  }
+
+  // Third pass: the scientific names printed on Part I lines. Keyed off the
+  // headword corrections above, so it runs after them.
+  const corrT = CORR.load(fs, path, path.join(OUT_DIR, "corrections", "taxa"));
+  const resT = CORR.applyPartITaxa(corrT, I.entries);
+  if (corrT) {
+    console.log("Fixes T " + resT.applied + " Part I taxon strings corrected, " +
+      corrT.files + " pages transcribed" +
+      (resT.stale.length ? "  (" + resT.stale.length + " stale)" : ""));
+  }
+
+  // Drop the handful of scanning artefacts a transcription marked as non-entries.
+  const dropped = I.entries.filter((e) => e.drop).length;
+  if (dropped) {
+    I.entries = I.entries.filter((e) => !e.drop);
+    console.log("        " + dropped + " non-entry line(s) dropped as scanning artefacts");
   }
 
   const II = parsePartII(pages, sections.partII);

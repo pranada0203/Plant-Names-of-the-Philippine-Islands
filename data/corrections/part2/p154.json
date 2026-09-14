@@ -29,6 +29,16 @@
  "entries": [
   {
    "page": 154,
+   "was": "?. ARBORESCENS",
+   "name": "D. arborescens"
+  },
+  {
+   "page": 154,
+   "was": "?. BLANcoI",
+   "name": "D. blancoi"
+  },
+  {
+   "page": 154,
    "was": "KcLiprA ALBA",
    "name": "Eclipta alba",
    "family": "Compositae"
@@ -41,8 +51,23 @@
   },
   {
    "page": 154,
+   "was": "?. BLANcoI",
+   "name": "E. blancoi"
+  },
+  {
+   "page": 154,
+   "was": "?. BUXIFOLIA",
+   "name": "E. buxifolia"
+  },
+  {
+   "page": 154,
    "was": "K. onava",
    "name": "E. onava"
+  },
+  {
+   "page": 154,
+   "was": "?. PHILIPPINENSIS",
+   "name": "E. philippinensis"
   },
   {
    "page": 154,
@@ -52,23 +77,38 @@
   },
   {
    "page": 154,
+   "was": "?. FLORIBUNDUS",
+   "name": "E. floribundus"
+  },
+  {
+   "page": 154,
+   "was": "?. LANCEAEFOLIUS",
+   "name": "E. lanceaefolius"
+  },
+  {
+   "page": 154,
    "was": "?. MONOCERA",
    "name": "E. monocera"
   },
   {
    "page": 154,
-   "was": "K. MULTIFLORUS",
+   "was": "?. MULTIFLORUS",
    "name": "E. multiflorus"
   },
   {
    "page": 154,
-   "was": "I. OBLONGUS",
+   "was": "?. OBLONGUS",
    "name": "E. oblongus"
   },
   {
    "page": 154,
    "was": "K. opovatus",
    "name": "E. obovatus"
+  },
+  {
+   "page": 154,
+   "was": "?. PELLUCIDA",
+   "name": "E. pellucida"
   },
   {
    "page": 154,

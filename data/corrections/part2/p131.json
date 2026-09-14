@@ -28,9 +28,24 @@
  "entries": [
   {
    "page": 131,
+   "was": "?. MACROPHYLLA",
+   "name": "A. macrophylla"
+  },
+  {
+   "page": 131,
+   "was": "?. SCHOLARIS",
+   "name": "A. scholaris"
+  },
+  {
+   "page": 131,
    "was": "ALYXIA OpORATA",
    "name": "Alyxia odorata",
    "family": "Apocinaceae"
+  },
+  {
+   "page": 131,
+   "was": "?. MELANCHOLICUS",
+   "name": "A. melancholicus"
   },
   {
    "page": 131,
@@ -44,17 +59,32 @@
   },
   {
    "page": 131,
-   "was": "A. cIntAtuM",
+   "was": "?. cIntAtuM",
    "name": "A. ciliatum"
   },
   {
    "page": 131,
-   "was": "A. caArDAMOMUM",
+   "was": "?. caArDAMOMUM",
    "name": "A. cardamomum"
   },
   {
    "page": 131,
-   "was": "A. ROoHITUKA",
+   "was": "?. VILLosuM",
+   "name": "A. villosum"
+  },
+  {
+   "page": 131,
+   "was": "?. GRANDIFOLIA",
+   "name": "A. grandifolia"
+  },
+  {
+   "page": 131,
+   "was": "?. PERROTTETIANA",
+   "name": "A. perrottetiana"
+  },
+  {
+   "page": 131,
+   "was": "?. ROoHITUKA",
    "name": "A. rohituka"
   }
  ]

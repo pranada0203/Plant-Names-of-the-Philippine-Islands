@@ -31,6 +31,11 @@
  "entries": [
   {
    "page": 135,
+   "was": "?. ESCULENTUM",
+   "name": "A. esculentum"
+  },
+  {
+   "page": 135,
    "was": "AstTronia",
    "name": "Astronia",
    "family": "Melastomaceae"
@@ -59,6 +64,21 @@
    "page": 135,
    "was": "?. ROLFEI",
    "name": "A. rolfei"
+  },
+  {
+   "page": 135,
+   "was": "?. MONOPHYLLA",
+   "name": "A. monophylla"
+  },
+  {
+   "page": 135,
+   "was": "?. NITIDA",
+   "name": "A. nitida"
+  },
+  {
+   "page": 135,
+   "was": "?. CARAMBOLA",
+   "name": "A. carambola"
   },
   {
    "page": 135,

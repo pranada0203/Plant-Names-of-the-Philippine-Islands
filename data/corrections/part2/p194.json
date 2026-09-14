@@ -33,13 +33,43 @@
   },
   {
    "page": 194,
+   "was": "?. BALANGHAS",
+   "name": "S. balanghas"
+  },
+  {
+   "page": 194,
    "was": "S. ratma",
    "name": "S. foetida"
   },
   {
    "page": 194,
-   "was": "S. pPINNATUM",
+   "was": "?. OBLONGATA",
+   "name": "S. oblongata"
+  },
+  {
+   "page": 194,
+   "was": "?. RUBIGINOSA",
+   "name": "S. rubiginosa"
+  },
+  {
+   "page": 194,
+   "was": "?. STIPULARIS",
+   "name": "S. stipularis"
+  },
+  {
+   "page": 194,
+   "was": "?. uRENS",
+   "name": "S. urens"
+  },
+  {
+   "page": 194,
+   "was": "?. pPINNATUM",
    "name": "S. pinnatum"
+  },
+  {
+   "page": 194,
+   "was": "?. QUADRIPINNATUM",
+   "name": "S. quadripinnatum"
   },
   {
    "page": 194,
@@ -52,6 +82,11 @@
    "was": "Srrycunos",
    "name": "Strychnos",
    "family": "Loganiaceae"
+  },
+  {
+   "page": 194,
+   "was": "?. cELEBIcA",
+   "name": "S. celebica"
   },
   {
    "page": 194,

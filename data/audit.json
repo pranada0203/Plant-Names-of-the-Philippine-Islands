@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-14T07:45:34.638Z",
+  "generated": "2026-09-14T08:38:33.983Z",
   "ocrConfidence": {
     "description": "OCR confidence by how the word is set on the page (uncorrected entries only)",
     "corrected": 5000,
@@ -11,9 +11,9 @@
       "underFiftyPercent": 41.7
     },
     "romanScientificNames": {
-      "n": 1448,
-      "median": 91,
-      "underFifty": 84
+      "n": 1479,
+      "median": 100,
+      "underFifty": 52
     },
     "worstReadings": [
       {
@@ -92,11 +92,11 @@
   },
   "crossHalfCheck": {
     "description": "Native names printed in Part II, looked up in Part I",
-    "total": 3258,
-    "matchedExactly": 1543,
-    "matchedWithinOneLetter": 955,
-    "unmatched": 760,
-    "unmatchedPercent": 23.3
+    "total": 3349,
+    "matchedExactly": 1575,
+    "matchedWithinOneLetter": 980,
+    "unmatched": 794,
+    "unmatchedPercent": 23.7
   },
   "implausibleHeadwords": {
     "description": "Part I headwords with no vowels or impossible consonant runs",
@@ -128,6 +128,11 @@
       "name": "Malacbée",
       "under": "Acalypha tiliaefolia",
       "page": 127
+    },
+    {
+      "name": "Atigod",
+      "under": "Achyranthes obtusifolia",
+      "page": 128
     },
     {
       "name": "Bihay",
@@ -301,11 +306,6 @@
     },
     {
       "name": "Caséy",
-      "under": "Anacardium occidentale",
-      "page": 132
-    },
-    {
-      "name": "Casty",
       "under": "Anacardium occidentale",
       "page": 132
     }

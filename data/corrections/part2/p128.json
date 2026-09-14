@@ -25,8 +25,23 @@
  "entries": [
   {
    "page": 128,
-   "was": "A. opTusIFoLIA",
+   "was": "?. AspeRA",
+   "name": "A. aspera"
+  },
+  {
+   "page": 128,
+   "was": "?. opTusIFoLIA",
    "name": "A. obtusifolia"
+  },
+  {
+   "page": 128,
+   "was": "?. AuREUM",
+   "name": "A. aureum"
+  },
+  {
+   "page": 128,
+   "was": "?. PAVONINA",
+   "name": "A. pavonina"
   },
   {
    "page": 128,
@@ -36,7 +51,17 @@
   },
   {
    "page": 128,
-   "was": "A. FLoripuM",
+   "was": "?. LUNULATUM",
+   "name": "A. lunulatum"
+  },
+  {
+   "page": 128,
+   "was": "?. PHILIPPINENSIS",
+   "name": "A. philippinensis"
+  },
+  {
+   "page": 128,
+   "was": "?. FLoripuM",
    "name": "A. floridum"
   }
  ]

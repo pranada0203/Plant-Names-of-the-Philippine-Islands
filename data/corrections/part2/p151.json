@@ -30,8 +30,28 @@
  "entries": [
   {
    "page": 151,
-   "was": "D. mnpIcA",
+   "was": "?. mnpIcA",
    "name": "D. indica"
+  },
+  {
+   "page": 151,
+   "was": "?. LUNATUM",
+   "name": "D. lunatum"
+  },
+  {
+   "page": 151,
+   "was": "?. FLAGELLIFER",
+   "name": "D. flagellifer"
+  },
+  {
+   "page": 151,
+   "was": "?. MEMBRANACEUS",
+   "name": "D. membranaceus"
+  },
+  {
+   "page": 151,
+   "was": "?. SCANDENS",
+   "name": "D. scandens"
   },
   {
    "page": 151,
@@ -51,7 +71,17 @@
   },
   {
    "page": 151,
-   "was": "D. TrRirLoruM",
+   "was": "?. LAXIFLORUM",
+   "name": "D. laxiflorum"
+  },
+  {
+   "page": 151,
+   "was": "?. PULCHELLUM",
+   "name": "D. pulchellum"
+  },
+  {
+   "page": 151,
+   "was": "?. TrRirLoruM",
    "name": "D. triflorum"
   },
   {

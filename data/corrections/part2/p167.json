@@ -29,12 +29,17 @@
  "entries": [
   {
    "page": 167,
-   "was": "I. ANGuUSTIFoLIuS",
+   "was": "?. ANGuUSTIFoLIuS",
    "name": "I. angustifolius"
   },
   {
    "page": 167,
-   "was": "I. rrIncTor1a",
+   "was": "?. TEYSMANNI",
+   "name": "I. teysmanni"
+  },
+  {
+   "page": 167,
+   "was": "?. rrIncTor1a",
    "name": "I. tinctoria"
   },
   {
@@ -42,6 +47,21 @@
    "was": "TrpoMoEA",
    "name": "Ipomoea",
    "family": "Convolvulaceae"
+  },
+  {
+   "page": 167,
+   "was": "?. BATATAS",
+   "name": "I. batatas"
+  },
+  {
+   "page": 167,
+   "was": "?. BONA-NOx",
+   "name": "I. bona-nox"
+  },
+  {
+   "page": 167,
+   "was": "?. HEDERACEA",
+   "name": "I. hederacea"
   },
   {
    "page": 167,
@@ -70,8 +90,18 @@
   },
   {
    "page": 167,
-   "was": "I. qguAMocuir",
+   "was": "?. qguAMocuir",
    "name": "I. quamoclit"
+  },
+  {
+   "page": 167,
+   "was": "?. REPTANS",
+   "name": "I. reptans"
+  },
+  {
+   "page": 167,
+   "was": "?. AMBOINICA",
+   "name": "I. amboinica"
   }
  ]
 }

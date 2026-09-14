@@ -29,8 +29,33 @@
  "entries": [
   {
    "page": 144,
+   "was": "?. MeRcADOI",
+   "name": "C. mercadoi"
+  },
+  {
+   "page": 144,
+   "was": "?. PAUCIFLORUM",
+   "name": "C. pauciflorum"
+  },
+  {
+   "page": 144,
    "was": "C. acipA",
    "name": "C. acida"
+  },
+  {
+   "page": 144,
+   "was": "?. AURANTIUM",
+   "name": "C. aurantium"
+  },
+  {
+   "page": 144,
+   "was": "?. DECUMANA",
+   "name": "C. decumana"
+  },
+  {
+   "page": 144,
+   "was": "?. HysTRIx",
+   "name": "C. hystrix"
   },
   {
    "page": 144,
@@ -39,8 +64,23 @@
   },
   {
    "page": 144,
-   "was": "C. excAvaTaA",
+   "was": "?. WALLICHIANUM",
+   "name": "C. wallichianum"
+  },
+  {
+   "page": 144,
+   "was": "?. excAvaTaA",
    "name": "C. excavata"
+  },
+  {
+   "page": 144,
+   "was": "?. WILLDENOVII",
+   "name": "C. willdenovii"
+  },
+  {
+   "page": 144,
+   "was": "?. JAVANICUM",
+   "name": "C. javanicum"
   }
  ]
 }

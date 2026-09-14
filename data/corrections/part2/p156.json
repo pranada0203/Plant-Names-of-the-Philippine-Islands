@@ -20,12 +20,12 @@
  "entries": [
   {
    "page": 156,
-   "was": "K. PANICULATA",
+   "was": "?. PANICULATA",
    "name": "E. paniculata"
   },
   {
    "page": 156,
-   "was": "E. OvVALIFOLIA",
+   "was": "?. OvVALIFOLIA",
    "name": "E. ovalifolia"
   },
   {
@@ -41,18 +41,33 @@
   },
   {
    "page": 156,
+   "was": "?. JAMBOLANA",
+   "name": "E. jambolana"
+  },
+  {
+   "page": 156,
    "was": "E. samBos",
    "name": "E. jambos"
   },
   {
    "page": 156,
-   "was": "K. JAVANICA",
+   "was": "?. JAVANICA",
    "name": "E. javanica"
   },
   {
    "page": 156,
-   "was": "J. MACROCARPA",
+   "was": "?. LINEATA",
+   "name": "E. lineata"
+  },
+  {
+   "page": 156,
+   "was": "?. MACROCARPA",
    "name": "E. macrocarpa"
+  },
+  {
+   "page": 156,
+   "was": "?. MONTANA",
+   "name": "E. montana"
   }
  ]
 }

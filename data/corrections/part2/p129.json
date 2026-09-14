@@ -27,6 +27,11 @@
  "entries": [
   {
    "page": 129,
+   "was": "?. RHOMBOIDEA",
+   "name": "A. rhomboidea"
+  },
+  {
+   "page": 129,
    "was": "AGAVE AMERICANA",
    "name": "Agave americana",
    "family": "Amaryllideae"
@@ -59,6 +64,16 @@
   },
   {
    "page": 129,
+   "was": "?. OLIGANTHA",
+   "name": "A. oligantha"
+  },
+  {
+   "page": 129,
+   "was": "?. PALEMBANICA",
+   "name": "A. palembanica"
+  },
+  {
+   "page": 129,
    "was": "AGROSTISTACHYS MASOANA",
    "name": "Agrostistachys maesoana",
    "family": "Euphorbiaceae"
@@ -83,7 +98,22 @@
   },
   {
    "page": 129,
-   "was": "A. LucipA",
+   "was": "?. JULIBRISSIN",
+   "name": "A. julibrissin"
+  },
+  {
+   "page": 129,
+   "was": "?. LEBBEK",
+   "name": "A. lebbek"
+  },
+  {
+   "page": 129,
+   "was": "?. LITTORALIS",
+   "name": "A. littoralis"
+  },
+  {
+   "page": 129,
+   "was": "?. LucipA",
    "name": "A. lucida"
   }
  ]

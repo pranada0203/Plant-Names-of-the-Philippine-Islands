@@ -26,6 +26,11 @@
  "entries": [
   {
    "page": 183,
+   "was": "?. UMBELLIFLORA",
+   "name": "P. umbelliflora"
+  },
+  {
+   "page": 183,
    "was": "PHRAGMITES ROXBURGHILT",
    "name": "Phragmites roxburghii",
    "family": "Gramineae"
@@ -43,8 +48,28 @@
   },
   {
    "page": 183,
-   "was": "P. urntNARIA",
+   "was": "?. DISTICHUS",
+   "name": "P. distichus"
+  },
+  {
+   "page": 183,
+   "was": "?. niRURI",
+   "name": "P. niruri"
+  },
+  {
+   "page": 183,
+   "was": "?. RETICULATUS",
+   "name": "P. reticulatus"
+  },
+  {
+   "page": 183,
+   "was": "?. urntNARIA",
    "name": "P. urinaria"
+  },
+  {
+   "page": 183,
+   "was": "?. PERUVIANA",
+   "name": "P. peruviana"
   },
   {
    "page": 183,
@@ -62,6 +87,11 @@
    "was": "Pieer",
    "name": "Piper",
    "family": "Piperaceae"
+  },
+  {
+   "page": 183,
+   "was": "?. BETLE",
+   "name": "P. betle"
   }
  ]
 }

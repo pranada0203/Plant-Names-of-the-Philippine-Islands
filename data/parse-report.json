@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-14T07:45:33.653Z",
+  "generated": "2026-09-14T08:37:47.439Z",
   "pages": 209,
   "corrections": {
     "partI": {
@@ -8,7 +8,7 @@
       "pages": 107
     },
     "partII": {
-      "applied": 501,
+      "applied": 911,
       "stale": 0,
       "pages": 75
     }
@@ -27,10 +27,10 @@
       127,
       201
     ],
-    "entries": 1452,
+    "entries": 1481,
     "unparsedBlocks": 0,
-    "withFamily": 1437,
-    "withNotes": 1001,
+    "withFamily": 1464,
+    "withNotes": 1009,
     "families": 147,
     "unmatchedFamilies": [
       "Cebu"

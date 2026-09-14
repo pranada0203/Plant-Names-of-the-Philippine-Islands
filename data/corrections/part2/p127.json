@@ -20,7 +20,7 @@
  "entries": [
   {
    "page": 127,
-   "was": "A. FASTUOSA,",
+   "was": "?. FASTUOSA,",
    "name": "A. fastuosa"
   },
   {
@@ -30,7 +30,22 @@
   },
   {
    "page": 127,
-   "was": "A. TILIHFOLIA",
+   "was": "?. FARNESIANA",
+   "name": "A. farnesiana"
+  },
+  {
+   "page": 127,
+   "was": "?. GRANDIS",
+   "name": "A. grandis"
+  },
+  {
+   "page": 127,
+   "was": "?. STIPULACEA",
+   "name": "A. stipulacea"
+  },
+  {
+   "page": 127,
+   "was": "?. TILIHFOLIA",
    "name": "A. tiliaefolia"
   },
   {

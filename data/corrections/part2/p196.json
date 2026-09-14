@@ -24,13 +24,38 @@
  "entries": [
   {
    "page": 196,
-   "was": "T. epUuLIS",
+   "was": "?. LUZONENSIS",
+   "name": "T. luzonensis"
+  },
+  {
+   "page": 196,
+   "was": "?. CALAMANSANAY",
+   "name": "T. calamansanay"
+  },
+  {
+   "page": 196,
+   "was": "?. epUuLIS",
    "name": "T. edulis"
   },
   {
    "page": 196,
-   "was": "T. nrrENS",
+   "was": "?. nrrENS",
    "name": "T. nitens"
+  },
+  {
+   "page": 196,
+   "was": "?. TOQUIAN",
+   "name": "T. toquian"
+  },
+  {
+   "page": 196,
+   "was": "?. MACROPHYLLA",
+   "name": "T. macrophylla"
+  },
+  {
+   "page": 196,
+   "was": "?. POPULNEA",
+   "name": "T. populnea"
   }
  ]
 }

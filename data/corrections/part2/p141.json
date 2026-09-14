@@ -25,14 +25,35 @@
  "entries": [
   {
    "page": 141,
+   "was": "?. MITE",
+   "name": "C. mite"
+  },
+  {
+   "page": 141,
    "was": "CApPARIsS",
    "name": "Capparis",
    "family": "Capparidaceae"
   },
   {
    "page": 141,
-   "was": "C. HorripA",
+   "was": "?. AURANTIOIDES",
+   "name": "C. aurantioides"
+  },
+  {
+   "page": 141,
+   "was": "?. HorripA",
    "name": "C. horrida"
+  },
+  {
+   "page": 141,
+   "was": "?. micrantHA",
+   "name": "C. micrantha"
+  },
+  {
+   "page": 141,
+   "was": "Carica PAPAYA",
+   "name": "Carica papaya",
+   "family": "Passifloraceae"
   },
   {
    "page": 141,
@@ -44,6 +65,21 @@
    "page": 141,
    "was": "C. cumineit",
    "name": "C. cumingii"
+  },
+  {
+   "page": 141,
+   "was": "?. RUMPHIANA",
+   "name": "C. rumphiana"
+  },
+  {
+   "page": 141,
+   "was": "?. urENS",
+   "name": "C. urens"
+  },
+  {
+   "page": 141,
+   "was": "?. cINEREA",
+   "name": "C. cinerea"
   }
  ]
 }

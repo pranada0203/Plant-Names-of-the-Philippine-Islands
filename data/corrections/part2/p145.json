@@ -26,8 +26,53 @@
  "entries": [
   {
    "page": 145,
+   "was": "?. BLANCOANUM",
+   "name": "C. blancoanum"
+  },
+  {
+   "page": 145,
+   "was": "?. BLANCoI",
+   "name": "C. blancoi"
+  },
+  {
+   "page": 145,
+   "was": "?. BRACHYANTHUM",
+   "name": "C. brachyanthum"
+  },
+  {
+   "page": 145,
+   "was": "?. CUMINGIANUM",
+   "name": "C. cumingianum"
+  },
+  {
+   "page": 145,
+   "was": "?. FRAGRANS",
+   "name": "C. fragrans"
+  },
+  {
+   "page": 145,
+   "was": "?. INERME",
+   "name": "C. inerme"
+  },
+  {
+   "page": 145,
+   "was": "?. INFORTUNATUM",
+   "name": "C. infortunatum"
+  },
+  {
+   "page": 145,
+   "was": "?. INTERMEDIUM",
+   "name": "C. intermedium"
+  },
+  {
+   "page": 145,
    "was": "?. LANUGINOSUM",
    "name": "C. lanuginosum"
+  },
+  {
+   "page": 145,
+   "was": "?. MACROSTEGIUM",
+   "name": "C. macrostegium"
   }
  ]
 }

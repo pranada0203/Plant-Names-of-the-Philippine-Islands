@@ -27,13 +27,53 @@
  "entries": [
   {
    "page": 162,
-   "was": "G. amBIcuA",
+   "was": "?. BARBADENSE",
+   "name": "G. barbadense"
+  },
+  {
+   "page": 162,
+   "was": "?. HERBACEUM",
+   "name": "G. herbaceum"
+  },
+  {
+   "page": 162,
+   "was": "?. PERENNE",
+   "name": "G. perenne"
+  },
+  {
+   "page": 162,
+   "was": "?. LAEVIGATA",
+   "name": "G. laevigata"
+  },
+  {
+   "page": 162,
+   "was": "?. UMBELLATA",
+   "name": "G. umbellata"
+  },
+  {
+   "page": 162,
+   "was": "?. PANICULATA",
+   "name": "G. paniculata"
+  },
+  {
+   "page": 162,
+   "was": "?. amBIcuA",
    "name": "G. ambigua"
   },
   {
    "page": 162,
-   "was": "C. AXILLARIS",
+   "was": "?. MONTANA",
+   "name": "G. montana"
+  },
+  {
+   "page": 162,
+   "was": "?. AXILLARIS",
    "name": "G. axillaris"
+  },
+  {
+   "page": 162,
+   "was": "?. SARMENTOSA",
+   "name": "G. sarmentosa"
   }
  ]
 }

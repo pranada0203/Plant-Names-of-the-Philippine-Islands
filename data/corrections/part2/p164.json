@@ -23,6 +23,16 @@
  "entries": [
   {
    "page": 164,
+   "was": "?. SUBULATUM",
+   "name": "H. subulatum"
+  },
+  {
+   "page": 164,
+   "was": "?. VENULOSUM",
+   "name": "H. venulosum"
+  },
+  {
+   "page": 164,
    "was": "HeERNANDIA PELTATA",
    "name": "Hernandia peltata",
    "family": "Hernandiaceae"
@@ -41,13 +51,28 @@
   },
   {
    "page": 164,
-   "was": "H. aseLMoscnus",
+   "was": "?. aseLMoscnus",
    "name": "H. abelmoschus"
+  },
+  {
+   "page": 164,
+   "was": "?. suRATTENSIS",
+   "name": "H. surattensis"
+  },
+  {
+   "page": 164,
+   "was": "?. GREWIAEFOLIUS",
+   "name": "H. grewiaefolius"
   },
   {
    "page": 164,
    "was": "H. murasiis",
    "name": "H. mutabilis"
+  },
+  {
+   "page": 164,
+   "was": "?. ROSA-SINENSIS",
+   "name": "H. rosa-sinensis"
   },
   {
    "page": 164,

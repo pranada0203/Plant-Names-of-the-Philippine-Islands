@@ -20,8 +20,23 @@
  "entries": [
   {
    "page": 169,
+   "was": "?. RAcEMOSA",
+   "name": "K. racemosa"
+  },
+  {
+   "page": 169,
+   "was": "?. BATITINAN",
+   "name": "L. batitinan"
+  },
+  {
+   "page": 169,
    "was": "L. inpicA",
    "name": "L. indica"
+  },
+  {
+   "page": 169,
+   "was": "?. SPECIOSA",
+   "name": "L. speciosa"
   }
  ]
 }
