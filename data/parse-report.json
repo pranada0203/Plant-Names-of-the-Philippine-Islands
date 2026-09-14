@@ -1,0 +1,36 @@
+{
+  "generated": "2026-09-14T03:53:32.722Z",
+  "pages": 209,
+  "partI": {
+    "pdfPages": [
+      19,
+      127
+    ],
+    "entries": 5038,
+    "unparsedLines": 84,
+    "flagged": 522
+  },
+  "partII": {
+    "pdfPages": [
+      128,
+      201
+    ],
+    "entries": 1410,
+    "unparsedBlocks": 0,
+    "withFamily": 1185,
+    "withNotes": 949,
+    "families": 137,
+    "unmatchedFamilies": [
+      "Cebu",
+      "flagellariacew",
+      "Cwreurbitacew",
+      "Stryacew"
+    ]
+  },
+  "flagCounts": {
+    "dialect-unrecognised": 99,
+    "glyph-damage": 193,
+    "accent-lost": 156,
+    "taxon-suspect": 119
+  }
+}

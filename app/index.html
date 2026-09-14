@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Merrill 1903 · Philippine Plant Names</title>
+<meta name="description" content="A searchable edition of Elmer D. Merrill's 1903 Dictionary of the Plant Names of the Philippine Islands.">
+<meta name="theme-color" content="#faf7f2">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="app" id="app">
+
+  <header class="masthead">
+    <h1>Plant Names of the Philippine Islands<span>Merrill · 1903</span></h1>
+    <div class="spacer"></div>
+    <button class="icon-btn" id="about" type="button">About</button>
+    <button class="icon-btn" id="theme" type="button" aria-label="Toggle colour theme">Theme</button>
+  </header>
+
+  <div class="body">
+    <section class="pane" aria-label="Search and results">
+      <div class="searchbar">
+        <input id="q" type="search" autocomplete="off" autocapitalize="off" spellcheck="false"
+               placeholder="Search a native or scientific name…" aria-label="Search">
+      </div>
+      <div class="filters">
+        <select id="dialect" aria-label="Filter by language"><option value="">All languages</option></select>
+        <select id="family" aria-label="Filter by plant family"><option value="">All families</option></select>
+        <select id="letter" aria-label="Filter by initial letter"><option value="">A–Z</option></select>
+        <div class="count" id="count"></div>
+      </div>
+      <ul class="results" id="results"></ul>
+    </section>
+
+    <main class="detail" id="detail" tabindex="-1">
+      <button class="icon-btn back" id="back" type="button">← Results</button>
+      <div class="detail-inner" id="detail-inner"></div>
+    </main>
+  </div>
+
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

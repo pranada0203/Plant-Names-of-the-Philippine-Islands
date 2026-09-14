@@ -1,0 +1,61 @@
+{
+  "title": "A Dictionary of the Plant Names of the Philippine Islands",
+  "author": "Elmer D. Merrill",
+  "published": 1903,
+  "publisher": "Bureau of Government Laboratories, Department of the Interior, Manila",
+  "series": "1903, No. 8",
+  "source": "dictionaryofplan00merr.pdf",
+  "rights": "Published 1903; in the public domain.",
+  "built": "2026-09-14T03:53:33.356Z",
+  "counts": {
+    "names": 4740,
+    "taxa": 2149,
+    "taxaWithNotes": 937,
+    "taxaWithFamily": 1184,
+    "families": 137,
+    "links": 5591
+  },
+  "provenance": {
+    "parse": {
+      "generated": "2026-09-14T03:53:32.722Z",
+      "pages": 209,
+      "partI": {
+        "pdfPages": [
+          19,
+          127
+        ],
+        "entries": 5038,
+        "unparsedLines": 84,
+        "flagged": 522
+      },
+      "partII": {
+        "pdfPages": [
+          128,
+          201
+        ],
+        "entries": 1410,
+        "unparsedBlocks": 0,
+        "withFamily": 1185,
+        "withNotes": 949,
+        "families": 137,
+        "unmatchedFamilies": [
+          "Cebu",
+          "flagellariacew",
+          "Cwreurbitacew",
+          "Stryacew"
+        ]
+      },
+      "flagCounts": {
+        "dialect-unrecognised": 99,
+        "glyph-damage": 193,
+        "accent-lost": 156,
+        "taxon-suspect": 119
+      }
+    },
+    "namesFlagged": 511,
+    "linkedFromPartII": 1383,
+    "linkedByNearMatch": 781,
+    "taxaJoinedByNearMatch": 366,
+    "namesOnlyInPartII": 1491
+  }
+}

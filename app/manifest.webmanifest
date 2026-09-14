@@ -1,0 +1,15 @@
+{
+  "name": "Philippine Plant Names — Merrill 1903",
+  "short_name": "Plant Names",
+  "description": "A searchable edition of Elmer D. Merrill's 1903 Dictionary of the Plant Names of the Philippine Islands.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#faf7f2",
+  "theme_color": "#faf7f2",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
