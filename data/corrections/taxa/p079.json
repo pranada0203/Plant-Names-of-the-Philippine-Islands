@@ -1,0 +1,35 @@
+{
+ "page": 79,
+ "transcription": [
+  "LANÍÑGUING | Ficus cumingii Miq.",
+  "LANÓTAN#3 | Goniothalamus, and other arborescent species of Anonaceae.",
+  "LANSÍNA | Ricinus communis L.",
+  "LAOCPÁO | Vernonia arborea Ham.",
+  "LASÁLIA | Wendlandia luzonensis DC."
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n78.jpg",
+ "entries": [
+  {
+   "page": 79,
+   "was": "LANINCUINE",
+   "occurrence": 0,
+   "taxa": [
+    "Ficus cumingii Miq"
+   ],
+   "wasTaxa": [
+    "Ficus cumingu Miq"
+   ]
+  },
+  {
+   "page": 79,
+   "was": "LAOCPAO",
+   "occurrence": 0,
+   "taxa": [
+    "Vernonia arborea Ham"
+   ],
+   "wasTaxa": [
+    "Cag..Vernonia arborea Ham"
+   ]
+  }
+ ]
+}

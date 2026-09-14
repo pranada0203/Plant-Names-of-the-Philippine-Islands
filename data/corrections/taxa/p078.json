@@ -1,0 +1,36 @@
+{
+ "page": 78,
+ "transcription": [
+  "LAMBAYÓNG | Ipomoea pes-caprae Roth.",
+  "LAMÍO | Dracontomelon mangiferum Blume.",
+  "LAMPAYÓNG | Ipomoea pes-caprae Roth.",
+  "LAMPÚYANG#2 | Curcurma xanthorrhiza Roxb. and other species.",
+  "LAMÚDIO | Carum copticum Benth.",
+  "LÁÑGAS | Semecarpus microcarpa Wall. and other species."
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n77.jpg",
+ "entries": [
+  {
+   "page": 78,
+   "was": "LAMPAYONE",
+   "occurrence": 0,
+   "taxa": [
+    "Ipomoea pes-caprae Roth"
+   ],
+   "wasTaxa": [
+    "Tpomoea pes-caprae Roth"
+   ]
+  },
+  {
+   "page": 78,
+   "was": "LAMPPUYANG",
+   "occurrence": 0,
+   "taxa": [
+    "Curcurma xanthorrhiza Roxb. and other species"
+   ],
+   "wasTaxa": [
+    "Cureurma xanthorrhiza Roxb. and other species"
+   ]
+  }
+ ]
+}

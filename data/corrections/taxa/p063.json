@@ -1,0 +1,46 @@
+{
+ "page": 63,
+ "transcription": [
+  "CUYANYÁN | Alstonia",
+  "CÚYON-CÚYON | Lepiniopsis ternatensis Valeton.",
+  "CÚYOS-CÚYOS#1 | Taxotrophis ilicifolia Vidal.",
+  "DAGÁBAS | Pteris opaca J. Sm.",
+  "DALÍÑGA | Dioscorea fasciculata Roxb."
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n62.jpg",
+ "entries": [
+  {
+   "page": 63,
+   "was": "CUYAANYAN",
+   "occurrence": 0,
+   "taxa": [
+    "Alstonia"
+   ],
+   "wasTaxa": [
+    "Alstonia. ternatensis Valeton"
+   ]
+  },
+  {
+   "page": 63,
+   "was": "CTYON-CTYON",
+   "occurrence": 0,
+   "taxa": [
+    "Lepiniopsis ternatensis Valeton"
+   ],
+   "wasTaxa": [
+    "Lepiniopsis ilicifolia Vidal"
+   ]
+  },
+  {
+   "page": 63,
+   "was": "CTYOS-CTYOS",
+   "occurrence": 0,
+   "taxa": [
+    "Taxotrophis ilicifolia Vidal"
+   ],
+   "wasTaxa": [
+    "Taxotrophis"
+   ]
+  }
+ ]
+}

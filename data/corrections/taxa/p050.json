@@ -1,0 +1,33 @@
+{
+ "page": 50,
+ "transcription": [
+  "CALACALAMÁYAN | Cissampelos pareira L.",
+  "CALAI-CALAI | Various species of Anonaceae",
+  "CALÁOAG | Curcuma virdiflora Roxb."
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n49.jpg",
+ "entries": [
+  {
+   "page": 50,
+   "was": "CALACALAMAYAN",
+   "occurrence": 0,
+   "taxa": [
+    "Cissampelos pareira L"
+   ],
+   "wasTaxa": [
+    "Cissampelos"
+   ]
+  },
+  {
+   "page": 50,
+   "was": "CALAOAAG",
+   "occurrence": 0,
+   "taxa": [
+    "Curcuma virdiflora Roxb"
+   ],
+   "wasTaxa": [
+    "Cureuma virdiflora Roxb"
+   ]
+  }
+ ]
+}

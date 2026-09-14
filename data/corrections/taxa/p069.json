@@ -1,0 +1,34 @@
+{
+ "page": 69,
+ "transcription": [
+  "GÁBI | Colocasia antiquorum Schott.",
+  "GÁBI-GÁBI#2 | Bootia cordata Wall.",
+  "GALÁÑGA | Maranta arundinacea L.",
+  "GAMAGAMATÍSAN | Solanum nigrum L."
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n68.jpg",
+ "entries": [
+  {
+   "page": 69,
+   "was": "GABI",
+   "occurrence": 0,
+   "taxa": [
+    "Colocasia antiquorum Schott"
+   ],
+   "wasTaxa": [
+    "Pamp. Colocasia antiquorum Schott"
+   ]
+  },
+  {
+   "page": 69,
+   "was": "GAMAGAMATISAN",
+   "occurrence": 0,
+   "taxa": [
+    "Solanum nigrum L"
+   ],
+   "wasTaxa": [
+    "Solanum nigrum L,"
+   ]
+  }
+ ]
+}
