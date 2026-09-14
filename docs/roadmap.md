@@ -5,7 +5,7 @@ Ordered by what unblocks the most. Nothing below is started.
 ## 0. Text quality — largely done
 
 Both halves have been transcribed from the page images: 5,000 native headwords
-and 511 scientific names. Cross-half agreement rose from 21.1% to 47.4%, and the
+and 501 scientific names. Cross-half agreement rose from 21.1% to 47.4%, and the
 count of headwords no Philippine language could produce fell from 175 to zero.
 
 What remains is Part I's *taxon strings* — the scientific name printed on each

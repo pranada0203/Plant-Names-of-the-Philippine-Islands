@@ -10,7 +10,7 @@ that works on desktop and mobile.
 ## Where things stand
 
 **Both halves of the book have been transcribed by eye from the page images.**
-All 181 pages: 5,000 native headwords and 511 scientific names corrected. ÍPIL,
+All 181 pages: 5,000 native headwords and 501 scientific names corrected. ÍPIL,
 MOLÁVE, GUÍJO, YÁCAL, TÍNDALO and the rest are searchable; before the pass the
 scan read ÍPIL as "fprz" and a search for it returned nothing.
 
@@ -43,7 +43,7 @@ Current extraction, from `npm run build`:
 | Name → plant links | 5,275 |
 | Taxa with Merrill's notes | 1,001 |
 | Taxa with a family | 1,437 |
-| Entries corrected from the page images | 5,511 |
+| Entries corrected from the page images | 5,501 |
 | Lines the parser could not read | 70 |
 
 ## Quick start
