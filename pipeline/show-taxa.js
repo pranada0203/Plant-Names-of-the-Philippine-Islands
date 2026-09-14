@@ -66,11 +66,36 @@ if (!entries.length) {
 console.log(`page ${page}  (printed ${entries[0].printedPage || '?'})  ${entries.length} entries`);
 console.log(`image: data/raw/images/p${page}.jpg\n`);
 
+// Lines already checked against the image are done, whether or not they needed
+// correcting -- many do not, because the stub is Merrill's own spelling or a
+// plant Part II simply omits. Without this they would be re-offered for ever
+// and there would be no way to tell how much of the pass remains.
+const checked = new Set();
+const taxaFile = path.join(ROOT, 'data', 'corrections', 'taxa', `p${String(page).padStart(3, '0')}.json`);
+if (fs.existsSync(taxaFile)) {
+  for (const line of JSON.parse(fs.readFileSync(taxaFile, 'utf8')).transcription || []) {
+    const head = line.slice(0, line.indexOf('|')).trim();
+    checked.add(head.replace(/#\d+$/, '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z]/g, ''));
+  }
+}
+
+// A page often repeats a headword for different plants -- page 21 carries
+// AJOS-AJOS NGA MAPOTI three times. Number those, so the transcription can say
+// which one it means and cannot silently correct its neighbour.
+const counts = new Map();
+for (const e of entries) counts.set(e.headword, (counts.get(e.headword) || 0) + 1);
+const seen = new Map();
+
 let shown = 0;
 for (const e of entries) {
+  const n = seen.get(e.headword) || 0;
+  seen.set(e.headword, n + 1);
+
+  const fkey = e.headword.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z]/g, "");
   const doubtful = e.taxa.some((t) => !isKnown(taxonKey(nameOf(t))));
-  if (!showAll && !doubtful) continue;
+  if (!showAll && (!doubtful || checked.has(fkey))) continue;
   shown++;
-  console.log(`  ${e.headword.padEnd(22)} ${e.taxa.join(' | ')}`);
+  const label = counts.get(e.headword) > 1 ? `${e.headword}#${n + 1}` : e.headword;
+  console.log(`  ${label.padEnd(24)} ${e.taxa.join(' | ')}`);
 }
 console.log(`\n${shown} line(s)${showAll ? '' : ' with a taxon absent from Part II'}`);

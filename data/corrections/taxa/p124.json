@@ -1,0 +1,125 @@
+{
+ "page": 124,
+ "transcription": [
+  "ÚBAN#2 | Barringtonia",
+  "ÚBAN#3 | Premna?",
+  "ÚBE-ÚBE | Aristolochia tagala Cham.",
+  "ÚBI | Dioscorea alata L. and other species",
+  "UBODÚBOD | Eleocharis",
+  "UGÁBANG | Mezoneurum glabrum Desf.",
+  "ÚLUD#2 | Crudia",
+  "VICBÍQUI | Rhododendron rosmarinifolium Vidal.",
+  "VÍLOS | Mallotus ricinoides Muell. Arg.",
+  "RHODODENDRON ROSMARINIFOLIUM | -",
+  "MALLOTUS RICINOIDES | -"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n123.jpg",
+ "entries": [
+  {
+   "page": 124,
+   "was": "UBAN",
+   "occurrence": 1,
+   "taxa": [
+    "Barringtonia"
+   ],
+   "wasTaxa": [
+    "Barringtonia. tagala Cham"
+   ]
+  },
+  {
+   "page": 124,
+   "was": "UBAN",
+   "occurrence": 2,
+   "taxa": [
+    "Premna?"
+   ],
+   "wasTaxa": [
+    "Premna?. other species"
+   ]
+  },
+  {
+   "page": 124,
+   "was": "UBE-UBE",
+   "occurrence": 0,
+   "taxa": [
+    "Aristolochia tagala Cham"
+   ],
+   "wasTaxa": [
+    "Aristolochia"
+   ]
+  },
+  {
+   "page": 124,
+   "was": "UPR",
+   "occurrence": 0,
+   "taxa": [
+    "Dioscorea alata L. and other species"
+   ],
+   "wasTaxa": [
+    "Dioscorea alata L. and"
+   ]
+  },
+  {
+   "page": 124,
+   "was": "USOPTSOP",
+   "occurrence": 0,
+   "taxa": [
+    "Eleocharis"
+   ],
+   "wasTaxa": [
+    "Eleocharis. glabrum Desf"
+   ]
+  },
+  {
+   "page": 124,
+   "was": "UCASANE",
+   "occurrence": 0,
+   "taxa": [
+    "Mezoneurum glabrum Desf"
+   ],
+   "wasTaxa": [
+    "Mezoneurum"
+   ]
+  },
+  {
+   "page": 124,
+   "was": "VICPIGUT",
+   "occurrence": 0,
+   "taxa": [
+    "Rhododendron rosmarinifolium Vidal"
+   ],
+   "wasTaxa": [
+    "Vv"
+   ]
+  },
+  {
+   "page": 124,
+   "was": "VITOS",
+   "occurrence": 0,
+   "taxa": [
+    "Mallotus ricinoides Muell. Arg"
+   ],
+   "wasTaxa": [
+    "Pamp"
+   ]
+  },
+  {
+   "page": 124,
+   "was": "RHODODENDRON ROSMARINIFOLIUM",
+   "occurrence": 0,
+   "drop": true,
+   "wasTaxa": [
+    "Vidal"
+   ]
+  },
+  {
+   "page": 124,
+   "was": "MALLOTUS RICINOIDES",
+   "occurrence": 0,
+   "drop": true,
+   "wasTaxa": [
+    "Muell. Arg"
+   ]
+  }
+ ]
+}

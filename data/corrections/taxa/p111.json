@@ -1,0 +1,48 @@
+{
+ "page": 111,
+ "transcription": [
+  "SAMPAGUÍTA | Jasseminum sambac Ait.",
+  "SÁÑGAY | Caladium bicolor Vent.",
+  "SANTÁN#1 | Ixora stricta Roxb.",
+  "SANTA ANA | Ixora stricta Roxb.",
+  "SANTA HELENA | Leucaena glauca Benth.",
+  "SANTA MARIA | Artemisia vulgaris L.",
+  "SAPÍLCO | Pollia thyrsiflora Endl."
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n110.jpg",
+ "entries": [
+  {
+   "page": 111,
+   "was": "SANTA",
+   "occurrence": 0,
+   "taxa": [
+    "Ixora stricta Roxb"
+   ],
+   "wasTaxa": [
+    "Ana. Ixora stricta Roxb"
+   ]
+  },
+  {
+   "page": 111,
+   "was": "SANTA",
+   "occurrence": 1,
+   "taxa": [
+    "Leucaena glauca Benth"
+   ],
+   "wasTaxa": [
+    "Hetena. Leucaena glauca Benth"
+   ]
+  },
+  {
+   "page": 111,
+   "was": "SANTA",
+   "occurrence": 2,
+   "taxa": [
+    "Artemisia vulgaris L"
+   ],
+   "wasTaxa": [
+    "Marra. Artemisia vulgaris L"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "page": 22,
+ "transcription": [
+  "ALÁRO | Maranta arundinacea L.",
+  "ALAUÍHAO | Dracontomelon cumingianum Baill.",
+  "ALCÁNFOR | Cinnamonum camphoratum Blume.",
+  "ÁLING | Mallotus moluccanus Muell. Arg.",
+  "ÁLING HOTÚNGAS | Callicarpa"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n21.jpg",
+ "entries": [
+  {
+   "page": 22,
+   "was": "ALING",
+   "occurrence": 0,
+   "taxa": [
+    "Mallotus moluccanus Muell. Arg"
+   ],
+   "wasTaxa": [
+    "Mallotus moluceants Muell. Arg"
+   ]
+  },
+  {
+   "page": 22,
+   "was": "ALING",
+   "occurrence": 1,
+   "taxa": [
+    "Callicarpa"
+   ],
+   "wasTaxa": [
+    "TlOTUNGAS. Callicarpa"
+   ]
+  }
+ ]
+}

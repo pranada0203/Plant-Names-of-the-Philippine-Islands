@@ -150,7 +150,7 @@ if (alignRatio < 0.6) {
   process.exit(2);
 }
 
-const dir = path.join(ROOT, 'data', 'corrections');
+const dir = path.join(ROOT, 'data', 'corrections', 'part1');
 fs.mkdirSync(dir, { recursive: true });
 const file = path.join(dir, `p${String(page).padStart(3, '0')}.json`);
 fs.writeFileSync(file, JSON.stringify({

@@ -1,0 +1,49 @@
+{
+ "page": 39,
+ "transcription": [
+  "BATOBATÓNIS | Euphorbia pilulifera L.",
+  "BÁTUL | Strychnos multiflora Benth.",
+  "BÁUANG POTÍ | Allium sativum Linn.",
+  "BAYÁG CAMBÍNG#2 | Caesalpena bonducella Fleming.",
+  "BAYAMBÁN | Maranta dichtoma Wall.",
+  "BAYASBÁS | Gynotroches axillaris Blume.",
+  "BAYÓG BAYÓG | Pterospermum",
+  "BAYÓGO#1 | Chionanthes ramiflora F. Muell."
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n38.jpg",
+ "entries": [
+  {
+   "page": 39,
+   "was": "BAUANG",
+   "occurrence": 0,
+   "taxa": [
+    "Allium sativum Linn"
+   ],
+   "wasTaxa": [
+    "Poti (Jolo). Allium sativum Linn"
+   ]
+  },
+  {
+   "page": 39,
+   "was": "BAYOC",
+   "occurrence": 3,
+   "taxa": [
+    "Pterospermum"
+   ],
+   "wasTaxa": [
+    "Ay6c, Pamp. Pterospermum"
+   ]
+  },
+  {
+   "page": 39,
+   "was": "BAYOEO",
+   "occurrence": 0,
+   "taxa": [
+    "Chionanthes ramiflora F. Muell"
+   ],
+   "wasTaxa": [
+    "Chionanthes ramiflora F, Muell"
+   ]
+  }
+ ]
+}

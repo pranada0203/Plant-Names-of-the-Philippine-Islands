@@ -18,8 +18,14 @@
  *   AMBOLONG | Metroxylon
  *   EOF
  *
- * A headword repeated on one page is matched in printed order, so listing it
- * twice corrects the first and second occurrence respectively.
+ * Where a page repeats a headword -- page 21 carries AJOS-AJOS NGA MAPOTI three
+ * times for three different plants -- the line must say which one it means:
+ *
+ *   ALAM#2 | Toona
+ *
+ * show-taxa.js prints that suffix wherever it is needed, and this script
+ * refuses the whole page rather than guess, because guessing rewrites a
+ * neighbouring entry's scientific name and nothing downstream would notice.
  *
  * Writes to data/corrections/taxa/pNNN.json.
  */
@@ -61,20 +67,48 @@ if (!entries.length) {
   process.exit(1);
 }
 
-// Consume repeated headwords in printed order.
-const cursor = new Map();
 const corrections = [];
 const unmatched = [];
+const ambiguous = [];
+const cursor = new Map();
 let same = 0;
 
 for (const w of wanted) {
-  const key = fold(w.head);
+  // "ALAM#2" names the second ALAM on the page. show-taxa prints the suffix
+  // wherever a headword repeats.
+  const hash = w.head.lastIndexOf('#');
+  const explicit = hash > 0 ? Number(w.head.slice(hash + 1)) : null;
+  const headText = hash > 0 ? w.head.slice(0, hash) : w.head;
+
+  const key = fold(headText);
   const candidates = entries.filter((e) => fold(e.headword) === key);
-  const n = cursor.get(key) || 0;
+  if (!candidates.length) { unmatched.push(w); continue; }
+
+  // Refuse to guess. A repeated headword without an index used to consume the
+  // first occurrence, which silently rewrote a neighbouring entry's taxon --
+  // on page 21 it would have given AJOS-AJOS NGA MAPOTI (Hymenocallis) the
+  // scientific name belonging to the next line.
+  if (candidates.length > 1 && explicit === null) {
+    ambiguous.push({ head: headText, options: candidates.map((e) => e.taxa.join(' | ')) });
+    continue;
+  }
+
+  const n = explicit !== null ? explicit - 1 : (cursor.get(key) || 0);
   cursor.set(key, n + 1);
 
   const e = candidates[n];
   if (!e) { unmatched.push(w); continue; }
+
+  // The correction is keyed by the scanner's reading of the headword, so its
+  // occurrence index must be counted the same way. Counting among *corrected*
+  // headwords disagrees whenever a headword correction split one OCR reading
+  // into two: page 22 reads "ALING" for both ALING and ALING HOTUNGAS, and
+  // indexing by the corrected name gave them both occurrence 0, so one
+  // correction silently went stale.
+  const ocrHead = e.ocrHeadword || e.headword;
+  const occurrence = entries
+    .filter((x) => (x.ocrHeadword || x.headword) === ocrHead)
+    .indexOf(e);
 
   // A taxon of "-" marks a line that is not an entry at all: a scanning
   // artefact the parser mistook for one, like the "daeal Doe" at the head of
@@ -83,7 +117,7 @@ for (const w of wanted) {
     corrections.push({
       page,
       was: e.ocrHeadword || e.headword,
-      occurrence: n,
+      occurrence,
       drop: true,
       wasTaxa: e.taxa,
     });
@@ -100,7 +134,7 @@ for (const w of wanted) {
     // Key on the scanner's own reading of the headword, exactly as the
     // headword corrections do, so the two stay in step and re-keying works.
     was: e.ocrHeadword || e.headword,
-    occurrence: n,
+    occurrence,
     taxa,
     wasTaxa: e.taxa,
   });
@@ -112,7 +146,18 @@ if (unmatched.length) {
   console.log(`  ${unmatched.length} headword(s) not found on this page:`);
   unmatched.forEach((w) => console.log(`      ${w.head}`));
 }
+if (ambiguous.length) {
+  console.error(`
+  ${ambiguous.length} headword(s) occur more than once and need an index:`);
+  for (const a of ambiguous) {
+    a.options.forEach((o, i) => console.error(`      ${a.head}#${i + 1}  ${o}`));
+  }
+}
 
+if (ambiguous.length) {
+  console.error('\nREFUSED: index each ambiguous headword and rerun. Nothing written.');
+  process.exit(2);
+}
 if (unmatched.length && unmatched.length === wanted.length) {
   console.error('\nREFUSED: nothing matched. Check the page number and the headword spellings.');
   process.exit(2);

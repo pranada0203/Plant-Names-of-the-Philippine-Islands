@@ -1,19 +1,5 @@
 [
  {
-  "headword": "DAEAL",
-  "headRaw": "daeal",
-  "dialects": [],
-  "place": null,
-  "taxa": [
-   "Doe"
-  ],
-  "page": 19,
-  "printedPage": "11",
-  "confidence": null,
-  "raw": "daeal Doe",
-  "flags": []
- },
- {
   "headword": "AÁGAO",
   "headRaw": "Aágao",
   "dialects": [
@@ -1301,7 +1287,7 @@
   ],
   "place": null,
   "taxa": [
-   "Fiens hispida Blanco"
+   "Ficus hispida Blanco"
   ],
   "page": 20,
   "printedPage": "12",
@@ -1309,7 +1295,11 @@
   "raw": "Aacésoc, T. Fiens hispida Blanco.",
   "flags": [],
   "ocrHeadword": "AACÉSOC",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Fiens hispida Blanco"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "AGÓS-OS",
@@ -3113,7 +3103,7 @@
   ],
   "place": null,
   "taxa": [
-   "Mallotus moluceants Muell. Arg"
+   "Mallotus moluccanus Muell. Arg"
   ],
   "page": 22,
   "printedPage": "14",
@@ -3121,7 +3111,11 @@
   "raw": "ALING, B. Mallotus moluceants Muell. Arg.",
   "flags": [],
   "ocrHeadword": "ALING",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Mallotus moluceants Muell. Arg"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "ALÍÑGAD",
@@ -3165,7 +3159,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "TlOTUNGAS. Callicarpa"
+   "Callicarpa"
   ],
   "page": 22,
   "printedPage": "14",
@@ -3173,7 +3167,11 @@
   "raw": "ALING TlOTUNGAS. Callicarpa.",
   "flags": [],
   "ocrHeadword": "ALING",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "TlOTUNGAS. Callicarpa"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "ALINTÁTAO",
@@ -7808,7 +7806,7 @@
   ],
   "place": null,
   "taxa": [
-   "Maranta arundinacea L.-"
+   "Maranta arundinacea L"
   ],
   "page": 28,
   "printedPage": "20",
@@ -7816,7 +7814,11 @@
   "raw": "Arrou-rou, T., V. Maranta arundinacea L.-",
   "flags": [],
   "ocrHeadword": "ARROU-ROU",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Maranta arundinacea L.-"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "ÁRUM",
@@ -11667,7 +11669,7 @@
   ],
   "place": null,
   "taxa": [
-   "Pamp. Anamirta coceculus W. and A"
+   "Anamirta cocculus W. and A"
   ],
   "page": 32,
   "printedPage": "24",
@@ -11675,7 +11677,11 @@
   "raw": "BALASIN, T., V.. Pamp. Anamirta coceculus W. and A.",
   "flags": [],
   "ocrHeadword": "BALASIN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Pamp. Anamirta coceculus W. and A"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "BALÁTBAT",
@@ -13369,7 +13375,7 @@
   ],
   "place": null,
   "taxa": [
-   "Kntada seandens Benth"
+   "Entada scandens Benth"
   ],
   "page": 34,
   "printedPage": "26",
@@ -13377,7 +13383,11 @@
   "raw": "saL0Gco, T., V., Pamp. Kntada seandens Benth.",
   "flags": [],
   "ocrHeadword": "SAL0GCO",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Kntada seandens Benth"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "BÁLOI",
@@ -13982,7 +13992,7 @@
   ],
   "place": null,
   "taxa": [
-   "Mang. Lagerstroemia speciosa Pers"
+   "Lagerstroemia speciosa Pers"
   ],
   "page": 35,
   "printedPage": "27",
@@ -13990,7 +14000,11 @@
   "raw": "Banas, T., V.. Mang. Lagerstroemia speciosa Pers.",
   "flags": [],
   "ocrHeadword": "BANAS",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Mang. Lagerstroemia speciosa Pers"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "BANABANÁLO",
@@ -17069,7 +17083,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Poti (Jolo). Allium sativum Linn"
+   "Allium sativum Linn"
   ],
   "page": 39,
   "printedPage": "31",
@@ -17077,7 +17091,11 @@
   "raw": "BAUANG Poti (Jolo). Allium sativum Linn.",
   "flags": [],
   "ocrHeadword": "BAUANG",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Poti (Jolo). Allium sativum Linn"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "BÁUI",
@@ -17581,7 +17599,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Ay6c, Pamp. Pterospermum"
+   "Pterospermum"
   ],
   "page": 39,
   "printedPage": "31",
@@ -17591,7 +17609,11 @@
    "taxon-noise"
   ],
   "ocrHeadword": "BAYOC",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Ay6c, Pamp. Pterospermum"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "BAYÓGO",
@@ -17601,7 +17623,7 @@
   ],
   "place": null,
   "taxa": [
-   "Chionanthes ramiflora F, Muell"
+   "Chionanthes ramiflora F. Muell"
   ],
   "page": 39,
   "printedPage": "31",
@@ -17609,7 +17631,11 @@
   "raw": "Bayoeo, V. Chionanthes ramiflora F, Muell.",
   "flags": [],
   "ocrHeadword": "BAYOEO",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Chionanthes ramiflora F, Muell"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "BAYÓGO",
@@ -18048,7 +18074,7 @@
   ],
   "place": null,
   "taxa": [
-   "Tllipe betis Merrill"
+   "Illipe betis Merrill"
   ],
   "page": 40,
   "printedPage": "32",
@@ -18058,7 +18084,11 @@
    "taxon-noise"
   ],
   "ocrHeadword": "BETIS LALAQUE",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Tllipe betis Merrill"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "BIÁS",
@@ -77523,7 +77553,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Ana. Ixora stricta Roxb"
+   "Ixora stricta Roxb"
   ],
   "page": 111,
   "printedPage": "103",
@@ -77531,7 +77561,11 @@
   "raw": "Santa Ana. Ixora stricta Roxb.",
   "flags": [],
   "ocrHeadword": "SANTA",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Ana. Ixora stricta Roxb"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "SANTA HELENA",
@@ -77539,7 +77573,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Hetena. Leucaena glauca Benth"
+   "Leucaena glauca Benth"
   ],
   "page": 111,
   "printedPage": "103",
@@ -77547,7 +77581,11 @@
   "raw": "Santa Hetena. Leucaena glauca Benth.",
   "flags": [],
   "ocrHeadword": "SANTA",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Hetena. Leucaena glauca Benth"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "SANTA MARIA",
@@ -77555,7 +77593,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Marra. Artemisia vulgaris L"
+   "Artemisia vulgaris L"
   ],
   "page": 111,
   "printedPage": "103",
@@ -77563,7 +77601,11 @@
   "raw": "Santa Marra. Artemisia vulgaris L.",
   "flags": [],
   "ocrHeadword": "SANTA",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Marra. Artemisia vulgaris L"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "SANTÁN",
@@ -87803,7 +87845,7 @@
   ],
   "place": null,
   "taxa": [
-   "Barringtonia. tagala Cham"
+   "Barringtonia"
   ],
   "page": 124,
   "printedPage": "116",
@@ -87811,7 +87853,11 @@
   "raw": "UBAN, T. Barringtonia. tagala Cham.",
   "flags": [],
   "ocrHeadword": "UBAN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Barringtonia. tagala Cham"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "ÚBAN",
@@ -87819,7 +87865,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Premna?. other species"
+   "Premna?"
   ],
   "page": 124,
   "printedPage": "116",
@@ -87827,7 +87873,11 @@
   "raw": "UBAN. Premna?. other species.",
   "flags": [],
   "ocrHeadword": "UBAN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Premna?. other species"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "ÚBE",
@@ -87854,7 +87904,7 @@
   ],
   "place": null,
   "taxa": [
-   "Aristolochia"
+   "Aristolochia tagala Cham"
   ],
   "page": 124,
   "printedPage": "116",
@@ -87862,7 +87912,11 @@
   "raw": "UBE-UBE, T., V. Aristolochia",
   "flags": [],
   "ocrHeadword": "UBE-UBE",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Aristolochia"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "ÚBI",
@@ -87870,7 +87924,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Dioscorea alata L. and"
+   "Dioscorea alata L. and other species"
   ],
   "page": 124,
   "printedPage": "116",
@@ -87878,7 +87932,11 @@
   "raw": "Upr. Dioscorea alata L. and",
   "flags": [],
   "ocrHeadword": "UPR",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Dioscorea alata L. and"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "UBÍAN",
@@ -87958,7 +88016,7 @@
   ],
   "place": null,
   "taxa": [
-   "Eleocharis. glabrum Desf"
+   "Eleocharis"
   ],
   "page": 124,
   "printedPage": "116",
@@ -87966,7 +88024,11 @@
   "raw": "Usoptsop, T. Eleocharis. glabrum Desf.",
   "flags": [],
   "ocrHeadword": "USOPTSOP",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Eleocharis. glabrum Desf"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "UDIÁON",
@@ -87994,7 +88056,7 @@
   ],
   "place": null,
   "taxa": [
-   "Mezoneurum"
+   "Mezoneurum glabrum Desf"
   ],
   "page": 124,
   "printedPage": "116",
@@ -88002,7 +88064,11 @@
   "raw": "UcAsane, V. Mezoneurum",
   "flags": [],
   "ocrHeadword": "UCASANE",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Mezoneurum"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "UGÁO",
@@ -88409,7 +88475,7 @@
   ],
   "place": null,
   "taxa": [
-   "Vv"
+   "Rhododendron rosmarinifolium Vidal"
   ],
   "page": 124,
   "printedPage": "116",
@@ -88417,7 +88483,11 @@
   "raw": "Vicpigut, Ig. Vv.",
   "flags": [],
   "ocrHeadword": "VICPIGUT",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Vv"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "VÍLOS",
@@ -88425,7 +88495,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Pamp"
+   "Mallotus ricinoides Muell. Arg"
   ],
   "page": 124,
   "printedPage": "116",
@@ -88433,35 +88503,11 @@
   "raw": "Vitos, Pamp.",
   "flags": [],
   "ocrHeadword": "VITOS",
-  "corrected": true
- },
- {
-  "headword": "RHODODENDRON ROSMARINIFOLIUM",
-  "headRaw": "Rhododendron rosmarinifolium",
-  "dialects": [],
-  "place": null,
-  "taxa": [
-   "Vidal"
+  "corrected": true,
+  "ocrTaxa": [
+   "Pamp"
   ],
-  "page": 124,
-  "printedPage": "116",
-  "confidence": 91,
-  "raw": "Rhododendron rosmarinifolium Vidal.",
-  "flags": []
- },
- {
-  "headword": "MALLOTUS RICINOIDES",
-  "headRaw": "Mallotus ricinoides",
-  "dialects": [],
-  "place": null,
-  "taxa": [
-   "Muell. Arg"
-  ],
-  "page": 124,
-  "printedPage": "116",
-  "confidence": 90,
-  "raw": "Mallotus ricinoides Muell. Arg.",
-  "flags": []
+  "taxaCorrected": true
  },
  {
   "headword": "VÍTAM",

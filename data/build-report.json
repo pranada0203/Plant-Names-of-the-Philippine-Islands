@@ -6,18 +6,18 @@
   "series": "1903, No. 8",
   "source": "dictionaryofplan00merr.pdf",
   "rights": "Published 1903; in the public domain.",
-  "built": "2026-09-14T08:37:55.121Z",
+  "built": "2026-09-14T08:46:03.756Z",
   "counts": {
-    "names": 4395,
-    "taxa": 1713,
+    "names": 4392,
+    "taxa": 1695,
     "taxaWithNotes": 1009,
     "taxaWithFamily": 1464,
     "families": 147,
-    "links": 5246
+    "links": 5233
   },
   "provenance": {
     "parse": {
-      "generated": "2026-09-14T08:37:47.439Z",
+      "generated": "2026-09-14T08:45:52.017Z",
       "pages": 209,
       "corrections": {
         "partI": {
@@ -36,7 +36,7 @@
           19,
           126
         ],
-        "entries": 5014,
+        "entries": 5011,
         "unparsedLines": 70,
         "flagged": 133
       },
@@ -63,8 +63,8 @@
     "namesFlagged": 131,
     "ocrConfidence": {
       "source": "Internet Archive hOCR, Tesseract 5.3 x_wconf",
-      "scored": 4393,
-      "unscored": 2,
+      "scored": 4391,
+      "unscored": 1,
       "median": 100,
       "under40": 4,
       "under70": 6
