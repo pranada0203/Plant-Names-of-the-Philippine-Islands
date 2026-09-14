@@ -43,6 +43,13 @@ each entry was printed on and the app crops the leaf to it on request — 100% o
 Part I's lines and 98.5% of Part II's blocks. A reader who doubts a reading does
 not have to take the transcription's word for it.
 
+**Search knows how Merrill spelled.** He records on page 9 that *e*/*i*, *o*/*u*
+and *i*/*y* are interchangeable in his sources, so a search for `dungon` returns
+DÚÑGON, DONGÓN and DUÑGÚN — three spellings of one tree — each labelled with why
+it is there. The matched letters are marked, and his descriptive notes are
+searched too, so "gutta-percha" or "used in medicine" finds the plants he says
+that about.
+
 **It works offline and installs like an app.** A service worker keeps the shell
 and the payload, so after one visit the dictionary needs no network at all; the
 page images it keeps separately, because the 1903 scan will not change.

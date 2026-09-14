@@ -11,6 +11,7 @@
   --rule-soft: #efe9e0;
   --accent: #6b4f2a;
   --accent-soft: #f0e6d6;
+  --mark: #f3dfb4;
   --flag: #9a5b2c;
   --flag-bg: #fbefe2;
   --focus: #3c6e8f;
@@ -33,6 +34,7 @@
     --rule-soft: #2a2724;
     --accent: #d7b280;
     --accent-soft: #322a1e;
+    --mark: #4d3c1c;
     --flag: #d9a36a;
     --flag-bg: #2e2519;
     --focus: #7fb0cd;
@@ -49,6 +51,7 @@
   --rule-soft: #2a2724;
   --accent: #d7b280;
   --accent-soft: #322a1e;
+  --mark: #4d3c1c;
   --flag: #d9a36a;
   --flag-bg: #2e2519;
   --focus: #7fb0cd;
@@ -223,6 +226,31 @@ button { font: inherit; color: inherit; }
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* The part of the word the search actually matched. A tinted underline rather
+   than a highlighter block: these are results in a list, and a row of yellow
+   slabs is harder to read down than the words themselves. */
+.results mark,
+.results .sub mark {
+  background: none;
+  color: inherit;
+  box-shadow: inset 0 -0.45em 0 var(--mark);
+  border-radius: 2px;
+}
+.results .sub mark { font-weight: 600; color: var(--ink-soft); }
+
+/* Why a result is in the list when the reader could not otherwise tell: shown
+   for a spelling variant, a one-letter difference, or a match in the prose. */
+.results .why {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  margin-left: 0.4rem;
+  vertical-align: 0.12em;
+  font-style: normal;
+  font-family: var(--sans);
+}
+
 .results .kind {
   font-size: 0.62rem;
   text-transform: uppercase;

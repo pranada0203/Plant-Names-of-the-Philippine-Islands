@@ -1,7 +1,7 @@
 # Roadmap
 
-Ordered by what unblocks the most. Sections 0, 1, 4 and 6 are done; the rest
-is not started.
+Ordered by what unblocks the most. Sections 0, 1, 2, 4 and 6 are done; what
+is left is browsing and modern nomenclature.
 
 ## 0. Text quality — done
 
@@ -31,15 +31,27 @@ What is left here is small: 2 native names and 22 Part II blocks could not be
 located and so offer nothing to look at, and the leaf is fetched fresh each
 time rather than being cached for offline use (see section 4).
 
-## 2. Search
+## 2. Search — done
 
-- Diacritic- and variant-tolerant search is in; **phonetic** search is not.
-  Merrill himself documents the variation — *e/i*, *o/u*, *i/y* interchange,
-  `ñ` for *ng*. A fold that collapses those classes would find `dungon` from
-  `dungun`, which one-letter tolerance already half-does but not deliberately.
-- No highlighting of the matched span in results.
-- No search within Merrill's descriptive notes, which are full of useful terms
-  ("valuable timber", "gutta-percha", "used in medicine").
+- **Phonetic folding.** Merrill says on page 9 that "there is a great variation
+  in the spelling of the same word, *e* and *i*, *o* and *u*, and frequently *i*
+  and *y* have the same values and are interchangeable." Those classes are now
+  collapsed for matching, so `dungon` finds DONGÓN and DUÑGÚN — all three the
+  same *Heritiera littoralis*. 191 groups of headwords collapse under the rule.
+  Nothing further is folded: two headwords in the whole book contain a `k`, so a
+  c/k rule would cost precision and earn nothing.
+- **The matched span is marked** in the results, mapped back through the fold so
+  it lands on the right letters of the printed word — MALA**DÚÑGUN** — and a
+  small tag says *why* a result is there when it is not obvious: a spelling
+  variant, a one-letter difference, or a hit in the prose.
+- **The notes are searched**, last and only for queries of three letters or
+  more. By phrase first, then by words: what Merrill actually writes is "used in
+  the practice of medicine", so "used in medicine" has to match on words or it
+  finds nothing at all.
+
+What is left is ranking rather than recall — a plant matched in the description
+sorts below every name match, which is right for "timber" and arguably wrong
+for a query that is obviously prose.
 
 ## 3. Browse, not just search
 

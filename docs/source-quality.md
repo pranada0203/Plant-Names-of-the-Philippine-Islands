@@ -211,6 +211,33 @@ Where the match is poor the box is left out. A box round the wrong line is
 worse than none: the reader is shown a line that does not say what the entry
 says, and has no way to tell which of the two is wrong.
 
+## The author's own spelling variation
+
+Not everything that looks like a scanning error is one. Merrill sets this out
+himself on page 9:
+
+> there is a great variation in the spelling of the same word, *e* and *i*,
+> *o* and *u*, and frequently *i* and *y* have the same values and are
+> interchangeable
+
+His sources were Spanish investigators recording native names by ear, in Spanish
+orthography, over two centuries. So the book prints ARÓRO and ARÚRU, DÓSOL and
+DÚSUL, TENÁAN and TINÁAN, BÓBOI and BÓBOY and BÚBUY — each pair one word.
+Collapsing {e, i, y} and {o, u} merges **191 groups of headwords**, 396 names in
+all.
+
+These are deliberately *not* merged in the data. Half of those groups point at
+plants with nothing in common — AMÓLONG is *Epipremnum medium* and AMÚLUNG is
+*Rhaphidophora*, two aroids identified by different collectors — and deciding
+they are the same record would be making a botanical judgement the book does not
+make. The fold is applied in the search instead, where it brings the spellings
+together in front of a reader who can see all of them at once and judge.
+
+Nothing beyond those classes is folded. Merrill kept Spanish orthography
+consistently: two headwords in the whole book contain a `k`, so a c/k rule would
+cost precision and earn nothing, and `ñ` needs no rule because stripping the
+tilde already turns his `ñg` into the `ng` a reader would type.
+
 ## What is still wrong
 
 **188 of 1,669 taxa exist only because Part I names them.** The third pass cut

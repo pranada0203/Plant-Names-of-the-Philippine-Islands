@@ -1,4 +1,4 @@
-import { Search } from './search.js';
+import { Search, foldMap } from './search.js';
 import { initScan, scanFigure, scanAvailable, revealScans } from './scan.js';
 import { initOffline } from './offline.js';
 
@@ -112,7 +112,7 @@ function renderResults(results, total) {
 
     if (r.kind === 'name') {
       const n = data.names[r.id];
-      head.textContent = n.name;
+      head.append(highlight(n.name, r.at, r.len));
       sub.textContent = n.taxa.map((t) => data.taxa[t.id].name).join(' · ') || '—';
       if (n.dialects.length) {
         const tag = document.createElement('span');
@@ -130,13 +130,23 @@ function renderResults(results, total) {
     } else {
       const t = data.taxa[r.id];
       head.style.fontStyle = 'italic';
-      head.textContent = t.name;
+      // A note match is a match on the description, not on the name, so the
+      // name is left alone and the description carries the mark instead.
+      head.append(r.via === 'note' ? t.name : highlight(t.name, r.at, r.len));
       const tag = document.createElement('span');
       tag.className = 'kind';
       tag.textContent = 'species';
       tag.style.fontStyle = 'normal';
       head.append(tag);
-      sub.textContent = t.family || (t.notes ? t.notes.slice(0, 70) : '—');
+      if (r.via === 'note') sub.append(snippet(t.notes, r.at, r.len));
+      else sub.textContent = t.family || (t.notes ? t.notes.slice(0, 70) : '—');
+    }
+    const why = WHY[r.via];
+    if (why) {
+      const tag = document.createElement('span');
+      tag.className = 'why';
+      tag.textContent = why;
+      head.append(tag);
     }
 
     b.append(head, sub);
@@ -144,6 +154,72 @@ function renderResults(results, total) {
     frag.append(li);
   }
   list.append(frag);
+}
+
+/**
+ * Why a result is in the list, when the reader could not otherwise tell.
+ * An exact or prefix match needs no explanation; being shown DUNGUN for
+ * DUNGON does.
+ */
+const WHY = {
+  phonetic: 'spelling variant',
+  near: 'one letter out',
+  note: 'description',
+};
+
+/**
+ * Mark the part of `text` that matched.
+ *
+ * The match was found in the folded key -- no accents, no punctuation, i for y
+ * -- so its position has to be carried back to the text as printed. `foldMap`
+ * records which character of the original produced each character of the key,
+ * which makes that exact rather than approximate: a match at key position 4 in
+ * ÁLAG-ÁLAG is marked at the right letter even though the fold dropped an
+ * accent and a hyphen before it.
+ */
+function highlight(text, at, len) {
+  const frag = document.createDocumentFragment();
+  if (!(at >= 0) || !len) { frag.append(text); return frag; }
+  const { map } = foldMap(text);
+  if (at >= map.length) { frag.append(text); return frag; }
+  const from = map[at];
+  const to = map[Math.min(at + len, map.length) - 1] + 1;
+  const m = document.createElement('mark');
+  m.textContent = text.slice(from, to);
+  frag.append(text.slice(0, from), m, text.slice(to));
+  return frag;
+}
+
+/**
+ * A window of Merrill's note around the match, with the match marked.
+ *
+ * The lead is deliberately much shorter than the tail. A result row is one
+ * clipped line a few words wide, so a centred window puts the very thing the
+ * reader searched for out past the ellipsis -- which is the one word that had
+ * to be visible.
+ */
+function snippet(text, at, len, lead = 14, tail = 90) {
+  const frag = document.createDocumentFragment();
+  if (!text) return frag;
+  const { map } = foldMap(text);
+  if (!(at >= 0) || at >= map.length) { frag.append(text.slice(0, 90)); return frag; }
+  const from = map[at];
+  const to = map[Math.min(at + len, map.length) - 1] + 1;
+
+  // Widen to whole words, so the snippet does not start mid-syllable.
+  let start = Math.max(0, from - lead);
+  let end = Math.min(text.length, to + tail);
+  if (start > 0) { const sp = text.indexOf(' ', start); if (sp >= 0 && sp < from) start = sp + 1; }
+  if (end < text.length) { const sp = text.lastIndexOf(' ', end); if (sp > to) end = sp; }
+
+  const m = document.createElement('mark');
+  m.textContent = text.slice(from, to);
+  frag.append(
+    (start > 0 ? '…' : '') + text.slice(start, from),
+    m,
+    text.slice(to, end) + (end < text.length ? '…' : '')
+  );
+  return frag;
 }
 
 function show(kind, id) {
