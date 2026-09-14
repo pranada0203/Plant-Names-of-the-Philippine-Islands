@@ -8,8 +8,11 @@
     "parse": "node pipeline/02-parse.js",
     "index": "node pipeline/03-build-index.js",
     "audit": "node pipeline/04-audit.js",
-    "build": "npm run extract && npm run parse && npm run index && npm run audit",
-    "serve": "node pipeline/serve.js"
+    "build": "npm run extract && npm run fetch-ia && npm run parse && npm run index && npm run audit",
+    "serve": "node pipeline/serve.js",
+    "fetch-ia": "node pipeline/01b-fetch-ia.js"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }

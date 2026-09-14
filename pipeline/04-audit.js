@@ -53,8 +53,40 @@ function main() {
     return vowels === 0 || vowels / w.length < 0.2 || /[BCDFGHJKLMNPQRSTVWXZ]{4}/.test(w);
   });
 
+  // The decisive comparison, when hOCR confidence is available: the native
+  // headwords and the scientific names sit on the same pages of the same scan,
+  // but the headwords are set in small caps and the scientific names in roman.
+  // If small caps are the problem, the two should score very differently.
+  const scored = part1.filter((e) => e.confidence !== null && e.confidence !== undefined);
+  let typeface = null;
+  if (scored.length) {
+    const median = (a) => [...a].sort((x, y) => x - y)[Math.floor(a.length / 2)];
+    const headwords = scored.map((e) => e.confidence);
+    // Part II's scientific headings are set in caps/roman; Part I's are not.
+    const roman = part2.map((e) => e.confidence).filter((c) => c !== null && c !== undefined);
+    typeface = {
+      description: 'OCR confidence by how the word is set on the page',
+      smallCapsHeadwords: {
+        n: headwords.length,
+        median: median(headwords),
+        underFifty: headwords.filter((c) => c < 50).length,
+        underFiftyPercent: +((headwords.filter((c) => c < 50).length / headwords.length) * 100).toFixed(1),
+      },
+      romanScientificNames: roman.length ? {
+        n: roman.length,
+        median: median(roman),
+        underFifty: roman.filter((c) => c < 50).length,
+      } : null,
+      worstReadings: [...scored]
+        .sort((a, b) => a.confidence - b.confidence)
+        .slice(0, 25)
+        .map((e) => ({ read_as: e.headRaw, confidence: e.confidence, page: e.page, line: e.raw })),
+    };
+  }
+
   const audit = {
     generated: new Date().toISOString(),
+    ocrConfidence: typeface,
     crossHalfCheck: {
       description: 'Native names printed in Part II, looked up in Part I',
       total,
@@ -77,6 +109,18 @@ function main() {
   };
 
   fs.writeFileSync(path.join(ROOT, 'data', 'audit.json'), JSON.stringify(audit, null, 2));
+
+  if (typeface) {
+    const sc = typeface.smallCapsHeadwords;
+    console.log('OCR confidence (Tesseract x_wconf, via IA hOCR)');
+    console.log('  native headwords, small caps: n=' + sc.n + '  median ' + sc.median +
+      '  under 50: ' + sc.underFiftyPercent + '%');
+    if (typeface.romanScientificNames) {
+      const r = typeface.romanScientificNames;
+      console.log('  scientific names, roman    : n=' + r.n + '  median ' + r.median +
+        '  under 50: ' + ((r.underFifty / r.n) * 100).toFixed(1) + '%');
+    }
+  }
 
   const c = audit.crossHalfCheck;
   console.log('Cross-half check  ' + c.total + ' names printed in both halves');

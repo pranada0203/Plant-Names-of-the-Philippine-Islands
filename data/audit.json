@@ -1,5 +1,171 @@
 {
-  "generated": "2026-09-14T03:53:33.956Z",
+  "generated": "2026-09-14T04:00:58.584Z",
+  "ocrConfidence": {
+    "description": "OCR confidence by how the word is set on the page",
+    "smallCapsHeadwords": {
+      "n": 4157,
+      "median": 45,
+      "underFifty": 2248,
+      "underFiftyPercent": 54.1
+    },
+    "romanScientificNames": {
+      "n": 1383,
+      "median": 86,
+      "underFifty": 376
+    },
+    "worstReadings": [
+      {
+        "read_as": "ApisiinG",
+        "confidence": 0,
+        "page": 19,
+        "line": "ApisiinG, B. Artocarpus."
+      },
+      {
+        "read_as": "ABUTRA",
+        "confidence": 0,
+        "page": 19,
+        "line": "ABUTRA, Sp.-Fil. Anamirta cocculus W. & A."
+      },
+      {
+        "read_as": "Actin",
+        "confidence": 0,
+        "page": 20,
+        "line": "Actin, T. Dysoxylum blancoi Vidal."
+      },
+      {
+        "read_as": "Actrir",
+        "confidence": 0,
+        "page": 21,
+        "line": "Actrir. Ficus quercifolia Roxb."
+      },
+      {
+        "read_as": "ALAN{eniI",
+        "confidence": 0,
+        "page": 22,
+        "line": "ALAN{eniI (Zamboanga). Myristica."
+      },
+      {
+        "read_as": "ALauinao",
+        "confidence": 0,
+        "page": 22,
+        "line": "ALauinao. Dracontomelon cumingianum Baill."
+      },
+      {
+        "read_as": "AutAMA",
+        "confidence": 0,
+        "page": 22,
+        "line": "AutAMA. Morinda bracteata Roxb."
+      },
+      {
+        "read_as": "Arripinin",
+        "confidence": 0,
+        "page": 22,
+        "line": "Arripinin. Bauhinia binnata Blanco."
+      },
+      {
+        "read_as": "Auiptsut",
+        "confidence": 0,
+        "page": 22,
+        "line": "Auiptsut, V. Tabernaemontana pandacaqui Poir."
+      },
+      {
+        "read_as": "Axisun",
+        "confidence": 0,
+        "page": 22,
+        "line": "Axisun, V. Blumea balsamifera DC."
+      },
+      {
+        "read_as": "AiHizo",
+        "confidence": 0,
+        "page": 22,
+        "line": "AiHizo. Bauhinia binnata Blanco."
+      },
+      {
+        "read_as": "Axinao",
+        "confidence": 0,
+        "page": 22,
+        "line": "Axinao, B. Columbia serratifolia DC."
+      },
+      {
+        "read_as": "AiIntTATAO",
+        "confidence": 0,
+        "page": 22,
+        "line": "AiIntTATAO, T. Diospyros pilosanthera Blanco."
+      },
+      {
+        "read_as": "ALIpAcHAo",
+        "confidence": 0,
+        "page": 22,
+        "line": "ALIpAcHAo, Il. Garcinia."
+      },
+      {
+        "read_as": "Auipat",
+        "confidence": 0,
+        "page": 23,
+        "line": "Auipat, T. Nephelium glabrum Noronh."
+      },
+      {
+        "read_as": "Avipsro",
+        "confidence": 0,
+        "page": 23,
+        "line": "Avipsro, T. Sumbavia rottleroides Baill."
+      },
+      {
+        "read_as": "AuIpAyo",
+        "confidence": 0,
+        "page": 23,
+        "line": "AuIpAyo, V. Homalomena."
+      },
+      {
+        "read_as": "Axuipay",
+        "confidence": 0,
+        "page": 23,
+        "line": "Axuipay. Nephelium glabrum Noronh."
+      },
+      {
+        "read_as": "AuiTApTAP",
+        "confidence": 0,
+        "page": 23,
+        "line": "AuiTApTAP, B. Planchonia."
+      },
+      {
+        "read_as": "AtMéNDRO",
+        "confidence": 0,
+        "page": 23,
+        "line": "AtMéNDRO, Sp.-Fil. Terminalia catappa L."
+      },
+      {
+        "read_as": "Atmeéz",
+        "confidence": 0,
+        "page": 23,
+        "line": "Atmeéz. Celtis philippinensis Blanco."
+      },
+      {
+        "read_as": "Axopac",
+        "confidence": 0,
+        "page": 23,
+        "line": "Axopac. Euphorbia litchi DC."
+      },
+      {
+        "read_as": "AuuBinop",
+        "confidence": 0,
+        "page": 23,
+        "line": "AuuBinop, V. Spondias mangifera Wall."
+      },
+      {
+        "read_as": "Aural",
+        "confidence": 0,
+        "page": 23,
+        "line": "Aural, T. Nephelium longana Camb."
+      },
+      {
+        "read_as": "AMO",
+        "confidence": 0,
+        "page": 24,
+        "line": "AMO LONG, Il. Epipremnum medium Engl."
+      }
+    ]
+  },
   "crossHalfCheck": {
     "description": "Native names printed in Part II, looked up in Part I",
     "total": 2908,

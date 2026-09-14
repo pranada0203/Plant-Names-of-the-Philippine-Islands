@@ -44,12 +44,30 @@ function fillFilters() {
 
 /* --------------------------------------------------------------- searching */
 
+/**
+ * How far to trust a headword, from the OCR engine's own per-word confidence
+ * (Tesseract `x_wconf`, via the Internet Archive's hOCR). Below about 40 the
+ * engine was effectively guessing: "fprz" — its reading of ÍPIL — scored 9.
+ * `null` means the word could not be located in the hOCR at all, which is not
+ * the same as being fine.
+ */
+const DOUBTFUL = 40;
+const SOLID = 70;
+
+function confidenceNote(c) {
+  if (c === null || c === undefined) return { level: 'unknown', text: 'reading not verified against the scan' };
+  if (c < DOUBTFUL) return { level: 'bad', text: `the scanner was guessing here — ${c}/100 confident` };
+  if (c < SOLID) return { level: 'weak', text: `the scanner was unsure of this reading — ${c}/100` };
+  return { level: 'ok', text: null };
+}
+
 let pending = null;
 function run() {
   const opts = {
     dialect: el('dialect').value || null,
     family: el('family').value || null,
     letter: el('letter').value || null,
+    minConfidence: el('confident').checked ? SOLID : null,
   };
   const { total, results } = search.query(el('q').value, opts);
   renderResults(results, total);
@@ -93,6 +111,13 @@ function renderResults(results, total) {
         tag.className = 'kind';
         tag.textContent = n.dialects.map((d) => data.dialects[d] || d).join('/');
         head.append(tag);
+      }
+      if (confidenceNote(n.confidence).level === 'bad') {
+        const d = document.createElement('span');
+        d.className = 'doubt';
+        d.title = confidenceNote(n.confidence).text;
+        d.textContent = 'misread?';
+        head.append(d);
       }
     } else {
       const t = data.taxa[r.id];
@@ -153,7 +178,20 @@ function nameView(n) {
   for (const d of n.dialects) meta.append(tag(data.dialects[d] || d));
   for (const p of n.places) meta.append(tag(p));
   if (!n.dialects.length && !n.places.length) meta.append(tag('language not recorded'));
-  for (const flag of n.flags) meta.append(tag(FLAG_TEXT[flag] || flag, true));
+
+  // The engine's own confidence supersedes our heuristic flags where it exists:
+  // "glyph-damage" is a guess about the reading, x_wconf is a measurement of it.
+  const note = confidenceNote(n.confidence);
+  if (note.text) {
+    const c = document.createElement('span');
+    c.className = 'conf';
+    c.textContent = note.text;
+    meta.append(c);
+  }
+  for (const flag of n.flags) {
+    if (note.level !== 'ok' && flag === 'glyph-damage') continue;
+    meta.append(tag(FLAG_TEXT[flag] || flag, true));
+  }
   head.append(meta);
   f.append(head);
 
@@ -200,7 +238,7 @@ function nameView(n) {
     f.append(chips([...siblings.values()].sort((a, b) => a.name.localeCompare(b.name))));
   }
 
-  f.append(source(`Page ${n.pages.join(', ')} of the 1903 printing`, n.printed));
+  f.append(source(pageCitation(n.printedPages, n.pages), n.printed));
   return f;
 }
 
@@ -257,11 +295,20 @@ function taxonView(t) {
     f.append(box);
   }
 
-  f.append(source(`Page ${t.page} of the 1903 printing`, t.printed + (t.authority ? ' ' + t.authority : '')));
+  f.append(source(pageCitation(null, [t.page]), t.printed + (t.authority ? ' ' + t.authority : '')));
   return f;
 }
 
 /* ---------------------------------------------------------------- fragments */
+
+/**
+ * Cite the page a reader would find in a physical copy when we know it, and
+ * say plainly when the number is the scan leaf instead.
+ */
+function pageCitation(printed, pdfPages) {
+  if (printed && printed.length) return `Page ${printed.join(', ')} of the 1903 printing`;
+  return `Scan leaf ${pdfPages.join(', ')}`;
+}
 
 function tag(text, warn = false) {
   const s = document.createElement('span');
@@ -294,6 +341,13 @@ function chips(names) {
       d.className = 'dia';
       d.textContent = n.dialects.map((x) => data.dialects[x] || x).join('/');
       b.append(d);
+    }
+    // A doubtful sibling is worth marking here especially: the reader is being
+    // told "this plant is also called X", and X may not be a real word.
+    const note = confidenceNote(n.confidence);
+    if (note.level === 'bad') {
+      b.classList.add('doubtful');
+      b.title = note.text;
     }
     b.onclick = () => show('name', n.id);
     box.append(b);
@@ -337,7 +391,7 @@ function placeholder() {
 
 function wire() {
   el('q').addEventListener('input', scheduleRun);
-  for (const id of ['dialect', 'family', 'letter']) el(id).addEventListener('change', run);
+  for (const id of ['dialect', 'family', 'letter', 'confident']) el(id).addEventListener('change', run);
 
   el('results').addEventListener('click', (e) => {
     const b = e.target.closest('button[data-kind]');

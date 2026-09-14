@@ -32,7 +32,9 @@ between them are those indices. That keeps the payload small and lookups O(1).
   "taxa": [                   // the plants this name denotes
     { "id": 812, "authority": "Miq.", "printed": "Licuala spectabilis Miq.", "via": "partII-near" }
   ],
-  "pages": [24],              // PDF page numbers, for checking against the scan
+  "pages": [24],              // scan leaf, for checking against the PDF
+  "printedPages": ["16"],     // page number as the book itself paginates
+  "confidence": 68,           // lowest x_wconf the OCR engine gave this headword
   "flags": ["accent-lost"]    // see below
 }
 ```
@@ -94,8 +96,27 @@ shatters into several and the family filter is useless. See
 | `taxon-suspect` | The scientific name on this line does not look like a binomial |
 
 These are **under-inclusive by design**: they catch damage the pipeline can see.
-They do not catch a word misread as a different plausible word. See
-[source-quality.md](source-quality.md).
+They do not catch a word misread as a different plausible word.
+
+## `confidence` — the signal that supersedes the flags
+
+`names[].confidence` is the lowest `x_wconf` Tesseract gave any word of the
+headword, read from the Internet Archive hOCR (stage 1b). It is a measurement,
+where the flags above are a guess, and the app prefers it: `fprz` carries no
+flag at all but scores **9**.
+
+| Range | The app says |
+|---|---|
+| 70–100 | nothing — the reading stands |
+| 40–69 | "the scanner was unsure of this reading" |
+| 0–39 | "the scanner was guessing here"; marked *misread?* in results |
+| `null` | the word was not located in the hOCR — unknown, not fine |
+
+`null` is treated as doubtful by the "Hide doubtful readings" filter, because
+passing an unverified reading silently would defeat the filter.
+
+See [source-quality.md](source-quality.md) for what the distribution looks like
+and why it is concentrated in the small-caps headwords.
 
 ## `meta.provenance`
 

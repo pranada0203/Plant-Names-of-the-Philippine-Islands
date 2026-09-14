@@ -80,7 +80,7 @@ export class Search {
   /**
    * @returns {{kind:'name'|'taxon', id:number, rank:number}[]}
    */
-  query(raw, { limit = 200, dialect = null, family = null, letter = null } = {}) {
+  query(raw, { limit = 200, dialect = null, family = null, letter = null, minConfidence = null } = {}) {
     const q = fold(raw);
     const out = [];
 
@@ -106,14 +106,18 @@ export class Search {
       for (let i = 0; i < this.data.names.length; i++) out.push({ kind: 'name', id: i, rank: RANK.contains });
     }
 
-    const filtered = out.filter((r) => this.passes(r, { dialect, family, letter }));
+    const filtered = out.filter((r) => this.passes(r, { dialect, family, letter, minConfidence }));
     filtered.sort((a, b) => a.rank - b.rank || this.label(a).localeCompare(this.label(b), 'en'));
     return { total: filtered.length, results: filtered.slice(0, limit) };
   }
 
-  passes(r, { dialect, family, letter }) {
+  passes(r, { dialect, family, letter, minConfidence }) {
     if (r.kind === 'name') {
       const n = this.data.names[r.id];
+      // A headword with no score was never located in the hOCR. Treat unknown
+      // as doubtful when the reader asks to see only confident readings --
+      // silently passing it would defeat the point of the filter.
+      if (minConfidence !== null && !(n.confidence >= minConfidence)) return false;
       if (dialect && !n.dialects.includes(dialect)) return false;
       if (letter && !n.name.startsWith(letter)) return false;
       if (family && !n.taxa.some((t) => this.data.taxa[t.id].family === family)) return false;

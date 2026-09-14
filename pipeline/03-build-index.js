@@ -153,6 +153,8 @@ function main() {
         places: [],
         taxa: [],
         pages: [],
+        printedPages: [],
+        confidence: null,   // lowest the OCR engine gave this headword
         flags: [],
       };
       byHead.set(headKey, rec);
@@ -162,6 +164,11 @@ function main() {
     for (const d of e.dialects) if (!rec.dialects.includes(d)) rec.dialects.push(d);
     if (e.place && !rec.places.includes(e.place)) rec.places.push(e.place);
     if (!rec.pages.includes(e.page)) rec.pages.push(e.page);
+    if (e.printedPage && !rec.printedPages.includes(e.printedPage)) rec.printedPages.push(e.printedPage);
+    // Merged headwords take the worst reading, not the flattering one.
+    if (e.confidence !== null && e.confidence !== undefined) {
+      rec.confidence = rec.confidence === null ? e.confidence : Math.min(rec.confidence, e.confidence);
+    }
     for (const f of e.flags) if (!rec.flags.includes(f)) rec.flags.push(f);
 
     for (const raw of e.taxa) {
@@ -245,6 +252,19 @@ function main() {
       provenance: {
         parse: report,
         namesFlagged: names.filter((n) => n.flags.length).length,
+        ocrConfidence: (() => {
+          const scored = names.filter((n) => n.confidence !== null).map((n) => n.confidence);
+          if (!scored.length) return null;
+          const sorted = [...scored].sort((a, b) => a - b);
+          return {
+            source: "Internet Archive hOCR, Tesseract 5.3 x_wconf",
+            scored: scored.length,
+            unscored: names.length - scored.length,
+            median: sorted[Math.floor(sorted.length / 2)],
+            under40: scored.filter((c) => c < 40).length,
+            under70: scored.filter((c) => c < 70).length,
+          };
+        })(),
         linkedFromPartII: linkedFromII,
         linkedByNearMatch: linkedFuzzy,
         taxaJoinedByNearMatch: taxaJoinedFuzzy,

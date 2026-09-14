@@ -20,10 +20,66 @@ const fs = require('fs');
 const path = require('path');
 const N = require('./lib/normalize');
 const TAX = require('./lib/taxonomy');
+const HOCR = require('./lib/hocr');
 
 const ROOT = path.join(__dirname, '..');
 const IN = path.join(ROOT, 'data', 'raw', 'pages.json');
 const OUT_DIR = path.join(ROOT, 'data');
+const IA_DIR = path.join(ROOT, 'data', 'raw', 'ia');
+
+/**
+ * Per-page word confidence from the Internet Archive's hOCR, when stage 1b has
+ * fetched it. Absent is fine -- entries simply carry no confidence and the
+ * pipeline falls back on its own heuristic flags.
+ */
+function loadConfidence(pages) {
+  const file = path.join(IA_DIR, 'hocr.html');
+  if (!fs.existsSync(file)) return null;
+
+  const hocrPages = HOCR.parseHocr(fs.readFileSync(file, 'utf8'));
+  const { map, offset, offsetScore } = HOCR.alignPages(hocrPages, pages);
+  const aligned = map.filter((j) => j >= 0).length;
+
+  const byPage = new Map();
+  for (let i = 0; i < map.length; i++) {
+    if (map[i] >= 0) byPage.set(i + 1, HOCR.pageConfidence(hocrPages[map[i]]));
+  }
+
+  // Printed page numbers, so entries can be cited as the book paginates them.
+  let printed = null;
+  const pnFile = path.join(IA_DIR, 'page_numbers.json');
+  if (fs.existsSync(pnFile)) {
+    printed = new Map();
+    for (const p of (JSON.parse(fs.readFileSync(pnFile, 'utf8')).pages || [])) {
+      if (p.pageNumber != null) printed.set(p.leafNum, String(p.pageNumber));
+    }
+  }
+
+  return { byPage, printed, stats: { hocrPages: hocrPages.length, aligned, offset, offsetScore } };
+}
+
+/**
+ * Confidence for a headword: the lowest the engine gave any of its words.
+ * Returns null when the word cannot be located on the page, so "unknown" is
+ * never silently reported as "fine".
+ */
+function lookupConfidence(conf, page, text) {
+  if (!conf) return null;
+  const table = conf.byPage.get(page);
+  if (!table) return null;
+  const tokens = text.split(/[\s-]+/)
+    .map((t) => t.replace(/[^A-Za-zÀ-ÿ]/g, '').toLowerCase())
+    .filter(Boolean);
+  if (!tokens.length) return null;
+
+  let worst = null;
+  for (const t of tokens) {
+    const hit = table.get(t);
+    if (!hit) return null;                       // unmatched: do not pretend
+    if (worst === null || hit.conf < worst) worst = hit.conf;
+  }
+  return worst;
+}
 
 // ---------------------------------------------------------------- boundaries
 
@@ -66,7 +122,7 @@ const PART_I_ENTRY = new RegExp(
 /** Unparsed leftovers that are page furniture, not lost data. */
 const FURNITURE = /^\s*(\d{1,3}|[A-Z]\.|[IVXL]+|\d+\s+\d+|8956.*)\s*$/;
 
-function parsePartI(pages, range) {
+function parsePartI(pages, range, conf) {
   const entries = [];
   const issues = [];
   for (let p = range[0]; p <= range[1]; p++) {
@@ -107,6 +163,8 @@ function parsePartI(pages, range) {
         place: g.place ? N.squash(g.place) : null,
         taxa,
         page: p + 1,
+        printedPage: conf && conf.printed ? conf.printed.get(p + 1) || null : null,
+        confidence: lookupConfidence(conf, p + 1, head),
         raw: line,
         flags: qualityFlags(head, taxa, dialectsUnknown),
       });
@@ -386,8 +444,23 @@ function main() {
   const pages = JSON.parse(fs.readFileSync(IN, 'utf8'));
   const sections = findSections(pages);
 
-  const I = parsePartI(pages, sections.partI);
+  const conf = loadConfidence(pages);
+  if (conf) {
+    console.log('hOCR    ' + conf.stats.hocrPages + ' scanned leaves, ' + conf.stats.aligned +
+      ' aligned to our pages (offset ' + conf.stats.offset + ')');
+  } else {
+    console.log('hOCR    not fetched - run `npm run fetch-ia` for per-word confidence');
+  }
+
+  const I = parsePartI(pages, sections.partI, conf);
   const II = parsePartII(pages, sections.partII);
+
+  // Score Part II's headings too. They are set in roman rather than small caps,
+  // which makes them the control group for how much the typeface costs us.
+  for (const e of II.entries) {
+    e.confidence = lookupConfidence(conf, e.page, e.name.replace(/^[A-Z]\.\s+/, ''));
+    e.printedPage = conf && conf.printed ? conf.printed.get(e.page) || null : null;
+  }
 
   // The book abbreviates repeated genera ("A. ASPERA" under ACHYRANTHES) and
   // states the family once, on the genus line. Carry both down to the species.

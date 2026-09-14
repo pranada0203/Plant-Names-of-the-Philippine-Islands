@@ -158,6 +158,38 @@ button { font: inherit; color: inherit; }
   color: var(--ink);
   max-width: 100%;
 }
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.toggle input { accent-color: var(--accent); margin: 0; }
+
+/* How far the OCR engine trusted its own reading of a headword. */
+.conf {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  color: var(--flag);
+  background: var(--flag-bg);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  white-space: nowrap;
+}
+.results .doubt {
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--flag);
+  margin-left: 0.4rem;
+  vertical-align: 0.12em;
+}
+
 .count {
   font-size: 0.78rem;
   color: var(--ink-faint);
@@ -266,6 +298,13 @@ h3.section {
 }
 .chip:hover { border-color: var(--accent); color: var(--accent); }
 .chip .dia { color: var(--ink-faint); font-size: 0.75rem; margin-left: 0.25rem; }
+/* The scanner was guessing at this word: underline it the way a spell-checker
+   would, so the reader is not told a garbled string is a plant name. */
+.chip.doubtful {
+  text-decoration: underline wavy var(--flag);
+  text-underline-offset: 3px;
+  color: var(--ink-soft);
+}
 
 .source {
   margin-top: 2rem;

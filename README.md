@@ -10,10 +10,19 @@ that works on desktop and mobile.
 ## Where things stand
 
 The full pipeline runs and the app works. **The limiting factor is not the code,
-it is the scan.** See [docs/source-quality.md](docs/source-quality.md) — the
-short version is that the PDF's text layer misreads enough headwords that the
-dictionary is not yet trustworthy as a reference, and the fix is to re-OCR from
-the page images. Everything else is in place and waiting for better text.
+it is the scan.** See [docs/source-quality.md](docs/source-quality.md).
+
+The short version: Merrill set the native names in small capitals, and the OCR
+handled them badly. On the same pages, in the same scan, the roman scientific
+names score a median confidence of 86 while the small-caps headwords score 45 —
+and only 1,117 of 4,740 headwords (23.6%) reach a confidence of 70. The app now
+reports that per entry instead of presenting every reading as equally sound, but
+the remedy is better text, not more parsing.
+
+Fetching the Internet Archive's own OCR settled one question: the PDF's text
+layer and the IA's `_djvu.txt` are the same Tesseract run, sharing 16,953 of
+17,040 tokens. What the IA did add is **hOCR**, carrying a confidence score and
+a bounding box for every word — which is where the numbers above come from.
 
 Current extraction, from `npm run build`:
 
@@ -25,6 +34,7 @@ Current extraction, from `npm run build`:
 | Name → plant links | 5,591 |
 | Pages with descriptive notes | 937 taxa |
 | Lines the parser could not read | 84 of ~5,100 |
+| Headwords the OCR engine was confident about | 1,117 (23.6%) |
 
 ## Quick start
 
@@ -57,11 +67,14 @@ docs/       source assessment, data model, roadmap
 | Stage | Script | Does |
 |---|---|---|
 | 1 | `pipeline/01-extract-text.js` | `pdftotext -layout` → `data/raw/pages.json` |
+| 1b | `pipeline/01b-fetch-ia.js` | Fetches the Internet Archive hOCR for per-word confidence (network; skippable) |
 | 2 | `pipeline/02-parse.js` | Parses both halves of the book → `data/part1-*.json`, `data/part2-*.json` |
 | 3 | `pipeline/03-build-index.js` | Joins the halves into one graph → `app/data/dictionary.json` |
 | 4 | `pipeline/04-audit.js` | Measures how much the scan can be trusted → `data/audit.json` |
 
-Run them individually with `npm run extract | parse | index | audit`.
+Run them individually with `npm run extract | fetch-ia | parse | index | audit`.
+Stage 1b is the only one that touches the network; everything downstream works
+without it, just with no confidence scores.
 
 ### What the parser has to cope with
 

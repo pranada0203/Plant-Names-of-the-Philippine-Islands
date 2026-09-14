@@ -4,19 +4,26 @@ Ordered by what unblocks the most. Nothing below is started.
 
 ## 0. Decide the text-quality question first
 
-Everything else is polish on top of text that is currently wrong about half the
-time on cross-checkable names. See [source-quality.md](source-quality.md) for
-the measurements and the four options. This is a decision for you, not a task
-for the pipeline: the cheapest option (fetch the Internet Archive's own OCR)
-needs your go-ahead because it means fetching from an external service.
+**Done, partly.** The Internet Archive route was tried and settled: the IA's
+`_djvu.txt` is the same Tesseract run as the PDF's text layer, so no better
+text exists there. Its hOCR did add per-word confidence, which is now in the
+pipeline and shown in the app — so the app no longer presents a guess as a fact.
 
-Until it is settled, treat the app as a working prototype over provisional text.
+But the text is unchanged. A reader searching "ipil" still finds nothing,
+because the scan reads `fprz`. The remaining options are in
+[source-quality.md](source-quality.md); a vision-model pass over the page
+images is now clearly the right one, and the confidence scores make it
+targetable — the ~2,250 worst headwords rather than all 209 pages. It needs the
+page images (63 MB) and your go-ahead.
+
+Until that is done, treat the app as a working prototype over provisional text.
 
 ## 1. The reader's obvious next question: "show me the page"
 
-Every entry already records its PDF page. If we obtain page images (which comes
-free with options 1–3 above), the detail view can show the scanned line beside
-the transcription. That converts every quality flag from a warning into
+Every entry already records its scan leaf and its printed page number, and the
+hOCR gives a bounding box for every word — so the crop is already computable.
+All that is missing is the page images themselves. With them, the detail view
+can show the scanned line beside the transcription. That converts every quality flag from a warning into
 something the reader can resolve themselves, and it is the single highest-value
 feature this app can have given the state of the text.
 
