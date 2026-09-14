@@ -35,10 +35,10 @@ function viewerUrl(page) {
   return scan.viewer.replace('{leaf}', String(page - 1));
 }
 
-/** Height / width of a leaf, needed to turn a fractional box into a shape. */
-function aspectOf(page) {
+/** A leaf's pixel dimensions, [width, height], or null if unknown. */
+function dimsOf(page) {
   const dims = scan && scan.pages && scan.pages[page];
-  return dims && dims[0] ? dims[1] / dims[0] : null;
+  return dims && dims[0] && dims[1] ? dims : null;
 }
 
 /**
@@ -94,9 +94,10 @@ function placeWhole(frame, img) {
  */
 export function scanFigure(sighting, alt) {
   if (!sighting || !sighting.box || !scan) return null;
-  const aspect = aspectOf(sighting.page);
+  const dims = dimsOf(sighting.page);
   const src = leafUrl(sighting.page, (scan.widths && scan.widths[0]) || 0);
-  if (!aspect || !src) return null;
+  if (!dims || !src) return null;
+  const aspect = dims[1] / dims[0];
 
   const fig = document.createElement('figure');
   fig.className = 'scan';
@@ -109,9 +110,19 @@ export function scanFigure(sighting, alt) {
 
   const img = document.createElement('img');
   img.alt = alt ? `Scan of the line reading: ${alt}` : 'The line as printed';
-  img.loading = 'lazy';
+  // The leaf's own dimensions, so the element has a height before any bytes
+  // arrive; without them `height: auto` on an unloaded image computes to zero
+  // and the crop jumps into place when it loads.
+  img.width = dims[0];
+  img.height = dims[1];
   img.decoding = 'async';
-  img.src = src;
+  // Not `loading="lazy"`. This element is deliberately positioned far outside
+  // the box that clips it -- for a single line, some twenty times its own
+  // height above the frame -- and "has it scrolled into view" is not a question
+  // the browser answers usefully about such a thing: it simply never loaded.
+  // `revealScans()` sets the source when the reader opens the disclosure,
+  // which is the moment that was actually meant.
+  img.dataset.src = src;
   img.addEventListener('load', () => frame.classList.remove('loading'));
   // The Archive may be unreachable, or blocked. Say so rather than leaving a
   // silent empty rectangle that looks like the line is missing from the book.
@@ -141,7 +152,7 @@ export function scanFigure(sighting, alt) {
     if (whole && img.dataset.full !== '1') {
       img.dataset.full = '1';
       const full = leafUrl(sighting.page, 0);
-      if (full) img.src = full;
+      if (full) { img.src = full; delete img.dataset.src; }
     }
     if (whole) placeWhole(frame, img);
     else placeCrop(frame, img, sighting.box, aspect);
@@ -167,6 +178,17 @@ export function scanFigure(sighting, alt) {
 
   fig.append(cap);
   return fig;
+}
+
+/**
+ * Start loading the leaves inside `root`. Idempotent -- a figure whose source
+ * is already set has no `data-src` left -- so it is safe to bind to `toggle`.
+ */
+export function revealScans(root) {
+  for (const img of root.querySelectorAll('img[data-src]')) {
+    img.src = img.dataset.src;
+    delete img.dataset.src;
+  }
 }
 
 /** True when anything can be shown at all — the payload may predate stage 2's boxes. */

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Leaf">
+  <rect width="64" height="64" fill="#faf7f2"/>
+  <path d="M 14.70 19.89 A 28.03 28.03 0 0 1 49.30 44.11 A 28.03 28.03 0 0 1 14.70 19.89 Z"
+        fill="#6b4f2a"/>
+  <path d="M 8.41 15.48 L 49.30 44.11"
+        stroke="#6b4f2a" stroke-width="1.66" stroke-linecap="round"/>
+  <path d="M 14.70 19.89 L 46.88 42.42"
+        stroke="#f0e6d6" stroke-width="1.41" stroke-linecap="round"/>
+</svg>

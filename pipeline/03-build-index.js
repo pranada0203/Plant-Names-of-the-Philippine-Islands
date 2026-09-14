@@ -12,6 +12,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const N = require('./lib/normalize');
 const { NearIndex } = require('./lib/fuzzy');
 
@@ -29,6 +30,21 @@ const OUT_DIR = path.join(ROOT, 'app', 'data');
  * one; `{width}` is one of the sizes the IA generates, or empty for the master.
  */
 const IMAGE_BASE = 'https://archive.org/download/dictionaryofplan00merr/page/n{leaf}{width}.jpg';
+
+/**
+ * The app's own files, whose contents go into the service worker's version.
+ * Keep in step with SHELL_FILES in app/sw.js: a file the worker precaches but
+ * this list omits would be served stale for ever after it changed.
+ */
+const SHELL_FILES = [
+  'index.html',
+  'manifest.webmanifest',
+  'css/app.css',
+  'js/app.js',
+  'js/search.js',
+  'js/scan.js',
+  'js/offline.js',
+];
 
 /** Match key for a scientific name: genus + epithet, case and accent folded. */
 function taxonKey(name) {
@@ -62,6 +78,63 @@ function splitTaxonString(s) {
     name: tokens.slice(0, take).join(' '),
     authority: tokens.slice(take).join(' ').replace(/[.,]+$/, '') || null,
   };
+}
+
+/**
+ * Write a version into the service worker.
+ *
+ * A browser only notices a new service worker when the bytes of `sw.js` change,
+ * so the version has to be in that file rather than in anything it imports. It
+ * is a hash rather than a timestamp so that a stale cache cannot be held while
+ * new data is served.
+ *
+ * It hashes two things: what a reader would notice in the payload -- the
+ * entries, the facets and where the scan is -- and the bytes of the app's own
+ * files. Both matter. Hashing only the payload leaves the service worker
+ * serving yesterday's JavaScript out of its cache after an app change, which
+ * is a bug you find by fixing something and watching the fix not arrive.
+ *
+ * What is deliberately left out is `meta.built` and the parse report's
+ * `generated`: they differ on every run, and hashing them would expire every
+ * reader's offline copy each time the pipeline was run, however little had
+ * changed. `sw.js` is left out too, for the obvious reason that the version is
+ * written into it.
+ */
+function stampServiceWorker(payload) {
+  const file = path.join(ROOT, 'app', 'sw.js');
+  if (!fs.existsSync(file)) return;
+  const src = fs.readFileSync(file, 'utf8');
+  // The worker precaches its own list. If this one drifts from it, a file the
+  // worker serves from cache would never be invalidated when it changed --
+  // silently, and only for readers who had already visited.
+  const declared = [...src.matchAll(/'\.\/([^']+)'/g)].map((m) => m[1])
+    .filter((f) => !f.startsWith('assets/'));
+  const missing = declared.filter((f) => !SHELL_FILES.includes(f));
+  if (missing.length) {
+    console.log(`!  app/sw.js precaches ${missing.join(', ')}, which the version ` +
+      'hash does not cover - add them to SHELL_FILES in this file');
+  }
+
+  const hash = crypto.createHash('sha256');
+  hash.update(JSON.stringify([
+    payload.names, payload.taxa, payload.families,
+    payload.dialects, payload.dialectCounts, payload.meta.scan,
+  ]));
+  for (const rel of SHELL_FILES) {
+    const f = path.join(ROOT, 'app', rel);
+    if (fs.existsSync(f)) hash.update(rel).update(fs.readFileSync(f));
+  }
+  const version = hash.digest('hex').slice(0, 12);
+  const line = /^const VERSION = '[^']*';/m;
+  if (!line.test(src)) {
+    console.log('!  app/sw.js has no VERSION line to stamp - readers will not see updates');
+    return;
+  }
+  // An unchanged version is the normal case, not a failure: the hash covers
+  // what a reader sees, so rebuilding after a documentation edit leaves it be.
+  const next = src.replace(line, `const VERSION = '${version}';`);
+  if (next !== src) fs.writeFileSync(file, next);
+  console.log(`service worker version ${version}${next === src ? ' (unchanged)' : ''}`);
 }
 
 function main() {
@@ -319,7 +392,9 @@ function main() {
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const out = path.join(OUT_DIR, 'dictionary.json');
-  fs.writeFileSync(out, JSON.stringify(payload));
+  const body = JSON.stringify(payload);
+  fs.writeFileSync(out, body);
+  stampServiceWorker(payload);
   fs.writeFileSync(path.join(DATA, 'build-report.json'), JSON.stringify(payload.meta, null, 2));
 
   const kb = (fs.statSync(out).size / 1024).toFixed(0);

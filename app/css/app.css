@@ -327,6 +327,47 @@ h3.section {
   color: var(--ink-soft);
 }
 
+/* ------------------------------------------------------------- update bar */
+/* Shown only when a new build has been downloaded and is waiting. It is a
+   notice, not a modal: the reader chooses when the data under them changes. */
+.update-bar {
+  position: fixed;
+  left: 50%;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: calc(100vw - 2rem);
+  padding: 0.55rem 0.8rem;
+  font-size: 0.82rem;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.18);
+}
+.update-bar span { flex: 1 1 auto; }
+.update-bar button {
+  flex: 0 0 auto;
+  font: inherit;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--rule);
+  background: none;
+  color: var(--accent);
+}
+.update-bar button:hover { border-color: var(--accent); }
+.update-bar button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+#update-dismiss { color: var(--ink-faint); border-color: transparent; }
+
+@media (max-width: 30rem) {
+  .update-bar { flex-wrap: wrap; }
+  .update-bar span { flex-basis: 100%; }
+}
+
 /* ------------------------------------------------------------------- scan */
 /* The scanned line, shown on request. The frame clips a single `<img>` of the
    whole leaf; app/js/scan.js scales and offsets it so the entry's slice of the

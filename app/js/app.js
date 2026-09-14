@@ -1,5 +1,6 @@
 import { Search } from './search.js';
-import { initScan, scanFigure, scanAvailable } from './scan.js';
+import { initScan, scanFigure, scanAvailable, revealScans } from './scan.js';
+import { initOffline } from './offline.js';
 
 const el = (id) => document.getElementById(id);
 const app = el('app');
@@ -11,6 +12,11 @@ let current = null;      // { kind, id }
 /* ------------------------------------------------------------------ boot */
 
 async function boot() {
+  // Before the payload, not after: if the fetch below fails because there is no
+  // network and no cache yet, the worker should still be installed for next
+  // time rather than the app giving up entirely.
+  initOffline();
+
   const res = await fetch('data/dictionary.json');
   if (!res.ok) throw new Error(`Could not load dictionary.json (${res.status})`);
   data = await res.json();
@@ -340,6 +346,9 @@ function scanSection(sightings, printed) {
     ? `Show the scan (${usable.length} lines)`
     : 'Show the scan';
   d.append(sum);
+  // The leaves are fetched when the reader asks for them, and not before: a
+  // closed disclosure should cost nothing.
+  d.addEventListener('toggle', () => { if (d.open) revealScans(d); });
   for (const s of usable) {
     const fig = scanFigure(s, printed);
     if (fig) d.append(fig);

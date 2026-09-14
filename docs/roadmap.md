@@ -1,7 +1,7 @@
 # Roadmap
 
-Ordered by what unblocks the most. Sections 0, 1 and 6 are done; the rest is
-not started.
+Ordered by what unblocks the most. Sections 0, 1, 4 and 6 are done; the rest
+is not started.
 
 ## 0. Text quality — done
 
@@ -50,13 +50,23 @@ A dictionary is for browsing. Missing:
 - Browse by language — "every Bicol name in the book" is a genuinely
   interesting view and the data supports it today.
 
-## 4. Offline
+## 4. Offline — done
 
-The manifest is written but there is **no service worker and no icons**, so it
-is not yet installable. A service worker would also let the page images be kept
-after first view, which is the one part of the app that needs the network. `app/assets/icon-192.png` and `icon-512.png` need to
-exist. Given the payload is one JSON file, offline is close to free once a
-service worker caches the shell plus `data/dictionary.json`.
+`app/sw.js` caches the app and the payload, so after one visit the dictionary
+needs no network. Page images are kept in a cache of their own, capped at 80
+leaves and never revalidated: the 1903 scan will not change, so a leaf fetched
+today is still right after the next twenty builds.
+
+The cache version is a hash of both the payload's reader-visible content and
+the app's own files, stamped into `sw.js` by stage 3. Hashing only one of the
+two leaves the other stale, which is a bug best found before shipping rather
+than after.
+
+A waiting update is offered, never applied: swapping the payload under a reader
+mid-session changes the ids behind the URLs they are looking at.
+
+Icons are drawn by `npm run icons` — a leaf, from two circular arcs, over a
+60-line PNG writer. The app is installable.
 
 ## 5. Modern names
 

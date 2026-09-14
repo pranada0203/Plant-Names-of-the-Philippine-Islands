@@ -43,6 +43,10 @@ each entry was printed on and the app crops the leaf to it on request — 100% o
 Part I's lines and 98.5% of Part II's blocks. A reader who doubts a reading does
 not have to take the transcription's word for it.
 
+**It works offline and installs like an app.** A service worker keeps the shell
+and the payload, so after one visit the dictionary needs no network at all; the
+page images it keeps separately, because the 1903 scan will not change.
+
 188 taxa still exist only because Part I names them and Part II does not. Most
 are not misreadings: they are Merrill's own inconsistent spelling (*Livinstonia*
 / *Livistonia* / *Livistona*, *Jasminum sambac* and "Jasseminum sambac" on
@@ -86,7 +90,8 @@ app, `app/data/dictionary.json` is already committed.
 source/     the scanned PDF (do not edit)
 pipeline/   PDF -> text -> structured entries -> app payload
 data/       intermediate and diagnostic JSON (data/raw/ is gitignored)
-app/        the web app: static HTML, CSS, ES modules (js/scan.js is the page-image viewer)
+app/        the web app: static HTML, CSS, ES modules (js/scan.js is the page-image
+            viewer, sw.js the offline cache, assets/ the generated icons)
 docs/       source assessment, data model, roadmap
 ```
 
@@ -114,6 +119,7 @@ Supporting tools:
 | `pipeline/ingest-taxa.js <page>` | Turns a transcription of those scientific names into a correction file |
 | `pipeline/rekey-corrections.js` | Re-derives every correction after a parser change |
 | `pipeline/verify-boxes.js` (`npm run verify-boxes`) | Checks every scan box really sits on its own line |
+| `pipeline/make-icons.js` (`npm run icons`) | Draws the app icons and the favicon |
 
 Stages 1b and 1c are the only ones that touch the network; everything downstream works
 without it, just with no confidence scores.
@@ -149,6 +155,16 @@ shows both.
   loads them from there, on demand, only when a reader opens "Show the scan" —
   so the dictionary itself works with no network beyond the payload, and the
   viewer says so plainly when the Archive cannot be reached.
+- **Offline is the normal case, not a fallback.** `app/sw.js` caches the shell
+  and the payload under a version stamped in by stage 3 — a hash of both the
+  data and the app's own files, so neither can go stale while the other moves.
+  Leaves are cached separately and never revalidated, since the scan is fixed.
+- **An update is never applied underneath the reader.** A new worker waits and
+  the page offers a reload. Swapping the payload mid-session would change the
+  ids behind the URLs someone is looking at.
+- **The icons are drawn by code** (`npm run icons`), not pasted in as binaries
+  nobody can regenerate. `pipeline/lib/png.js` is a 60-line PNG writer over
+  Node's own zlib.
 - **Honesty over polish.** Where the scan is doubtful the app says so, on the
   entry, rather than presenting a confident wrong answer.
 - **Corrections are data, not edits.** Hand-read entries live in
