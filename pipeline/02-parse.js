@@ -88,7 +88,14 @@ function lookupConfidence(conf, page, text) {
 function findSections(pages) {
   const findPage = (re) => pages.findIndex((p) => p.lines.some((l) => re.test(l)));
   const partIStart = findPage(/^\s*AAGAO,/);
-  const partIIStart = findPage(/^\s*ACHRAS\s+SAPOTA/i);
+  // Part II opens with ABROMA ALATA, not with ACHRAS SAPOTA -- the latter is
+  // merely the first entry on the *second* page of Part II. Anchoring on it
+  // left Part II's opening page inside Part I, where its multi-line entries
+  // parsed into nonsense ("ABROMA ALATA" with the taxon "Blanco.
+  // (Sterculiaceae.) Shrubs, the roots and bark some-"). The "PART II" heading
+  // itself is unusable: the scan renders it as "easn)ceBaiabe".
+  let partIIStart = findPage(/^\s*ABROMA\s+ALATA/i);
+  if (partIIStart < 0) partIIStart = findPage(/^\s*ACHRAS\s+SAPOTA/i);
   if (partIStart < 0 || partIIStart < 0) throw new Error('Could not locate section boundaries');
   // Part II runs to the last page carrying a recognisable scientific entry.
   let partIIEnd = pages.length - 1;
@@ -277,11 +284,25 @@ function parsePartII(pages, range) {
   };
 
   for (let p = range[0]; p <= range[1]; p++) {
+    // Some pages come out of the scan uniformly indented -- Part II's opening
+    // page sits about sixteen columns in. Indentation only means "continuation"
+    // relative to the page's own left margin, so measure it and dedent first,
+    // or every line on such a page reads as a continuation and the entries are
+    // swallowed by whatever preceded them.
+    // Measured from lines with real content: page 127 carries a 7-character
+    // scanning artefact at column 0, and taking a plain minimum would put the
+    // margin there and dedent nothing.
+    const indents = pages[p].lines
+      .filter((l) => l.trim().length >= 20)
+      .map((l) => l.match(/^\s*/)[0].length);
+    const margin = indents.length ? Math.min(...indents) : 0;
+
     for (const rawLine of pages[p].lines) {
       if (!rawLine.trim()) continue;
-      const t = N.repairOcr(rawLine);
+      const dedented = rawLine.slice(margin);
+      const t = N.repairOcr(dedented);
       if (FURNITURE.test(t)) continue;
-      if (isPartIIHead(rawLine)) {
+      if (isPartIIHead(dedented)) {
         flush();
         block = { page: p + 1, lines: [t] };
       } else if (block) {

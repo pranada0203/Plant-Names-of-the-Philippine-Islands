@@ -1,142 +1,117 @@
 # How good is the source text?
 
-Short answer: good enough to build the whole system against, not good enough to
-publish as a reference work. This document records the measurements, because the
-decision about what to do next depends on them.
+Part I — the native-name index, and the half of the book people actually search
+— has been transcribed by eye from the page images and is now sound. Part II's
+scientific names and prose have not, and are still as the scanner read them.
 
-Reproduce everything here with `npm run audit` (writes `data/audit.json`).
+This document records how that was established and measured. Reproduce the
+numbers with `npm run audit` (writes `data/audit.json`).
 
 ## What we are working from
 
 `source/dictionaryofplan00merr.pdf` — 209 pages, a photographic scan of the 1903
 printing, with an OCR text layer produced by **Tesseract 5.3**.
 
-## The Internet Archive question, settled
+## Two things the Internet Archive settled
 
 The PDF is the Internet Archive's own derivative of item
-`dictionaryofplan00merr`, so the obvious first move was to fetch the IA's
-`_djvu.txt` on the theory that the PDF's embedded text layer had been degraded
-in packaging. **It had not.** The two are the same OCR run:
+`dictionaryofplan00merr`.
 
-| | |
-|---|---:|
-| Distinct tokens in IA `_djvu.txt` | 17,040 |
-| Distinct tokens in the PDF text layer | 17,034 |
-| Shared | 16,953 |
-| Accented characters in each | 1,268 / 1,268 |
+**Its `_djvu.txt` is the same OCR run**, so there was no better text to fetch:
+17,040 vs 17,034 distinct tokens, 16,953 shared, identical accent counts, and
+the differences confined to the cover leaves. That avenue is closed.
 
-The ~85 tokens either side are all on the cover and endpaper leaves, not in the
-dictionary. `fprz` — the bad reading discussed below — is byte-identical in
-both. Re-fetching the *text* buys nothing, and that avenue is closed.
+**Its hOCR was worth having.** Plain text discards what hOCR keeps — an
+`x_wconf` confidence and a bounding box per word. `npm run fetch-ia` downloads
+it and stage 2 stamps each headword with the lowest confidence the engine gave
+it. That turned quality from a guess into a measurement, and it is what made the
+scale of the problem legible:
 
-The IA's **hOCR** was a different matter, and is now part of the pipeline.
-
-## What the hOCR added: the engine's own confidence
-
-Plain text throws away what hOCR keeps — an `x_wconf` score and a bounding box
-for every word. `npm run fetch-ia` downloads it; stage 2 aligns it to our pages
-and stamps each headword with the lowest confidence the engine gave it.
-
-This replaces guesswork with measurement. The pipeline's heuristics could not
-tell that `fprz` was wrong — it is all letters, no odd characters, no lost
-accent. The engine could: **it scored it 9 out of 100.**
-
-| Reading | What it should be | Confidence |
+| Reading | Should be | Confidence |
 |---|---|---:|
 | `BapBdrop` | *(unrecoverable)* | **1** |
-| `Aagnocdsto` | AGNOCASTO | **4** |
+| `Aagnocdsto` | AGNOCÁSTO | **4** |
 | `fprz` | ÍPIL | **9** |
 | `Cdégon-tocd` | CÓGON-TOCÓ | **25** |
-| `Batucstc` | *(unrecoverable)* | **29** |
-| `ANGupb` | ANGUD | **46** |
 | `Afzelia` (roman, same line as `fprz`) | — | **92** |
 
-## The problem, measured three ways
+**And its page images are served per leaf as JPEG** —
+`archive.org/download/<item>/page/n<leaf>.jpg` — so the vision pass needed
+neither the 63 MB JP2 archive nor a JPEG 2000 decoder. IA leaf `nX` is our page
+`X + 1`.
 
-Merrill printed headwords in **small capitals**, and printed the scientific
-names beside them in **roman**. Same scan, same page, same engine — so the two
-are a controlled comparison of what the typeface costs.
+## Why the damage was where it was
 
-### 1. Confidence by typeface
+Merrill printed headwords in **small capitals** and the scientific names beside
+them in **roman**. Same scan, same page, same engine — a controlled comparison
+of what the typeface cost. Before the vision pass:
 
-| Set on the page as | n | Median confidence | Scoring under 50 |
+| Set on the page as | n | Median confidence | Under 50 |
 |---|---:|---:|---:|
 | Native headwords — small caps | 4,157 | **45** | **54.1%** |
 | Scientific names — roman | 1,383 | **86** | 27.2% |
 
-The damage is concentrated almost entirely in the small-caps native names —
-which is to say, in the half of the dictionary that is the point of the book.
-Only **1,117 of 4,740 headwords (23.6%)** reach a confidence of 70.
+Two further measurements agreed. Of the 2,908 names the book prints in **both**
+halves (OCR'd independently, so a disagreement means one reading is wrong),
+only **21.1%** matched exactly and **51.9%** could not be reconciled at all. And
+**175 headwords (3.5%)** contained no vowel or an impossible consonant run —
+`BAPBDROP`, `BATUCSTC` — words no Philippine language produces.
 
-### 2. The two halves against each other
+## The vision pass
 
-The book prints most native names twice, once in each index, and the two were
-OCR'd independently. If the readings disagree, at least one is wrong.
+All **107 pages of Part I** were read from the page images and transcribed.
+**5,000 headwords** were corrected — essentially every one, since almost all
+carried at least a lost accent.
 
-Of **2,908** names printed in both halves:
+The transcription was written straight (every headword, in printed order) and
+`pipeline/ingest-transcription.js` did the comparison against the parse,
+aligning the two sequences with Needleman-Wunsch so a line the parser had
+dropped shifted nothing. Corrections live in `data/corrections/`, one file per
+page, keyed by page plus the scanner's own reading, and are applied during stage
+2 — never edited into generated files, which `npm run build` regenerates.
 
-| Result | Count | Share |
+Each file keeps the **full transcription**, not just the diff, so
+`pipeline/rekey-corrections.js` can re-derive every correction after a parser
+change. That was used twice here, re-keying all 107 pages without re-reading a
+single image.
+
+### Result
+
+| | Before | After |
 |---|---:|---:|
-| The two halves agree exactly | 613 | 21.1% |
-| They differ by one letter | 786 | 27.0% |
-| No match at all | 1,509 | **51.9%** |
+| Cross-half agreement, exact | 21.1% | **46.9%** |
+| Cross-half, within one letter | 27.0% | 28.7% |
+| Cross-half, unreconcilable | **51.9%** | **24.5%** |
+| Implausible headwords | 175 (3.5%) | **0** |
+| Distinct native names | 4,740 | 4,395 |
+| Name → plant links | 5,591 | 5,727 |
 
-Not all of that 51.9% is OCR error — Merrill warns that spelling genuinely
-varies, "e and i, o and u, and frequently i and y have the same values and are
-interchangeable" — but one-letter tolerance already absorbs most variation of
-that kind.
+The name count *fell* because it was inflated: the same name misread two ways
+counted twice. Links *rose* because corrected names now match their Part II
+mentions — Part II contributed 2,188 extra links, up from 1,383.
 
-Two independent methods, 54.1% and 51.9%. They agree.
+The residual 24.5% is no longer mostly Part I's fault. Merrill himself warns
+that spellings vary — "e and i, o and u, and frequently i and y have the same
+values and are interchangeable" — and what remains is a mix of that genuine
+variation and Part II's still-uncorrected readings.
 
-### 3. Words no language would produce
+## What is still wrong
 
-**175 headwords (3.5%)** contain no vowel at all or an impossible consonant run:
-`BAPBDROP`, `BATUCSTC`, `BANCCTPO`. This is only the share obvious enough to
-detect by rule, and it is a floor, not an estimate.
+**Part II was not transcribed.** Its scientific names and descriptive prose are
+as the scanner read them, and the damage shows wherever the app surfaces them:
 
-## Damage that is visible but recoverable
+- Duplicate taxa from misread binomials — *Pterocarpus indicus* also appears as
+  "Prerocarpus rnpicus", *Musa textilis* as "Méco, texttilis", *Hopea plagata*
+  as both "Hopea palagata" and "H. pragata".
+- Garbled fragments inside Merrill's notes (`Pll avis NG eee aa 12)`).
+- Some cross-references are consequently wrong: a name linked to a mangled taxon
+  that should have merged with its correct twin.
 
-Every accented vowel was read as one of a few wrong glyphs, most often `é`:
-`Baca-bacáhan` → `Baca-bacéhan`, `Alúsang` → `Altsang`, `lópo-lópo` →
-`l6po-l6po`. **1,268** occurrences. Entries are flagged `accent-lost` and the
-app warns on them; the pipeline does not guess the vowel.
+Fixing this means the same treatment for pages 127–201 (~75 pages), transcribing
+the scientific names rather than the headwords. It would collapse the duplicate
+taxa and tighten the cross-references. The tooling already exists; only the
+ingest script's target would change.
 
-Merrill considered this accentuation a contribution of the work — he had every
-name checked with native speakers on his staff because earlier Spanish authors
-had accented them carelessly or not at all. Losing it is a real loss.
-
-Case scrambling (`ANIBIONG` → `AniBionG`) is harmless and normalised away.
-
-## What this means
-
-The pipeline, the data model and the app are built and working, and they now
-report per-entry confidence honestly rather than presenting every reading as
-equally sound. They will produce a much better dictionary the moment they are
-fed better text — nothing downstream needs to change.
-
-But the text itself has not improved, and cannot be improved from anything the
-IA distributes as text. A reader searching "ipil" still finds nothing.
-
-## Options for better text, best first
-
-1. **Vision-model pass over the page images.** Now clearly the right tool: the
-   two things that are broken are small caps and accented vowels, which is
-   exactly where a vision model beats a classical engine, and it can use the
-   surrounding entry as context. The confidence scores make it targetable —
-   the ~2,250 headwords under 50 could be re-read rather than all 209 pages.
-   Needs `..._jp2.zip` (63 MB) or `..._orig_jp2.tar` (117 MB) from the IA.
-
-2. **Re-OCR with Tesseract tuned for small caps.** Same images, plus a Spanish +
-   English model and `--psm` settings suited to the layout. Cheaper than 1 and
-   may recover a good share; small caps remain the weak spot of the approach
-   that produced the current text, so expectations should be modest.
-
-3. **Correct by hand, worst-first.** `data/audit.json` now ranks every headword
-   by confidence, so this is no longer guesswork about where to look. Viable as
-   a finishing pass over a few hundred entries; not viable as the strategy.
-
-4. **Find a different edition.** Other scans of the 1903 printing may exist with
-   better plates or better OCR. Unverified.
-
-Whichever route: only `data/raw/` changes, then `npm run build`, and the numbers
-in this document move.
+Two smaller residues: 70 Part I lines still fail to parse
+(`data/issues.json`), and 12 headwords could not be located in the hOCR so
+carry no confidence score — the app treats those as doubtful rather than fine.

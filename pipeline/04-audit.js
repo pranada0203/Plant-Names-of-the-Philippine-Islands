@@ -52,6 +52,7 @@ function main() {
   const VOWEL = /[AEIOUÁÉÍÓÚÀÈÌÒÙÄËÏÖÜÑ]/g;
   const CONSONANT_RUN = /[BCDFGHJKLMNPQRSTVWXZ]{4}/;
   const implausible = part1.filter((e) => {
+    if (e.corrected) return false;   // measuring the scan, not the transcription
     const words = e.headword.split(/[^A-ZÀ-Þ]+/).filter((w) => w.length >= 3);
     if (!words.length) return false;
     return words.some((w) => {
@@ -64,7 +65,12 @@ function main() {
   // headwords and the scientific names sit on the same pages of the same scan,
   // but the headwords are set in small caps and the scientific names in roman.
   // If small caps are the problem, the two should score very differently.
-  const scored = part1.filter((e) => e.confidence !== null && e.confidence !== undefined);
+  // Only entries still as the scanner read them. A corrected headword carries a
+  // confidence of 100 by fiat, and including those would turn this measurement
+  // of the OCR into a measurement of the transcription.
+  const scored = part1.filter(
+    (e) => !e.corrected && e.confidence !== null && e.confidence !== undefined
+  );
   let typeface = null;
   if (scored.length) {
     const median = (a) => [...a].sort((x, y) => x - y)[Math.floor(a.length / 2)];
@@ -72,7 +78,9 @@ function main() {
     // Part II's scientific headings are set in caps/roman; Part I's are not.
     const roman = part2.map((e) => e.confidence).filter((c) => c !== null && c !== undefined);
     typeface = {
-      description: 'OCR confidence by how the word is set on the page',
+      description: 'OCR confidence by how the word is set on the page (uncorrected entries only)',
+      corrected: part1.filter((e) => e.corrected).length,
+      stillAsScanned: scored.length,
       smallCapsHeadwords: {
         n: headwords.length,
         median: median(headwords),

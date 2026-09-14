@@ -1,5 +1,387 @@
 [
  {
+  "name": "ABROMA ALATA",
+  "authority": "Blanco",
+  "family": "Sterculiaceae",
+  "familyRaw": "Sterculiacee",
+  "familySource": "fuzzy",
+  "unresolvedFamily": null,
+  "notes": "Shrubs, the roots and bark somewhat used in the practice of medicine; the bark also yields a valuable fibre. Anaba, T.; Anadbong, V.; Anibiong, Anibong, T.",
+  "vernaculars": [
+   {
+    "name": "Labon",
+    "dialects": [
+     "V"
+    ],
+    "place": null
+   },
+   {
+    "name": "Nabo",
+    "dialects": [
+     "V"
+    ],
+    "place": null
+   }
+  ],
+  "page": 127,
+  "raw": "ABROMA ALATA Blanco. (Sterculiacee.) Shrubs, the roots and bark somewhat used in the practice of medicine; the bark also yields a valuable fibre. Anaba, T.; Anadbong, V.; Anibiong, Anibong, T.; Labon, V.; Nabo, V.",
+  "confidence": 92,
+  "printedPage": "119",
+  "genus": "ABROMA",
+  "nameDisplay": "Abroma alata"
+ },
+ {
+  "name": "ABROMA augusta",
+  "authority": "L",
+  "family": "Sterculiaceae",
+  "familyRaw": null,
+  "familySource": "inherited",
+  "unresolvedFamily": null,
+  "notes": null,
+  "vernaculars": [
+   {
+    "name": "Anibong",
+    "dialects": [
+     "T"
+    ],
+    "place": null
+   },
+   {
+    "name": "Anibog",
+    "dialects": [
+     "T"
+    ],
+    "place": null
+   },
+   {
+    "name": "Andbo",
+    "dialects": [],
+    "place": null
+   }
+  ],
+  "page": 127,
+  "raw": "A. augusta L. Anibong, T.; Anibog, T.; Andbo.",
+  "confidence": 19,
+  "printedPage": "119",
+  "abbreviated": "A. augusta",
+  "genus": "ABROMA",
+  "nameDisplay": "Abroma augusta"
+ },
+ {
+  "name": "ABROMA FASTUOSA,",
+  "authority": "R",
+  "family": "Sterculiaceae",
+  "familyRaw": null,
+  "familySource": "inherited",
+  "unresolvedFamily": null,
+  "notes": "Br.",
+  "vernaculars": [
+   {
+    "name": "Anabo",
+    "dialects": [],
+    "place": null
+   }
+  ],
+  "page": 127,
+  "raw": "A. FASTUOSA, R. Br. Anabo.",
+  "confidence": 89,
+  "printedPage": "119",
+  "abbreviated": "A. FASTUOSA,",
+  "genus": "ABROMA",
+  "nameDisplay": "Abroma fastuosa,"
+ },
+ {
+  "name": "ABRUS PRECATORIUS",
+  "authority": "L",
+  "family": "Leguminosae",
+  "familyRaw": "Leguminosew",
+  "familySource": "fuzzy",
+  "unresolvedFamily": null,
+  "notes": "A small vine, very common in the Philippines, the small seeds, red and black, used as beads; also used in the practice of medicine. Agay-on (Cebu); Agniyaéngyiing, V.; Agiyéngyiing, V.; Aguydngyan, V.; Aroyangyang, V.; Bangati, T., V.; Bugayon, Il.; Caloo, V.; Casasiga, Cansasiga, Pamp.; Gicos-gicos, V.; Guicos-gicos, V.; Liga (Cebu); Mangad6long, V.",
+  "vernaculars": [
+   {
+    "name": "Matang-ptine",
+    "dialects": [
+     "V"
+    ],
+    "place": null
+   },
+   {
+    "name": "Oyangia",
+    "dialects": [
+     "V"
+    ],
+    "place": null
+   },
+   {
+    "name": "Saga",
+    "dialects": [
+     "T"
+    ],
+    "place": null
+   },
+   {
+    "name": "Saga-siga",
+    "dialects": [
+     "T"
+    ],
+    "place": null
+   },
+   {
+    "name": "Sagamamin",
+    "dialects": [
+     "T"
+    ],
+    "place": null
+   }
+  ],
+  "page": 127,
+  "raw": "ABRUS PRECATORIUS L. (Leguminosew.) A small vine, very common in the Philippines, the small seeds, red and black, used as beads; also used in the practice of medicine. Agay-on (Cebu); Agniyaéngyiing, V.; Agiyéngyiing, V.; Aguydngyan, V.; Aroyangyang, V.; Bangati, T., V.; Bugayon, Il.; Caloo, V.; Casasiga, Cansasiga, Pamp.; Gicos-gicos, V.; Guicos-gicos, V.; Liga (Cebu); Mangad6long, V.; Matang-ptine, V.; Oyangia, V.; Saga, T.; Saga-siga, T.; Sagamamin, T.",
+  "confidence": 91,
+  "printedPage": "119",
+  "genus": "ABRUS",
+  "nameDisplay": "Abrus precatorius"
+ },
+ {
+  "name": "ABUTILON INDICUM",
+  "authority": "G. Don. *",
+  "family": "Malvaceae",
+  "familyRaw": "Malvacee",
+  "familySource": "fuzzy",
+  "unresolvedFamily": null,
+  "notes": "A small shrub with yellow flowers, common, used in the practice of medicine. Cuacuacohan, T.; Guiling guilimgan, T.; Gilig-giligan, T.; Dulipang, V.; Lultipao, Il.; Malvas de Castilla, Sp.",
+  "vernaculars": [
+   {
+    "name": "Fil",
+    "dialects": [],
+    "place": null
+   },
+   {
+    "name": "Malvas",
+    "dialects": [
+     "Sp"
+    ],
+    "place": null
+   },
+   {
+    "name": "Malis",
+    "dialects": [
+     "V"
+    ],
+    "place": null
+   },
+   {
+    "name": "Mélbas",
+    "dialects": [
+     "T"
+    ],
+    "place": null
+   },
+   {
+    "name": "Pilis",
+    "dialects": [
+     "V"
+    ],
+    "place": null
+   },
+   {
+    "name": "Taratacopes",
+    "dialects": [
+     "V"
+    ],
+    "place": null
+   },
+   {
+    "name": "Yampéng",
+    "dialects": [
+     "V"
+    ],
+    "place": null
+   }
+  ],
+  "page": 127,
+  "raw": "ABUTILON INDICUM G. Don. * (Malvacee.) A small shrub with yellow flowers, common, used in the practice of medicine. Cuacuacohan, T.; Guiling guilimgan, T.; Gilig-giligan, T.; Dulipang, V.; Lultipao, Il.; Malvas de Castilla, Sp. Fil.; Malvas, Sp.; Malis, V.; Mélbas, T.; Pilis, V.; Taratacopes, V.; Yampéng, V.",
+  "confidence": 75,
+  "printedPage": "119",
+  "genus": "ABUTILON",
+  "nameDisplay": "Abutilon indicum"
+ },
+ {
+  "name": "Acacia",
+  "authority": null,
+  "family": "Leguminosae",
+  "familyRaw": "Leguminosew",
+  "familySource": "fuzzy",
+  "unresolvedFamily": null,
+  "notes": "Spiny shrubs or small trees, generally producing more or less gum similar to gum Arabic.",
+  "vernaculars": [
+   {
+    "name": "Caraol",
+    "dialects": [
+     "Z"
+    ],
+    "place": null
+   },
+   {
+    "name": "Unip",
+    "dialects": [
+     "Pang"
+    ],
+    "place": null
+   }
+  ],
+  "page": 127,
+  "raw": "Acacia. (Leguminosew.) Spiny shrubs or small trees, generally producing more or less gum similar to gum Arabic. Caraol, Z.; Unip, Pang.",
+  "confidence": 74,
+  "printedPage": "119",
+  "genus": "Acacia",
+  "nameDisplay": "Acacia"
+ },
+ {
+  "name": "Acacia concinnaA",
+  "authority": "DC",
+  "family": "Leguminosae",
+  "familyRaw": null,
+  "familySource": "inherited",
+  "unresolvedFamily": null,
+  "notes": "Sibég, T. A. FARNESIANA WilJld. Aréma, T.; Roma, T. V.",
+  "vernaculars": [
+   {
+    "name": "Santiago",
+    "dialects": [
+     "V"
+    ],
+    "place": null
+   }
+  ],
+  "page": 127,
+  "raw": "A. concinnaA DC. Sibég, T. A. FARNESIANA WilJld. Aréma, T.; Roma, T. V.; Santiago, V.",
+  "confidence": 14,
+  "printedPage": "119",
+  "abbreviated": "A. concinnaA",
+  "genus": "Acacia",
+  "nameDisplay": "Acacia concinnaa"
+ },
+ {
+  "name": "ACALYPHA",
+  "authority": null,
+  "family": "Urticaceae",
+  "familyRaw": "Urticacew",
+  "familySource": "fuzzy",
+  "unresolvedFamily": null,
+  "notes": "Trees, shrubs, or herbs. May4gos-lalaqui, V.",
+  "vernaculars": [
+   {
+    "name": "Pabto",
+    "dialects": [
+     "T"
+    ],
+    "place": null
+   },
+   {
+    "name": "Palang",
+    "dialects": [],
+    "place": null
+   }
+  ],
+  "page": 127,
+  "raw": "ACALYPHA. (Urticacew.) Trees, shrubs, or herbs. May4gos-lalaqui, V.; Pabto, T.; Palang.",
+  "confidence": 90,
+  "printedPage": "119",
+  "genus": "ACALYPHA",
+  "nameDisplay": "Acalypha"
+ },
+ {
+  "name": "ACALYPHA GRANDIS",
+  "authority": "Benth",
+  "family": "Urticaceae",
+  "familyRaw": null,
+  "familySource": "inherited",
+  "unresolvedFamily": null,
+  "notes": "Bol-l6, Ig.; Btigos, T. V.",
+  "vernaculars": [
+   {
+    "name": "Gutli",
+    "dialects": [
+     "T",
+     "V"
+    ],
+    "place": null
+   }
+  ],
+  "page": 127,
+  "raw": "A. GRANDIS Benth. Bol-l6, Ig.; Btigos, T. V.; Gutli, T., V.",
+  "confidence": 91,
+  "printedPage": "119",
+  "abbreviated": "A. GRANDIS",
+  "genus": "ACALYPHA",
+  "nameDisplay": "Acalypha grandis"
+ },
+ {
+  "name": "ACALYPHA STIPULACEA",
+  "authority": "Klotzsch",
+  "family": "Urticaceae",
+  "familyRaw": null,
+  "familySource": "inherited",
+  "unresolvedFamily": null,
+  "notes": null,
+  "vernaculars": [
+   {
+    "name": "Bégos",
+    "dialects": [
+     "V"
+    ],
+    "place": null
+   }
+  ],
+  "page": 127,
+  "raw": "A. STIPULACEA Klotzsch. Bégos, V.",
+  "confidence": 91,
+  "printedPage": "119",
+  "abbreviated": "A. STIPULACEA",
+  "genus": "ACALYPHA",
+  "nameDisplay": "Acalypha stipulacea"
+ },
+ {
+  "name": "ACALYPHA TILIHFOLIA",
+  "authority": "Muell",
+  "family": "Urticaceae",
+  "familyRaw": null,
+  "familySource": "inherited",
+  "unresolvedFamily": null,
+  "notes": "Arg.",
+  "vernaculars": [
+   {
+    "name": "Malacbée",
+    "dialects": [],
+    "place": "Morong"
+   }
+  ],
+  "page": 127,
+  "raw": "A. TILIHFOLIA Muell. Arg. Malacbée (Morong).",
+  "confidence": 26,
+  "printedPage": "119",
+  "abbreviated": "A. TILIHFOLIA",
+  "genus": "ACALYPHA",
+  "nameDisplay": "Acalypha tilihfolia"
+ },
+ {
+  "name": "ACANTHUS IniciFotius",
+  "authority": "L",
+  "family": "Acanthaceae",
+  "familyRaw": "Acanthacea",
+  "familySource": "fuzzy",
+  "unresolvedFamily": null,
+  "notes": "A small shrub with glossy spiny leaves resembling ilex, and blue flowers, common in regions inundated by salt water. Dilivirio, T.; Dolofrin, T.; Dolovério, Dulanéri, Dulaudri, Pamp.; Liguio-liguio, T.; Laiquis-laquis, Lagtw-lagiw, T.; Tind6éi, T.; Tingey MBG Abrrarel hayes Mus Abriuaitey A\"/ 120 ' =",
+  "vernaculars": [],
+  "page": 127,
+  "raw": "ACANTHUS IniciFotius L. (Acanthacea.) A small shrub with glossy spiny leaves resembling ilex, and blue flowers, common in regions inundated by salt water. Dilivirio, T.; Dolofrin, T.; Dolovério, Dulanéri, Dulaudri, Pamp.; Liguio-liguio, T.; Laiquis-laquis, Lagtw-lagiw, T.; Tind6éi, T.; Tingey MBG Abrrarel hayes Mus Abriuaitey A\"/ 120 ' =",
+  "confidence": 11,
+  "printedPage": "119",
+  "genus": "ACANTHUS",
+  "nameDisplay": "Acanthus inicifotius"
+ },
+ {
   "name": "AcHRAS SAPOTA",
   "authority": "Linn",
   "family": "Sapotaceae",

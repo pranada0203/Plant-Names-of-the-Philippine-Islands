@@ -1,28 +1,28 @@
 {
-  "generated": "2026-09-14T04:37:26.257Z",
+  "generated": "2026-09-14T04:51:22.019Z",
   "pages": 209,
   "corrections": {
-    "applied": 1460,
+    "applied": 5000,
     "stale": 0
   },
   "partI": {
     "pdfPages": [
       19,
-      127
+      126
     ],
-    "entries": 5020,
-    "unparsedLines": 102,
-    "flagged": 365
+    "entries": 5014,
+    "unparsedLines": 70,
+    "flagged": 133
   },
   "partII": {
     "pdfPages": [
-      128,
+      127,
       201
     ],
-    "entries": 1410,
+    "entries": 1422,
     "unparsedBlocks": 0,
-    "withFamily": 1185,
-    "withNotes": 949,
+    "withFamily": 1197,
+    "withNotes": 959,
     "families": 137,
     "unmatchedFamilies": [
       "Cebu",
@@ -34,7 +34,6 @@
   "flagCounts": {
     "dialect-unrecognised": 100,
     "taxon-noise": 31,
-    "accent-lost": 112,
-    "glyph-damage": 146
+    "accent-lost": 3
   }
 }

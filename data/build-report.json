@@ -6,41 +6,41 @@
   "series": "1903, No. 8",
   "source": "dictionaryofplan00merr.pdf",
   "rights": "Published 1903; in the public domain.",
-  "built": "2026-09-14T04:37:32.760Z",
+  "built": "2026-09-14T04:51:22.524Z",
   "counts": {
-    "names": 4619,
-    "taxa": 2104,
-    "taxaWithNotes": 937,
-    "taxaWithFamily": 1184,
+    "names": 4395,
+    "taxa": 2102,
+    "taxaWithNotes": 947,
+    "taxaWithFamily": 1196,
     "families": 137,
-    "links": 5606
+    "links": 5727
   },
   "provenance": {
     "parse": {
-      "generated": "2026-09-14T04:37:26.257Z",
+      "generated": "2026-09-14T04:51:22.019Z",
       "pages": 209,
       "corrections": {
-        "applied": 1460,
+        "applied": 5000,
         "stale": 0
       },
       "partI": {
         "pdfPages": [
           19,
-          127
+          126
         ],
-        "entries": 5020,
-        "unparsedLines": 102,
-        "flagged": 365
+        "entries": 5014,
+        "unparsedLines": 70,
+        "flagged": 133
       },
       "partII": {
         "pdfPages": [
-          128,
+          127,
           201
         ],
-        "entries": 1410,
+        "entries": 1422,
         "unparsedBlocks": 0,
-        "withFamily": 1185,
-        "withNotes": 949,
+        "withFamily": 1197,
+        "withNotes": 959,
         "families": 137,
         "unmatchedFamilies": [
           "Cebu",
@@ -52,22 +52,21 @@
       "flagCounts": {
         "dialect-unrecognised": 100,
         "taxon-noise": 31,
-        "accent-lost": 112,
-        "glyph-damage": 146
+        "accent-lost": 3
       }
     },
-    "namesFlagged": 364,
+    "namesFlagged": 131,
     "ocrConfidence": {
       "source": "Internet Archive hOCR, Tesseract 5.3 x_wconf",
-      "scored": 3963,
-      "unscored": 656,
-      "median": 70,
-      "under40": 1232,
-      "under70": 1981
+      "scored": 4393,
+      "unscored": 2,
+      "median": 100,
+      "under40": 4,
+      "under70": 6
     },
-    "linkedFromPartII": 1583,
-    "linkedByNearMatch": 810,
-    "taxaJoinedByNearMatch": 359,
-    "namesOnlyInPartII": 1291
+    "linkedFromPartII": 2188,
+    "linkedByNearMatch": 834,
+    "taxaJoinedByNearMatch": 360,
+    "namesOnlyInPartII": 712
   }
 }

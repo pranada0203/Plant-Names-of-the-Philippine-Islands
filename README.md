@@ -9,32 +9,37 @@ that works on desktop and mobile.
 
 ## Where things stand
 
-The full pipeline runs and the app works. **The limiting factor is not the code,
-it is the scan.** See [docs/source-quality.md](docs/source-quality.md).
+**Part I — the native-name index — has been transcribed by eye from the page
+images and is sound.** All 107 pages, 5,000 headwords corrected. ÍPIL, MOLÁVE,
+GUÍJO, YÁCAL, TÍNDALO and the rest are searchable; before the pass the scan read
+ÍPIL as "fprz" and a search for it returned nothing.
 
-The short version: Merrill set the native names in small capitals, and the OCR
-handled them badly. On the same pages, in the same scan, the roman scientific
-names score a median confidence of 86 while the small-caps headwords score 45 —
-and only 1,117 of 4,740 headwords (23.6%) reach a confidence of 70. The app now
-reports that per entry instead of presenting every reading as equally sound, but
-the remedy is better text, not more parsing.
+**Part II — the scientific index — has not been.** Its binomials and prose are
+still as the scanner read them, so some taxa are duplicated under misread names
+(*Pterocarpus indicus* also appears as "Prerocarpus rnpicus") and Merrill's
+notes carry garbled fragments. See [docs/source-quality.md](docs/source-quality.md)
+for what that costs and what fixing it would take.
 
-Fetching the Internet Archive's own OCR settled one question: the PDF's text
-layer and the IA's `_djvu.txt` are the same Tesseract run, sharing 16,953 of
-17,040 tokens. What the IA did add is **hOCR**, carrying a confidence score and
-a bounding box for every word — which is where the numbers above come from.
+What the vision pass changed, measured by how well the book's two independently
+OCR'd halves agree with each other:
+
+| | Before | After |
+|---|---:|---:|
+| Cross-half agreement, exact | 21.1% | **46.9%** |
+| Cross-half, unreconcilable | 51.9% | **24.5%** |
+| Headwords no language could produce | 175 | **0** |
 
 Current extraction, from `npm run build`:
 
 | | |
 |---|---|
-| Native names | 4,740 |
-| Plants (taxa) | 2,149 |
+| Native names | 4,395 |
+| Plants (taxa) | 2,102 |
 | Plant families | 137 |
-| Name → plant links | 5,591 |
-| Pages with descriptive notes | 937 taxa |
-| Lines the parser could not read | 84 of ~5,100 |
-| Headwords the OCR engine was confident about | 1,117 (23.6%) |
+| Name → plant links | 5,727 |
+| Taxa with Merrill's notes | 947 |
+| Headwords corrected from the page images | 5,000 |
+| Lines the parser could not read | 70 |
 
 ## Quick start
 
@@ -68,11 +73,21 @@ docs/       source assessment, data model, roadmap
 |---|---|---|
 | 1 | `pipeline/01-extract-text.js` | `pdftotext -layout` → `data/raw/pages.json` |
 | 1b | `pipeline/01b-fetch-ia.js` | Fetches the Internet Archive hOCR for per-word confidence (network; skippable) |
+| 1c | `pipeline/01c-fetch-images.js` | Fetches page images for the vision pass (network; skippable) |
 | 2 | `pipeline/02-parse.js` | Parses both halves of the book → `data/part1-*.json`, `data/part2-*.json` |
 | 3 | `pipeline/03-build-index.js` | Joins the halves into one graph → `app/data/dictionary.json` |
 | 4 | `pipeline/04-audit.js` | Measures how much the scan can be trusted → `data/audit.json` |
 
 Run them individually with `npm run extract | fetch-ia | parse | index | audit`.
+
+Supporting tools:
+
+| Script | Does |
+|---|---|
+| `pipeline/show-page.js <page>` | Prints what the pipeline currently believes a page says |
+| `pipeline/ingest-transcription.js <page>` | Turns a transcription on stdin into a correction file |
+| `pipeline/rekey-corrections.js` | Re-derives every correction after a parser change |
+
 Stage 1b is the only one that touches the network; everything downstream works
 without it, just with no confidence scores.
 
@@ -104,6 +119,9 @@ shows both.
   grows, split the search index from the entry bodies.
 - **Honesty over polish.** Where the scan is doubtful the app says so, on the
   entry, rather than presenting a confident wrong answer.
+- **Corrections are data, not edits.** Hand-read headwords live in
+  `data/corrections/` and are applied during the build. Editing the generated
+  files would not survive `npm run build`.
 - **Theme-aware and responsive** — two panes on desktop, list-then-detail on
   phones, light and dark.
 
