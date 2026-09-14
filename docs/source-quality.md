@@ -87,7 +87,7 @@ clean parse dropped every one.
 
 ## Pass two: Part II, the scientific index
 
-All **74 pages**, **511 scientific names corrected**. A genus heading only has
+All **74 pages**, **501 scientific names corrected**. A genus heading only has
 to be corrected once: the parser expands abbreviated species ("A. aspera") from
 whichever genus is open, so repairing "Aeiata" to *Aglaia* fixes the six species
 beneath it too.
