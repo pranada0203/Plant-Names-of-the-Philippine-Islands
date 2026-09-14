@@ -1,0 +1,23 @@
+{
+ "page": 123,
+ "transcription": [
+  "TUGNÁNG | Buddleia",
+  "TÚNAN-TÚNAN#1 | Melastoma obovatum Jack.",
+  "TÚNAS | Nymphaea lotus Linn.",
+  "TÚYAT-BAGUÍO | Desmodium umbellatum DC."
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n122.jpg",
+ "entries": [
+  {
+   "page": 123,
+   "was": "TUNAS",
+   "occurrence": 0,
+   "taxa": [
+    "Nymphaea lotus Linn"
+   ],
+   "wasTaxa": [
+    "Pamp. Nymphaea lotus Linn"
+   ]
+  }
+ ]
+}

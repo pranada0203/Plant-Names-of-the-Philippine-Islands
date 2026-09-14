@@ -9,41 +9,52 @@ that works on desktop and mobile.
 
 ## Where things stand
 
-**Both halves of the book have been transcribed by eye from the page images.**
-All 181 pages: 5,000 native headwords and 501 scientific names corrected. ÍPIL,
-MOLÁVE, GUÍJO, YÁCAL, TÍNDALO and the rest are searchable; before the pass the
-scan read ÍPIL as "fprz" and a search for it returned nothing.
+**Every field the book prints has been transcribed by eye from the page images**
+— in three passes: Part I's native headwords, Part II's scientific headings, and
+finally the scientific name printed on each Part I line. 5,984 corrections over
+181 pages. ÍPIL, MOLÁVE, GUÍJO, YÁCAL, TÍNDALO and the rest are searchable;
+before the first pass the scan read ÍPIL as "fprz" and a search for it returned
+nothing.
 
 Measured by how well the book's two independently OCR'd halves agree with each
 other, and by how many headwords are words no Philippine language could produce:
 
-| | Before | After Part I | After Part II |
-|---|---:|---:|---:|
-| Cross-half agreement, exact | 21.1% | 46.9% | **47.4%** |
-| Cross-half, unreconcilable | 51.9% | 24.5% | **23.3%** |
-| Impossible headwords | 175 | 0 | **0** |
-| Distinct taxa | 2,149 | 2,102 | **1,709** |
+| | Before | After Part I | After Part II | After Part I taxa |
+|---|---:|---:|---:|---:|
+| Cross-half agreement, exact | 21.1% | 46.9% | 47.4% | **47.0%** |
+| Cross-half, unreconcilable | 51.9% | 24.5% | 23.3% | **23.7%** |
+| Impossible headwords | 175 | 0 | 0 | **0** |
+| Distinct taxa | 2,149 | 2,102 | 1,709 | **1,669** |
+| Stub taxa (Part I only) | — | — | 283 | **188** |
 
 The taxon count *fell* because it had been inflated: *Pterocarpus indicus* also
 existed as "Prerocarpus rnpicus", *Hopea plagata* as both "Hopea palagata" and
-"H. pragata". Correcting the scientific index merged them.
+"H. pragata". Correcting the scientific index merged them; the third pass merged
+another 40.
 
-Still outstanding: Part I also prints a scientific name on every line, and those
-were not transcribed, so 283 of 1,709 taxa remain as stubs of a misread binomial.
-See [docs/source-quality.md](docs/source-quality.md) — automatic merging is not
+The cross-half figures moved by 0.4 points between the last two columns, but not
+because of the third pass — that pass does not touch headwords. They were
+re-measured after a parser fix recovered 29 Part II entries, which enlarged the
+comparison set.
+
+188 taxa still exist only because Part I names them and Part II does not. Most
+are not misreadings: they are Merrill's own inconsistent spelling (*Livinstonia*
+/ *Livistonia* / *Livistona*, *Jasminum sambac* and "Jasseminum sambac" on
+adjacent lines) or plants the scientific index simply omits. See
+[docs/source-quality.md](docs/source-quality.md) — automatic merging is still not
 safe, and the reasons are worth reading before anyone tries it.
 
 Current extraction, from `npm run build`:
 
 | | |
 |---|---|
-| Native names | 4,395 |
-| Plants (taxa) | 1,709 |
+| Native names | 4,391 |
+| Plants (taxa) | 1,669 |
 | Plant families | 147 |
-| Name → plant links | 5,275 |
-| Taxa with Merrill's notes | 1,001 |
-| Taxa with a family | 1,437 |
-| Entries corrected from the page images | 5,501 |
+| Name → plant links | 5,216 |
+| Taxa with Merrill's notes | 1,009 |
+| Taxa with a family | 1,464 |
+| Entries corrected from the page images | 5,984 |
 | Lines the parser could not read | 70 |
 
 ## Quick start
@@ -92,6 +103,8 @@ Supporting tools:
 | `pipeline/show-page.js <page>` | Prints what the pipeline currently believes a page says |
 | `pipeline/ingest-transcription.js <page>` | Turns a Part I transcription on stdin into a correction file |
 | `pipeline/ingest-part2.js <page>` | The same for Part II scientific names |
+| `pipeline/show-taxa.js <page>` | Lists the Part I lines whose scientific name has no Part II counterpart |
+| `pipeline/ingest-taxa.js <page>` | Turns a transcription of those scientific names into a correction file |
 | `pipeline/rekey-corrections.js` | Re-derives every correction after a parser change |
 
 Stages 1b and 1c are the only ones that touch the network; everything downstream works
@@ -126,7 +139,7 @@ shows both.
 - **Honesty over polish.** Where the scan is doubtful the app says so, on the
   entry, rather than presenting a confident wrong answer.
 - **Corrections are data, not edits.** Hand-read entries live in
-  `data/corrections/part1/` and `part2/` and are applied during the build. Editing the generated
+  `data/corrections/part1/`, `part2/` and `taxa/` and are applied during the build. Editing the generated
   files would not survive `npm run build`.
 - **Theme-aware and responsive** — two panes on desktop, list-then-detail on
   phones, light and dark.

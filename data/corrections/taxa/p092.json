@@ -1,0 +1,33 @@
+{
+ "page": 92,
+ "transcription": [
+  "MANBÁN | Maranta dichotoma Wall.",
+  "MANUNGÁL | Samadera indica Gaertn.",
+  "MANZÁNA-RÓSA | Eugenia jambos Linn."
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n91.jpg",
+ "entries": [
+  {
+   "page": 92,
+   "was": "MANUNEAT",
+   "occurrence": 0,
+   "taxa": [
+    "Samadera indica Gaertn"
+   ],
+   "wasTaxa": [
+    "Pamp. Samadera indica Gaertn"
+   ]
+  },
+  {
+   "page": 92,
+   "was": "MANZANA-ROSA",
+   "occurrence": 0,
+   "taxa": [
+    "Eugenia jambos Linn"
+   ],
+   "wasTaxa": [
+    "File Eugenia jambos Linn"
+   ]
+  }
+ ]
+}

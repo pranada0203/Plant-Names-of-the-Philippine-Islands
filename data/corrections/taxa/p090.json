@@ -1,0 +1,34 @@
+{
+ "page": 90,
+ "transcription": [
+  "MALATÁCO | Albizzia",
+  "MALATÁPAY#1 | Alanguim octopetalum Blanco.",
+  "MALÍCO | Evodia mindanaensis Merrill.",
+  "MALISMALÍS | Euphorbia pilulifera L."
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n89.jpg",
+ "entries": [
+  {
+   "page": 90,
+   "was": "MARARACO",
+   "occurrence": 0,
+   "taxa": [
+    "Albizzia"
+   ],
+   "wasTaxa": [
+    "Albizzia. arboreum Vidal"
+   ]
+  },
+  {
+   "page": 90,
+   "was": "MALISMAL{S",
+   "occurrence": 0,
+   "taxa": [
+    "Euphorbia pilulifera L"
+   ],
+   "wasTaxa": [
+    "Euphorbia pilulifera L. d"
+   ]
+  }
+ ]
+}

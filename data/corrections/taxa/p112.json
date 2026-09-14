@@ -1,0 +1,37 @@
+{
+ "page": 112,
+ "transcription": [
+  "SAPNÍT#1 | Mezoneurum glabrum Desf.",
+  "SAUSAÚLI | Sapindus turczinanowii Vid.",
+  "SAYÍCAN#2 | Euphorbia pilulifera L.",
+  "SAYÍCAN#4 | Euphorbia pilulifera L.",
+  "SIBÓYAS-SONGSÓNG | Allium jaquemontii Kunth.",
+  "SIGÁNG-DÁGAT | Elephantopus spicatus Juss.",
+  "SÍIT | Mezoneurum glabrum Desf."
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n111.jpg",
+ "entries": [
+  {
+   "page": 112,
+   "was": "SAUSATLI",
+   "occurrence": 0,
+   "taxa": [
+    "Sapindus turczinanowii Vid"
+   ],
+   "wasTaxa": [
+    "Sapindus turezinanowii Vid"
+   ]
+  },
+  {
+   "page": 112,
+   "was": "SAYICAN",
+   "occurrence": 1,
+   "taxa": [
+    "Euphorbia pilulifera L"
+   ],
+   "wasTaxa": [
+    "Euphorbia pilulifera L. ~"
+   ]
+  }
+ ]
+}

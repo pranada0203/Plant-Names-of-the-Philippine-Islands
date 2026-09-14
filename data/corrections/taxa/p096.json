@@ -1,0 +1,31 @@
+{
+ "page": 96,
+ "transcription": [
+  "NÁTO#1 | Palaquium barnesii Merrill, n. sp.",
+  "ODAÓDEG | Berchemia philippinensis Vidal.",
+  "OO | -"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n95.jpg",
+ "entries": [
+  {
+   "page": 96,
+   "was": "OPADPEEG",
+   "occurrence": 0,
+   "taxa": [
+    "Berchemia philippinensis Vidal"
+   ],
+   "wasTaxa": [
+    "Berchemia philippinensis"
+   ]
+  },
+  {
+   "page": 96,
+   "was": "OO",
+   "occurrence": 0,
+   "drop": true,
+   "wasTaxa": [
+    "Vidal"
+   ]
+  }
+ ]
+}

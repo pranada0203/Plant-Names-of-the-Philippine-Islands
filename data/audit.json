@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-14T08:38:33.983Z",
+  "generated": "2026-09-14T09:00:58.139Z",
   "ocrConfidence": {
     "description": "OCR confidence by how the word is set on the page (uncorrected entries only)",
     "corrected": 5000,
-    "stillAsScanned": 12,
+    "stillAsScanned": 9,
     "smallCapsHeadwords": {
-      "n": 12,
-      "median": 81,
-      "underFifty": 5,
-      "underFiftyPercent": 41.7
+      "n": 9,
+      "median": 66,
+      "underFifty": 4,
+      "underFiftyPercent": 44.4
     },
     "romanScientificNames": {
       "n": 1479,
@@ -41,12 +41,6 @@
         "line": "Tiqués, T. Pithecolobium montanum Benth."
       },
       {
-        "read_as": "oO",
-        "confidence": 47,
-        "page": 96,
-        "line": "oO. Vidal."
-      },
-      {
         "read_as": "HoJAS DE BUYO",
         "confidence": 66,
         "page": 74,
@@ -69,18 +63,6 @@
         "confidence": 89,
         "page": 101,
         "line": "PANCALIAN, Cag. Sindora wallichii Benth."
-      },
-      {
-        "read_as": "Mallotus ricinoides",
-        "confidence": 90,
-        "page": 124,
-        "line": "Mallotus ricinoides Muell. Arg."
-      },
-      {
-        "read_as": "Rhododendron rosmarinifolium",
-        "confidence": 91,
-        "page": 124,
-        "line": "Rhododendron rosmarinifolium Vidal."
       },
       {
         "read_as": "ARBOL DE FUEGO",

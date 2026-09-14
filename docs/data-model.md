@@ -3,8 +3,10 @@
 `app/data/dictionary.json` is the single file the app loads. Everything else in
 `data/` is intermediate or diagnostic.
 
-Hand-read corrections live in `data/corrections/part1/` (native headwords) and
-`data/corrections/part2/` (scientific names), applied during stage 2. See
+Hand-read corrections live in `data/corrections/part1/` (Part I native
+headwords), `data/corrections/part2/` (Part II scientific names) and
+`data/corrections/taxa/` (the scientific name printed on each Part I line), one
+file per page, applied during stage 2. See
 [source-quality.md](source-quality.md).
 
 ## Shape

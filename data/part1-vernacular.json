@@ -1287,7 +1287,7 @@
   ],
   "place": null,
   "taxa": [
-   "Ficus hispida Blanco"
+   "Fiens hispida Blanco"
   ],
   "page": 20,
   "printedPage": "12",
@@ -1295,11 +1295,7 @@
   "raw": "Aacésoc, T. Fiens hispida Blanco.",
   "flags": [],
   "ocrHeadword": "AACÉSOC",
-  "corrected": true,
-  "ocrTaxa": [
-   "Fiens hispida Blanco"
-  ],
-  "taxaCorrected": true
+  "corrected": true
  },
  {
   "headword": "AGÓS-OS",
@@ -20909,7 +20905,7 @@
   ],
   "place": null,
   "taxa": [
-   "Cureurma xanthorrhiza Roxb"
+   "Curcurma xanthorrhiza Roxb"
   ],
   "page": 43,
   "printedPage": "35",
@@ -20917,7 +20913,11 @@
   "raw": "Boté6n, T. Cureurma xanthorrhiza Roxb.",
   "flags": [],
   "ocrHeadword": "BOTÉ6N",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Cureurma xanthorrhiza Roxb"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "BOLONGAÉTA",
@@ -26237,7 +26237,7 @@
   "dialects": [],
   "place": "Batangas",
   "taxa": [
-   "Cissampelos"
+   "Cissampelos pareira L"
   ],
   "page": 50,
   "printedPage": "42",
@@ -26245,7 +26245,11 @@
   "raw": "CALACALAMAYAN (Batangas). Cissampelos",
   "flags": [],
   "ocrHeadword": "CALACALAMAYAN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Cissampelos"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "CALACAMÓTE",
@@ -26898,7 +26902,7 @@
   ],
   "place": null,
   "taxa": [
-   "Cureuma virdiflora Roxb"
+   "Curcuma virdiflora Roxb"
   ],
   "page": 50,
   "printedPage": "42",
@@ -26906,7 +26910,11 @@
   "raw": "CaLAoaAG, V. Cureuma virdiflora Roxb.",
   "flags": [],
   "ocrHeadword": "CALAOAAG",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Cureuma virdiflora Roxb"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "CALÁPI",
@@ -27502,7 +27510,7 @@
   ],
   "place": null,
   "taxa": [
-   "Meloehia corchorifolia L"
+   "Melochia corchorifolia L"
   ],
   "page": 51,
   "printedPage": "43",
@@ -27510,7 +27518,11 @@
   "raw": "CALINGAN, V. Meloehia corchorifolia L.",
   "flags": [],
   "ocrHeadword": "CALINGAN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Meloehia corchorifolia L"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "CÁLIN-MANÓG",
@@ -35861,7 +35873,7 @@
   ],
   "place": null,
   "taxa": [
-   "Pamp. Trichosanthes anguina L"
+   "Trichosanthes anguina L"
   ],
   "page": 61,
   "printedPage": "53",
@@ -35869,7 +35881,11 @@
   "raw": "CucuBiTan, T., V.. Pamp. Trichosanthes anguina L.",
   "flags": [],
   "ocrHeadword": "CUCUBITAN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Pamp. Trichosanthes anguina L"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "CUCÚN-BANÚC",
@@ -37015,7 +37031,7 @@
   ],
   "place": null,
   "taxa": [
-   "Alstonia. ternatensis Valeton"
+   "Alstonia"
   ],
   "page": 63,
   "printedPage": "55",
@@ -37023,7 +37039,11 @@
   "raw": "CuyaAnyAN, B. Alstonia. ternatensis Valeton.",
   "flags": [],
   "ocrHeadword": "CUYAANYAN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Alstonia. ternatensis Valeton"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "CÚYON-CÚYON",
@@ -37033,7 +37053,7 @@
   ],
   "place": null,
   "taxa": [
-   "Lepiniopsis ilicifolia Vidal"
+   "Lepiniopsis ternatensis Valeton"
   ],
   "page": 63,
   "printedPage": "55",
@@ -37041,7 +37061,11 @@
   "raw": "Ctyon-ctyon, V. Lepiniopsis ilicifolia Vidal.",
   "flags": [],
   "ocrHeadword": "CTYON-CTYON",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Lepiniopsis ilicifolia Vidal"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "CÚYOS-CÚYOS",
@@ -37051,7 +37075,7 @@
   ],
   "place": null,
   "taxa": [
-   "Taxotrophis"
+   "Taxotrophis ilicifolia Vidal"
   ],
   "page": 63,
   "printedPage": "55",
@@ -37059,7 +37083,11 @@
   "raw": "Ctyos-ctyos, V. Taxotrophis",
   "flags": [],
   "ocrHeadword": "CTYOS-CTYOS",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Taxotrophis"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "CÚYOS-CÚYOS",
@@ -38511,7 +38539,7 @@
   ],
   "place": null,
   "taxa": [
-   "Pogonatherum crinitum [rin"
+   "Pogonatherum crinitum Trin"
   ],
   "page": 64,
   "printedPage": "56",
@@ -38519,7 +38547,11 @@
   "raw": "Damtnc-etsat, T. Pogonatherum crinitum [rin.",
   "flags": [],
   "ocrHeadword": "DAMTNC-ETSAT",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Pogonatherum crinitum [rin"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "DAMÚÑG-PÁSIG",
@@ -39075,7 +39107,7 @@
   ],
   "place": null,
   "taxa": [
-   "Universally applied to epiphytic orchids, ferns, lyecopodiums, etc"
+   "Universally applied to epiphytic orchids, ferns, lycopodiums, etc"
   ],
   "page": 65,
   "printedPage": "57",
@@ -39083,7 +39115,11 @@
   "raw": "DApo, T. Universally applied to epiphytic orchids, ferns, lyecopodiums, etc.",
   "flags": [],
   "ocrHeadword": "DAPO",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Universally applied to epiphytic orchids, ferns, lyecopodiums, etc"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "DÁPO-MARIPÓSA",
@@ -42313,7 +42349,7 @@
   ],
   "place": null,
   "taxa": [
-   "Pamp. Colocasia antiquorum Schott"
+   "Colocasia antiquorum Schott"
   ],
   "page": 69,
   "printedPage": "61",
@@ -42321,7 +42357,11 @@
   "raw": "GABI, Cag., T., V.. Pamp. Colocasia antiquorum Schott.",
   "flags": [],
   "ocrHeadword": "GABI",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Pamp. Colocasia antiquorum Schott"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "GÁBI-GÁBI",
@@ -42724,7 +42764,7 @@
   ],
   "place": null,
   "taxa": [
-   "Solanum nigrum L,"
+   "Solanum nigrum L"
   ],
   "page": 69,
   "printedPage": "61",
@@ -42732,7 +42772,11 @@
   "raw": "GAMAGAMATISAN, T. Solanum nigrum L,",
   "flags": [],
   "ocrHeadword": "GAMAGAMATISAN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Solanum nigrum L,"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "GAMÓT-SAMBÁLI",
@@ -45950,7 +45994,7 @@
   ],
   "place": null,
   "taxa": [
-   "Pamp. Connarus. Blanco"
+   "Connarus"
   ],
   "page": 73,
   "printedPage": "65",
@@ -45958,7 +46002,11 @@
   "raw": "HANMABABAO, T., V.. Pamp. Connarus. Blanco.",
   "flags": [],
   "ocrHeadword": "HANMABABAO",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Pamp. Connarus. Blanco"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "HANMABALÁR",
@@ -46344,7 +46392,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "San PépRo, Sp. Phyllanthus niruri Muell. Arg"
+   "Phyllanthus niruri Muell. Arg"
   ],
   "page": 74,
   "printedPage": "66",
@@ -46352,7 +46400,11 @@
   "raw": "HiérBA DE San PépRo, Sp. Phyllanthus niruri Muell. Arg.",
   "flags": [],
   "ocrHeadword": "HIÉRBA DE",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "San PépRo, Sp. Phyllanthus niruri Muell. Arg"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "HIGANTÓNG",
@@ -47798,7 +47850,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Hina. Artabotrys odoratissimus R. Br"
+   "Artabotrys odoratissimus R. Br"
   ],
   "page": 75,
   "printedPage": "67",
@@ -47808,7 +47860,11 @@
    "taxon-noise"
   ],
   "ocrHeadword": "ILANG-{LANG DE",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Hina. Artabotrys odoratissimus R. Br"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "ÍLIB",
@@ -48246,7 +48302,7 @@
   ],
   "place": null,
   "taxa": [
-   "Pamp. Ficus aspera L?"
+   "Ficus aspera L?"
   ],
   "page": 76,
   "printedPage": "68",
@@ -48254,7 +48310,11 @@
   "raw": "Is-is, T., V.. Pamp. Ficus aspera L?.",
   "flags": [],
   "ocrHeadword": "IS-IS",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Pamp. Ficus aspera L?"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "ISIOÍSIO",
@@ -49532,7 +49592,7 @@
   ],
   "place": null,
   "taxa": [
-   "Tpomoea pes-caprae Roth"
+   "Ipomoea pes-caprae Roth"
   ],
   "page": 78,
   "printedPage": "70",
@@ -49542,7 +49602,11 @@
    "dialect-unrecognised"
   ],
   "ocrHeadword": "LAMPAYONE",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Tpomoea pes-caprae Roth"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "LAMBÓTAN",
@@ -49737,7 +49801,7 @@
   ],
   "place": null,
   "taxa": [
-   "Cureurma xanthorrhiza Roxb. and other species"
+   "Curcurma xanthorrhiza Roxb. and other species"
   ],
   "page": 78,
   "printedPage": "70",
@@ -49745,7 +49809,11 @@
   "raw": "LAMpPUYANG, T. Cureurma xanthorrhiza Roxb. and other species.",
   "flags": [],
   "ocrHeadword": "LAMPPUYANG",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Cureurma xanthorrhiza Roxb. and other species"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "LAMPÚYANG-DORÁC",
@@ -50354,7 +50422,7 @@
   ],
   "place": null,
   "taxa": [
-   "Ficus cumingu Miq"
+   "Ficus cumingii Miq"
   ],
   "page": 79,
   "printedPage": "71",
@@ -50362,7 +50430,11 @@
   "raw": "Lanincuine, T. Ficus cumingu Miq.",
   "flags": [],
   "ocrHeadword": "LANINCUINE",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Ficus cumingu Miq"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "LANÍBGA",
@@ -50795,7 +50867,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Cag..Vernonia arborea Ham"
+   "Vernonia arborea Ham"
   ],
   "page": 79,
   "printedPage": "71",
@@ -50803,7 +50875,11 @@
   "raw": "LaocpAo, Cag..Vernonia arborea Ham.",
   "flags": [],
   "ocrHeadword": "LAOCPAO",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Cag..Vernonia arborea Ham"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "LAPNÉI",
@@ -54549,7 +54625,7 @@
   ],
   "place": null,
   "taxa": [
-   "Cratoxylon sumatranum"
+   "Cratoxylon sumatranum Blume"
   ],
   "page": 84,
   "printedPage": "76",
@@ -54557,7 +54633,11 @@
   "raw": "Ltyone-Ltyone, V. Cratoxylon sumatranum",
   "flags": [],
   "ocrHeadword": "LTYONE-LTYONE",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Cratoxylon sumatranum"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "LÚYOS",
@@ -55989,7 +56069,7 @@
   ],
   "place": null,
   "taxa": [
-   "Ailanthus moluccanus DC,"
+   "Ailanthus moluccanus DC"
   ],
   "page": 85,
   "printedPage": "77",
@@ -55997,7 +56077,11 @@
   "raw": "Maaapuas, T. Ailanthus moluccanus DC,",
   "flags": [],
   "ocrHeadword": "MAAAPUAS",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Ailanthus moluccanus DC,"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "MALAADÚAS",
@@ -56627,7 +56711,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Ipomoea quamocht L"
+   "Ipomoea quamoclit L"
   ],
   "page": 86,
   "printedPage": "78",
@@ -56635,7 +56719,11 @@
   "raw": "Marasocsoc. Ipomoea quamocht L.",
   "flags": [],
   "ocrHeadword": "MARASOCSOC",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Ipomoea quamocht L"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "MALABOCBÓC",
@@ -57330,7 +57418,7 @@
   ],
   "place": null,
   "taxa": [
-   "Pithecolobium montanwn Benth"
+   "Pithecolobium montanum Benth"
   ],
   "page": 87,
   "printedPage": "79",
@@ -57338,7 +57426,11 @@
   "raw": "MALAcAMONSiLE, T. Pithecolobium montanwn Benth.",
   "flags": [],
   "ocrHeadword": "MALACAMONSILE",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Pithecolobium montanwn Benth"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "MALACAMÓTE",
@@ -58574,7 +58666,7 @@
   ],
   "place": null,
   "taxa": [
-   "Sapindus turezaninowil Vidal"
+   "Sapindus turczaninowii Vidal"
   ],
   "page": 88,
   "printedPage": "80",
@@ -58582,7 +58674,11 @@
   "raw": "MALAPALiTpIT, Pamp. Sapindus turezaninowil Vidal.",
   "flags": [],
   "ocrHeadword": "MALAPALITPIT",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Sapindus turezaninowil Vidal"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "MALAPANDACÁQUE",
@@ -59517,7 +59613,7 @@
   ],
   "place": null,
   "taxa": [
-   "Albizzia. arboreum Vidal"
+   "Albizzia"
   ],
   "page": 90,
   "printedPage": "82",
@@ -59525,7 +59621,11 @@
   "raw": "MararAco, T. Albizzia. arboreum Vidal.",
   "flags": [],
   "ocrHeadword": "MARARACO",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Albizzia. arboreum Vidal"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "MALATADIÁNG",
@@ -60333,7 +60433,7 @@
   ],
   "place": null,
   "taxa": [
-   "Euphorbia pilulifera L. d"
+   "Euphorbia pilulifera L"
   ],
   "page": 90,
   "printedPage": "82",
@@ -60341,7 +60441,11 @@
   "raw": "MALISMAL{s, Pamp.. Euphorbia pilulifera L. d",
   "flags": [],
   "ocrHeadword": "MALISMAL{S",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Euphorbia pilulifera L. d"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "MÁLIT",
@@ -60497,7 +60601,7 @@
   ],
   "place": null,
   "taxa": [
-   "Mollugo pentaphyllim Linn"
+   "Mollugo pentaphyllum Linn"
   ],
   "page": 91,
   "printedPage": "83",
@@ -60505,7 +60609,11 @@
   "raw": "Matucoso, V. Mollugo pentaphyllim Linn.",
   "flags": [],
   "ocrHeadword": "MATUCOSO",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Mollugo pentaphyllim Linn"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "MALULÚCBAN",
@@ -61961,7 +62069,7 @@
   ],
   "place": null,
   "taxa": [
-   "Pamp. Samadera indica Gaertn"
+   "Samadera indica Gaertn"
   ],
   "page": 92,
   "printedPage": "84",
@@ -61969,7 +62077,11 @@
   "raw": "ManuneAt, T., B., V.. Pamp. Samadera indica Gaertn.",
   "flags": [],
   "ocrHeadword": "MANUNEAT",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Pamp. Samadera indica Gaertn"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "MANUÑGBÁGA",
@@ -62015,7 +62127,7 @@
   ],
   "place": null,
   "taxa": [
-   "File Eugenia jambos Linn"
+   "Eugenia jambos Linn"
   ],
   "page": 92,
   "printedPage": "84",
@@ -62023,7 +62135,11 @@
   "raw": "MANZANA-ROSA, Sp. File Eugenia jambos Linn.",
   "flags": [],
   "ocrHeadword": "MANZANA-ROSA",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "File Eugenia jambos Linn"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "MANZANÍTAS",
@@ -65095,20 +65211,6 @@
   "corrected": true
  },
  {
-  "headword": "OO",
-  "headRaw": "oO",
-  "dialects": [],
-  "place": null,
-  "taxa": [
-   "Vidal"
-  ],
-  "page": 96,
-  "printedPage": "88",
-  "confidence": 47,
-  "raw": "oO. Vidal.",
-  "flags": []
- },
- {
   "headword": "OÁY",
   "headRaw": "Oáy",
   "dialects": [
@@ -65188,7 +65290,7 @@
   ],
   "place": null,
   "taxa": [
-   "Berchemia philippinensis"
+   "Berchemia philippinensis Vidal"
   ],
   "page": 96,
   "printedPage": "88",
@@ -65196,7 +65298,11 @@
   "raw": "OpadpeEG, Ig. Berchemia philippinensis",
   "flags": [],
   "ocrHeadword": "OPADPEEG",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Berchemia philippinensis"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "ÓDLING",
@@ -66707,7 +66813,7 @@
   ],
   "place": null,
   "taxa": [
-   "Lllipe betis Merrill"
+   "Illipe betis Merrill"
   ],
   "page": 98,
   "printedPage": "90",
@@ -66715,7 +66821,11 @@
   "raw": "PAGPAGAN, Cag. Lllipe betis Merrill.",
   "flags": [],
   "ocrHeadword": "PAGPAGAN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Lllipe betis Merrill"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "PAGSAINGÁIN",
@@ -67837,7 +67947,7 @@
   ],
   "place": null,
   "taxa": [
-   "Xanthostemon verdugonianus Naves. Triana"
+   "Xanthostemon verdugonianus Naves"
   ],
   "page": 100,
   "printedPage": "92",
@@ -67845,7 +67955,11 @@
   "raw": "PALO-DE-HIERRO, V. Xanthostemon verdugonianus Naves. Triana.",
   "flags": [],
   "ocrHeadword": "PALO-DE-HIERRO",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Xanthostemon verdugonianus Naves. Triana"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "PALO-DÚRO",
@@ -69143,7 +69257,7 @@
   ],
   "place": null,
   "taxa": [
-   "Pandanus odoratissimus Linn. f. and othei species"
+   "Pandanus odoratissimus Linn. f. and other species"
   ],
   "page": 101,
   "printedPage": "93",
@@ -69151,7 +69265,11 @@
   "raw": "PANDAN, T., V. Pandanus odoratissimus Linn. f. and othei species.",
   "flags": [],
   "ocrHeadword": "PANDAN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Pandanus odoratissimus Linn. f. and othei species"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "PANDÁN",
@@ -70138,7 +70256,7 @@
   ],
   "place": null,
   "taxa": [
-   "Jllipe betis Merrill"
+   "Illipe betis Merrill"
   ],
   "page": 102,
   "printedPage": "94",
@@ -70148,7 +70266,11 @@
    "taxon-noise"
   ],
   "ocrHeadword": "PAPPAGAY",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Jllipe betis Merrill"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "PÁQUIT",
@@ -70763,7 +70885,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Euphorbia puleherrima Willd"
+   "Euphorbia pulcherrima Willd"
   ],
   "page": 103,
   "printedPage": "95",
@@ -70771,7 +70893,11 @@
   "raw": "PascuAs. Euphorbia puleherrima Willd.",
   "flags": [],
   "ocrHeadword": "PASCUAS",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Euphorbia puleherrima Willd"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "PÁSI",
@@ -73991,7 +74117,7 @@
   ],
   "place": null,
   "taxa": [
-   "Melia can dollei Juss"
+   "Melia candollei Juss"
   ],
   "page": 107,
   "printedPage": "99",
@@ -73999,7 +74125,11 @@
   "raw": "QuintTANA, T. Melia can dollei Juss.",
   "flags": [],
   "ocrHeadword": "QUINTTANA",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Melia can dollei Juss"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "QUINTASÍN",
@@ -74045,7 +74175,7 @@
   ],
   "place": null,
   "taxa": [
-   "Sumbavia ro ttleroides Baill"
+   "Sumbavia rottleroides Baill"
   ],
   "page": 107,
   "printedPage": "99",
@@ -74053,7 +74183,11 @@
   "raw": "QurrAp, T. Sumbavia ro ttleroides Baill.",
   "flags": [],
   "ocrHeadword": "QURRAP",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Sumbavia ro ttleroides Baill"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "QUIRÓI",
@@ -74223,7 +74357,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Bombax malabsz arieum LL"
+   "Bombax malabaricum L"
   ],
   "page": 107,
   "printedPage": "99",
@@ -74231,7 +74365,11 @@
   "raw": "QuESERO. Bombax malabsz arieum LL.",
   "flags": [],
   "ocrHeadword": "QUESERO",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Bombax malabsz arieum LL"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "RAQUÍNDI",
@@ -74259,7 +74397,7 @@
   ],
   "place": null,
   "taxa": [
-   "Andropogon schoenanthus LL"
+   "Andropogon schoenanthus L"
   ],
   "page": 107,
   "printedPage": "99",
@@ -74267,7 +74405,11 @@
   "raw": "RAIZ-DE-MORAS, Sp. Fil. Andropogon schoenanthus LL.",
   "flags": [],
   "ocrHeadword": "RAIZ-DE-MORAS",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Andropogon schoenanthus LL"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "RÁMI",
@@ -74387,7 +74529,7 @@
   ],
   "place": null,
   "taxa": [
-   "Sopho ra tomentosa L"
+   "Sophora tomentosa L"
   ],
   "page": 107,
   "printedPage": "99",
@@ -74395,7 +74537,11 @@
   "raw": "Rocnouan, T., V. Sopho ra tomentosa L.",
   "flags": [],
   "ocrHeadword": "ROCNOUAN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Sopho ra tomentosa L"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "RÓMA",
@@ -78237,7 +78383,7 @@
   "dialects": [],
   "place": null,
   "taxa": [
-   "Sapindus turezinanowii Vid"
+   "Sapindus turczinanowii Vid"
   ],
   "page": 112,
   "printedPage": "104",
@@ -78245,7 +78391,11 @@
   "raw": "SausatLi. Sapindus turezinanowii Vid.",
   "flags": [],
   "ocrHeadword": "SAUSATLI",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Sapindus turezinanowii Vid"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "SAUSAÚOLI",
@@ -78312,7 +78462,7 @@
   ],
   "place": null,
   "taxa": [
-   "Euphorbia pilulifera L. ~"
+   "Euphorbia pilulifera L"
   ],
   "page": 112,
   "printedPage": "104",
@@ -78320,7 +78470,11 @@
   "raw": "Sayican, T. Euphorbia pilulifera L. ~",
   "flags": [],
   "ocrHeadword": "SAYICAN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Euphorbia pilulifera L. ~"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "SAYÍCAN",
@@ -78878,7 +79032,7 @@
   ],
   "place": null,
   "taxa": [
-   "Krianthemum bicolor Schrank"
+   "Erianthemum bicolor Schrank"
   ],
   "page": 113,
   "printedPage": "105",
@@ -78888,7 +79042,11 @@
    "taxon-noise"
   ],
   "ocrHeadword": "SILISILINAN",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Krianthemum bicolor Schrank"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "SINALÍGAN",
@@ -79714,7 +79872,7 @@
   ],
   "place": null,
   "taxa": [
-   "Plectronia. ee aeee"
+   "Plectronia"
   ],
   "page": 114,
   "printedPage": "106",
@@ -79722,7 +79880,11 @@
   "raw": "SuLiac-paGA, T. Plectronia. ee aeee",
   "flags": [],
   "ocrHeadword": "SULIAC-PAGA",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Plectronia. ee aeee"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "SULÍPA",
@@ -80390,7 +80552,7 @@
   ],
   "place": null,
   "taxa": [
-   "Illipe. species"
+   "Illipe"
   ],
   "page": 115,
   "printedPage": "107",
@@ -80398,7 +80560,11 @@
   "raw": "TacArtor, T. Illipe. species.",
   "flags": [],
   "ocrHeadword": "TACARTOR",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Illipe. species"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "TAGÓGON",
@@ -86585,7 +86751,7 @@
   ],
   "place": null,
   "taxa": [
-   "Heliotropum indicumL"
+   "Heliotropum indicum L"
   ],
   "page": 122,
   "printedPage": "114",
@@ -86593,7 +86759,11 @@
   "raw": "TROMPALIPAUTE, V. Heliotropum indicumL.",
   "flags": [],
   "ocrHeadword": "TROMPALIPAUTE",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Heliotropum indicumL"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "TSAMPÁCA",
@@ -87416,7 +87586,7 @@
   ],
   "place": null,
   "taxa": [
-   "Pamp. Nymphaea lotus Linn"
+   "Nymphaea lotus Linn"
   ],
   "page": 123,
   "printedPage": "115",
@@ -87424,7 +87594,11 @@
   "raw": "Tunas, T., V.. Pamp. Nymphaea lotus Linn.",
   "flags": [],
   "ocrHeadword": "TUNAS",
-  "corrected": true
+  "corrected": true,
+  "ocrTaxa": [
+   "Pamp. Nymphaea lotus Linn"
+  ],
+  "taxaCorrected": true
  },
  {
   "headword": "TÚNAY-TÚNAY",

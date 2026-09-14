@@ -1,18 +1,23 @@
 # Roadmap
 
-Ordered by what unblocks the most. Nothing below is started.
+Ordered by what unblocks the most. Sections 0 and 6 are done; the rest is
+not started.
 
-## 0. Text quality — largely done
+## 0. Text quality — done
 
-Both halves have been transcribed from the page images: 5,000 native headwords
-and 501 scientific names. Cross-half agreement rose from 21.1% to 47.4%, and the
-count of headwords no Philippine language could produce fell from 175 to zero.
+Every field the book prints has been transcribed from the page images, in three
+passes: 5,000 native headwords, 911 scientific names, and the 73 Part I taxon
+strings that needed it. Cross-half agreement rose from 21.1% to 47.0%, the count
+of headwords no Philippine language could produce fell from 175 to zero, and the
+taxon count fell from 2,149 to 1,669 as duplicate spellings of the same plant
+merged.
 
-What remains is Part I's *taxon strings* — the scientific name printed on each
-native-name line, which neither pass touched. 283 of 1,709 taxa are stubs of a
-misread binomial as a result, so a few plants still appear twice under two
-spellings. See [source-quality.md](source-quality.md), and note in particular
-why merging them automatically on the species epithet is **not** safe.
+What remains is not a transcription problem. 188 taxa still exist only because
+Part I names them and Part II does not, but the readings are faithful: they are
+Merrill's own inconsistent spellings (*Livinstonia* / *Livistonia* /
+*Livistona*) or plants the scientific index omits. Closing that gap needs a
+hand-checked list of the author's variants; merging automatically on the species
+epithet is **not** safe. See [source-quality.md](source-quality.md).
 
 ## 1. The reader's obvious next question: "show me the page"
 
@@ -58,19 +63,21 @@ the current names — but it is a separate dataset and a separate sourcing
 decision, and it must be shown as an *addition* to Merrill, never as a
 correction of him.
 
-## 6. Corrections as data
+## 6. Corrections as data — done
 
-If any hand-correction happens, it must not be edits to generated files —
-`npm run build` would erase them. It needs a `data/corrections.json` that stage 3
-applies on top of the parse, keyed by page plus raw line, with the original kept
-visible. Worth building before the first correction, not after the hundredth.
+Hand-read entries live in `data/corrections/part1/`, `part2/` and `taxa/`, one
+file per page, and are applied during the parse rather than edited into the
+generated files. Each is keyed by page plus the scanner's own reading, so a
+parser change that alters what a line reads reports the correction as stale
+instead of dropping it silently; `pipeline/rekey-corrections.js` re-derives the
+whole set from the stored transcriptions.
 
 ## Known rough edges in what exists
 
-- 84 Part I lines still fail to parse (`data/issues.json`); most are lines the
+- 70 Part I lines still fail to parse (`data/issues.json`); most are lines the
   scan mangled past recognition, but they are worth a read.
-- Part II: two family spellings still unresolved (`Amarylidew`, `Cwreurbitacew`)
-  and 225 entries carry no family.
+- Part II: one family spelling still unresolved (`Cebu`, which is a province and
+  not a family at all) and 17 entries carry no family.
 - Some Part II blocks absorb the page's running head or a stray marginal
   fragment into their notes.
 - The payload is served uncompressed by `pipeline/serve.js`; any real host will

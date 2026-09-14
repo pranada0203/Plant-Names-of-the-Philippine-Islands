@@ -140,8 +140,29 @@ for (const w of wanted) {
   });
 }
 
+// A drop correction erases its own target: once "daeal Doe" is dropped from
+// page 19 it is no longer in the parse, so re-ingesting that page cannot match
+// the line and would quietly write the drop away, resurrecting the artefact.
+// Carry forward any drop in the existing file whose headword the transcription
+// still names.
+const dir = path.join(ROOT, 'data', 'corrections', 'taxa');
+const file = path.join(dir, `p${String(page).padStart(3, '0')}.json`);
+let carried = 0;
+if (fs.existsSync(file)) {
+  const prev = JSON.parse(fs.readFileSync(file, 'utf8'));
+  for (const c of prev.entries || []) {
+    if (!c.drop) continue;
+    const stillNamed = unmatched.some((w) => fold(w.head.replace(/#\d+$/, '')) === fold(c.was));
+    const alreadyHave = corrections.some(
+      (x) => x.was === c.was && (x.occurrence || 0) === (c.occurrence || 0)
+    );
+    if (stillNamed && !alreadyHave) { corrections.push(c); carried++; }
+  }
+}
+
 console.log(`page ${page}: ${wanted.length} line(s) given, ${entries.length} entries on the page`);
 console.log(`  matched ${wanted.length - unmatched.length}, unchanged ${same}, corrections ${corrections.length}`);
+if (carried) console.log(`  ${carried} drop(s) carried forward from the existing file`);
 if (unmatched.length) {
   console.log(`  ${unmatched.length} headword(s) not found on this page:`);
   unmatched.forEach((w) => console.log(`      ${w.head}`));
@@ -163,9 +184,7 @@ if (unmatched.length && unmatched.length === wanted.length) {
   process.exit(2);
 }
 
-const dir = path.join(ROOT, 'data', 'corrections', 'taxa');
 fs.mkdirSync(dir, { recursive: true });
-const file = path.join(dir, `p${String(page).padStart(3, '0')}.json`);
 fs.writeFileSync(file, JSON.stringify({
   page,
   transcription: lines,

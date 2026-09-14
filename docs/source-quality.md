@@ -87,7 +87,10 @@ clean parse dropped every one.
 
 ## Pass two: Part II, the scientific index
 
-All **74 pages**, **501 scientific names corrected**. A genus heading only has
+All **75 pages**, **911 scientific names corrected** (511 when the pass was
+first run; re-keying after a later parser fix, which recovered 29 entries the
+parser had been dropping, changed what many lines read and so produced more
+corrections). A genus heading only has
 to be corrected once: the parser expands abbreviated species ("A. aspera") from
 whichever genus is open, so repairing "Aeiata" to *Aglaia* fixes the six species
 beneath it too.
@@ -116,42 +119,88 @@ Four more silent defects surfaced:
   where the book says *Antidesma bunius*. A heading's first token ends in a
   period; a wrapped name list ends its first token with a comma or semicolon.
 
+## Pass three: Part I's taxon strings
+
+Part I also prints a scientific name on every line — "ABACÁ, T., V. Musa
+textilis Neé." — and the first two passes left those as the scanner read them.
+Where one was garbled badly enough not to match its Part II counterpart it
+survived as a stub taxon, so the same plant appeared twice under two spellings.
+
+The pass did not need every line. `pipeline/show-taxa.js` lists exactly the
+lines whose scientific name has no Part II counterpart — the only ones that can
+be wrong in a way that matters — and those were checked against the page image
+one page at a time, **105 pages, 73 corrections**. The low hit rate is the
+finding, not a shortfall: most flagged lines are faithful readings.
+
+What the pass actually repaired falls into four kinds:
+
+- **The dialect marker bled into the scientific name.** "CUCUBÍTAN, T., V.,
+  Pamp. Trichosanthes anguina L." reached the parser with "Pamp." at the head of
+  the taxon; likewise GÁBI, IS-ÍS, LAOCPÁO, MANUNGÁL, TÚNAS.
+- **The headword bled into it.** HIÉRBA DE SAN PÉDRO carried "San PépRo, Sp.
+  Phyllanthus niruri", ÍLANG-ÍLANG DE CHÍNA carried "Hina. Artabotrys".
+- **A line's epithet was taken from its neighbour.** On page 63 the epithets
+  shifted up one line, giving CUYANYÁN "Alstonia. ternatensis Valeton" — a name
+  belonging to CÚYON-CÚYON, whose own line then read *Lepiniopsis ilicifolia*
+  instead of *L. ternatensis*.
+- **Single letters misread inside an otherwise sound binomial**: "Ipomoea
+  quamocht", "Lllipe betis", "Sapindus turezaninowil", "Euphorbia puleherrima",
+  "Melia can dollei", "Bombax malabsz arieum".
+
+Two non-entries the parser had mistaken for lines were dropped: a scan artefact
+on page 19 and the "O." section heading on page 96, which had also swallowed the
+authority "Vidal" from the ODAÓDEG line above it.
+
 ## Result
 
-| | Before | After Part I | After Part II |
-|---|---:|---:|---:|
-| Cross-half agreement, exact | 21.1% | 46.9% | **47.4%** |
-| Cross-half, unreconcilable | 51.9% | 24.5% | **23.3%** |
-| Implausible headwords | 175 | 0 | **0** |
-| Distinct native names | 4,740 | 4,395 | **4,395** |
-| Distinct taxa | 2,149 | 2,102 | **1,709** |
-| Taxa with a family | 1,184 | 1,196 | **1,437** |
-| Taxa with Merrill's notes | 937 | 947 | **1,001** |
-| Plant families | 137 | 137 | **147** |
+| | Before | After Part I | After Part II | After Part I taxa |
+|---|---:|---:|---:|---:|
+| Cross-half agreement, exact | 21.1% | 46.9% | 47.4% | **47.0%** |
+| Cross-half, unreconcilable | 51.9% | 24.5% | 23.3% | **23.7%** |
+| Implausible headwords | 175 | 0 | 0 | **0** |
+| Distinct native names | 4,740 | 4,395 | 4,395 | **4,391** |
+| Distinct taxa | 2,149 | 2,102 | 1,709 | **1,669** |
+| Taxa with a family | 1,184 | 1,196 | 1,437 | **1,464** |
+| Taxa with Merrill's notes | 937 | 947 | 1,001 | **1,009** |
+| Plant families | 137 | 137 | 147 | **147** |
+| Stub taxa (Part I only) | — | — | 283 | **188** |
 
 The name count *fell* in pass one because it had been inflated: the same name
-misread two ways counted twice. The taxon count fell in pass two for the same
-reason.
+misread two ways counted twice. The taxon count fell in pass two, and again in
+pass three, for the same reason.
 
-Median OCR confidence of the scientific names still as the scanner left them is
-91, with 5.8% under 50. The roman type was never the problem.
+The cross-half figures are 0.4 points worse in the last column than in the one
+before it, which is not the third pass's doing — it does not touch headwords.
+The Part II column was measured before a parser fix recovered 29 Part II entries;
+the last column is a fresh measurement over that larger comparison set.
+
+The audit now measures only the entries still as the scanner left them, and
+there are few: 9 native headwords (median confidence 66) and 1,479 scientific
+names in Part II's notes (median 100, 3.5% under 50). The roman type was never
+the problem.
 
 ## What is still wrong
 
-**Part I's taxon strings were not transcribed.** The two passes corrected
-*headwords* (Part I) and *scientific headings* (Part II). But Part I also prints
-a scientific name on every line — "ABACÁ, T., V. Musa textilis Neé." — and those
-were left as the scanner read them. Where one is garbled badly enough not to
-match its Part II counterpart, it survives as a stub taxon:
+**188 of 1,669 taxa exist only because Part I names them.** The third pass cut
+that from 283, but what remains is mostly not OCR damage at all — it is the book
+disagreeing with itself, and the transcription is faithful to the page:
 
-- SAMPAGUÍTA still resolves to both *Jasminum sambac* and "Jasseminum sambac".
-- ANÁHAO carries "Livistona" and "Livistonia rotundifolia" separately.
+- ANÁHAO's palm is printed *Livinstonia rotundifolia* in Part I, *Livistonia* on
+  another Part I line, and *Livistona* in Part II.
+- SAMPAGUÍTA's *Jasminum sambac* and "Jasseminum sambac" are both Merrill's, on
+  adjacent lines.
+- *Caesalpena*, *Panceratum*, *Cinnamonum*, *Maranta dichtoma*,
+  *Koordersiodendron* / *Koordersoidendron*, *Glircida maculata*, "Ficus
+  ameplas", "Cissampelos pariera" — all printed that way.
+- Some plants Part II simply never lists.
 
-**283 of 1,709 taxa are stubs of this kind.** Merging them automatically is not
-safe: matching on the species epithet alone would join *Eurycles sylvestris* to
-*Pandanus sylvestris*, and *Maranta arundinacea* to *Imperata arundinacea*,
-which are different plants. This needs the same treatment the other two fields
-got — transcription — or a hand-checked merge list.
+Merging what is left automatically is still not safe: matching on the species
+epithet alone would join *Eurycles sylvestris* to *Pandanus sylvestris*, and
+*Maranta arundinacea* to *Imperata arundinacea*, which are different plants.
+*Toona* and *Unona*, *Ryparosa* and *Aporosa*, *Sesuvium indicum* and *Sesamum
+indicum* are each within two or three edits of one another and each a different
+plant. What is needed now is a hand-checked list of Merrill's own variant
+spellings, not a rule.
 
 Smaller residues: 70 Part I lines still fail to parse (`data/issues.json`), and
 12 headwords could not be located in the hOCR so carry no confidence score; the

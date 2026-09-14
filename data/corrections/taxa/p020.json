@@ -1,20 +1,9 @@
 {
  "page": 20,
  "transcription": [
-  "AGÓSOC | Ficus hispida Blanco."
+  "AGÓSOC | Ficus hispida Blanco.",
+  "AGUIBÁGAN | Hypoestes"
  ],
  "source": "https://archive.org/download/dictionaryofplan00merr/page/n19.jpg",
- "entries": [
-  {
-   "page": 20,
-   "was": "AACÉSOC",
-   "occurrence": 0,
-   "taxa": [
-    "Ficus hispida Blanco"
-   ],
-   "wasTaxa": [
-    "Fiens hispida Blanco"
-   ]
-  }
- ]
+ "entries": []
 }
