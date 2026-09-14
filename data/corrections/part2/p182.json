@@ -1,0 +1,58 @@
+{
+ "page": 182,
+ "transcription": [
+  "Parameria philippinensis | Apocinaceae",
+  "Parasponia | Urticaceae",
+  "Parastomon | Rosaceae",
+  "Parinarium | Rosaceae",
+  "Parkia roxburghii | Leguminosae",
+  "Paspalum | Gramineae",
+  "Pavetta | Rubiaceae",
+  "P. angustifolia",
+  "Payena | Sapotaceae",
+  "Pemphis acidula | Lythraceae",
+  "Pennisetum nigricans | Gramineae",
+  "Peristrophe contorta | Acanthaceae",
+  "Phaenthus cumingii | Anonaceae",
+  "P. nutans",
+  "Phalaenopsis amabalis | Orchidaceae",
+  "Phaleria perrottetiana | Thymelaeaceae",
+  "Phaseolus caracalla | Leguminosae",
+  "P. lunatus",
+  "P. mungo",
+  "P. vulgaris",
+  "Phoebe | Lauraceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n181.jpg",
+ "transcribed": 21,
+ "entries": [
+  {
+   "page": 182,
+   "was": "PAvEeTTA",
+   "name": "Pavetta",
+   "family": "Rubiaceae"
+  },
+  {
+   "page": 182,
+   "was": "PENNISETUM NIGRICANS",
+   "name": "Pennisetum nigricans",
+   "family": "Gramineae"
+  },
+  {
+   "page": 182,
+   "was": "PHANTHUS CUMINGII",
+   "name": "Phaenthus cumingii",
+   "family": "Anonaceae"
+  },
+  {
+   "page": 182,
+   "was": "P. munco",
+   "name": "P. mungo"
+  },
+  {
+   "page": 182,
+   "was": "P. vutearIs",
+   "name": "P. vulgaris"
+  }
+ ]
+}

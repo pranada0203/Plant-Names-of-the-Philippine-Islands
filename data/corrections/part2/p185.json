@@ -1,0 +1,69 @@
+{
+ "page": 185,
+ "transcription": [
+  "Plectronia | Rubiaceae",
+  "P. horrida",
+  "P. moluccana",
+  "Pluchea indica | Compositae",
+  "Plumbago zeylanica | Plumbaginaceae",
+  "Plumiera acutifolia | Apocinaceae",
+  "Podocarpus | Coniferae",
+  "Ponogatherum crinitum | Gramineae",
+  "Pogostemon cablin | Labiatae",
+  "P. heyneanus",
+  "Poinciana regia | Leguminosae",
+  "Pollia sorzogonensis | Commelinaceae",
+  "Pollia thrysiflora",
+  "Polyalthia | Anonaceae",
+  "P. lanceolata",
+  "Polyanthes tuberosa | Amaryllidaceae",
+  "Polygonum | Polygonaceae",
+  "P. barbatum",
+  "Polypodium | Filices",
+  "P. dipteris",
+  "P. quercifolium"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n184.jpg",
+ "transcribed": 21,
+ "entries": [
+  {
+   "page": 185,
+   "was": "P. moLtuccaNA",
+   "name": "P. moluccana"
+  },
+  {
+   "page": 185,
+   "was": "PopocaRPus",
+   "name": "Podocarpus",
+   "family": "Coniferae"
+  },
+  {
+   "page": 185,
+   "was": "PoOLYALTHIA",
+   "name": "Polyalthia",
+   "family": "Anonaceae"
+  },
+  {
+   "page": 185,
+   "was": "PotyeonuM",
+   "name": "Polygonum",
+   "family": "Polygonaceae"
+  },
+  {
+   "page": 185,
+   "was": "PotypopiuM",
+   "name": "Polypodium",
+   "family": "Filices"
+  },
+  {
+   "page": 185,
+   "was": "P. pipreriIs",
+   "name": "P. dipteris"
+  },
+  {
+   "page": 185,
+   "was": "P. quEerciroLiUmM",
+   "name": "P. quercifolium"
+  }
+ ]
+}

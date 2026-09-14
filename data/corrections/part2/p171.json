@@ -1,0 +1,91 @@
+{
+ "page": 171,
+ "transcription": [
+  "L. elegans",
+  "L. spectabilis",
+  "Lilium philippinense | Liliaceae",
+  "Limnanthemum cristatum | Gentianaceae",
+  "Limnophila gratioloides | Scrophulariaceae",
+  "L. menthastrum",
+  "L. repens",
+  "L. roxburgii",
+  "Limnophyton obtusifolium | Alismaceae",
+  "Linociera | Oleaceae",
+  "L. coriacea",
+  "L. cumingiana",
+  "L. luzonica",
+  "Lippia nodiflora | Verbenaceae",
+  "Litsea | Lauraceae",
+  "L. albayana",
+  "L. chinensis",
+  "L. garciae",
+  "L. luzonica",
+  "L. magnifica",
+  "L. perrottetii",
+  "Livistona | Palmae",
+  "L. papuana",
+  "L. rotundifolia"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n170.jpg",
+ "transcribed": 24,
+ "entries": [
+  {
+   "page": 171,
+   "was": "L. roxBureII",
+   "name": "L. roxburgii"
+  },
+  {
+   "page": 171,
+   "was": "LinocreraA",
+   "name": "Linociera",
+   "family": "Oleaceae"
+  },
+  {
+   "page": 171,
+   "was": "L. tuzonica",
+   "name": "L. luzonica"
+  },
+  {
+   "page": 171,
+   "was": "LippIA NopIFLORA",
+   "name": "Lippia nodiflora",
+   "family": "Verbenaceae"
+  },
+  {
+   "page": 171,
+   "was": "Lirsea",
+   "name": "Litsea",
+   "family": "Lauraceae"
+  },
+  {
+   "page": 171,
+   "was": "?. ALBAYANA",
+   "name": "L. albayana"
+  },
+  {
+   "page": 171,
+   "was": "?. CHINENSIS",
+   "name": "L. chinensis"
+  },
+  {
+   "page": 171,
+   "was": "?. GARCIAE",
+   "name": "L. garciae"
+  },
+  {
+   "page": 171,
+   "was": "?. LUZONICA",
+   "name": "L. luzonica"
+  },
+  {
+   "page": 171,
+   "was": "?. MAGNIFICA",
+   "name": "L. magnifica"
+  },
+  {
+   "page": 171,
+   "was": "Pe.ePeeERROTTETII B.",
+   "name": "L. perrottetii"
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "page": 178,
+ "transcription": [
+  "Naravelia | Ranunculaceae",
+  "N. laurifolia",
+  "Nauclea | Rubiaceae",
+  "N. blancoi",
+  "N. glaberrima",
+  "N. glabra",
+  "N. obtusa",
+  "N. purpurea",
+  "Neesia altissima | Malvaceae",
+  "Nelitris | Rubiaceae",
+  "Nelumbium speciosum | Nymphaeaceae",
+  "Nepenthes | Nepenthaceae",
+  "N. alata",
+  "N. gracilis",
+  "N. ventricosa",
+  "Nephelium | Sapindaceae",
+  "N. glabrum",
+  "N. litchi",
+  "N. longana",
+  "Nicotiana tabacum | Solanaceae",
+  "Nipa fructicans | Palmae",
+  "Nymphaea lotus | Nymphaeaceae",
+  "N. stellata"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n177.jpg",
+ "transcribed": 23,
+ "entries": [
+  {
+   "page": 178,
+   "was": "M. Laurirorta",
+   "name": "N. laurifolia"
+  },
+  {
+   "page": 178,
+   "was": "Nauctea",
+   "name": "Nauclea",
+   "family": "Rubiaceae"
+  },
+  {
+   "page": 178,
+   "was": "?. BLANCOI",
+   "name": "N. blancoi"
+  },
+  {
+   "page": 178,
+   "was": "?. GLABERRIMA",
+   "name": "N. glaberrima"
+  },
+  {
+   "page": 178,
+   "was": "?. GLABRA",
+   "name": "N. glabra"
+  },
+  {
+   "page": 178,
+   "was": "?. AoABpTUNSA",
+   "name": "N. obtusa"
+  },
+  {
+   "page": 178,
+   "was": "N. atata",
+   "name": "N. alata"
+  },
+  {
+   "page": 178,
+   "was": "N. eracitis",
+   "name": "N. gracilis"
+  },
+  {
+   "page": 178,
+   "was": "N. exasruM",
+   "name": "N. glabrum"
+  },
+  {
+   "page": 178,
+   "was": "N. tircHt",
+   "name": "N. litchi"
+  },
+  {
+   "page": 178,
+   "was": "NympH2A torus",
+   "name": "Nymphaea lotus",
+   "family": "Nymphaeaceae"
+  }
+ ]
+}

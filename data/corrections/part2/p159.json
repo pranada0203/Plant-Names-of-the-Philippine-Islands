@@ -1,0 +1,75 @@
+{
+ "page": 159,
+ "transcription": [
+  "F. hispida",
+  "F. indica",
+  "F. luzonensis",
+  "F. minnahassae",
+  "F. payapa",
+  "F. pseudopalma",
+  "F. quercifolia",
+  "F. radicans",
+  "Fimbristylis miliacea | Cyperaceae",
+  "F. schoenoides",
+  "Flacourtea | Bixaceae",
+  "F. cataphracta",
+  "F. sepiaria",
+  "Flagellaria indica | Flagellariaceae",
+  "Flemingia | Leguminosae",
+  "F. strobilifera",
+  "Fleurya interrupta | Urticaceae",
+  "Fluggea obovata | Euphorbiaceae",
+  "Foeniculum vulgare | Umbelliferae",
+  "Fragaria indica | Rosaceae",
+  "Freycinetia | Pandanaceae",
+  "F. insignis",
+  "F. luzonensis"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n158.jpg",
+ "transcribed": 23,
+ "entries": [
+  {
+   "page": 159,
+   "was": "F. rnpica",
+   "name": "F. indica"
+  },
+  {
+   "page": 159,
+   "was": "F. ps--EupopALMA",
+   "name": "F. pseudopalma"
+  },
+  {
+   "page": 159,
+   "was": "F. QurrRcIroLIA",
+   "name": "F. quercifolia"
+  },
+  {
+   "page": 159,
+   "was": "Fracourrea",
+   "name": "Flacourtea",
+   "family": "Bixaceae"
+  },
+  {
+   "page": 159,
+   "was": "F. carapHracta",
+   "name": "F. cataphracta"
+  },
+  {
+   "page": 159,
+   "was": "FLAGELLARIA INDICA",
+   "name": "Flagellaria indica",
+   "family": "Flagellariaceae"
+  },
+  {
+   "page": 159,
+   "was": "FoENICULUM yULGARE",
+   "name": "Foeniculum vulgare",
+   "family": "Umbelliferae"
+  },
+  {
+   "page": 159,
+   "was": "F. rvstienis",
+   "name": "F. insignis"
+  }
+ ]
+}

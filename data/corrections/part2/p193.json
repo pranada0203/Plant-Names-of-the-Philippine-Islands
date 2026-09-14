@@ -1,0 +1,65 @@
+{
+ "page": 193,
+ "transcription": [
+  "S. nigrum",
+  "S. sanctum",
+  "S. tuberosum",
+  "S. verbascifolium",
+  "Sonneratia pagatpat | Lythraceae",
+  "Sophora tomentosa | Leguminosae",
+  "Sorgum vulgare | Gramineae",
+  "Sphaeranthus africanus | Compositae",
+  "S. indicus",
+  "Sphenoclea zeylanica | Campanulaceae",
+  "Spilanthes acmella | Compositae",
+  "Spinifex squarrosus | Gramineae",
+  "Spondias mangifera | Anacardiaceae",
+  "S. purpurea",
+  "Sponia | Urticaceae",
+  "Stephegyne | Rubiaceae",
+  "S. diversifolia",
+  "S. speciosa"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n192.jpg",
+ "transcribed": 18,
+ "entries": [
+  {
+   "page": 193,
+   "was": "S. sancrum",
+   "name": "S. sanctum"
+  },
+  {
+   "page": 193,
+   "was": "S. ruBerosum",
+   "name": "S. tuberosum"
+  },
+  {
+   "page": 193,
+   "was": "S. verBascirorium",
+   "name": "S. verbascifolium"
+  },
+  {
+   "page": 193,
+   "was": "SPHURANTHUS AFRICANUS",
+   "name": "Sphaeranthus africanus",
+   "family": "Compositae"
+  },
+  {
+   "page": 193,
+   "was": "SPINIFEX SQUARROSUS",
+   "name": "Spinifex squarrosus",
+   "family": "Gramineae"
+  },
+  {
+   "page": 193,
+   "was": "Sponta",
+   "name": "Sponia",
+   "family": "Urticaceae"
+  },
+  {
+   "page": 193,
+   "was": "S. DIVERSTFOLIA",
+   "name": "S. diversifolia"
+  }
+ ]
+}

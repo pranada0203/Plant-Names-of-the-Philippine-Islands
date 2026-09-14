@@ -1,0 +1,46 @@
+{
+ "page": 144,
+ "transcription": [
+  "Chrysopogon aciculatus | Gramineae",
+  "Cinnamomum | Lauraceae",
+  "C. mercadoi",
+  "C. pauciflorum",
+  "Cissampelos pareira | Menispermaceae",
+  "Citrus | Rutaceae",
+  "C. acida",
+  "C. aurantium",
+  "C. decumana",
+  "C. hystrix",
+  "C. medica",
+  "C. toroso",
+  "Claoxylon indicum | Euphorbiaceae",
+  "C. wallichianum",
+  "Clausena | Rutaceae",
+  "C. excavata",
+  "C. wampi",
+  "C. willdenovii",
+  "Cleidion | Euphorbiaceae",
+  "C. javanicum",
+  "Cleisistoma amabile | Orchidaceae",
+  "Clematis gouriana | Ranunculaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n143.jpg",
+ "transcribed": 22,
+ "entries": [
+  {
+   "page": 144,
+   "was": "C. acipA",
+   "name": "C. acida"
+  },
+  {
+   "page": 144,
+   "was": "C. mepicaA",
+   "name": "C. medica"
+  },
+  {
+   "page": 144,
+   "was": "C. excAvaTaA",
+   "name": "C. excavata"
+  }
+ ]
+}

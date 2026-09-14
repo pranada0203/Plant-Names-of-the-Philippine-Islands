@@ -219,7 +219,12 @@ function qualityFlags(head, taxa, unknownDialects) {
  * V.; Hangot, T." Never a head, even when the page has lost its indentation.
  */
 const VERN_LINE = new RegExp(
-  '^[A-Za-zé][A-Za-zé\'\\- ]{1,40}(?:,\\s*(?:' + LOC + ')\\.|;)',
+  '^[A-Za-zé][A-Za-zé\'\\- ]{1,40}' +
+  // Merrill gives a province in parentheses where he has no dialect:
+  // "Arbon (Paragua); Baraybay, T." Without this the line reads as a heading
+  // and becomes a junk taxon named after a native word.
+  '(?:\\s*\\([^)]{2,30}\\))?\\s*' +
+  '(?:,\\s*(?:' + LOC + ')\\.|;)',
   'i'
 );
 
@@ -231,24 +236,78 @@ const VERN_LINE = new RegExp(
  * shape of the line has to back it up. Case alone is not usable: genus-only
  * headings are set in small caps and OCR as "AcrosticHum", "Cyperus", "Berrya".
  */
+/**
+ * The scan sometimes loses the initial of an abbreviated genus, leaving the
+ * line as ". ARGENTEA Blume." or ">>. MINUTIFLORA Bedd." -- which also shifts
+ * it a few columns right, where it reads as a continuation line. Normalise the
+ * wreckage to "?." so the rest of the parser can treat it as what it is: a
+ * species under whatever genus is currently open.
+ */
+// The epithet after a lost initial is set in small caps, so OCR may give it a
+// lowercase head ("opoRATA" for ODORATA). Allow a short lowercase run before
+// the first capital; prose following a period never looks like that.
+const LOST_INITIAL = /^[\s>«»'"|]*\.\s+(?=[A-ZÉ]|[a-zé]{1,3}[A-ZÉ])/;
+
+/**
+ * Sometimes the initial is not lost but destroyed -- "Pp>p>. ROLFEI Vidal.",
+ * "&EES. RICINOIDES Muell. Arg." A first token carrying a non-letter, followed
+ * by something epithet-shaped (two or more capitals), is the same case. Without
+ * this the wreckage becomes a junk genus and the real species is orphaned under
+ * it. A sound initial ("A.") and a sound genus ("ALBIZZIA.") are all letters,
+ * so neither is touched.
+ */
+const DAMAGED_INITIAL =
+  /^\s*[A-Za-z&>«»|]{0,6}[^A-Za-z\s.][A-Za-z&>«»|]{0,6}\.\s+(?=[A-Za-zé]*[A-ZÉ][A-Za-zé]*[A-ZÉ])/;
+
+/**
+ * And sometimes the initial vanishes entirely, leaving the epithet indented a
+ * few columns where the "I." used to be:
+ *
+ *     I. BATATAS L. The sweet potato.
+ *         MARIANENSIS Chois. Tugui-tuguian, T.      <- was "I. MARIANENSIS"
+ *
+ * A genus heading is set flush left and carries either a second capitalised
+ * word ("ISCHAEMUM CILIARE") or a parenthesised family ("INDIGOFERA.
+ * (Leguminosae.)"). A *shifted* line with one all-caps word followed by a
+ * Titlecase authority is therefore a species that lost its initial. Requiring
+ * the indent keeps genuine flush-left headings out of this.
+ */
+const SHIFTED_EPITHET = /^\s{1,4}(?=[A-ZÉ]{4,}\s+[A-ZÉ][a-zé.])/;
+
+const normaliseLostInitial = (line) => {
+  if (LOST_INITIAL.test(line)) return line.replace(LOST_INITIAL, '?. ');
+  if (DAMAGED_INITIAL.test(line)) return line.replace(DAMAGED_INITIAL, '?. ');
+  if (SHIFTED_EPITHET.test(line)) return line.replace(SHIFTED_EPITHET, '?. ');
+  return line;
+};
+
 function isPartIIHead(line) {
-  if (/^\s{3,}/.test(line)) return false;                 // indented = continuation
-  const t = line.trim();
+  // Continuations sit at six columns or more; a head knocked three columns
+  // right by a lost initial must not be mistaken for one.
+  if (/^\s{5,}/.test(line)) return false;
+  const t = normaliseLostInitial(line).trim();
   if (!t || FURNITURE.test(t)) return false;
   if (/^[a-zé]/.test(t)) return false;                    // wrapped prose
   if (VERN_LINE.test(t)) return false;                    // native-name list
 
   const tokens = t.split(/\s+/);
   const first = tokens[0];
-  if (/^[A-Z]\.$/.test(first)) return true;               // "A. ASPERA Linn."
+  if (/^[A-Z?]\.$/.test(first)) return true;              // "A. ASPERA Linn."
 
   const letters = first.replace(/[^A-Za-z]/g, '');
   if (letters.length < 3) return false;
   const upper = (letters.match(/[A-Z]/g) || []).length;
   if (upper >= 2) return true;                            // caps or mangled small caps
-  // Titlecase genus standing alone: accept only if what follows looks like an
-  // entry body -- a parenthesised family, or another capitalised word.
-  return /^[A-Z][a-zé]/.test(first) && /^[(A-Z]/.test(tokens[1] || '');
+  // Titlecase genus standing alone ("Cyperus.", "Agaricus.", "Berrya.").
+  // The period matters: a heading's first token ends in one, while a wrapped
+  // native-name list ends its first token with a comma or semicolon
+  // ("Mobóti, V.;", "Cachtimba, Il.;", "Pamp.; Ligos;"). Without that test
+  // those lines become headings, and -- worse -- the genus for every
+  // abbreviated species beneath them, giving taxa like "Mobóti, bunius"
+  // where the book says Antidesma bunius.
+  return /^[A-Z][a-zé]/.test(first) &&
+    /\.$/.test(first) &&
+    /^[(A-Z]/.test(tokens[1] || '');
 }
 
 /**
@@ -270,6 +329,58 @@ function findFamily(text) {
   return null;
 }
 
+/**
+ * Two entries sometimes land on one OCR line -- "A. LUCIDA Benth. Tinaqui, V.
+ * A. ODORATISSIMA Benth." -- and the second is then swallowed as part of the
+ * first. Split on an interior abbreviated genus.
+ *
+ * The trap is the authority: "AFZELIA BIJUGA A. Gray." has the same shape. What
+ * separates them is that an epithet is set in small caps, so OCR gives it two or
+ * more capitals ("ODORATISSIMA", "LucipA"), while an author is Titlecase with
+ * exactly one ("Gray", "Br", "DC").
+ */
+const RUN_TOGETHER = /\s([A-Z?])\.\s+(?=[A-Za-zé]*[A-ZÉ][A-Za-zé]*[A-ZÉ])([A-Za-zé]{4,})(?=[\s.,;])/;
+
+function splitRunTogether(block) {
+  const out = [];
+  let text = block.lines.join('\n');
+
+  // Repeat: three or four short entries can share one OCR line.
+  for (;;) {
+    const m = RUN_TOGETHER.exec(text);
+    // Only split well past the start, or the entry's own heading would be cut.
+    if (!m || m.index < 15) break;
+    out.push({ page: block.page, lines: [text.slice(0, m.index)] });
+    text = text.slice(m.index).trim();
+  }
+
+  out.push({ page: block.page, lines: [text] });
+  return out;
+}
+
+/**
+ * Where a page's left margin actually is.
+ *
+ * Some pages come out of the scan uniformly indented -- page 127 sits sixteen
+ * columns in, page 149 six -- and indentation is what marks a continuation
+ * line, so the margin has to be measured rather than assumed to be zero.
+ *
+ * Not the plain minimum: one stray fragment at column 0 (page 149 has
+ * "i ia  Atimon, V.; ...") would put the margin there and dedent nothing,
+ * swallowing the whole page into the previous entry. Take instead the smallest
+ * indent that recurs, which an isolated artefact never does.
+ */
+function pageMargin(indents) {
+  if (!indents.length) return 0;
+  const counts = new Map();
+  for (const i of indents) counts.set(i, (counts.get(i) || 0) + 1);
+  const threshold = Math.max(2, Math.ceil(indents.length * 0.1));
+  const recurring = [...counts.entries()]
+    .filter(([, n]) => n >= threshold)
+    .map(([i]) => i);
+  return recurring.length ? Math.min(...recurring) : Math.min(...indents);
+}
+
 function parsePartII(pages, range) {
   const entries = [];
   const issues = [];
@@ -277,9 +388,11 @@ function parsePartII(pages, range) {
 
   const flush = () => {
     if (!block) return;
-    const parsed = parsePartIIBlock(block);
-    if (parsed) entries.push(parsed);
-    else issues.push({ part: 2, page: block.page, text: block.lines.join(' ').slice(0, 300) });
+    for (const piece of splitRunTogether(block)) {
+      const parsed = parsePartIIBlock(piece);
+      if (parsed) entries.push(parsed);
+      else issues.push({ part: 2, page: piece.page, text: piece.lines.join(' ').slice(0, 300) });
+    }
     block = null;
   };
 
@@ -289,17 +402,14 @@ function parsePartII(pages, range) {
     // relative to the page's own left margin, so measure it and dedent first,
     // or every line on such a page reads as a continuation and the entries are
     // swallowed by whatever preceded them.
-    // Measured from lines with real content: page 127 carries a 7-character
-    // scanning artefact at column 0, and taking a plain minimum would put the
-    // margin there and dedent nothing.
     const indents = pages[p].lines
       .filter((l) => l.trim().length >= 20)
       .map((l) => l.match(/^\s*/)[0].length);
-    const margin = indents.length ? Math.min(...indents) : 0;
+    const margin = pageMargin(indents);
 
     for (const rawLine of pages[p].lines) {
       if (!rawLine.trim()) continue;
-      const dedented = rawLine.slice(margin);
+      const dedented = normaliseLostInitial(rawLine.slice(margin));
       const t = N.repairOcr(dedented);
       if (FURNITURE.test(t)) continue;
       if (isPartIIHead(dedented)) {
@@ -390,7 +500,7 @@ function splitName(namePart) {
   const tokens = N.squash(namePart).split(/\s+/).filter(Boolean);
   if (!tokens.length) return { name: namePart, authority: null };
 
-  const abbreviated = /^[A-Z]\.$/.test(tokens[0]);
+  const abbreviated = /^[A-Z?]\.$/.test(tokens[0]);
   // Abbreviated genus: initial + epithet. Otherwise: genus + optional epithet.
   const take = abbreviated ? 2 : Math.min(2, tokens.length);
   const name = tokens.slice(0, take).join(' ');
@@ -431,7 +541,7 @@ function parsePartIIBlock(block) {
 
   // "A. ASPERA L." - an abbreviated genus. Consume it before any sentence split,
   // otherwise the period after the initial looks like the end of the name.
-  const abbr = /^([A-Z])\.\s+/.exec(text);
+  const abbr = /^([A-Z?])\.\s+/.exec(text);
 
   // Scientific name is everything before the family, else before the first sentence.
   let namePart = fam ? text.slice(0, fam.index) : text;
@@ -494,13 +604,13 @@ function main() {
   const I = parsePartI(pages, sections.partI, conf);
 
   // Hand-read headwords, from the page images. These override the scan.
-  const corrections = CORR.load(fs, path, path.join(OUT_DIR, 'corrections'));
-  const corr = CORR.apply(corrections, I.entries);
-  if (corrections) {
-    console.log('Fixes   ' + corr.applied + ' headwords corrected from the page images, ' +
-      corrections.files + ' pages transcribed' +
-      (corr.stale.length ? '  (' + corr.stale.length + ' stale, no longer match)' : ''));
-    for (const s of corr.stale.slice(0, 5)) {
+  const corrI = CORR.load(fs, path, path.join(OUT_DIR, 'corrections', 'part1'));
+  const resI = CORR.applyPartI(corrI, I.entries);
+  if (corrI) {
+    console.log('Fixes I ' + resI.applied + ' headwords corrected, ' +
+      corrI.files + ' pages transcribed' +
+      (resI.stale.length ? '  (' + resI.stale.length + ' stale)' : ''));
+    for (const s of resI.stale.slice(0, 5)) {
       console.log('          stale: p.' + s.page + ' "' + s.was + '" -> "' + s.headword + '"');
     }
   }
@@ -514,13 +624,32 @@ function main() {
     e.printedPage = conf && conf.printed ? conf.printed.get(e.page) || null : null;
   }
 
+  // Hand-read scientific names, before the genus expansion below -- a correction
+  // may repair the very genus that later lines abbreviate to an initial.
+  const corrII = CORR.load(fs, path, path.join(OUT_DIR, 'corrections', 'part2'));
+  const resII = CORR.applyPartII(corrII, II.entries);
+  if (corrII) {
+    console.log('Fixes II ' + resII.applied + ' scientific names corrected, ' +
+      corrII.files + ' pages transcribed' +
+      (resII.stale.length ? '  (' + resII.stale.length + ' stale)' : ''));
+    for (const s of resII.stale.slice(0, 5)) {
+      console.log('          stale: p.' + s.page + ' "' + s.was + '" -> "' + s.name + '"');
+    }
+  }
+
   // The book abbreviates repeated genera ("A. ASPERA" under ACHYRANTHES) and
   // states the family once, on the genus line. Carry both down to the species.
   let genus = null;
   let genusFamily = null;
   for (const e of II.entries) {
-    const abbr = /^([A-Z])\.\s+(.*)$/.exec(e.name);
-    const continuesGenus = abbr && genus && genus[0].toUpperCase() === abbr[1];
+    const abbr = /^([A-Z?])\.\s+(.*)$/.exec(e.name);
+    // An abbreviated name is a continuation by definition, so its initial need
+    // not match the open genus. Requiring a match was worse than useless: where
+    // the genus heading itself was misread ("TrpoMoEA" for IPOMOEA) every "I."
+    // species under it failed the check and reset the genus to its own epithet,
+    // giving "Hederacea marianensis". Corrections repair the heading, and are
+    // applied before this runs, so the expansion then names them correctly.
+    const continuesGenus = Boolean(abbr && genus);
 
     if (continuesGenus) {
       e.abbreviated = e.name;
@@ -550,7 +679,10 @@ function main() {
   const report = {
     generated: new Date().toISOString(),
     pages: pages.length,
-    corrections: { applied: corr.applied, stale: corr.stale.length },
+    corrections: {
+      partI: { applied: resI.applied, stale: resI.stale.length, pages: corrI ? corrI.files : 0 },
+      partII: { applied: resII.applied, stale: resII.stale.length, pages: corrII ? corrII.files : 0 },
+    },
     partI: {
       pdfPages: [sections.partI[0] + 1, sections.partI[1] + 1],
       entries: I.entries.length,

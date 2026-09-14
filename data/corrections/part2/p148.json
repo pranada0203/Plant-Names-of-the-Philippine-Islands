@@ -1,0 +1,77 @@
+{
+ "page": 148,
+ "transcription": [
+  "C. blancoi",
+  "C. celebicum",
+  "C. floribundum",
+  "C. formosum",
+  "Crescentia alata | Bignoniaceae",
+  "Crinum | Amaryllidaceae",
+  "C. amoenum",
+  "C. asiaticum",
+  "C. pratense",
+  "Crotalaria | Leguminosae",
+  "C. linifolia",
+  "C. quinquefolia",
+  "C. verrucosa",
+  "Croton | Euphorbiaceae",
+  "C. consanguineus",
+  "C. leiophyllus",
+  "C. muricatum",
+  "C. tiglium",
+  "Crudia blancoi | Leguminosae",
+  "Crypteronia | Lythraceae",
+  "C. paniculata",
+  "Cryptocarya | Lauraceae",
+  "C. densiflora",
+  "C. ilocana",
+  "C. villarii",
+  "Cubilia rumphii | Sapindaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n147.jpg",
+ "transcribed": 26,
+ "entries": [
+  {
+   "page": 148,
+   "was": "C. rorMosuM",
+   "name": "C. formosum"
+  },
+  {
+   "page": 148,
+   "was": "C. astaticum",
+   "name": "C. asiaticum"
+  },
+  {
+   "page": 148,
+   "was": "CroTaLaARIA L",
+   "name": "Crotalaria",
+   "family": "Leguminosae"
+  },
+  {
+   "page": 148,
+   "was": "C. uinirouia",
+   "name": "C. linifolia"
+  },
+  {
+   "page": 148,
+   "was": "C. Tia~ttum",
+   "name": "C. muricatum"
+  },
+  {
+   "page": 148,
+   "was": "CryprocaryA",
+   "name": "Cryptocarya",
+   "family": "Lauraceae"
+  },
+  {
+   "page": 148,
+   "was": "C. m1ocana",
+   "name": "C. ilocana"
+  },
+  {
+   "page": 148,
+   "was": "C. VILLARIT",
+   "name": "C. villarii"
+  }
+ ]
+}

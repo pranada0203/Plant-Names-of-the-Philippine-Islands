@@ -1,0 +1,47 @@
+{
+ "page": 186,
+ "transcription": [
+  "Polyporus",
+  "Polyscias nodosa | Araliaceae",
+  "Pometia | Sapindaceae",
+  "Pongamia glabra | Leguminosae",
+  "Portulaca oleracea | Portulacaceae",
+  "P. quadrifida",
+  "Potamogaton javanicus | Najadaceae",
+  "Pothos | Aroideae",
+  "P. cylindricus",
+  "Pouzolzia indica | Urticaceae",
+  "Premna | Verbenaceae",
+  "P. vestita",
+  "Prosopis juliflora | Leguminosae",
+  "Psidium guayava | Myrtaceae",
+  "Psophocarpus palustris | Leguminosae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n185.jpg",
+ "transcribed": 15,
+ "entries": [
+  {
+   "page": 186,
+   "was": "Potyporus",
+   "name": "Polyporus"
+  },
+  {
+   "page": 186,
+   "was": "PétHos",
+   "name": "Pothos",
+   "family": "Aroideae"
+  },
+  {
+   "page": 186,
+   "was": "PoUuzoLzIA INDICA",
+   "name": "Pouzolzia indica",
+   "family": "Urticaceae"
+  },
+  {
+   "page": 186,
+   "was": "PsipiumM GuAyAVvA",
+   "name": "Psidium guayava",
+   "family": "Myrtaceae"
+  }
+ ]
+}

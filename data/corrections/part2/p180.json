@@ -1,0 +1,44 @@
+{
+ "page": 180,
+ "transcription": [
+  "Ormosia calavensis | Leguminosae",
+  "Orophea | Anonaceae",
+  "O. enterocarpoidea",
+  "Oroxylum indicum | Bignoniaceae",
+  "Oryza minuta | Gramineae",
+  "O. sativa",
+  "Osbeckia chinensis | Melastomaceae",
+  "Osbornia octodonta | Myrtaceae",
+  "Osmelia | Samydaceae",
+  "Osmoxylon | Araliaceae",
+  "O. pulcherrimum",
+  "Otophora blancoi | Sapindaceae",
+  "O. spectabilis",
+  "Ottelia alismoides | Hydrocharidaceae",
+  "Oxalis acetosella | Geraniaceae",
+  "O. corniculata",
+  "Pachyrhyzus angulatus | Leguminosae",
+  "Paederia foetida | Rubiaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n179.jpg",
+ "transcribed": 18,
+ "entries": [
+  {
+   "page": 180,
+   "was": "OTTELIA ALISMOIDES",
+   "name": "Ottelia alismoides",
+   "family": "Hydrocharidaceae"
+  },
+  {
+   "page": 180,
+   "was": "OXALIS ACETOSELLA",
+   "name": "Oxalis acetosella",
+   "family": "Geraniaceae"
+  },
+  {
+   "page": 180,
+   "was": "O. cCoRNICULATA",
+   "name": "O. corniculata"
+  }
+ ]
+}

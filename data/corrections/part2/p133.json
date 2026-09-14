@@ -1,0 +1,47 @@
+{
+ "page": 133,
+ "transcription": [
+  "Antidesma | Euphorbiaceae",
+  "A. bunius",
+  "A. cumingii",
+  "A. ghaesembilla",
+  "Aphanthe | Urticaceae",
+  "Aporosa | Euphorbiaceae",
+  "Arachis hypogaea | Leguminosae",
+  "Aralia javanica | Araliaceae",
+  "Ardisia | Myrsinaceae",
+  "A. humilis",
+  "A. perrottetiana",
+  "A. philippinensis",
+  "A. pyramidalis",
+  "A. serrata",
+  "Areca | Palmae",
+  "A. alba",
+  "A. catechu",
+  "A. nibung",
+  "Arenga saccharifera | Palmae",
+  "Argemone mexicana | Papaveraceae",
+  "Argyreia | Convolvulaceae",
+  "A. nitida"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n132.jpg",
+ "transcribed": 22,
+ "entries": [
+  {
+   "page": 133,
+   "was": "A. cumineiI",
+   "name": "A. cumingii"
+  },
+  {
+   "page": 133,
+   "was": "ArpIsia",
+   "name": "Ardisia",
+   "family": "Myrsinaceae"
+  },
+  {
+   "page": 133,
+   "was": "A. carecnu",
+   "name": "A. catechu"
+  }
+ ]
+}

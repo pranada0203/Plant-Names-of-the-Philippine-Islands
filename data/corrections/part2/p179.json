@@ -1,0 +1,54 @@
+{
+ "page": 179,
+ "transcription": [
+  "Ochna squarrosa | Ochnaceae",
+  "Ochrocarpus | Guttiferae",
+  "O. pentapetalus",
+  "Ocimum basilicum | Labiatae",
+  "O. gratissimum",
+  "O. sanctum",
+  "Octomeles sumatrana | Datiscaceae",
+  "Olax | Olacineae",
+  "O. imbricata",
+  "Oldenlandia diffusa | Rubiaceae",
+  "Olea | Oleaceae",
+  "Onychium auratum | Filices",
+  "Ophiorrhiza | Rubiaceae",
+  "Opilia javanica | Olacineae",
+  "Opuntia cochinillifera | Cactaceae",
+  "Orania regalis | Palmae",
+  "Orchipeda foetida | Apocinaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n178.jpg",
+ "transcribed": 17,
+ "entries": [
+  {
+   "page": 179,
+   "was": "OcimMuUM BASILIcuUM",
+   "name": "Ocimum basilicum",
+   "family": "Labiatae"
+  },
+  {
+   "page": 179,
+   "was": "O. sANotuM",
+   "name": "O. sanctum"
+  },
+  {
+   "page": 179,
+   "was": "OuLAx",
+   "name": "Olax",
+   "family": "Olacineae"
+  },
+  {
+   "page": 179,
+   "was": "O. ImpBricaATA",
+   "name": "O. imbricata"
+  },
+  {
+   "page": 179,
+   "was": "OLtEA",
+   "name": "Olea",
+   "family": "Oleaceae"
+  }
+ ]
+}

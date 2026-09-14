@@ -1,0 +1,48 @@
+{
+ "page": 147,
+ "transcription": [
+  "Commelina benghalensis | Commelinaceae",
+  "C. communis",
+  "Commersonia platyphylla | Sterculiaceae",
+  "Connarus | Connaraceae",
+  "C. ferrugineus",
+  "Conocephalus | Urticaceae",
+  "C. acuminatus",
+  "C. erectus",
+  "C. ovatus",
+  "C. suaveolens",
+  "Corchorus acutangulus | Tiliaceae",
+  "C. capsularis",
+  "Cordia blancoi | Boraginaceae",
+  "C. subcordata",
+  "Cordyline terminalis | Liliaceae",
+  "Coriandrum sativum | Umbelliferae",
+  "Corypha | Palmae",
+  "C. umbraculifera",
+  "Costus | Scitamineae",
+  "Couthovia celebica | Loganiaceae",
+  "Crataeva religiosa | Capparidaceae",
+  "Cratoxylon | Hypericaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n146.jpg",
+ "transcribed": 22,
+ "entries": [
+  {
+   "page": 147,
+   "was": "C. commMuNIS",
+   "name": "C. communis"
+  },
+  {
+   "page": 147,
+   "was": "COMMERSONIA PLATYPHYILA",
+   "name": "Commersonia platyphylla",
+   "family": "Sterculiaceae"
+  },
+  {
+   "page": 147,
+   "was": "CorpIA BLANCO",
+   "name": "Cordia blancoi",
+   "family": "Boraginaceae"
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "page": 140,
+ "transcription": [
+  "Calotropis gigantea | Asclepiadaceae",
+  "Calyptrocalyx spicatus | Palmae",
+  "Cananga odorata | Anonaceae",
+  "Canarium | Burseraceae",
+  "C. commune",
+  "C. cumingii",
+  "C. luzonicum",
+  "C. multipinnatum",
+  "C. ovatum",
+  "Canavalia ensiformis | Leguminosae",
+  "C. obtusifolia",
+  "Canna indica | Scitamineae",
+  "Canscora diffusa | Gentianaceae",
+  "Canthium | Rubiaceae",
+  "C. arboreum",
+  "C. confertum",
+  "C. horridum"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n139.jpg",
+ "transcribed": 17,
+ "entries": [
+  {
+   "page": 140,
+   "was": "CANANGA opoRATA",
+   "name": "Cananga odorata",
+   "family": "Anonaceae"
+  },
+  {
+   "page": 140,
+   "was": "CaNaARIUM",
+   "name": "Canarium",
+   "family": "Burseraceae"
+  },
+  {
+   "page": 140,
+   "was": "C. cuminelt",
+   "name": "C. cumingii"
+  },
+  {
+   "page": 140,
+   "was": "C. osprusiroria",
+   "name": "C. obtusifolia"
+  },
+  {
+   "page": 140,
+   "was": "CANNA InpIcA",
+   "name": "Canna indica",
+   "family": "Scitamineae"
+  },
+  {
+   "page": 140,
+   "was": "CANSCORA DIFFUSA",
+   "name": "Canscora diffusa",
+   "family": "Gentianaceae"
+  }
+ ]
+}

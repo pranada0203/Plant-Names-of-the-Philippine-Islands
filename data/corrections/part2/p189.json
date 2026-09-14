@@ -1,0 +1,81 @@
+{
+ "page": 189,
+ "transcription": [
+  "R. conjugata",
+  "R. mucronata",
+  "Rhodamnia glabra | Myrtaceae",
+  "Rhododendron rosmarinifolium | Ericaceae",
+  "R. verticillatum",
+  "Ricinus communis | Euphorbiaceae",
+  "Rosmarinus officinalis | Labiatae",
+  "Rottboellia muricata | Gramineae",
+  "Rourea | Connaraceae",
+  "R. heterophylla",
+  "R. multitflora",
+  "Rubus | Rosaceae",
+  "R. glomeratus",
+  "R. parviflorus",
+  "R. rosaefolius",
+  "Ruta graveolens | Rutaceae",
+  "Ryparosa longipedunculata | Euphorbiaceae",
+  "Saccharum officinarum | Gramineae",
+  "Saccolabium | Orchidaceae",
+  "Saccopetalum | Anonaceae",
+  "S. longipes",
+  "Sageretia | Rhamnaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n188.jpg",
+ "transcribed": 22,
+ "entries": [
+  {
+   "page": 189,
+   "was": "R. consucata",
+   "name": "R. conjugata"
+  },
+  {
+   "page": 189,
+   "was": "RoureEa",
+   "name": "Rourea",
+   "family": "Connaraceae"
+  },
+  {
+   "page": 189,
+   "was": "Rusus",
+   "name": "Rubus",
+   "family": "Rosaceae"
+  },
+  {
+   "page": 189,
+   "was": "R. pARvirLorus",
+   "name": "R. parviflorus"
+  },
+  {
+   "page": 189,
+   "was": "R. RoS&¥Forius",
+   "name": "R. rosaefolius"
+  },
+  {
+   "page": 189,
+   "was": "RYPAROSA LONGIPEDUNCULATA",
+   "name": "Ryparosa longipedunculata",
+   "family": "Euphorbiaceae"
+  },
+  {
+   "page": 189,
+   "was": "SaccoLasium",
+   "name": "Saccolabium",
+   "family": "Orchidaceae"
+  },
+  {
+   "page": 189,
+   "was": "SAccoPpETALUM",
+   "name": "Saccopetalum",
+   "family": "Anonaceae"
+  },
+  {
+   "page": 189,
+   "was": "S. tonaipes",
+   "name": "S. longipes"
+  }
+ ]
+}

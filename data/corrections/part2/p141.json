@@ -1,0 +1,49 @@
+{
+ "page": 141,
+ "transcription": [
+  "C. mite",
+  "Capparis | Capparidaceae",
+  "C. aurantioides",
+  "C. horrida",
+  "C. micrantha",
+  "Capsicum minimum | Solanaceae",
+  "Capura | Sapindaceae",
+  "Carallia integerrima | Rhizophoraceae",
+  "Cardiospermum halicacabum | Sapindaceae",
+  "Carica papaya | Passifloraceae",
+  "Carthamus tinctorius | Compositae",
+  "Carum copticum | Umbelliferae",
+  "Caryota | Palmae",
+  "C. cumingii",
+  "C. rumphiana",
+  "C. urens",
+  "Casearia | Samydaceae",
+  "C. cinerea"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n140.jpg",
+ "transcribed": 18,
+ "entries": [
+  {
+   "page": 141,
+   "was": "CApPARIsS",
+   "name": "Capparis",
+   "family": "Capparidaceae"
+  },
+  {
+   "page": 141,
+   "was": "C. HorripA",
+   "name": "C. horrida"
+  },
+  {
+   "page": 141,
+   "was": "Caryora",
+   "name": "Caryota",
+   "family": "Palmae"
+  },
+  {
+   "page": 141,
+   "was": "C. cumineit",
+   "name": "C. cumingii"
+  }
+ ]
+}

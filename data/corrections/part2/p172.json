@@ -1,0 +1,85 @@
+{
+ "page": 172,
+ "transcription": [
+  "Lophopetalum | Celastraceae",
+  "L. toxicum",
+  "Loranthus | Loranthaceae",
+  "L. ampullaceus",
+  "L. blancoanus",
+  "L. pauciflorus",
+  "L. pentandrus",
+  "L. philippinensis",
+  "L. spicifer",
+  "Lucuma mammosa | Sapotaceae",
+  "Luffa acutangula | Cucurbitaceae",
+  "L. aegyptiaca",
+  "Lumnitzera purpurea | Combretaceae",
+  "Lunasia | Rutaceae",
+  "L. amara",
+  "L. grandiflora",
+  "Lycopersicum esculentum | Solanaceae",
+  "Lycopodium | Lycopodiaceae",
+  "Lygodium dichotomum | Filices",
+  "L. scandens",
+  "Maba buxifolia | Ebenaceae",
+  "Macaranga | Euphorbiaceae",
+  "M. bicolor"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n171.jpg",
+ "transcribed": 23,
+ "entries": [
+  {
+   "page": 172,
+   "was": "?. AMPULLACEUS",
+   "name": "L. ampullaceus"
+  },
+  {
+   "page": 172,
+   "was": "?. BLANCOANUS",
+   "name": "L. blancoanus"
+  },
+  {
+   "page": 172,
+   "was": "?. PAUCIFLORUS",
+   "name": "L. pauciflorus"
+  },
+  {
+   "page": 172,
+   "was": "?. PENTANDRUS",
+   "name": "L. pentandrus"
+  },
+  {
+   "page": 172,
+   "was": "?. PHILIPPINENSIS",
+   "name": "L. philippinensis"
+  },
+  {
+   "page": 172,
+   "was": "L. Ar@ypTiaca",
+   "name": "L. aegyptiaca"
+  },
+  {
+   "page": 172,
+   "was": "Lycopopium",
+   "name": "Lycopodium",
+   "family": "Lycopodiaceae"
+  },
+  {
+   "page": 172,
+   "was": "LyagopIum picHotoMuM",
+   "name": "Lygodium dichotomum",
+   "family": "Filices"
+  },
+  {
+   "page": 172,
+   "was": "'MABA BUXIFOLIA",
+   "name": "Maba buxifolia",
+   "family": "Ebenaceae"
+  },
+  {
+   "page": 172,
+   "was": "M. Bicotor",
+   "name": "M. bicolor"
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "page": 200,
+ "transcription": [
+  "V. capriolata",
+  "V. carnosa",
+  "V. geniculata",
+  "V. latifolia",
+  "V. lanceolaria",
+  "V. quadrangularis",
+  "V. repens",
+  "Voacanga | Apocinaceae",
+  "Wallichia tremula | Palmae",
+  "Walsura robusta | Meliaceae",
+  "Webera | Rubiaceae",
+  "Wedelia | Compositae",
+  "Weinmannia luzoniensis | Saxifragaceae",
+  "Wendlanoia luzoniensis | Rubiaceae",
+  "Wikstroemia indica | Thymelaeaceae",
+  "W. ovata",
+  "Wolffia schleideni | Lemnaceae",
+  "Wormia luzonensis | Dilleniaceae",
+  "Wrightia | Apocinaceae",
+  "W. ovata",
+  "Xanthophyllum | Polygalaceae",
+  "Xanthostemon verdergonianus | Myrtaceae",
+  "Xerotes longifolia | Juncaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n199.jpg",
+ "transcribed": 23,
+ "entries": [
+  {
+   "page": 200,
+   "was": "WIKSTROEMIA INDICA",
+   "name": "Wikstroemia indica",
+   "family": "Thymelaeaceae"
+  },
+  {
+   "page": 200,
+   "was": "WOoLFFIA SCHLEIDENI",
+   "name": "Wolffia schleideni",
+   "family": "Lemnaceae"
+  },
+  {
+   "page": 200,
+   "was": "WRIGHTIA (7)",
+   "name": "Wrightia",
+   "family": "Apocinaceae"
+  }
+ ]
+}

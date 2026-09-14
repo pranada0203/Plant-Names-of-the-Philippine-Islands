@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-14T04:51:22.986Z",
+  "generated": "2026-09-14T07:44:05.565Z",
   "ocrConfidence": {
     "description": "OCR confidence by how the word is set on the page (uncorrected entries only)",
     "corrected": 5000,
@@ -11,9 +11,9 @@
       "underFiftyPercent": 41.7
     },
     "romanScientificNames": {
-      "n": 1395,
-      "median": 86,
-      "underFifty": 380
+      "n": 1448,
+      "median": 91,
+      "underFifty": 84
     },
     "worstReadings": [
       {
@@ -92,11 +92,11 @@
   },
   "crossHalfCheck": {
     "description": "Native names printed in Part II, looked up in Part I",
-    "total": 2934,
-    "matchedExactly": 1375,
-    "matchedWithinOneLetter": 841,
-    "unmatched": 718,
-    "unmatchedPercent": 24.5
+    "total": 3258,
+    "matchedExactly": 1543,
+    "matchedWithinOneLetter": 955,
+    "unmatched": 760,
+    "unmatchedPercent": 23.3
   },
   "implausibleHeadwords": {
     "description": "Part I headwords with no vowels or impossible consonant runs",
@@ -126,13 +126,8 @@
     },
     {
       "name": "Malacbée",
-      "under": "Acalypha tilihfolia",
+      "under": "Acalypha tiliaefolia",
       "page": 127
-    },
-    {
-      "name": "Atigod",
-      "under": "Achyranthes optusifolia",
-      "page": 128
     },
     {
       "name": "Bihay",
@@ -146,17 +141,17 @@
     },
     {
       "name": "Fil",
-      "under": "Aptantumm lunulatum",
+      "under": "Adiantum lunulatum",
       "page": 128
     },
     {
       "name": "Gayéman-manée",
-      "under": "Aptantumm lunulatum",
+      "under": "Adiantum lunulatum",
       "page": 128
     },
     {
       "name": "Loémot-lométan",
-      "under": "Aptantumm lunulatum",
+      "under": "Adiantum lunulatum",
       "page": 128
     },
     {
@@ -185,33 +180,63 @@
       "page": 129
     },
     {
+      "name": "Cacéo-caciuan",
+      "under": "Aglaia",
+      "page": 129
+    },
+    {
+      "name": "Guiséc-guiséc",
+      "under": "Aglaia",
+      "page": 129
+    },
+    {
+      "name": "Malasiging-pulaé",
+      "under": "Aglaia",
+      "page": 129
+    },
+    {
+      "name": "Tibeél",
+      "under": "Aglaia",
+      "page": 129
+    },
+    {
+      "name": "Tingeél",
+      "under": "Aglaia",
+      "page": 129
+    },
+    {
+      "name": "Gdégong-bisiya",
+      "under": "Aglaia grandis",
+      "page": 129
+    },
+    {
       "name": "Fil",
-      "under": "Aeiata",
+      "under": "Aglaia odorata",
       "page": 129
     },
     {
       "name": "Pusoptiso",
-      "under": "Agrostistachys masoana",
+      "under": "Agrostistachys maesoana",
       "page": 129
     },
     {
       "name": "Anandipla",
-      "under": "Albizzzia lucipa",
+      "under": "Albizzia procera",
       "page": 129
     },
     {
       "name": "Adan",
-      "under": "Albizzzia lucipa",
+      "under": "Albizzia procera",
       "page": 129
     },
     {
       "name": "Bofe",
-      "under": "Albizzzia lucipa",
+      "under": "Albizzia procera",
       "page": 129
     },
     {
       "name": "Pathod",
-      "under": "Albizzzia lucipa",
+      "under": "Albizzia procera",
       "page": 129
     },
     {
@@ -266,7 +291,7 @@
     },
     {
       "name": "Lamptiyang-nga-maputi",
-      "under": "Amomum caardamomum",
+      "under": "Amomum cardamomum",
       "page": 131
     },
     {
@@ -282,31 +307,6 @@
     {
       "name": "Casty",
       "under": "Anacardium occidentale",
-      "page": 132
-    },
-    {
-      "name": "Balibad",
-      "under": "Anacardium occidentale",
-      "page": 132
-    },
-    {
-      "name": "Yabas Toys",
-      "under": "Anamirta cocculus",
-      "page": 132
-    },
-    {
-      "name": "Fil",
-      "under": "Pamp.; abttra,",
-      "page": 132
-    },
-    {
-      "name": "Fil",
-      "under": "Malisa (camarines);",
-      "page": 132
-    },
-    {
-      "name": "Fil",
-      "under": "Andropogon muricatus",
       "page": 132
     }
   ]

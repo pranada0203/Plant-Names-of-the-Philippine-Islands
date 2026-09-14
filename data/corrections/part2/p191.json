@@ -1,0 +1,52 @@
+{
+ "page": 191,
+ "transcription": [
+  "Scirpus | Cyperaceae",
+  "S. mucronata",
+  "Scleria | Cyperaceae",
+  "Scolopia | Bixaceae",
+  "S. crenata",
+  "S. dasyanthera",
+  "S. roxburghii",
+  "Scoparia dulcis | Scrophulariaceae",
+  "Scyphiphora hydrophyllacea | Rubiaceae",
+  "Selaginella | Selaginellaceae",
+  "S. caulescens",
+  "Semecarpus | Anacardiaceae",
+  "S. anacardium",
+  "S. gigantifolia",
+  "S. macrophylla",
+  "S. perrottetii",
+  "Serianthes grandiflora | Leguminosae",
+  "Sesamum indicum | Pedaliaceae",
+  "Sesbania aegyptiaca | Leguminosae",
+  "S. grandiflora",
+  "Sesuvium portulacastrum | Ficoideae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n190.jpg",
+ "transcribed": 21,
+ "entries": [
+  {
+   "page": 191,
+   "was": "Scontopia",
+   "name": "Scolopia",
+   "family": "Bixaceae"
+  },
+  {
+   "page": 191,
+   "was": "ScopartA puLtctis",
+   "name": "Scoparia dulcis",
+   "family": "Scrophulariaceae"
+  },
+  {
+   "page": 191,
+   "was": "?. MACROPHYLLA",
+   "name": "S. macrophylla"
+  },
+  {
+   "page": 191,
+   "was": "S. PERROTTETIT",
+   "name": "S. perrottetii"
+  }
+ ]
+}

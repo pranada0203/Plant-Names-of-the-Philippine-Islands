@@ -1,0 +1,72 @@
+{
+ "page": 150,
+ "transcription": [
+  "Cynometra | Leguminosae",
+  "C. inaequalifolia",
+  "C. ramiflora",
+  "Cynomorium philippinense",
+  "Cyperus | Cyperaceae",
+  "C. difformis",
+  "C. elatus",
+  "C. rotundus",
+  "Dactyloctenium aegyptium | Gramineae",
+  "Daemonorops | Palmae",
+  "Dalbergia | Leguminosae",
+  "D. ferruginea",
+  "D. lanceolaria",
+  "D. spinosa",
+  "Dalea nigra | Leguminosae",
+  "Datura alba | Solanaceae",
+  "D. fastuosa",
+  "D. metel",
+  "Decaspermum | Myrtaceae",
+  "D. blancoi",
+  "D. paniculatum"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n149.jpg",
+ "transcribed": 21,
+ "entries": [
+  {
+   "page": 150,
+   "was": "C. pirrorMis",
+   "name": "C. difformis"
+  },
+  {
+   "page": 150,
+   "was": "C. roruNnpus",
+   "name": "C. rotundus"
+  },
+  {
+   "page": 150,
+   "was": "DACTYLOCTENIUM A:GYPTIUM",
+   "name": "Dactyloctenium aegyptium",
+   "family": "Gramineae"
+  },
+  {
+   "page": 150,
+   "was": "D. sprnosa",
+   "name": "D. spinosa"
+  },
+  {
+   "page": 150,
+   "was": "DatTurRA ALBA",
+   "name": "Datura alba",
+   "family": "Solanaceae"
+  },
+  {
+   "page": 150,
+   "was": "D. rastuosa",
+   "name": "D. fastuosa"
+  },
+  {
+   "page": 150,
+   "was": "D. Meret",
+   "name": "D. metel"
+  },
+  {
+   "page": 150,
+   "was": "D. BLANcor",
+   "name": "D. blancoi"
+  }
+ ]
+}

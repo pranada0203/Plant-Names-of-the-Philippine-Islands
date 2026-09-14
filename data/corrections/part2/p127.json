@@ -1,0 +1,43 @@
+{
+ "page": 127,
+ "transcription": [
+  "Abroma alata | Sterculiaceae",
+  "A. augusta",
+  "A. fastuosa",
+  "Abrus precatorius | Leguminosae",
+  "Abutilon indicum | Malvaceae",
+  "Acacia | Leguminosae",
+  "A. concinna",
+  "A. farnesiana",
+  "Acalypha | Urticaceae",
+  "A. grandis",
+  "A. stipulacea",
+  "A. tiliaefolia",
+  "Acanthus ilicifolius | Acanthaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n126.jpg",
+ "transcribed": 13,
+ "entries": [
+  {
+   "page": 127,
+   "was": "A. FASTUOSA,",
+   "name": "A. fastuosa"
+  },
+  {
+   "page": 127,
+   "was": "A. concinnaA",
+   "name": "A. concinna"
+  },
+  {
+   "page": 127,
+   "was": "A. TILIHFOLIA",
+   "name": "A. tiliaefolia"
+  },
+  {
+   "page": 127,
+   "was": "CANTHUS IniciFotius",
+   "name": "Acanthus ilicifolius",
+   "family": "Acanthaceae"
+  }
+ ]
+}

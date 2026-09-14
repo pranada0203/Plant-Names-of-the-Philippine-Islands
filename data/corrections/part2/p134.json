@@ -1,0 +1,66 @@
+{
+ "page": 134,
+ "transcription": [
+  "Aristolochia tagala | Aristolochiaceae",
+  "Artabotrys | Anonaceae",
+  "A. odoratissimus",
+  "Artemesia grata | Compositae",
+  "A. vulgaris",
+  "Arthophyllum | Araliaceae",
+  "Artocarpus | Urticaceae",
+  "A. blumei",
+  "A. camansi",
+  "A. cumingiana",
+  "A. incisa",
+  "A. integrifolia",
+  "A. lamellosa",
+  "A. lanceolata",
+  "A. nitida",
+  "A. odoratissima",
+  "Arundinella nervosa | Gramineae",
+  "Arytera rufescens | Sapindaceae",
+  "Asclepias curassavica | Asclepiadaceae",
+  "Asplenium nidus | Filices"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n133.jpg",
+ "transcribed": 20,
+ "entries": [
+  {
+   "page": 134,
+   "was": "A. oporATIssImus",
+   "name": "A. odoratissimus"
+  },
+  {
+   "page": 134,
+   "was": "A. yuLGARIS",
+   "name": "A. vulgaris"
+  },
+  {
+   "page": 134,
+   "was": "ARTOCcARPUS",
+   "name": "Artocarpus",
+   "family": "Urticaceae"
+  },
+  {
+   "page": 134,
+   "was": "A. BLUME!",
+   "name": "A. blumei"
+  },
+  {
+   "page": 134,
+   "was": "A. 1nctsA",
+   "name": "A. incisa"
+  },
+  {
+   "page": 134,
+   "was": "A. nitipA",
+   "name": "A. nitida"
+  },
+  {
+   "page": 134,
+   "was": "ASPLENIUM Nipus",
+   "name": "Asplenium nidus",
+   "family": "Filices"
+  }
+ ]
+}

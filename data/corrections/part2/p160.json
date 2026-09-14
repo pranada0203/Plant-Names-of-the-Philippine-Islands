@@ -1,0 +1,51 @@
+{
+ "page": 160,
+ "transcription": [
+  "Ganophyllum falcatum | Burseraceae",
+  "Garcinia | Guttiferae",
+  "G. cambogia",
+  "G. cornea",
+  "G. cowa",
+  "G. duodecandra",
+  "G. mangostana",
+  "G. ovalifolia",
+  "G. venulosa",
+  "Gardenia | Rubiaceae",
+  "G. obscura",
+  "G. pseudopsidium",
+  "Garuga | Burseraceae",
+  "G. floribunda",
+  "Gaultheria | Ericaceae",
+  "Gelonium | Euphorbiaceae",
+  "G. glomerulatum",
+  "Geodorum semicristatum | Orchidaceae",
+  "Geunsia cumingiana | Verbenaceae",
+  "Gironniera celtidifolia | Urticaceae",
+  "Gliricidia maculata | Leguminosae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n159.jpg",
+ "transcribed": 21,
+ "entries": [
+  {
+   "page": 160,
+   "was": "?. CAMBOGIA",
+   "name": "G. cambogia"
+  },
+  {
+   "page": 160,
+   "was": "F. DUODECANDRA",
+   "name": "G. duodecandra"
+  },
+  {
+   "page": 160,
+   "was": "G. opscurRA",
+   "name": "G. obscura"
+  },
+  {
+   "page": 160,
+   "was": "Garuca",
+   "name": "Garuga",
+   "family": "Burseraceae"
+  }
+ ]
+}

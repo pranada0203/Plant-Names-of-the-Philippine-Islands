@@ -1,0 +1,43 @@
+{
+ "page": 128,
+ "transcription": [
+  "Achras sapota | Sapotaceae",
+  "Achyranthes aquatica | Amarantaceae",
+  "A. aspera",
+  "A. obtusifolia",
+  "Acorus calamus | Aroideae",
+  "Acrostichum | Filices",
+  "A. aureum",
+  "Adenanthera | Leguminosae",
+  "A. pavonina",
+  "Adenostemma viscosum | Compositae",
+  "Adiantum | Filices",
+  "A. lunulatum",
+  "Adina polycephala | Rubiaceae",
+  "A. philippinensis",
+  "Aegiceras corniculatum | Myrsinaceae",
+  "A. floridum",
+  "Aegle decandra | Rutaceae",
+  "Afzelia bijuga | Leguminosae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n127.jpg",
+ "transcribed": 18,
+ "entries": [
+  {
+   "page": 128,
+   "was": "A. opTusIFoLIA",
+   "name": "A. obtusifolia"
+  },
+  {
+   "page": 128,
+   "was": "AptantuMm",
+   "name": "Adiantum",
+   "family": "Filices"
+  },
+  {
+   "page": 128,
+   "was": "A. FLoripuM",
+   "name": "A. floridum"
+  }
+ ]
+}

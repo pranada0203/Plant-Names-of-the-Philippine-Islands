@@ -1,0 +1,81 @@
+{
+ "page": 153,
+ "transcription": [
+  "Dipterocarpus | Dipterocarpaceae",
+  "D. affinis",
+  "D. grandiflorus",
+  "D. mayapis",
+  "D. pilosus",
+  "D. polyspermus",
+  "D. vernicifluus",
+  "Dittelasma rarak | Sapindaceae",
+  "Dodonaea viscosa | Sapindaceae",
+  "Dolichandrone spathacea | Bignoniaceae",
+  "Dolichos | Leguminosae",
+  "D. echinulatus",
+  "D. lablab",
+  "D. sesquipedalis",
+  "Donax arundastrum | Marantaceae",
+  "Dracaena | Liliaceae",
+  "Dracontomelum | Anacardiaceae",
+  "D. cumingianum",
+  "D. mangiferum",
+  "Drosera indica | Droseraceae",
+  "Duabanga moluccana | Lythraceae",
+  "Durio zibethinus | Malvaceae",
+  "Dysoxylum | Meliaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n152.jpg",
+ "transcribed": 23,
+ "entries": [
+  {
+   "page": 153,
+   "was": "?. AFFINIS",
+   "name": "D. affinis"
+  },
+  {
+   "page": 153,
+   "was": "?. GRANDIFLORUS",
+   "name": "D. grandiflorus"
+  },
+  {
+   "page": 153,
+   "was": "?. MAYAPIS",
+   "name": "D. mayapis"
+  },
+  {
+   "page": 153,
+   "was": "?. PILOSUS",
+   "name": "D. pilosus"
+  },
+  {
+   "page": 153,
+   "was": "?. POLYSPERMUS",
+   "name": "D. polyspermus"
+  },
+  {
+   "page": 153,
+   "was": "DIrTELASMA RARAK",
+   "name": "Dittelasma rarak",
+   "family": "Sapindaceae"
+  },
+  {
+   "page": 153,
+   "was": "DoponakA viscosa",
+   "name": "Dodonaea viscosa",
+   "family": "Sapindaceae"
+  },
+  {
+   "page": 153,
+   "was": "Doricuos",
+   "name": "Dolichos",
+   "family": "Leguminosae"
+  },
+  {
+   "page": 153,
+   "was": "Dysoxytum",
+   "name": "Dysoxylum",
+   "family": "Meliaceae"
+  }
+ ]
+}

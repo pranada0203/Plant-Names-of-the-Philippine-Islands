@@ -9,36 +9,41 @@ that works on desktop and mobile.
 
 ## Where things stand
 
-**Part I — the native-name index — has been transcribed by eye from the page
-images and is sound.** All 107 pages, 5,000 headwords corrected. ÍPIL, MOLÁVE,
-GUÍJO, YÁCAL, TÍNDALO and the rest are searchable; before the pass the scan read
-ÍPIL as "fprz" and a search for it returned nothing.
+**Both halves of the book have been transcribed by eye from the page images.**
+All 181 pages: 5,000 native headwords and 511 scientific names corrected. ÍPIL,
+MOLÁVE, GUÍJO, YÁCAL, TÍNDALO and the rest are searchable; before the pass the
+scan read ÍPIL as "fprz" and a search for it returned nothing.
 
-**Part II — the scientific index — has not been.** Its binomials and prose are
-still as the scanner read them, so some taxa are duplicated under misread names
-(*Pterocarpus indicus* also appears as "Prerocarpus rnpicus") and Merrill's
-notes carry garbled fragments. See [docs/source-quality.md](docs/source-quality.md)
-for what that costs and what fixing it would take.
+Measured by how well the book's two independently OCR'd halves agree with each
+other, and by how many headwords are words no Philippine language could produce:
 
-What the vision pass changed, measured by how well the book's two independently
-OCR'd halves agree with each other:
+| | Before | After Part I | After Part II |
+|---|---:|---:|---:|
+| Cross-half agreement, exact | 21.1% | 46.9% | **47.4%** |
+| Cross-half, unreconcilable | 51.9% | 24.5% | **23.3%** |
+| Impossible headwords | 175 | 0 | **0** |
+| Distinct taxa | 2,149 | 2,102 | **1,709** |
 
-| | Before | After |
-|---|---:|---:|
-| Cross-half agreement, exact | 21.1% | **46.9%** |
-| Cross-half, unreconcilable | 51.9% | **24.5%** |
-| Headwords no language could produce | 175 | **0** |
+The taxon count *fell* because it had been inflated: *Pterocarpus indicus* also
+existed as "Prerocarpus rnpicus", *Hopea plagata* as both "Hopea palagata" and
+"H. pragata". Correcting the scientific index merged them.
+
+Still outstanding: Part I also prints a scientific name on every line, and those
+were not transcribed, so 283 of 1,709 taxa remain as stubs of a misread binomial.
+See [docs/source-quality.md](docs/source-quality.md) — automatic merging is not
+safe, and the reasons are worth reading before anyone tries it.
 
 Current extraction, from `npm run build`:
 
 | | |
 |---|---|
 | Native names | 4,395 |
-| Plants (taxa) | 2,102 |
-| Plant families | 137 |
-| Name → plant links | 5,727 |
-| Taxa with Merrill's notes | 947 |
-| Headwords corrected from the page images | 5,000 |
+| Plants (taxa) | 1,709 |
+| Plant families | 147 |
+| Name → plant links | 5,275 |
+| Taxa with Merrill's notes | 1,001 |
+| Taxa with a family | 1,437 |
+| Entries corrected from the page images | 5,511 |
 | Lines the parser could not read | 70 |
 
 ## Quick start
@@ -85,20 +90,21 @@ Supporting tools:
 | Script | Does |
 |---|---|
 | `pipeline/show-page.js <page>` | Prints what the pipeline currently believes a page says |
-| `pipeline/ingest-transcription.js <page>` | Turns a transcription on stdin into a correction file |
+| `pipeline/ingest-transcription.js <page>` | Turns a Part I transcription on stdin into a correction file |
+| `pipeline/ingest-part2.js <page>` | The same for Part II scientific names |
 | `pipeline/rekey-corrections.js` | Re-derives every correction after a parser change |
 
-Stage 1b is the only one that touches the network; everything downstream works
+Stages 1b and 1c are the only ones that touch the network; everything downstream works
 without it, just with no confidence scores.
 
 ### What the parser has to cope with
 
 The book is two indexes over the same facts, printed differently:
 
-- **Part I** (pp. 11–117 of the original, 19–127 of the PDF) — native name →
+- **Part I** (pp. 11–118 of the original, 19–126 of the PDF) — native name →
   scientific name, one entry per line:
   `ANAHAO, T., V. Licuala spectabilis Miq.`
-- **Part II** (pp. 120–193 / 128–201) — scientific name → family, descriptive
+- **Part II** (pp. 119–193 / 127–201) — scientific name → family, descriptive
   note, and the native names for it, hanging-indented across several lines.
 
 Part II is where the family and Merrill's notes live, so the join between the
@@ -119,8 +125,8 @@ shows both.
   grows, split the search index from the entry bodies.
 - **Honesty over polish.** Where the scan is doubtful the app says so, on the
   entry, rather than presenting a confident wrong answer.
-- **Corrections are data, not edits.** Hand-read headwords live in
-  `data/corrections/` and are applied during the build. Editing the generated
+- **Corrections are data, not edits.** Hand-read entries live in
+  `data/corrections/part1/` and `part2/` and are applied during the build. Editing the generated
   files would not survive `npm run build`.
 - **Theme-aware and responsive** — two panes on desktop, list-then-detail on
   phones, light and dark.

@@ -1,0 +1,62 @@
+{
+ "page": 163,
+ "transcription": [
+  "Habranthus | Amaryllidaceae",
+  "H. versicolor",
+  "Harpullia arborea | Sapindaceae",
+  "H. blancoi",
+  "Harrisonia bennetii | Simarubiaceae",
+  "Hedychium | Scitamineae",
+  "H. coronarium",
+  "H. hasseltii",
+  "Helicia cumingiana | Proteaceae",
+  "Heliconia | Scitamineae",
+  "Helioconiopsis amboinensis | Scitamineae",
+  "Helicteres | Sterculiaceae",
+  "H. spicata",
+  "Heliotropium indicum | Boraginaceae",
+  "Hemigraphis repens | Acanthaceae",
+  "Hemigyrosa | Sapindaceae",
+  "H. canescens",
+  "Henslowia | Santalaceae",
+  "Heptapleurum | Araliaceae",
+  "H. caudatum"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n162.jpg",
+ "transcribed": 20,
+ "entries": [
+  {
+   "page": 163,
+   "was": "H. versicoLtor",
+   "name": "H. versicolor"
+  },
+  {
+   "page": 163,
+   "was": "H. BLANCOL",
+   "name": "H. blancoi"
+  },
+  {
+   "page": 163,
+   "was": "HARRISONIA BENNETIL",
+   "name": "Harrisonia bennetii",
+   "family": "Simarubiaceae"
+  },
+  {
+   "page": 163,
+   "was": "HepycHiumM",
+   "name": "Hedychium",
+   "family": "Scitamineae"
+  },
+  {
+   "page": 163,
+   "was": "H. HASSELTIT",
+   "name": "H. hasseltii"
+  },
+  {
+   "page": 163,
+   "was": "Hemicyrosa",
+   "name": "Hemigyrosa",
+   "family": "Sapindaceae"
+  }
+ ]
+}

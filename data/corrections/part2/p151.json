@@ -1,0 +1,70 @@
+{
+ "page": 151,
+ "transcription": [
+  "Deeringia celosioides | Amarantaceae",
+  "D. indica",
+  "Dehaasia | Lauraceae",
+  "Delima sarmentosa | Dilleniaceae",
+  "Dendrobium | Orchidaceae",
+  "D. lunatum",
+  "Dendrocalamus | Gramineae",
+  "D. flagellifer",
+  "D. membranaceus",
+  "Dentella repens | Rubiaceae",
+  "Derris | Leguminosae",
+  "D. scandens",
+  "D. sinuata",
+  "D. uliginosa",
+  "Desmodium | Leguminosae",
+  "D. laxiflorum",
+  "D. pulchellum",
+  "D. triflorum",
+  "D. umbellatum",
+  "Deutzia pulchra | Saxifragaceae",
+  "Dictyoneura | Malpighiaceae",
+  "Digitaria | Gramineae",
+  "Dillenia philippinensis | Dilleniaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n150.jpg",
+ "transcribed": 23,
+ "entries": [
+  {
+   "page": 151,
+   "was": "D. mnpIcA",
+   "name": "D. indica"
+  },
+  {
+   "page": 151,
+   "was": "D. styuatTa",
+   "name": "D. sinuata"
+  },
+  {
+   "page": 151,
+   "was": "D. uLieryosa",
+   "name": "D. uliginosa"
+  },
+  {
+   "page": 151,
+   "was": "DesMopium",
+   "name": "Desmodium",
+   "family": "Leguminosae"
+  },
+  {
+   "page": 151,
+   "was": "D. TrRirLoruM",
+   "name": "D. triflorum"
+  },
+  {
+   "page": 151,
+   "was": "Dicryoneura",
+   "name": "Dictyoneura",
+   "family": "Malpighiaceae"
+  },
+  {
+   "page": 151,
+   "was": "DiciITariA",
+   "name": "Digitaria",
+   "family": "Gramineae"
+  }
+ ]
+}

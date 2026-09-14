@@ -1,0 +1,79 @@
+{
+ "page": 154,
+ "transcription": [
+  "D. arborescens",
+  "D. blancoi",
+  "Eclipta alba | Compositae",
+  "Ehretia | Boraginaceae",
+  "E. blancoi",
+  "E. buxifolia",
+  "E. onava",
+  "E. philippinensis",
+  "Elaeagnus latifolia | Elaeagnaceae",
+  "Elaeocarpus | Tiliaceae",
+  "E. floribundus",
+  "E. lanceaefolius",
+  "E. monocera",
+  "E. multiflorus",
+  "E. oblongus",
+  "E. obovatus",
+  "Elatostema | Urticaceae",
+  "Eleocharis | Cyperaceae",
+  "E. pellucida",
+  "Elephantopus mollis | Compositae",
+  "E. scaber",
+  "E. spicatus"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n153.jpg",
+ "transcribed": 22,
+ "entries": [
+  {
+   "page": 154,
+   "was": "KcLiprA ALBA",
+   "name": "Eclipta alba",
+   "family": "Compositae"
+  },
+  {
+   "page": 154,
+   "was": "EnReTIA",
+   "name": "Ehretia",
+   "family": "Boraginaceae"
+  },
+  {
+   "page": 154,
+   "was": "K. onava",
+   "name": "E. onava"
+  },
+  {
+   "page": 154,
+   "was": "Evaocarpus",
+   "name": "Elaeocarpus",
+   "family": "Tiliaceae"
+  },
+  {
+   "page": 154,
+   "was": "?. MONOCERA",
+   "name": "E. monocera"
+  },
+  {
+   "page": 154,
+   "was": "K. MULTIFLORUS",
+   "name": "E. multiflorus"
+  },
+  {
+   "page": 154,
+   "was": "I. OBLONGUS",
+   "name": "E. oblongus"
+  },
+  {
+   "page": 154,
+   "was": "K. opovatus",
+   "name": "E. obovatus"
+  },
+  {
+   "page": 154,
+   "was": "K. scaBer",
+   "name": "E. scaber"
+  }
+ ]
+}

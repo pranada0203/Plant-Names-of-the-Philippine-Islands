@@ -6,22 +6,30 @@
   "series": "1903, No. 8",
   "source": "dictionaryofplan00merr.pdf",
   "rights": "Published 1903; in the public domain.",
-  "built": "2026-09-14T04:51:22.524Z",
+  "built": "2026-09-14T07:44:05.091Z",
   "counts": {
     "names": 4395,
-    "taxa": 2102,
-    "taxaWithNotes": 947,
-    "taxaWithFamily": 1196,
-    "families": 137,
-    "links": 5727
+    "taxa": 1709,
+    "taxaWithNotes": 1001,
+    "taxaWithFamily": 1437,
+    "families": 147,
+    "links": 5275
   },
   "provenance": {
     "parse": {
-      "generated": "2026-09-14T04:51:22.019Z",
+      "generated": "2026-09-14T07:44:04.577Z",
       "pages": 209,
       "corrections": {
-        "applied": 5000,
-        "stale": 0
+        "partI": {
+          "applied": 5000,
+          "stale": 0,
+          "pages": 107
+        },
+        "partII": {
+          "applied": 501,
+          "stale": 0,
+          "pages": 75
+        }
       },
       "partI": {
         "pdfPages": [
@@ -37,16 +45,13 @@
           127,
           201
         ],
-        "entries": 1422,
+        "entries": 1452,
         "unparsedBlocks": 0,
-        "withFamily": 1197,
-        "withNotes": 959,
-        "families": 137,
+        "withFamily": 1437,
+        "withNotes": 1001,
+        "families": 147,
         "unmatchedFamilies": [
-          "Cebu",
-          "flagellariacew",
-          "Cwreurbitacew",
-          "Stryacew"
+          "Cebu"
         ]
       },
       "flagCounts": {
@@ -64,9 +69,9 @@
       "under40": 4,
       "under70": 6
     },
-    "linkedFromPartII": 2188,
-    "linkedByNearMatch": 834,
-    "taxaJoinedByNearMatch": 360,
-    "namesOnlyInPartII": 712
+    "linkedFromPartII": 2498,
+    "linkedByNearMatch": 955,
+    "taxaJoinedByNearMatch": 201,
+    "namesOnlyInPartII": 760
   }
 }

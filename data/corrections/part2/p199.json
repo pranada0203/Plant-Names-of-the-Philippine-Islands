@@ -1,0 +1,51 @@
+{
+ "page": 199,
+ "transcription": [
+  "Ventilago maderspatana | Rhamnaceae",
+  "Viburnum luzonicum | Caprifoliaceae",
+  "V. odoratissimum",
+  "Vidalia | Guttiferae",
+  "V. lepidota",
+  "V. navesii",
+  "Vigna | Leguminosae",
+  "V. catjang",
+  "Villaria philippinensis | Rubiaceae",
+  "Villebrunea | Urticaceae",
+  "V. frutescens",
+  "Vinca rosea | Apocinaceae",
+  "Vitex | Verbenaceae",
+  "V. aherniana",
+  "V. heterophylla",
+  "V. littoralis",
+  "V. obovata",
+  "V. negundo",
+  "V. philippinensis",
+  "V. trifolia",
+  "Vitis | Ampelidaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n198.jpg",
+ "transcribed": 21,
+ "entries": [
+  {
+   "page": 199,
+   "was": "V. LeEPIpOTA",
+   "name": "V. lepidota"
+  },
+  {
+   "page": 199,
+   "was": "V. NAvesr",
+   "name": "V. navesii"
+  },
+  {
+   "page": 199,
+   "was": "Viena",
+   "name": "Vigna",
+   "family": "Leguminosae"
+  },
+  {
+   "page": 199,
+   "was": "V. opovaTtaA",
+   "name": "V. obovata"
+  }
+ ]
+}

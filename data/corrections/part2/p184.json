@@ -1,0 +1,50 @@
+{
+ "page": 184,
+ "transcription": [
+  "P. corylistachyon",
+  "P. nigrum",
+  "P. philippinum",
+  "P. subpeltatum",
+  "Pipturus asper | Urticaceae",
+  "Pisonia aculeata | Nyctaginaceae",
+  "P. inermis",
+  "P. umbellata",
+  "Pistia stratiotes | Aroideae",
+  "Pithecolobium | Leguminosae",
+  "P. acle",
+  "P. dulce",
+  "P. lobatum",
+  "P. montanum",
+  "Pittosporum | Pittosporaceae",
+  "P. fernandezii",
+  "P. floribundum",
+  "Planchonia | Myrtaceae",
+  "Plantago erosa | Plantaginaceae",
+  "Plectocomia elongata | Palmae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n183.jpg",
+ "transcribed": 20,
+ "entries": [
+  {
+   "page": 184,
+   "was": "P. nickuM",
+   "name": "P. nigrum"
+  },
+  {
+   "page": 184,
+   "was": "P. putce",
+   "name": "P. dulce"
+  },
+  {
+   "page": 184,
+   "was": "P. montanumM",
+   "name": "P. montanum"
+  },
+  {
+   "page": 184,
+   "was": "PiTTosPporUM",
+   "name": "Pittosporum",
+   "family": "Pittosporaceae"
+  }
+ ]
+}

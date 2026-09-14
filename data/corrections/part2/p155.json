@@ -1,0 +1,55 @@
+{
+ "page": 155,
+ "transcription": [
+  "Elettaria | Scitamineae",
+  "Eleusine indica | Gramineae",
+  "Emilia sonchifolia | Compositae",
+  "Engelhardtia | Juglandaceae",
+  "Enhalus koenigii | Hydrocharitaceae",
+  "Entada scandens | Leguminosae",
+  "Epipremnum medium | Aroideae",
+  "Eragrostis plumosa | Gramineae",
+  "E. tenella",
+  "Eranthemum bicolor | Acanthaceae",
+  "Eriachne | Gramineae",
+  "Eriocaulon sexangulare | Eriocaulonaceae",
+  "Erioglossum | Sapindaceae",
+  "E. edule",
+  "Eriosema chinense | Leguminosae",
+  "Erycibe | Convolvulaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n154.jpg",
+ "transcribed": 16,
+ "entries": [
+  {
+   "page": 155,
+   "was": "ELEUSINE INDICA",
+   "name": "Eleusine indica",
+   "family": "Gramineae"
+  },
+  {
+   "page": 155,
+   "was": "{PIPREMNUM MEDIUM",
+   "name": "Epipremnum medium",
+   "family": "Aroideae"
+  },
+  {
+   "page": 155,
+   "was": "IRAGROSTIS PLUMOSA",
+   "name": "Eragrostis plumosa",
+   "family": "Gramineae"
+  },
+  {
+   "page": 155,
+   "was": "ERI0GLOssuM",
+   "name": "Erioglossum",
+   "family": "Sapindaceae"
+  },
+  {
+   "page": 155,
+   "was": "ErycrBe",
+   "name": "Erycibe",
+   "family": "Convolvulaceae"
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+{
+ "page": 165,
+ "transcription": [
+  "Holarrhena | Apocinaceae",
+  "H. macrocarpa",
+  "Homalanthus | Euphorbiaceae",
+  "H. fastuosus",
+  "Homalium luzoniense | Samydaceae",
+  "H. panayamum",
+  "H. villarianum",
+  "Homalocenchus hexandrus | Gramineae",
+  "Homalomena | Aroideae",
+  "H. miqueliana",
+  "Homonoia riparia | Euphorbiaceae",
+  "Hopea | Dipterocarpaceae",
+  "H. philippinensis",
+  "H. plagata",
+  "Hoya | Asclepiadaceae",
+  "H. diversifolia",
+  "H. multiflora",
+  "Hydnocarpus heterophylla | Bixaceae",
+  "Hydnophytum | Rubiaceae",
+  "Hydrilla | Hydrocharidaceae",
+  "H. verticillata",
+  "Hydrocotyle asiatica | Umbelliferae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n164.jpg",
+ "transcribed": 22,
+ "entries": [
+  {
+   "page": 165,
+   "was": "H. rastuosus",
+   "name": "H. fastuosus"
+  },
+  {
+   "page": 165,
+   "was": "HOMALOCENCHUS, HEXANDRUS",
+   "name": "Homalocenchus hexandrus",
+   "family": "Gramineae"
+  },
+  {
+   "page": 165,
+   "was": "Hopes",
+   "name": "Hopea",
+   "family": "Dipterocarpaceae"
+  },
+  {
+   "page": 165,
+   "was": "H. pragaTa",
+   "name": "H. plagata"
+  },
+  {
+   "page": 165,
+   "was": "H. Muttiryora",
+   "name": "H. multiflora"
+  },
+  {
+   "page": 165,
+   "was": "HYDNOCARPUS IIETEROPHYLLA",
+   "name": "Hydnocarpus heterophylla",
+   "family": "Bixaceae"
+  },
+  {
+   "page": 165,
+   "was": "HypnopHytumM",
+   "name": "Hydnophytum",
+   "family": "Rubiaceae"
+  },
+  {
+   "page": 165,
+   "was": "Hypritta. (Hydrocharidee.)",
+   "name": "Hydrilla",
+   "family": "Hydrocharidaceae"
+  },
+  {
+   "page": 165,
+   "was": "HybrocoryLe ASIATICA",
+   "name": "Hydrocotyle asiatica",
+   "family": "Umbelliferae"
+  }
+ ]
+}

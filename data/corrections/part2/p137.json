@@ -1,0 +1,48 @@
+{
+ "page": 137,
+ "transcription": [
+  "Berrya | Tiliaceae",
+  "Bidens pilosa | Compositae",
+  "Biophytum sensitivum | Geraniaceae",
+  "Bischofia javanica | Euphorbiaceae",
+  "Bixa orellana | Bixaceae",
+  "Blechum brownei | Acanthaceae",
+  "Blumea balsamifera | Compositae",
+  "B. chinensis",
+  "B. laciniata",
+  "Boehmeria nivea | Urticaceae",
+  "B. weddeliana",
+  "Boerhaavia repens | Nyctaginaceae",
+  "Boletus",
+  "Bombax malabaricum | Malvaceae",
+  "Bootia cordata | Hydrocharitaceae",
+  "Brackenridgea fascicularis | Ochnaceae",
+  "Breynia acuminata | Euphorbiaceae"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n136.jpg",
+ "transcribed": 17,
+ "entries": [
+  {
+   "page": 137,
+   "was": "BLECHUM BROWNE!",
+   "name": "Blechum brownei",
+   "family": "Acanthaceae"
+  },
+  {
+   "page": 137,
+   "was": "B. racintata",
+   "name": "B. laciniata"
+  },
+  {
+   "page": 137,
+   "was": "Botetus",
+   "name": "Boletus"
+  },
+  {
+   "page": 137,
+   "was": "BREYNIA ACUMINATA",
+   "name": "Breynia acuminata",
+   "family": "Euphorbiaceae"
+  }
+ ]
+}

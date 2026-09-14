@@ -1,9 +1,17 @@
 {
-  "generated": "2026-09-14T04:51:22.019Z",
+  "generated": "2026-09-14T07:44:04.577Z",
   "pages": 209,
   "corrections": {
-    "applied": 5000,
-    "stale": 0
+    "partI": {
+      "applied": 5000,
+      "stale": 0,
+      "pages": 107
+    },
+    "partII": {
+      "applied": 501,
+      "stale": 0,
+      "pages": 75
+    }
   },
   "partI": {
     "pdfPages": [
@@ -19,16 +27,13 @@
       127,
       201
     ],
-    "entries": 1422,
+    "entries": 1452,
     "unparsedBlocks": 0,
-    "withFamily": 1197,
-    "withNotes": 959,
-    "families": 137,
+    "withFamily": 1437,
+    "withNotes": 1001,
+    "families": 147,
     "unmatchedFamilies": [
-      "Cebu",
-      "flagellariacew",
-      "Cwreurbitacew",
-      "Stryacew"
+      "Cebu"
     ]
   },
   "flagCounts": {

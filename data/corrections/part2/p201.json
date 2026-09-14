@@ -1,0 +1,57 @@
+{
+ "page": 201,
+ "transcription": [
+  "Xylia | Leguminosae",
+  "Xylopia | Anonaceae",
+  "X. dehiscens",
+  "Xylosma cumingii | Bixaceae",
+  "Xylocarpus obovatus | Meliaceae",
+  "X. granatum",
+  "Xyris complanata | Xyridaceae",
+  "Zalacca edulis | Palmae",
+  "Zanthoxylum avicennae | Rutaceae",
+  "Z. oxyphyllum",
+  "Zea mays | Gramineae",
+  "Zingiber | Zingiberaceae",
+  "Z. officinale",
+  "Z. zerumbet",
+  "Zizyphus | Rhamnaceae",
+  "Z. arborea",
+  "Z. dalanta",
+  "Z. trinervis",
+  "Z. jujuba"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n200.jpg",
+ "transcribed": 19,
+ "entries": [
+  {
+   "page": 201,
+   "was": "Xyuia",
+   "name": "Xylia",
+   "family": "Leguminosae"
+  },
+  {
+   "page": 201,
+   "was": "NYLOSMA CUMINGII",
+   "name": "Xylosma cumingii",
+   "family": "Bixaceae"
+  },
+  {
+   "page": 201,
+   "was": "XYRIS COMPLANATA",
+   "name": "Xyris complanata",
+   "family": "Xyridaceae"
+  },
+  {
+   "page": 201,
+   "was": "Z. OXYPIHYLLUM",
+   "name": "Z. oxyphyllum"
+  },
+  {
+   "page": 201,
+   "was": "Zizyepuus",
+   "name": "Zizyphus",
+   "family": "Rhamnaceae"
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "page": 146,
+ "transcription": [
+  "Codiaeum variegatum | Euphorbiaceae",
+  "Coffea arabica | Rubiaceae",
+  "Coix lachryma-jobi | Gramineae",
+  "Coldenia procumbens | Boraginaceae",
+  "Coleus | Labiatae",
+  "C. acuminatus",
+  "C. aromatius",
+  "C. atropurpureus",
+  "Colocasia antiquorum | Aroideae",
+  "Colubrina asiatica | Rhamnaceae",
+  "Columbia | Tiliaceae",
+  "C. serratifolia",
+  "Connaropsis philippica | Geraniaceae",
+  "Combretum | Combretaceae",
+  "C. ovalifolium",
+  "C. squamosum"
+ ],
+ "source": "https://archive.org/download/dictionaryofplan00merr/page/n145.jpg",
+ "transcribed": 16,
+ "entries": [
+  {
+   "page": 146,
+   "was": "CopIAEUM VARIEGATUM",
+   "name": "Codiaeum variegatum",
+   "family": "Euphorbiaceae"
+  },
+  {
+   "page": 146,
+   "was": "Coteus",
+   "name": "Coleus",
+   "family": "Labiatae"
+  },
+  {
+   "page": 146,
+   "was": "C. aroMaATIus",
+   "name": "C. aromatius"
+  },
+  {
+   "page": 146,
+   "was": "Cotumpia",
+   "name": "Columbia",
+   "family": "Tiliaceae"
+  },
+  {
+   "page": 146,
+   "was": "CoNNAROPSIS PHILIPPICA",
+   "name": "Connaropsis philippica",
+   "family": "Geraniaceae"
+  },
+  {
+   "page": 146,
+   "was": "C. squAMOsSUmM",
+   "name": "C. squamosum"
+  }
+ ]
+}
