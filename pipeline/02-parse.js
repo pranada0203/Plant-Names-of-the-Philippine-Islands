@@ -22,6 +22,7 @@ const N = require('./lib/normalize');
 const TAX = require('./lib/taxonomy');
 const HOCR = require('./lib/hocr');
 const CORR = require('./lib/corrections');
+const ALIGN = require('./lib/align');
 
 const ROOT = path.join(__dirname, '..');
 const IN = path.join(ROOT, 'data', 'raw', 'pages.json');
@@ -42,8 +43,14 @@ function loadConfidence(pages) {
   const aligned = map.filter((j) => j >= 0).length;
 
   const byPage = new Map();
+  const scan = new Map();
   for (let i = 0; i < map.length; i++) {
-    if (map[i] >= 0) byPage.set(i + 1, HOCR.pageConfidence(hocrPages[map[i]]));
+    if (map[i] < 0) continue;
+    byPage.set(i + 1, HOCR.pageConfidence(hocrPages[map[i]]));
+    // The same hOCR page, kept whole: its line boxes are what let the app show
+    // a reader the scanned line an entry came from.
+    const hp = hocrPages[map[i]];
+    if (hp.box && hp.lines.length) scan.set(i + 1, hp);
   }
 
   // Printed page numbers, so entries can be cited as the book paginates them.
@@ -56,7 +63,121 @@ function loadConfidence(pages) {
     }
   }
 
-  return { byPage, printed, stats: { hocrPages: hocrPages.length, aligned, offset, offsetScore } };
+  return { byPage, scan, printed,
+    stats: { hocrPages: hocrPages.length, aligned, offset, offsetScore } };
+}
+
+// ------------------------------------------------- locating entries on the scan
+
+/**
+ * How much of the page to leave around a box, as a fraction of the page.
+ *
+ * Enough to clear the ascenders and descenders the engine's own box sometimes
+ * clips, and no more: on a 3,205-pixel leaf a line is about 40 pixels tall, so
+ * a larger vertical pad starts showing slices of the neighbouring entries.
+ */
+const PAD_X = 0.008;
+const PAD_Y = 0.003;
+
+/**
+ * A pixel box on the scan, as fractions of the page.
+ *
+ * Fractions rather than pixels because the Internet Archive serves several
+ * sizes of each leaf and the app should be free to pick one; the hOCR happens
+ * to be in the full-size leaf's own pixels, but nothing downstream should
+ * depend on that.
+ */
+function normalise(box, page) {
+  const W = page.box[2];
+  const H = page.box[3];
+  // Three places is about two pixels on a 1945-pixel leaf -- far finer than the
+  // padding either side, and it keeps thousands of these out of the payload.
+  const r = (n) => Math.round(n * 1e3) / 1e3;
+  const clamp = (n) => Math.min(1, Math.max(0, n));
+  const x0 = clamp(box[0] / W - PAD_X);
+  const y0 = clamp(box[1] / H - PAD_Y);
+  const x1 = clamp(box[2] / W + PAD_X);
+  const y1 = clamp(box[3] / H + PAD_Y);
+  return [r(x0), r(y0), r(x1 - x0), r(y1 - y0)];
+}
+
+/** A box that is obviously not one entry of an index page. */
+const implausible = (b) => b[2] < 0.05 || b[3] < 0.004 || b[3] > 0.6;
+
+/**
+ * Page furniture: the folio at the head of the page, the printer's signature
+ * ("8956——4") at the foot, the single letter that opens an alphabet section.
+ * A spanning entry must not absorb one into its box.
+ */
+const furniture = (line) => {
+  const t = line.text.replace(/\s+/g, '');
+  return t.length <= 8 && /^[^A-Za-z]*[A-Za-z]?[^A-Za-z]*$/.test(t);
+};
+
+/**
+ * Find the scanned line each entry was printed on.
+ *
+ * Both sequences are in reading order -- the parser reads the same text layer
+ * the engine produced -- so they are aligned rather than matched one by one,
+ * and the running head and section letter simply fall out as gaps.
+ *
+ * A match below `floor` is left unlocated. A box drawn round the wrong line is
+ * worse than no box: the reader would be shown a line that does not say what
+ * the entry says and would have no way to tell which of the two was wrong.
+ *
+ * @param toText  the entry text to match against a scanned line
+ * @param span    true for Part II, whose entries run over several lines and so
+ *                stretch from their own line to just before the next entry's
+ */
+function locate(conf, entries, toText, { span = false, floor = 0.5 } = {}) {
+  const stats = { located: 0, unlocated: 0, noPage: 0 };
+  if (!conf || !conf.scan) { stats.noPage = entries.length; return stats; }
+
+  const byPage = new Map();
+  for (const e of entries) {
+    if (!byPage.has(e.page)) byPage.set(e.page, []);
+    byPage.get(e.page).push(e);
+  }
+
+  for (const [page, group] of byPage) {
+    const sp = conf.scan.get(page);
+    if (!sp) { stats.noPage += group.length; continue; }
+
+    const score = (e, l) => ALIGN.prefixSimilarity(toText(e), l.text);
+    const pairs = ALIGN.align(group, sp.lines, score);
+    const index = new Map(sp.lines.map((l, i) => [l, i]));
+
+    // Where each entry starts, so a spanning entry knows where the next begins.
+    const starts = pairs
+      .filter(([e, l]) => e && l && score(e, l) >= floor)
+      .map(([e, l]) => [e, index.get(l)]);
+
+    for (let k = 0; k < starts.length; k++) {
+      const [e, i] = starts[k];
+      let last = i;
+      if (span) {
+        const limit = k + 1 < starts.length ? starts[k + 1][1] - 1 : sp.lines.length - 1;
+        while (last < limit && !furniture(sp.lines[last + 1])) last++;
+      }
+      const box = normalise(sp.lines.slice(i, last + 1).map((l) => l.box).reduce((a, b) => [
+        Math.min(a[0], b[0]), Math.min(a[1], b[1]),
+        Math.max(a[2], b[2]), Math.max(a[3], b[3]),
+      ]), sp);
+      if (implausible(box)) continue;
+      e.box = box;
+      stats.located++;
+    }
+  }
+  stats.unlocated = entries.length - stats.located - stats.noPage;
+  return stats;
+}
+
+/** Page pixel dimensions, so the app knows each leaf's aspect ratio. */
+function scanPages(conf) {
+  const out = {};
+  if (!conf || !conf.scan) return out;
+  for (const [page, sp] of conf.scan) out[page] = [sp.box[2], sp.box[3]];
+  return out;
 }
 
 /**
@@ -710,8 +831,23 @@ function main() {
     }
   }
 
+  // Where each entry sits on the scanned leaf. Last, so that a Part II entry is
+  // located by the name a correction gave it rather than the scan's reading --
+  // the alignment is against the scan either way, and the corrected name is the
+  // better query when the scan's own reading was nonsense.
+  const locI = locate(conf, I.entries, (e) => e.raw);
+  const locII = locate(conf, II.entries, (e) => e.raw, { span: true });
+  const scanned = scanPages(conf);
+  if (conf) {
+    const pct = (n, of) => of ? (100 * n / of).toFixed(1) + '%' : '0%';
+    console.log('Scan    ' + (locI.located + locII.located) + ' entries located on the page images (' +
+      pct(locI.located, I.entries.length) + ' of Part I, ' +
+      pct(locII.located, II.entries.length) + ' of Part II)');
+  }
+
   const issues = [...I.issues, ...II.issues];
   fs.mkdirSync(OUT_DIR, { recursive: true });
+  fs.writeFileSync(path.join(OUT_DIR, 'scan-pages.json'), JSON.stringify(scanned, null, 1));
   fs.writeFileSync(path.join(OUT_DIR, 'part1-vernacular.json'), JSON.stringify(I.entries, null, 1));
   fs.writeFileSync(path.join(OUT_DIR, 'part2-scientific.json'), JSON.stringify(II.entries, null, 1));
   fs.writeFileSync(path.join(OUT_DIR, 'issues.json'), JSON.stringify(issues, null, 1));
@@ -741,6 +877,11 @@ function main() {
       unmatchedFamilies: [...new Set(
         II.entries.filter((e) => e.unresolvedFamily).map((e) => e.unresolvedFamily)
       )],
+    },
+    scan: {
+      pages: Object.keys(scanned).length,
+      partI: locI,
+      partII: locII,
     },
     flagCounts: I.entries.reduce((acc, e) => {
       e.flags.forEach((f) => { acc[f] = (acc[f] || 0) + 1; });

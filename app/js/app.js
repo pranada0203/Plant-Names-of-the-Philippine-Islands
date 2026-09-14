@@ -1,4 +1,5 @@
 import { Search } from './search.js';
+import { initScan, scanFigure, scanAvailable } from './scan.js';
 
 const el = (id) => document.getElementById(id);
 const app = el('app');
@@ -14,6 +15,7 @@ async function boot() {
   if (!res.ok) throw new Error(`Could not load dictionary.json (${res.status})`);
   data = await res.json();
   search = new Search(data);
+  initScan(data.meta && data.meta.scan);
 
   fillFilters();
   restoreTheme();
@@ -238,7 +240,9 @@ function nameView(n) {
     f.append(chips([...siblings.values()].sort((a, b) => a.name.localeCompare(b.name))));
   }
 
-  f.append(source(pageCitation(n.printedPages, n.pages), n.printed));
+  const scan = scanSection(n.sightings, n.printed);
+  if (scan) f.append(scan);
+  f.append(source(pageCitation(n.sightings), n.printed));
   return f;
 }
 
@@ -295,7 +299,10 @@ function taxonView(t) {
     f.append(box);
   }
 
-  f.append(source(pageCitation(null, [t.page]), t.printed + (t.authority ? ' ' + t.authority : '')));
+  const cite = [{ page: t.page, printedPage: t.printedPage, box: t.box }];
+  const scan = scanSection(cite, t.printed);
+  if (scan) f.append(scan);
+  f.append(source(pageCitation(cite), t.printed + (t.authority ? ' ' + t.authority : '')));
   return f;
 }
 
@@ -305,9 +312,39 @@ function taxonView(t) {
  * Cite the page a reader would find in a physical copy when we know it, and
  * say plainly when the number is the scan leaf instead.
  */
-function pageCitation(printed, pdfPages) {
-  if (printed && printed.length) return `Page ${printed.join(', ')} of the 1903 printing`;
-  return `Scan leaf ${pdfPages.join(', ')}`;
+function pageCitation(sightings) {
+  const printed = [...new Set(sightings.map((s) => s.printedPage).filter(Boolean))];
+  if (printed.length) return `Page ${printed.join(', ')} of the 1903 printing`;
+  const leaves = [...new Set(sightings.map((s) => s.page))];
+  return `Scan leaf ${leaves.join(', ')}`;
+}
+
+/**
+ * The scan itself, folded away until asked for.
+ *
+ * Closed by default for two reasons: the reader came here for the dictionary,
+ * not the photograph, and a `<details>` that is shut keeps the browser from
+ * fetching the leaf at all. A headword printed on six lines gets six strips —
+ * they are six different plants, and the whole point is to let someone check
+ * which line says what.
+ */
+function scanSection(sightings, printed) {
+  if (!scanAvailable()) return null;
+  const usable = (sightings || []).filter((s) => s && s.box);
+  if (!usable.length) return null;
+
+  const d = document.createElement('details');
+  d.className = 'scan-block';
+  const sum = document.createElement('summary');
+  sum.textContent = usable.length > 1
+    ? `Show the scan (${usable.length} lines)`
+    : 'Show the scan';
+  d.append(sum);
+  for (const s of usable) {
+    const fig = scanFigure(s, printed);
+    if (fig) d.append(fig);
+  }
+  return d;
 }
 
 function tag(text, warn = false) {

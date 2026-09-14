@@ -20,33 +20,13 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { align, similarity } = require('./lib/align');
 
 const ROOT = path.join(__dirname, '..');
 const page = Number(process.argv[2]);
 if (!page) {
   console.error('usage: node pipeline/ingest-transcription.js <page> < transcript.txt');
   process.exit(1);
-}
-
-/** Compare headwords ignoring case, accents and punctuation. */
-const fold = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '')
-  .toLowerCase().replace(/[^a-z]/g, '');
-
-/** Cheap similarity for alignment: shared-character ratio, order-sensitive. */
-function score(a, b) {
-  const A = fold(a);
-  const B = fold(b);
-  if (!A || !B) return 0;
-  if (A === B) return 1;
-  let i = 0;
-  let j = 0;
-  let shared = 0;
-  while (i < A.length && j < B.length) {
-    if (A[i] === B[j]) { shared++; i++; j++; }
-    else if (A.length - i > B.length - j) i++;
-    else j++;
-  }
-  return (2 * shared) / (A.length + B.length);
 }
 
 const lines = fs.readFileSync(0, 'utf8')
@@ -63,34 +43,7 @@ if (!entries.length) {
 
 // Needleman-Wunsch over the two sequences, so a line the parser dropped shifts
 // nothing downstream.
-const GAP = -0.4;
-const n = entries.length;
-const m = lines.length;
-const dp = Array.from({ length: n + 1 }, () => new Float64Array(m + 1));
-const bt = Array.from({ length: n + 1 }, () => new Uint8Array(m + 1));
-for (let i = 1; i <= n; i++) { dp[i][0] = dp[i - 1][0] + GAP; bt[i][0] = 1; }
-for (let j = 1; j <= m; j++) { dp[0][j] = dp[0][j - 1] + GAP; bt[0][j] = 2; }
-for (let i = 1; i <= n; i++) {
-  for (let j = 1; j <= m; j++) {
-    const diag = dp[i - 1][j - 1] + score(entries[i - 1].headword, lines[j - 1]);
-    const up = dp[i - 1][j] + GAP;
-    const left = dp[i][j - 1] + GAP;
-    const best = Math.max(diag, up, left);
-    dp[i][j] = best;
-    bt[i][j] = best === diag ? 0 : best === up ? 1 : 2;
-  }
-}
-
-const pairs = [];
-let i = n;
-let j = m;
-while (i > 0 || j > 0) {
-  const b = i === 0 ? 2 : j === 0 ? 1 : bt[i][j];
-  if (b === 0) { pairs.push([entries[i - 1], lines[j - 1]]); i--; j--; }
-  else if (b === 1) { pairs.push([entries[i - 1], null]); i--; }
-  else { pairs.push([null, lines[j - 1]]); j--; }
-}
-pairs.reverse();
+const pairs = align(entries, lines, (e, l) => similarity(e.headword, l));
 
 const matched = pairs.filter(([e, l]) => e && l);
 const unmatchedEntries = pairs.filter(([e, l]) => e && !l);
@@ -126,7 +79,7 @@ console.log(`  aligned ${matched.length}, unchanged ${same}, corrections ${corre
 // accents, one of the two is a slip -- and on a 90-plus reading it is more
 // often the transcription. Worth a second look before trusting it.
 const suspicious = corrections.filter((c) =>
-  c.ocrConfidence >= 85 && score(c.was, c.headword) < 0.85);
+  c.ocrConfidence >= 85 && similarity(c.was, c.headword) < 0.85);
 if (suspicious.length) {
   console.log(`  ${suspicious.length} correction(s) override a confident OCR reading -- check these:`);
   for (const c of suspicious) {

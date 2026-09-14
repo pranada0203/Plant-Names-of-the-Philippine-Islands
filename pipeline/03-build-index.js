@@ -19,6 +19,17 @@ const ROOT = path.join(__dirname, '..');
 const DATA = path.join(ROOT, 'data');
 const OUT_DIR = path.join(ROOT, 'app', 'data');
 
+/**
+ * Where the page images come from.
+ *
+ * The Internet Archive serves every leaf of this scan, in several widths, from
+ * the same item the hOCR came from. They are not committed here: 183 leaves is
+ * 82 MB, and the IA is both the authority for them and already cited as this
+ * edition's source. `{leaf}` is the zero-based leaf, which is our page minus
+ * one; `{width}` is one of the sizes the IA generates, or empty for the master.
+ */
+const IMAGE_BASE = 'https://archive.org/download/dictionaryofplan00merr/page/n{leaf}{width}.jpg';
+
 /** Match key for a scientific name: genus + epithet, case and accent folded. */
 function taxonKey(name) {
   const cleaned = name
@@ -57,6 +68,10 @@ function main() {
   const part1 = JSON.parse(fs.readFileSync(path.join(DATA, 'part1-vernacular.json'), 'utf8'));
   const part2 = JSON.parse(fs.readFileSync(path.join(DATA, 'part2-scientific.json'), 'utf8'));
   const report = JSON.parse(fs.readFileSync(path.join(DATA, 'parse-report.json'), 'utf8'));
+  // Leaf dimensions, written by stage 2 when the hOCR was available. Without
+  // them a box is a rectangle with no aspect ratio, so the app shows no image.
+  const scanFile = path.join(DATA, 'scan-pages.json');
+  const scanned = fs.existsSync(scanFile) ? JSON.parse(fs.readFileSync(scanFile, 'utf8')) : {};
 
   // ---- taxa ---------------------------------------------------------------
   // Part II is authoritative for taxa: it supplies family and notes. Part I
@@ -86,6 +101,8 @@ function main() {
       familySource: e.familySource,
       notes: e.notes,
       page: e.page,
+      printedPage: e.printedPage || null,
+      box: e.box || null,
       fromPartII: true,
       names: [],          // filled below
       partIINames: e.vernaculars,
@@ -125,6 +142,10 @@ function main() {
       familySource: null,
       notes: null,
       page,
+      printedPage: null,
+      // A stub was never printed in the scientific index, so it has no line
+      // there to show. The reader is sent to the Part I line instead.
+      box: null,
       fromPartII: false,
       names: [],
       partIINames: [],
@@ -152,8 +173,11 @@ function main() {
         dialects: [],
         places: [],
         taxa: [],
-        pages: [],
-        printedPages: [],
+        // One per line the book prints this headword on: which leaf, how that
+        // leaf is paginated in the printing, and where on it the line sits.
+        // The same headword appears on several lines when it names several
+        // plants, and each of those is a separate thing to go and look at.
+        sightings: [],
         confidence: null,   // lowest the OCR engine gave this headword
         flags: [],
       };
@@ -163,8 +187,11 @@ function main() {
 
     for (const d of e.dialects) if (!rec.dialects.includes(d)) rec.dialects.push(d);
     if (e.place && !rec.places.includes(e.place)) rec.places.push(e.place);
-    if (!rec.pages.includes(e.page)) rec.pages.push(e.page);
-    if (e.printedPage && !rec.printedPages.includes(e.printedPage)) rec.printedPages.push(e.printedPage);
+    rec.sightings.push({
+      page: e.page,
+      ...(e.printedPage ? { printedPage: e.printedPage } : {}),
+      ...(e.box ? { box: e.box } : {}),
+    });
     // Merged headwords take the worst reading, not the flattering one.
     if (e.confidence !== null && e.confidence !== undefined) {
       rec.confidence = rec.confidence === null ? e.confidence : Math.min(rec.confidence, e.confidence);
@@ -240,6 +267,18 @@ function main() {
       series: '1903, No. 8',
       source: 'dictionaryofplan00merr.pdf',
       rights: 'Published 1903; in the public domain.',
+      scan: {
+        item: 'dictionaryofplan00merr',
+        // Our page number is the leaf number plus one.
+        imageUrl: IMAGE_BASE,
+        // The IA generates downscales below the master's width and serves the
+        // master for anything larger, so only ask for sizes that exist.
+        widths: [800],
+        viewer: 'https://archive.org/details/dictionaryofplan00merr/page/n{leaf}',
+        // Pixel size of each leaf, so a box expressed as fractions of the page
+        // can be turned back into an aspect ratio. Leaves differ.
+        pages: scanned,
+      },
       built: new Date().toISOString(),
       counts: {
         names: names.length,

@@ -38,8 +38,11 @@ between them are those indices. That keeps the payload small and lookups O(1).
   "taxa": [                   // the plants this name denotes
     { "id": 812, "authority": "Miq.", "printed": "Licuala spectabilis Miq.", "via": "partII-near" }
   ],
-  "pages": [24],              // scan leaf, for checking against the PDF
-  "printedPages": ["16"],     // page number as the book itself paginates
+  "sightings": [              // one per line the book prints this headword on
+    { "page": 24,             //   scan leaf, for checking against the PDF
+      "printedPage": "16",    //   page number as the book itself paginates
+      "box": [0.094, 0.865, 0.46, 0.024] }   // where on the leaf; see below
+  ],
   "confidence": 68,           // lowest x_wconf the OCR engine gave this headword
   "flags": ["accent-lost"]    // see below
 }
@@ -47,7 +50,11 @@ between them are those indices. That keeps the payload small and lookups O(1).
 
 One record per *distinct* headword. Merrill lists the same headword on several
 lines when it denotes several plants; those lines are merged, and `taxa`,
-`dialects`, `places` and `pages` accumulate across them.
+`dialects` and `places` accumulate across them.
+
+`sightings` does not merge, deliberately: ANÁHAO is printed on six lines naming
+six different palms, and the point of recording each one is that a reader can
+look at all six. `printedPage` and `box` are each absent when unknown.
 
 `taxa[].via` records how the link was made, so a doubtful join can be traced:
 
@@ -56,6 +63,32 @@ lines when it denotes several plants; those lines are merged, and `taxa`,
 | *(absent)* | Printed directly in Part I under this headword |
 | `partII` | Part II lists this name under that species, spelled identically |
 | `partII-near` | Same, but the two halves differ by one letter |
+
+## Boxes on the scan
+
+A `box` is `[x, y, width, height]` as **fractions of the leaf**, not pixels:
+the Internet Archive serves several sizes of each leaf and the app is free to
+pick one. `meta.scan.pages` gives each leaf's pixel dimensions, which is all
+that is needed to turn a fractional box back into a shape.
+
+```jsonc
+"meta": { "scan": {
+  "item": "dictionaryofplan00merr",
+  "imageUrl": "https://archive.org/download/dictionaryofplan00merr/page/n{leaf}{width}.jpg",
+  "widths": [800],              // sizes the IA generates; anything larger is the master
+  "viewer": "https://archive.org/details/dictionaryofplan00merr/page/n{leaf}",
+  "pages": { "19": [1945, 3205] }   // leaf -> [width, height] in pixels
+}}
+```
+
+`{leaf}` is **the page number minus one** — the Archive numbers leaves from
+zero. `{width}` is `_w800` or empty.
+
+Stage 2 finds these by aligning each page's parsed entries against the lines in
+the Internet Archive's hOCR, which carries a bounding box for every word. Where
+the match is poor the box is simply absent: a box drawn round the wrong line is
+worse than no box, because the reader is shown a line that does not say what
+the entry says and has no way to tell which of the two is wrong.
 
 ## `taxa[]` — a plant
 
@@ -70,6 +103,8 @@ lines when it denotes several plants; those lines are merged, and `taxa`,
   "familySource": "fuzzy",         // how the family was determined
   "notes": "A low stemless palm...",
   "page": 171,
+  "printedPage": "163",
+  "box": [0.088, 0.77, 0.83, 0.14], // the whole block on the leaf; null if unlocated
   "fromPartII": true,              // false = only ever mentioned in Part I
   "names": [191, 402, 1130],       // indices into `names`
   "extraNames": [                  // printed in Part II, no match in Part I

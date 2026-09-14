@@ -9,33 +9,88 @@
  * That turns quality from something the pipeline guesses at into something the
  * OCR engine reported. It knew "fprz" was a bad reading -- it scored it 9 out
  * of 100, against 92 for "Afzelia" on the same line.
+ *
+ * The boxes are what lets the app show the reader the scanned line itself. They
+ * are in the pixel space of the JP2 Tesseract ran on, and the JPEG the Internet
+ * Archive serves for a leaf has exactly those dimensions -- leaf n18 is 1945 by
+ * 3205, and so is hOCR page 19 -- but the IA also serves downscaled variants, so
+ * boxes are normalised to fractions of the page before they leave the pipeline.
  */
 
 const WORD_RE =
   /class="ocrx_word"[^>]*title="bbox (\d+) (\d+) (\d+) (\d+); x_wconf (\d+)[^"]*"[^>]*>([^<]*)</g;
 
+// Tesseract sets a line's text on four different classes; a page's running head
+// is an ocr_header and a plate caption an ocr_caption, and both are lines a
+// reader might want to see.
+const LINE_SPLIT = /class="ocr_(?:line|header|caption|textfloat)"/;
+const PAGE_BOX_RE = /title="[^"]*\bbbox (\d+) (\d+) (\d+) (\d+)/;
+
 const ENTITIES = { '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'" };
 const decode = (s) => s.replace(/&(?:amp|lt|gt|quot|#39);/g, (e) => ENTITIES[e]);
 
+/** Every ocrx_word in a chunk of markup, in document order. */
+function wordsIn(chunk) {
+  const words = [];
+  WORD_RE.lastIndex = 0;
+  let m;
+  while ((m = WORD_RE.exec(chunk)) !== null) {
+    const text = decode(m[6]).trim();
+    if (!text) continue;
+    words.push({
+      text,
+      conf: Number(m[5]),
+      bbox: [Number(m[1]), Number(m[2]), Number(m[3]), Number(m[4])],
+    });
+  }
+  return words;
+}
+
+/** Smallest box containing all of `boxes`. */
+function union(boxes) {
+  return boxes.reduce((a, b) => [
+    Math.min(a[0], b[0]), Math.min(a[1], b[1]),
+    Math.max(a[2], b[2]), Math.max(a[3], b[3]),
+  ]);
+}
+
 /**
  * Parse hOCR into one record per page.
- * @returns {{words: {text:string, conf:number, bbox:number[]}[]}[]}
+ *
+ * `lines` are sorted into reading order, top to bottom, which is *not* always
+ * the order the markup lists them in: Tesseract emits its blocks in the order
+ * it segmented them, and a stray mark can arrive last while sitting near the
+ * top of the page. Page 145 has a two-character speck at 46% down the leaf
+ * listed after the final line, and taking the markup's order at face value
+ * stretched the last entry's box back up the page to swallow it.
+ *
+ * A line's box is computed from its words rather than read from its own title:
+ * Tesseract sometimes stretches a line box around a stray mark it then assigns
+ * to no word, and a box drawn round nothing is worse than no box. Word spans
+ * occur only inside line spans, so splitting the page on the line classes
+ * partitions the words exactly.
+ *
+ * @returns {{box:number[], words:object[], lines:{text:string,box:number[],words:object[]}[]}[]}
  */
 function parseHocr(html) {
   return html.split('class="ocr_page"').slice(1).map((chunk) => {
-    const words = [];
-    WORD_RE.lastIndex = 0;
-    let m;
-    while ((m = WORD_RE.exec(chunk)) !== null) {
-      const text = decode(m[6]).trim();
-      if (!text) continue;
-      words.push({
-        text,
-        conf: Number(m[5]),
-        bbox: [Number(m[1]), Number(m[2]), Number(m[3]), Number(m[4])],
+    const pageBox = PAGE_BOX_RE.exec(chunk);
+    const lines = [];
+    for (const part of chunk.split(LINE_SPLIT).slice(1)) {
+      const words = wordsIn(part);
+      if (!words.length) continue;
+      lines.push({
+        text: words.map((w) => w.text).join(' '),
+        box: union(words.map((w) => w.bbox)),
+        words,
       });
     }
-    return { words };
+    lines.sort((a, b) => (a.box[1] - b.box[1]) || (a.box[0] - b.box[0]));
+    return {
+      box: pageBox ? pageBox.slice(1, 5).map(Number) : null,
+      words: wordsIn(chunk),
+      lines,
+    };
   });
 }
 

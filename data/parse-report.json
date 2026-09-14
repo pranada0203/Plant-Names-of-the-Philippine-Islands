@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-14T09:00:56.329Z",
+  "generated": "2026-09-14T09:21:37.613Z",
   "pages": 209,
   "corrections": {
     "partI": {
@@ -35,6 +35,19 @@
     "unmatchedFamilies": [
       "Cebu"
     ]
+  },
+  "scan": {
+    "pages": 194,
+    "partI": {
+      "located": 5008,
+      "unlocated": 2,
+      "noPage": 0
+    },
+    "partII": {
+      "located": 1459,
+      "unlocated": 22,
+      "noPage": 0
+    }
   },
   "flagCounts": {
     "dialect-unrecognised": 100,

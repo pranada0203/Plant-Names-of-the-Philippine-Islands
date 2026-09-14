@@ -33,7 +33,12 @@ http.createServer((req, res) => {
       res.writeHead(404, { 'content-type': 'text/plain' }).end('Not found: ' + rel);
       return;
     }
-    res.writeHead(200, { 'content-type': TYPES[path.extname(file)] || 'application/octet-stream' });
+    res.writeHead(200, {
+      'content-type': TYPES[path.extname(file)] || 'application/octet-stream',
+      // Development only, and worth the bytes: without it the browser's
+      // heuristic cache serves yesterday's CSS and you debug the wrong file.
+      'cache-control': 'no-store',
+    });
     res.end(buf);
   });
 }).listen(PORT, () => {

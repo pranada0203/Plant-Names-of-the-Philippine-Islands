@@ -179,6 +179,38 @@ there are few: 9 native headwords (median confidence 66) and 1,479 scientific
 names in Part II's notes (median 100, 3.5% under 50). The roman type was never
 the problem.
 
+## Showing the reader the page
+
+The transcription is now good, but "good" is a claim, and the book is the only
+thing that can settle it. Every entry therefore carries the box of the line it
+was printed on, and the app crops the scanned leaf to it on request.
+
+The boxes come from the same hOCR as the confidence scores: it gives a bounding
+box for every word, which groups into lines. Each page's parsed entries are
+aligned against that page's lines with Needleman-Wunsch — both sequences are in
+reading order, so the running head and the section letter fall out as gaps —
+and a Part II block, which runs over several lines, stretches from its own line
+to just before the next entry's. 100% of Part I's 5,010 lines and 98.5% of Part
+II's 1,481 blocks are located.
+
+Two defects surfaced, both of the same kind: a box that looked right and was
+not.
+
+- **hOCR line order is not reading order.** Tesseract emits blocks in the order
+  it segmented them. Page 145 carries a two-character speck 46% down the leaf,
+  listed after the last line of the page, and taking the markup's order at face
+  value stretched *Cocos nucifera*'s box back up the page to swallow it. Lines
+  are now sorted by position.
+- **A symmetric similarity is the wrong question for a block.** A Part II
+  entry's text runs past its own heading into the names beneath it, so
+  comparing the whole block against a heading line as short as "A. PAVONINA
+  Linn." scored 0.35 on length alone and threw the match away. Comparing only
+  as much of the entry as the line is long took Part II from 95.1% to 98.5%.
+
+Where the match is poor the box is left out. A box round the wrong line is
+worse than none: the reader is shown a line that does not say what the entry
+says, and has no way to tell which of the two is wrong.
+
 ## What is still wrong
 
 **188 of 1,669 taxa exist only because Part I names them.** The third pass cut

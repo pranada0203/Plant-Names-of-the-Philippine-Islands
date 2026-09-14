@@ -1,6 +1,6 @@
 # Roadmap
 
-Ordered by what unblocks the most. Sections 0 and 6 are done; the rest is
+Ordered by what unblocks the most. Sections 0, 1 and 6 are done; the rest is
 not started.
 
 ## 0. Text quality — done
@@ -19,14 +19,17 @@ Merrill's own inconsistent spellings (*Livinstonia* / *Livistonia* /
 hand-checked list of the author's variants; merging automatically on the species
 epithet is **not** safe. See [source-quality.md](source-quality.md).
 
-## 1. The reader's obvious next question: "show me the page"
+## 1. "Show me the page" — done
 
-Every entry records its scan leaf and its printed page number, the hOCR gives a
-bounding box for every word, and `npm run fetch-images` now downloads the page
-images. Everything needed to crop the scanned line and show it beside the
-transcription is in place; only the UI work is left. It would let a reader
-settle any remaining doubt themselves, and it is the single highest-value
-feature this app can still gain.
+Every entry carries the box of the line it was printed on, found by aligning the
+parsed entries against the hOCR's own line boxes: 100% of Part I's lines and
+98.5% of Part II's blocks. The app crops the leaf to that box on request, and a
+second click pulls back to the whole page. The images come from the Internet
+Archive rather than this repository.
+
+What is left here is small: 2 native names and 22 Part II blocks could not be
+located and so offer nothing to look at, and the leaf is fetched fresh each
+time rather than being cached for offline use (see section 4).
 
 ## 2. Search
 
@@ -50,7 +53,8 @@ A dictionary is for browsing. Missing:
 ## 4. Offline
 
 The manifest is written but there is **no service worker and no icons**, so it
-is not yet installable. `app/assets/icon-192.png` and `icon-512.png` need to
+is not yet installable. A service worker would also let the page images be kept
+after first view, which is the one part of the app that needs the network. `app/assets/icon-192.png` and `icon-512.png` need to
 exist. Given the payload is one JSON file, offline is close to free once a
 service worker caches the shell plus `data/dictionary.json`.
 

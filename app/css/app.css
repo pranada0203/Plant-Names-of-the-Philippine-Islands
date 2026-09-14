@@ -327,6 +327,106 @@ h3.section {
   color: var(--ink-soft);
 }
 
+/* ------------------------------------------------------------------- scan */
+/* The scanned line, shown on request. The frame clips a single `<img>` of the
+   whole leaf; app/js/scan.js scales and offsets it so the entry's slice of the
+   page fills the frame. Nothing here assumes a size, so the same markup serves
+   a 40-pixel line strip and the whole page. */
+
+.scan-block {
+  margin-top: 1.6rem;
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 0.8rem;
+}
+.scan-block > summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--accent);
+  width: fit-content;
+}
+.scan-block > summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.scan { margin: 0.8rem 0 0; }
+
+/* The frame must have no border and no padding. Its own box is the containing
+   block that the image's `top` and `left` percentages resolve against, and
+   those percentages are enormous -- lining up a single line on a 3,200-pixel
+   leaf means a top of about -2000%. A 1px border shrinks the reference by two
+   pixels, which at that multiplier moved the crop a whole line down the page
+   and showed the reader the wrong entry. The rule is drawn with an inset
+   shadow instead, which costs no layout. */
+.scan-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 0 1px var(--rule);
+  /* The scan's own paper, so a slow-loading leaf does not flash a dark or
+     white rectangle at a reader who chose the other theme. */
+  background: #efe9df;
+}
+.scan-frame.loading::after {
+  content: "Loading the scan6";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font: 0.75rem var(--sans);
+  color: #6b6257;
+}
+.scan-frame img {
+  position: absolute;
+  height: auto;
+  max-width: none;      /* the image is deliberately wider than its frame */
+  display: block;
+}
+.scan-frame.failed {
+  box-shadow: none;
+  border: 1px solid var(--rule);
+  padding: 0.8rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  background: var(--panel);
+}
+
+/* Pulled back to the whole leaf. The crop is switched off (app/js/scan.js
+   clears the inline geometry) and the image sized by height instead, so the
+   page arrives whole and in view rather than as a 1,200-pixel column the
+   reader has to scroll past to reach the rest of the entry. */
+.scan-whole .scan-frame {
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
+.scan-whole .scan-frame img {
+  position: static;
+  width: auto;
+  max-width: 100%;
+  max-height: min(70vh, 38rem);
+}
+
+.scan figcaption {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-top: 0.4rem;
+  font-size: 0.74rem;
+  color: var(--ink-faint);
+}
+.scan-where { margin-right: auto; }
+.scan figcaption a { color: var(--ink-faint); }
+
+.scan-toggle {
+  font: inherit;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.15rem 0.5rem;
+  cursor: pointer;
+}
+.scan-toggle:hover { border-color: var(--accent); }
+.scan-toggle:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
 .placeholder { color: var(--ink-faint); max-width: 34rem; }
 .placeholder h2 { font-family: var(--serif); color: var(--ink); font-weight: 600; font-size: 1.3rem; }
 .placeholder dl { display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 1rem; font-size: 0.9rem; }

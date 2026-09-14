@@ -37,6 +37,12 @@ because of the third pass — that pass does not touch headwords. They were
 re-measured after a parser fix recovered 29 Part II entries, which enlarged the
 comparison set.
 
+**Every entry can show you the scanned line it was read from.** The Internet
+Archive's hOCR gives a bounding box for every word, so stage 2 finds the line
+each entry was printed on and the app crops the leaf to it on request — 100% of
+Part I's lines and 98.5% of Part II's blocks. A reader who doubts a reading does
+not have to take the transcription's word for it.
+
 188 taxa still exist only because Part I names them and Part II does not. Most
 are not misreadings: they are Merrill's own inconsistent spelling (*Livinstonia*
 / *Livistonia* / *Livistona*, *Jasminum sambac* and "Jasseminum sambac" on
@@ -55,6 +61,7 @@ Current extraction, from `npm run build`:
 | Taxa with Merrill's notes | 1,009 |
 | Taxa with a family | 1,464 |
 | Entries corrected from the page images | 5,984 |
+| Entries located on the page images | 6,467 |
 | Lines the parser could not read | 70 |
 
 ## Quick start
@@ -79,7 +86,7 @@ app, `app/data/dictionary.json` is already committed.
 source/     the scanned PDF (do not edit)
 pipeline/   PDF -> text -> structured entries -> app payload
 data/       intermediate and diagnostic JSON (data/raw/ is gitignored)
-app/        the web app: static HTML, CSS, ES modules
+app/        the web app: static HTML, CSS, ES modules (js/scan.js is the page-image viewer)
 docs/       source assessment, data model, roadmap
 ```
 
@@ -106,6 +113,7 @@ Supporting tools:
 | `pipeline/show-taxa.js <page>` | Lists the Part I lines whose scientific name has no Part II counterpart |
 | `pipeline/ingest-taxa.js <page>` | Turns a transcription of those scientific names into a correction file |
 | `pipeline/rekey-corrections.js` | Re-derives every correction after a parser change |
+| `pipeline/verify-boxes.js` (`npm run verify-boxes`) | Checks every scan box really sits on its own line |
 
 Stages 1b and 1c are the only ones that touch the network; everything downstream works
 without it, just with no confidence scores.
@@ -134,8 +142,13 @@ shows both.
 
 - **No build step.** ES modules, one JSON payload, plain CSS. It can be hosted
   on any static host, including GitHub Pages.
-- **The payload is one file** (~1.6 MB, ~400 KB gzipped). Fine for now; if it
+- **The payload is one file** (~1.9 MB, ~350 KB gzipped). Fine for now; if it
   grows, split the search index from the entry bodies.
+- **The page images are not in this repository.** 183 leaves is 82 MB, and the
+  Internet Archive already hosts them as the source this edition cites. The app
+  loads them from there, on demand, only when a reader opens "Show the scan" —
+  so the dictionary itself works with no network beyond the payload, and the
+  viewer says so plainly when the Archive cannot be reached.
 - **Honesty over polish.** Where the scan is doubtful the app says so, on the
   entry, rather than presenting a confident wrong answer.
 - **Corrections are data, not edits.** Hand-read entries live in
