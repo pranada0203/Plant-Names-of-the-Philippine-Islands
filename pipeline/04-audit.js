@@ -46,11 +46,18 @@ function main() {
 
   // A second, independent signal: vowel-less or consonant-cluster headwords
   // that no Philippine language would produce.
+  // Accented vowels are vowels. Counting only A-E-I-O-U would flag every
+  // correctly transcribed name -- ACLÉNG-PÁRANG has four vowels, all accented.
+  // Multi-word headwords are judged word by word for the same reason.
+  const VOWEL = /[AEIOUÁÉÍÓÚÀÈÌÒÙÄËÏÖÜÑ]/g;
+  const CONSONANT_RUN = /[BCDFGHJKLMNPQRSTVWXZ]{4}/;
   const implausible = part1.filter((e) => {
-    const w = e.headword.replace(/[^A-Z]/g, '');
-    if (w.length < 3) return false;
-    const vowels = (w.match(/[AEIOU]/g) || []).length;
-    return vowels === 0 || vowels / w.length < 0.2 || /[BCDFGHJKLMNPQRSTVWXZ]{4}/.test(w);
+    const words = e.headword.split(/[^A-ZÀ-Þ]+/).filter((w) => w.length >= 3);
+    if (!words.length) return false;
+    return words.some((w) => {
+      const vowels = (w.match(VOWEL) || []).length;
+      return vowels === 0 || vowels / w.length < 0.2 || CONSONANT_RUN.test(w);
+    });
   });
 
   // The decisive comparison, when hOCR confidence is available: the native

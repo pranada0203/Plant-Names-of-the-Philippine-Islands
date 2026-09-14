@@ -21,6 +21,7 @@ const path = require('path');
 const N = require('./lib/normalize');
 const TAX = require('./lib/taxonomy');
 const HOCR = require('./lib/hocr');
+const CORR = require('./lib/corrections');
 
 const ROOT = path.join(__dirname, '..');
 const IN = path.join(ROOT, 'data', 'raw', 'pages.json');
@@ -116,7 +117,23 @@ const PART_I_ENTRY = new RegExp(
   '(?<locs>(?:\\s*,\\s*' + LOC_SLOT + '\\s*[.:]\\??)+)?' + // ", T., V."
   '(?:\\s*\\((?<place>[^)]{1,40})\\)\\s*\\.?)?' +          // " (Cagayan)."
   '\\s*[.:]?\\s+' +
-  '(?<sci>[A-Z][^]{2,})$'
+  // The scientific name must LOOK like one: a Titlecase genus. Without this the
+  // lazy headword stops at the first space and the rest of a multi-word name is
+  // swallowed into the taxon -- "AMORES SECOS, Sp.-Fil. Chrysopogon aciculatus"
+  // parsed as headword "AMORES", taxon "SECOS, Sp.-Fil. Chrysopogon aciculatus".
+  // Headword continuation words are set in small caps and OCR as caps (DAGAT,
+  // SECOS, BABAE), so case separates the two cleanly.
+  // A stray mark often clings to the front of the genus -- "'Trianthema",
+  // "HEugenia", "lLeea", "-Hlaeocarpus". One such character is allowed and
+  // dropped. It cannot reopen the bug above: "DAGAT" would need D-A-g, and
+  // "SECOS" S-E-c, neither of which is capital-then-lowercase.
+  '(?<scinoise>[A-Za-z\'‘’-]?)' +
+  // ...but a word followed by a dialect marker is still part of the headword,
+  // not the genus: "MApoTi, V. Habranthus" is MAPOTÍ (small caps) with dialect
+  // V., not a genus "ApoTi". Without this the tolerance above would re-split
+  // "AJOS-AJOS NGA MAPOTÍ" and "ANIS CÁNOT".
+  '(?<sci>(?![A-Za-zÀ-ÿ\'-]+,\\s*(?:' + LOC_SLOT + ')\\s*[.:])' +
+  '[A-ZÁÉÍÓÚ][a-zé][^]*)$'
 );
 
 /** Unparsed leftovers that are page furniture, not lost data. */
@@ -166,7 +183,8 @@ function parsePartI(pages, range, conf) {
         printedPage: conf && conf.printed ? conf.printed.get(p + 1) || null : null,
         confidence: lookupConfidence(conf, p + 1, head),
         raw: line,
-        flags: qualityFlags(head, taxa, dialectsUnknown),
+        flags: qualityFlags(head, taxa, dialectsUnknown)
+          .concat(g.scinoise ? ['taxon-noise'] : []),
       });
     }
   }
@@ -453,6 +471,19 @@ function main() {
   }
 
   const I = parsePartI(pages, sections.partI, conf);
+
+  // Hand-read headwords, from the page images. These override the scan.
+  const corrections = CORR.load(fs, path, path.join(OUT_DIR, 'corrections'));
+  const corr = CORR.apply(corrections, I.entries);
+  if (corrections) {
+    console.log('Fixes   ' + corr.applied + ' headwords corrected from the page images, ' +
+      corrections.files + ' pages transcribed' +
+      (corr.stale.length ? '  (' + corr.stale.length + ' stale, no longer match)' : ''));
+    for (const s of corr.stale.slice(0, 5)) {
+      console.log('          stale: p.' + s.page + ' "' + s.was + '" -> "' + s.headword + '"');
+    }
+  }
+
   const II = parsePartII(pages, sections.partII);
 
   // Score Part II's headings too. They are set in roman rather than small caps,
@@ -498,6 +529,7 @@ function main() {
   const report = {
     generated: new Date().toISOString(),
     pages: pages.length,
+    corrections: { applied: corr.applied, stale: corr.stale.length },
     partI: {
       pdfPages: [sections.partI[0] + 1, sections.partI[1] + 1],
       entries: I.entries.length,

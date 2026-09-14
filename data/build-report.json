@@ -6,27 +6,31 @@
   "series": "1903, No. 8",
   "source": "dictionaryofplan00merr.pdf",
   "rights": "Published 1903; in the public domain.",
-  "built": "2026-09-14T04:00:58.010Z",
+  "built": "2026-09-14T04:37:32.760Z",
   "counts": {
-    "names": 4740,
-    "taxa": 2149,
+    "names": 4619,
+    "taxa": 2104,
     "taxaWithNotes": 937,
     "taxaWithFamily": 1184,
     "families": 137,
-    "links": 5591
+    "links": 5606
   },
   "provenance": {
     "parse": {
-      "generated": "2026-09-14T04:00:57.391Z",
+      "generated": "2026-09-14T04:37:26.257Z",
       "pages": 209,
+      "corrections": {
+        "applied": 1460,
+        "stale": 0
+      },
       "partI": {
         "pdfPages": [
           19,
           127
         ],
-        "entries": 5038,
-        "unparsedLines": 84,
-        "flagged": 522
+        "entries": 5020,
+        "unparsedLines": 102,
+        "flagged": 365
       },
       "partII": {
         "pdfPages": [
@@ -46,24 +50,24 @@
         ]
       },
       "flagCounts": {
-        "dialect-unrecognised": 99,
-        "glyph-damage": 193,
-        "accent-lost": 156,
-        "taxon-suspect": 119
+        "dialect-unrecognised": 100,
+        "taxon-noise": 31,
+        "accent-lost": 112,
+        "glyph-damage": 146
       }
     },
-    "namesFlagged": 511,
+    "namesFlagged": 364,
     "ocrConfidence": {
       "source": "Internet Archive hOCR, Tesseract 5.3 x_wconf",
-      "scored": 3901,
-      "unscored": 839,
-      "median": 44,
-      "under40": 1736,
-      "under70": 2784
+      "scored": 3963,
+      "unscored": 656,
+      "median": 70,
+      "under40": 1232,
+      "under70": 1981
     },
-    "linkedFromPartII": 1383,
-    "linkedByNearMatch": 781,
-    "taxaJoinedByNearMatch": 366,
-    "namesOnlyInPartII": 1491
+    "linkedFromPartII": 1583,
+    "linkedByNearMatch": 810,
+    "taxaJoinedByNearMatch": 359,
+    "namesOnlyInPartII": 1291
   }
 }

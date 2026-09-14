@@ -1,14 +1,18 @@
 {
-  "generated": "2026-09-14T04:00:57.391Z",
+  "generated": "2026-09-14T04:37:26.257Z",
   "pages": 209,
+  "corrections": {
+    "applied": 1460,
+    "stale": 0
+  },
   "partI": {
     "pdfPages": [
       19,
       127
     ],
-    "entries": 5038,
-    "unparsedLines": 84,
-    "flagged": 522
+    "entries": 5020,
+    "unparsedLines": 102,
+    "flagged": 365
   },
   "partII": {
     "pdfPages": [
@@ -28,9 +32,9 @@
     ]
   },
   "flagCounts": {
-    "dialect-unrecognised": 99,
-    "glyph-damage": 193,
-    "accent-lost": 156,
-    "taxon-suspect": 119
+    "dialect-unrecognised": 100,
+    "taxon-noise": 31,
+    "accent-lost": 112,
+    "glyph-damage": 146
   }
 }

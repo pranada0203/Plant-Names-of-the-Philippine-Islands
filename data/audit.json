@@ -1,12 +1,12 @@
 {
-  "generated": "2026-09-14T04:00:58.584Z",
+  "generated": "2026-09-14T04:37:33.806Z",
   "ocrConfidence": {
     "description": "OCR confidence by how the word is set on the page",
     "smallCapsHeadwords": {
-      "n": 4157,
-      "median": 45,
-      "underFifty": 2248,
-      "underFiftyPercent": 54.1
+      "n": 4334,
+      "median": 73,
+      "underFifty": 1577,
+      "underFiftyPercent": 36.4
     },
     "romanScientificNames": {
       "n": 1383,
@@ -15,290 +15,170 @@
     },
     "worstReadings": [
       {
-        "read_as": "ApisiinG",
+        "read_as": "Buyén",
         "confidence": 0,
-        "page": 19,
-        "line": "ApisiinG, B. Artocarpus."
+        "page": 47,
+        "line": "Buyén (Balabac). Mussaenda grandiflora Rolfe."
       },
       {
-        "read_as": "ABUTRA",
+        "read_as": "Caguinpi",
         "confidence": 0,
-        "page": 19,
-        "line": "ABUTRA, Sp.-Fil. Anamirta cocculus W. & A."
+        "page": 49,
+        "line": "Caguinpi, V. Vitis carnosa Wall."
       },
       {
-        "read_as": "Actin",
+        "read_as": "CarcAt",
         "confidence": 0,
-        "page": 20,
-        "line": "Actin, T. Dysoxylum blancoi Vidal."
+        "page": 49,
+        "line": "CarcAt, T. Adiantum lunulatum Burm."
       },
       {
-        "read_as": "Actrir",
+        "read_as": "CaraBtyo",
         "confidence": 0,
-        "page": 21,
-        "line": "Actrir. Ficus quercifolia Roxb."
+        "page": 50,
+        "line": "CaraBtyo, T. Saccopetalum."
       },
       {
-        "read_as": "ALAN{eniI",
+        "read_as": "CaLAuios",
         "confidence": 0,
-        "page": 22,
-        "line": "ALAN{eniI (Zamboanga). Myristica."
+        "page": 50,
+        "line": "CaLAuios, V. Caryota rumphiana Mart."
       },
       {
-        "read_as": "ALauinao",
+        "read_as": "CataMAyo",
         "confidence": 0,
-        "page": 22,
-        "line": "ALauinao. Dracontomelon cumingianum Baill."
+        "page": 50,
+        "line": "CataMAyo, T. Erioglossum."
       },
       {
-        "read_as": "AutAMA",
+        "read_as": "CaLANiagI",
         "confidence": 0,
-        "page": 22,
-        "line": "AutAMA. Morinda bracteata Roxb."
+        "page": 50,
+        "line": "CaLANiagI, V. Gardenia."
       },
       {
-        "read_as": "Arripinin",
+        "read_as": "CatayAcay",
         "confidence": 0,
-        "page": 22,
-        "line": "Arripinin. Bauhinia binnata Blanco."
+        "page": 51,
+        "line": "CatayAcay, V. Desmodium pulchellum Benth."
       },
       {
-        "read_as": "Auiptsut",
+        "read_as": "CautAcay",
         "confidence": 0,
-        "page": 22,
-        "line": "Auiptsut, V. Tabernaemontana pandacaqui Poir."
+        "page": 51,
+        "line": "CautAcay, V. Desmodium pulchellum Benth."
       },
       {
-        "read_as": "Axisun",
+        "read_as": "CatAtca",
         "confidence": 0,
-        "page": 22,
-        "line": "Axisun, V. Blumea balsamifera DC."
+        "page": 51,
+        "line": "CatAtca. Clerodendron intermedium Cham."
       },
       {
-        "read_as": "AiHizo",
+        "read_as": "CaLioT",
         "confidence": 0,
-        "page": 22,
-        "line": "AiHizo. Bauhinia binnata Blanco."
+        "page": 51,
+        "line": "CaLioT, Pang., Il. Hopea plagata Vid."
       },
       {
-        "read_as": "Axinao",
+        "read_as": "CattRAoRAO",
         "confidence": 0,
-        "page": 22,
-        "line": "Axinao, B. Columbia serratifolia DC."
+        "page": 51,
+        "line": "CattRAoRAO, T. Eragrostis plumosa Link."
       },
       {
-        "read_as": "AiIntTATAO",
+        "read_as": "Caxires",
         "confidence": 0,
-        "page": 22,
-        "line": "AiIntTATAO, T. Diospyros pilosanthera Blanco."
+        "page": 51,
+        "line": "Caxires, V. Amaranthus spinosus L."
       },
       {
-        "read_as": "ALIpAcHAo",
+        "read_as": "Caroscos",
         "confidence": 0,
-        "page": 22,
-        "line": "ALIpAcHAo, Il. Garcinia."
+        "page": 51,
+        "line": "Caroscos, T. Eugenia jambos L."
       },
       {
-        "read_as": "Auipat",
+        "read_as": "CaLtpay",
         "confidence": 0,
-        "page": 23,
-        "line": "Auipat, T. Nephelium glabrum Noronh."
+        "page": 52,
+        "line": "CaLtpay, V. Lagenaria vulgaris Seringe."
       },
       {
-        "read_as": "Avipsro",
+        "read_as": "CaLuccée",
         "confidence": 0,
-        "page": 23,
-        "line": "Avipsro, T. Sumbavia rottleroides Baill."
+        "page": 52,
+        "line": "CaLuccée, T. Eugenia."
       },
       {
-        "read_as": "AuIpAyo",
+        "read_as": "Carupines",
         "confidence": 0,
-        "page": 23,
-        "line": "AuIpAyo, V. Homalomena."
+        "page": 52,
+        "line": "Carupines, Z. Avicennia officinalis L."
       },
       {
-        "read_as": "Axuipay",
+        "read_as": "CAtuT",
         "confidence": 0,
-        "page": 23,
-        "line": "Axuipay. Nephelium glabrum Noronh."
+        "page": 52,
+        "line": "CAtuT, Pamp. Dioscorea hirsuta Blume."
       },
       {
-        "read_as": "AuiTApTAP",
+        "read_as": "CamiAs",
         "confidence": 0,
-        "page": 23,
-        "line": "AuiTApTAP, B. Planchonia."
+        "page": 53,
+        "line": "CamiAs, T. Averrhoa bilimbi L."
       },
       {
-        "read_as": "AtMéNDRO",
+        "read_as": "Camtrao",
         "confidence": 0,
-        "page": 23,
-        "line": "AtMéNDRO, Sp.-Fil. Terminalia catappa L."
+        "page": 54,
+        "line": "Camtrao, Il. Citrus hystrix DC."
       },
       {
-        "read_as": "Atmeéz",
+        "read_as": "Canet",
         "confidence": 0,
-        "page": 23,
-        "line": "Atmeéz. Celtis philippinensis Blanco."
+        "page": 54,
+        "line": "Canet, T. Artocarpus."
       },
       {
-        "read_as": "Axopac",
+        "read_as": "CapaniruLor",
         "confidence": 0,
-        "page": 23,
-        "line": "Axopac. Euphorbia litchi DC."
+        "page": 55,
+        "line": "CapaniruLor, T. Justicia gendarussa L."
       },
       {
-        "read_as": "AuuBinop",
+        "read_as": "Capiti",
         "confidence": 0,
-        "page": 23,
-        "line": "AuuBinop, V. Spondias mangifera Wall."
+        "page": 55,
+        "line": "Capiti, T. Aleurites moluccana Willd."
       },
       {
-        "read_as": "Aural",
+        "read_as": "Cart",
         "confidence": 0,
-        "page": 23,
-        "line": "Aural, T. Nephelium longana Camb."
+        "page": 55,
+        "line": "Cart. Physalis peruviana L."
       },
       {
-        "read_as": "AMO",
+        "read_as": "CaptToL",
         "confidence": 0,
-        "page": 24,
-        "line": "AMO LONG, Il. Epipremnum medium Engl."
+        "page": 55,
+        "line": "CaptToL, V. Oryza minuta Pres)."
       }
     ]
   },
   "crossHalfCheck": {
     "description": "Native names printed in Part II, looked up in Part I",
     "total": 2908,
-    "matchedExactly": 613,
-    "matchedWithinOneLetter": 786,
-    "unmatched": 1509,
-    "unmatchedPercent": 51.9
+    "matchedExactly": 787,
+    "matchedWithinOneLetter": 817,
+    "unmatched": 1304,
+    "unmatchedPercent": 44.8
   },
   "implausibleHeadwords": {
     "description": "Part I headwords with no vowels or impossible consonant runs",
-    "count": 175,
-    "percentOfPartI": 3.5,
+    "count": 117,
+    "percentOfPartI": 2.3,
     "examples": [
-      {
-        "read_as": "AAGNOCDSTO",
-        "line": "Aagnocdsto, Sp.-Fil. Vitex negundo L.--Vitex"
-      },
-      {
-        "read_as": "ATMÉNDRO",
-        "line": "AtMéNDRO, Sp.-Fil. Terminalia catappa L."
-      },
-      {
-        "read_as": "BAPBDROP",
-        "line": "BapBdrop, T., V. Nauclea obtusa Blume."
-      },
-      {
-        "read_as": "BATUCSTC",
-        "line": "Batucstc, T. Clausena?."
-      },
-      {
-        "read_as": "BANCCTPO",
-        "line": "Bancctpo, V. Morinda citrifolia L."
-      },
-      {
-        "read_as": "BANCCTPO",
-        "line": "Bancctpo, V. Morinda bracteata Roxb."
-      },
-      {
-        "read_as": "BANTNVYO",
-        "line": "Bantnvyo, T. Antidesma ghaesembilla Gaertn."
-      },
-      {
-        "read_as": "BARTNCUCTRONE",
-        "line": "Bartncuctrone, Il. Hopea."
-      },
-      {
-        "read_as": "BAYNTP",
-        "line": "Bayntp. Columbia serratifolia A. DC."
-      },
-      {
-        "read_as": "BRSTCO-SIPAY",
-        "line": "Brstco-sipay, T. Calamus."
-      },
-      {
-        "read_as": "BITTNGA",
-        "line": "BittnGa, T. Macaranga tanarius Muell. Arg."
-      },
-      {
-        "read_as": "BILGNG-DALAGA",
-        "line": "BILGNG-DALAGA, T?. Terminalia."
-      },
-      {
-        "read_as": "BRYGRIV",
-        "line": "BryGriv, V. Dysoxylum blancoi Vidal."
-      },
-      {
-        "read_as": "BRN6NANE",
-        "line": "Brn6nane, T. Octomeles sumatrana Miq."
-      },
-      {
-        "read_as": "BRNTNGA",
-        "line": "BrntnGa, T. Clerodendron macrostigium Schauer."
-      },
-      {
-        "read_as": "BINTNGA",
-        "line": "BintnGa, V. Macaranga tanarius Muell. Arg."
-      },
-      {
-        "read_as": "BINTNGA",
-        "line": "BintnGa, Il. Melochia arborea Blanco."
-      },
-      {
-        "read_as": "BRRVDGC",
-        "line": "BrrvdGc, T. -Hlaeocarpus."
-      },
-      {
-        "read_as": "BOVOR-CTSAT",
-        "line": "Bovor-ctsat, T. Thespesia populnea Corr."
-      },
-      {
-        "read_as": "BOL6NG-TAMBAL",
-        "line": "BoL6nG-TAMBAL. Clerodendron intermedium Cham."
-      },
-      {
-        "read_as": "BTCTRON",
-        "line": "Btctron (Masbate). Calamus."
-      },
-      {
-        "read_as": "BTXRIO",
-        "line": "Btxrio, V. Dendrocalamus flagellifer Munro."
-      },
-      {
-        "read_as": "BGLAC-PONND6L",
-        "line": "BGLAc-ponnd6L (Cebu). Ceiba pentandra Gaertn."
-      },
-      {
-        "read_as": "BGNGA",
-        "line": "BGNGA (Cagayan). Dipterocarpus."
-      },
-      {
-        "read_as": "BTNTOR-PTSA",
-        "line": "Btntor-ptsa, T. Mallotus ricinoides Muell. Arg."
-      },
-      {
-        "read_as": "BOUNTOT-PTSA",
-        "line": "Bountot-Ptsa, T. Setaria glauca Beauy."
-      },
-      {
-        "read_as": "BTRONC",
-        "line": "Btronc, V. Milletia pulchra Benth."
-      },
-      {
-        "read_as": "BTTRONE-MANOC",
-        "line": "Bttrone-MANoc, V. Cyclostemon."
-      },
-      {
-        "read_as": "BUTTNNG-MANOOC",
-        "line": "ButtNnG-MANOoc, B. Hydnocarpus heterophylla Blume."
-      },
-      {
-        "read_as": "BTYO RR",
-        "line": "Btyo rr Amo, V. Piper caninum A. Deitr."
-      },
       {
         "read_as": "CACHTMPA",
         "line": "CacHtmpa, Il. Argemone mexicana L."
@@ -336,23 +216,143 @@
         "line": "CaxLurctp, T. Eugenia."
       },
       {
-        "read_as": "CAMOT-PTSA",
-        "line": "CAmot-ptsa, T. Harrisonia bennetii Benth. and Hook. f."
+        "read_as": "CARACHTCHA",
+        "line": "CaracHtcHa, T. Plumiera acutifolia Poir."
+      },
+      {
+        "read_as": "CASNTT-CABAA",
+        "line": "Casntt-cABaa, T. Azima nova Blanco."
+      },
+      {
+        "read_as": "CARCHTSUNE",
+        "line": "CarcHtsune, V. Datura alba Nees."
+      },
+      {
+        "read_as": "CATSTMPBA",
+        "line": "CatstmpBa, T. Carthamus tinctorius L."
+      },
+      {
+        "read_as": "CATTNGAO",
+        "line": "CattnGao, Ig. Loranthus spicifer F. Vill."
+      },
+      {
+        "read_as": "CAYANNGCCAN",
+        "line": "CayaNnGccAN, V. Heptapleurum venulosum Seem."
+      },
+      {
+        "read_as": "BAYANCGCAN",
+        "line": "BayancGcAn. Dioscorea pentaphylla Pers."
+      },
+      {
+        "read_as": "CUAM-BTNPOC",
+        "line": "CuAm-Btnpoc, T. Ehretia buxifolia Roxb."
+      },
+      {
+        "read_as": "CRNCHAO-CINCHAUAN",
+        "line": "CrncHAo-cINCHAUAN, T. Cissampelos pareira L."
+      },
+      {
+        "read_as": "CRRRGLLAS",
+        "line": "CrrRGLLAS. Spondias purpurea L."
+      },
+      {
+        "read_as": "COR6NNG-CORONG",
+        "line": "Cor6NnG-cORoNG, V. Erythrina ovalifolia Roxb."
+      },
+      {
+        "read_as": "CTSR",
+        "line": "Ctsr. Dittelasma rarak Benth."
+      },
+      {
+        "read_as": "CTS",
+        "line": "Cts, T. Memecylon edule Roxb."
+      },
+      {
+        "read_as": "CTPRANC-BUNBDOC",
+        "line": "Ctpranc-BunbDoc, B. Gleditschia maculata H. B. K."
+      },
+      {
+        "read_as": "CURCTP",
+        "line": "Curctp, Pamp. Eugenia."
+      },
+      {
+        "read_as": "CURCTRAN",
+        "line": "Curctran, T. Plectranthus."
+      },
+      {
+        "read_as": "CTTR",
+        "line": "Cttr, B. Solanum nigrum L."
+      },
+      {
+        "read_as": "DACTTTUNE",
+        "line": "DacttTune (Jolo). Clerodendron cumingianum Schauer."
+      },
+      {
+        "read_as": "DALTPPANC",
+        "line": "DaLtPpanc, V. Urena sinuata Linn."
+      },
+      {
+        "read_as": "DALTRVUY",
+        "line": "DaLtrvuy, Pamp. Aglaia."
+      },
+      {
+        "read_as": "DAMTNC-ETSAT",
+        "line": "Damtnc-etsat, T. Pogonatherum crinitum [rin."
+      },
+      {
+        "read_as": "DAMMTNG-PASSIGC",
+        "line": "DamMtNG-PAsSIGc, T. Panicum."
+      },
+      {
+        "read_as": "DANTPRA",
+        "line": "Dantpra (Cagayan). Cedrella toona Roxb."
+      },
+      {
+        "read_as": "DRRDAN",
+        "line": "DrrdAn, ll. Zizyphus."
+      },
+      {
+        "read_as": "DUCTTLAN",
+        "line": "DucttLan, T. Eugenia."
+      },
+      {
+        "read_as": "DUCTTNE-AHAS",
+        "line": "Ducttne-AHAS, T. Naravelia laurifolia Wall."
+      },
+      {
+        "read_as": "DTXRAO",
+        "line": "Dtxrao, V. Cureuma longa L."
+      },
+      {
+        "read_as": "DTWNEÉON",
+        "line": "Dtwneéon, T., V. Heritiera littoralis Dry."
+      },
+      {
+        "read_as": "DUNGTN",
+        "line": "DuNGtn, T., V. Heritiera littoralis Dry."
+      },
+      {
+        "read_as": "DUNGGNN",
+        "line": "DuNGGnN, V. Tarrietia sylvatica Merrill."
+      },
+      {
+        "read_as": "DUNGURGNGUT",
+        "line": "DuNGURGNGUT, C. Citrus hystrix DC."
       }
     ]
   },
   "accentsLost": {
     "description": "Occurrences where an accented vowel was flattened to \"e\"",
-    "partI": 156
+    "partI": 146
   },
   "sampleOrphans": [
     {
-      "name": "Angud",
+      "name": "Décot-décot",
       "under": "Achyranthes aspera",
       "page": 128
     },
     {
-      "name": "Décot-décot",
+      "name": "Hangot",
       "under": "Achyranthes aspera",
       "page": 128
     },
@@ -387,22 +387,12 @@
       "page": 128
     },
     {
-      "name": "fpil",
-      "under": "Adenanthera",
-      "page": 128
-    },
-    {
       "name": "Malatéyon",
       "under": "Adenanthera",
       "page": 128
     },
     {
       "name": "Bihay",
-      "under": "Adenanthera pavonina",
-      "page": 128
-    },
-    {
-      "name": "Baguiréro",
       "under": "Adenanthera pavonina",
       "page": 128
     },
@@ -507,22 +497,12 @@
       "page": 129
     },
     {
-      "name": "Ananfplas",
-      "under": "Albizzzia lucipa",
-      "page": 129
-    },
-    {
       "name": "Anandipla",
       "under": "Albizzzia lucipa",
       "page": 129
     },
     {
-      "name": "Ayangao",
-      "under": "Albizzzia lucipa",
-      "page": 129
-    },
-    {
-      "name": "Anitap",
+      "name": "Adan",
       "under": "Albizzzia lucipa",
       "page": 129
     },
@@ -545,6 +525,26 @@
       "name": "Pathod",
       "under": "Albizzzia lucipa",
       "page": 129
+    },
+    {
+      "name": "Tayan",
+      "under": "Albizzzia javansis",
+      "page": 130
+    },
+    {
+      "name": "Rimbang",
+      "under": "Aleurites moluccana",
+      "page": 130
+    },
+    {
+      "name": "Baléng-cadyés",
+      "under": "Allaeanthus luzonicus",
+      "page": 130
+    },
+    {
+      "name": "Cimal",
+      "under": "Allaeanthus luzonicus",
+      "page": 130
     }
   ]
 }
