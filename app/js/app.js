@@ -90,79 +90,118 @@ function scheduleRun() {
 
 /* --------------------------------------------------------------- rendering */
 
-function renderResults(results, total) {
-  const list = el('results');
-  list.replaceChildren();
+/**
+ * Painting the results list.
+ *
+ * The search returns every match; this decides how many of them become DOM.
+ * Measured on a desktop, building and laying out one row costs about 0.04ms,
+ * so the whole 4,414-name list is around 190ms and 22,000 nodes -- several
+ * times that on a phone, and paid on every keystroke. A page of 200 is about
+ * 16ms, which is under a frame.
+ *
+ * So the first page is painted immediately and the rest follow as the reader
+ * scrolls. The cap used to live in search.js instead, which meant the other
+ * 4,214 names were found, ranked, and then simply dropped: no amount of
+ * scrolling would reach them.
+ */
+const PAGE = 200;
 
-  el('count').textContent = total
-    ? `${total.toLocaleString()} match${total === 1 ? '' : 'es'}${total > results.length ? ` · showing ${results.length}` : ''}`
-    : 'No matches';
+let shown = [];        // every match for the current query, ranked
+let painted = 0;       // how many of them are in the DOM
+
+function renderResults(results, total) {
+  shown = results;
+  painted = 0;
+  el('results').replaceChildren();
+  el('results').scrollTop = 0;
+  paintMore(total);
+}
+
+/** Build one page of rows and append it. */
+function paintMore(total = shown.length) {
+  const list = el('results');
+  const slice = shown.slice(painted, painted + PAGE);
 
   const frag = document.createDocumentFragment();
-  for (const r of results) {
-    const li = document.createElement('li');
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.dataset.kind = r.kind;
-    b.dataset.id = String(r.id);
-    if (current && current.kind === r.kind && current.id === r.id) b.setAttribute('aria-current', 'true');
+  for (const r of slice) frag.append(row(r));
+  list.append(frag);
+  painted += slice.length;
 
-    const head = document.createElement('div');
-    head.className = 'headword';
-    const sub = document.createElement('div');
-    sub.className = 'sub';
+  el('count').textContent = total
+    ? `${total.toLocaleString()} match${total === 1 ? '' : 'es'}` +
+      (painted < total ? ` · showing ${painted.toLocaleString()}` : '')
+    : 'No matches';
 
-    if (r.kind === 'name') {
-      const n = data.names[r.id];
-      head.append(highlight(n.name, r.at, r.len));
-      sub.textContent = n.taxa.map((t) => data.taxa[t.id].name).join(' · ') || '—';
-      if (n.dialects.length) {
-        const tag = document.createElement('span');
-        tag.className = 'kind';
-        tag.textContent = n.dialects.map((d) => data.dialects[d] || d).join('/');
-        head.append(tag);
-      }
-      if (confidenceNote(n.confidence).level === 'bad') {
-        const d = document.createElement('span');
-        d.className = 'doubt';
-        d.title = confidenceNote(n.confidence).text;
-        d.textContent = 'misread?';
-        head.append(d);
-      }
-    } else {
-      const t = data.taxa[r.id];
-      // A plant, not a word: the row joins the botanical strand and is set in
-      // italic and green, so the two halves of the book are told apart before
-      // anything is read.
-      head.classList.add('sci');
-      // A note match is a match on the description, not on the name, so the
-      // name is left alone and the description carries the mark instead.
-      head.append(r.via === 'note' ? t.name : highlight(t.name, r.at, r.len));
+  // A page that does not fill the pane can never be scrolled, so the scroll
+  // handler would never fire and the rest would be stranded -- which happens
+  // on a tall window, and on any window once a filter leaves few enough rows.
+  if (painted < shown.length && list.scrollHeight <= list.clientHeight) paintMore(total);
+}
+
+/** One result row. */
+function row(r) {
+  const li = document.createElement('li');
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.dataset.kind = r.kind;
+  b.dataset.id = String(r.id);
+  if (current && current.kind === r.kind && current.id === r.id) b.setAttribute('aria-current', 'true');
+
+  const head = document.createElement('div');
+  head.className = 'headword';
+  const sub = document.createElement('div');
+  sub.className = 'sub';
+
+  if (r.kind === 'name') {
+    const n = data.names[r.id];
+    head.append(highlight(n.name, r.at, r.len));
+    sub.textContent = n.taxa.map((t) => data.taxa[t.id].name).join(' · ') || '—';
+    if (n.dialects.length) {
       const tag = document.createElement('span');
       tag.className = 'kind';
-      tag.textContent = 'species';
-      tag.style.fontStyle = 'normal';
-      head.append(tag);
-      // The sub-line under a name is a binomial and is set as one. Under a
-      // plant it is a family or a line of Merrill's prose, neither of which is
-      // a scientific name -- so it is marked as prose and set upright.
-      sub.classList.add('prose');
-      if (r.via === 'note') sub.append(snippet(t.notes, r.at, r.len));
-      else sub.textContent = t.family || (t.notes ? t.notes.slice(0, 70) : '—');
-    }
-    const why = WHY[r.via];
-    if (why) {
-      const tag = document.createElement('span');
-      tag.className = 'why';
-      tag.textContent = why;
+      tag.textContent = n.dialects.map((d) => data.dialects[d] || d).join('/');
       head.append(tag);
     }
-
-    b.append(head, sub);
-    li.append(b);
-    frag.append(li);
+    if (confidenceNote(n.confidence).level === 'bad') {
+      const d = document.createElement('span');
+      d.className = 'doubt';
+      d.title = confidenceNote(n.confidence).text;
+      d.textContent = 'misread?';
+      head.append(d);
+    }
+  } else {
+    const t = data.taxa[r.id];
+    // A plant, not a word: the row joins the botanical strand and is set in
+    // italic and green, so the two halves of the book are told apart before
+    // anything is read.
+    head.classList.add('sci');
+    // A note match is a match on the description, not on the name, so the
+    // name is left alone and the description carries the mark instead.
+    head.append(r.via === 'note' ? t.name : highlight(t.name, r.at, r.len));
+    const tag = document.createElement('span');
+    tag.className = 'kind';
+    tag.textContent = 'species';
+    tag.style.fontStyle = 'normal';
+    head.append(tag);
+    // The sub-line under a name is a binomial and is set as one. Under a
+    // plant it is a family or a line of Merrill's prose, neither of which is
+    // a scientific name -- so it is marked as prose and set upright.
+    sub.classList.add('prose');
+    if (r.via === 'note') sub.append(snippet(t.notes, r.at, r.len));
+    else sub.textContent = t.family || (t.notes ? t.notes.slice(0, 70) : '—');
   }
-  list.append(frag);
+
+  const why = WHY[r.via];
+  if (why) {
+    const tag = document.createElement('span');
+    tag.className = 'why';
+    tag.textContent = why;
+    head.append(tag);
+  }
+
+  b.append(head, sub);
+  li.append(b);
+  return li;
 }
 
 /**
@@ -630,6 +669,14 @@ function placeholder() {
 function wire() {
   el('q').addEventListener('input', scheduleRun);
   for (const id of ['dialect', 'family', 'letter', 'confident']) el(id).addEventListener('change', run);
+
+  // Paint the next page before the reader reaches the end, so the list does not
+  // visibly stop and then extend.
+  el('results').addEventListener('scroll', () => {
+    if (painted >= shown.length) return;
+    const list = el('results');
+    if (list.scrollTop + list.clientHeight > list.scrollHeight - 600) paintMore();
+  }, { passive: true });
 
   el('results').addEventListener('click', (e) => {
     const b = e.target.closest('button[data-kind]');

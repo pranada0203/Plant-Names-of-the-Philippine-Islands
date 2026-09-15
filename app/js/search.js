@@ -180,7 +180,7 @@ export class Search {
    * @returns {{kind:'name'|'taxon', id:number, rank:number, at:number, len:number,
    *            via?:'phonetic'|'near'|'note'}[]}
    */
-  query(raw, { limit = 200, dialect = null, family = null, letter = null,
+  query(raw, { dialect = null, family = null, letter = null,
                minConfidence = null, notes = true } = {}) {
     const q = fold(raw);
     // Below three letters the phonetic classes stop discriminating: a single
@@ -252,7 +252,13 @@ export class Search {
 
     const filtered = out.filter((r) => this.passes(r, { dialect, family, letter, minConfidence }));
     filtered.sort((a, b) => a.rank - b.rank || this.label(a).localeCompare(this.label(b), 'en'));
-    return { total: filtered.length, results: filtered.slice(0, limit) };
+    // Every match, not a page of them. This used to end in `.slice(0, limit)`
+    // with limit defaulting to 200, which quietly made four fifths of a result
+    // set unreachable: the work of finding and ranking them was already done,
+    // and then they were thrown away. How many to PAINT is a question about the
+    // DOM, so it belongs to the view; app.js paints in pages as the list is
+    // scrolled.
+    return { total: filtered.length, results: filtered };
   }
 
   passes(r, { dialect, family, letter, minConfidence }) {
