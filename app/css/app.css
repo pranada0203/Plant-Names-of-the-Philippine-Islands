@@ -217,6 +217,10 @@ button { font: inherit; color: inherit; }
   font-family: var(--serif);
   font-size: 1rem;
   letter-spacing: 0.02em;
+  /* A name listed in three languages carries the tag "Tagalog/Visayan/Pampangan",
+     which no engine breaks on its own and which pushed the whole results column
+     six pixels wide -- enough for a horizontal scrollbar under the list. */
+  overflow-wrap: anywhere;
 }
 .results .sub {
   font-size: 0.78rem;
@@ -396,6 +400,112 @@ h3.section {
   .update-bar span { flex-basis: 100%; }
 }
 
+/* ----------------------------------------------------------------- browse */
+/* The index views. A dictionary's other mode: not looking something up, but
+   seeing what is in it. Dense on purpose -- a page of an index should show a
+   page's worth. */
+
+.browse-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.2rem 0 0.3rem;
+}
+.browse-lede { color: var(--ink-soft); font-size: 0.9rem; margin: 0 0 1.4rem; max-width: 38rem; }
+.browse-foot { color: var(--ink-faint); font-size: 0.76rem; margin: 0.5rem 0 0; max-width: 38rem; }
+
+.browse-back {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+.browse-back:hover { text-decoration: underline; }
+
+/* A–Z: square tiles, because the alphabet is the one index whose shape the
+   reader already knows. */
+.browse-az {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3.6rem, 1fr));
+  gap: 0.4rem;
+}
+.browse-letter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  padding: 0.5rem 0.2rem;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--panel);
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--radius);
+}
+.browse-letter:hover { border-color: var(--accent); background: var(--accent-soft); }
+.browse-letter .browse-count { font-family: var(--sans); font-size: 0.66rem; color: var(--ink-faint); }
+
+.browse-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.browse-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.84rem;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--panel);
+  border: 1px solid var(--rule-soft);
+  border-radius: 999px;
+}
+.browse-chip:hover { border-color: var(--accent); background: var(--accent-soft); }
+.browse-chip .browse-count { font-size: 0.7rem; color: var(--ink-faint); }
+
+/* The long lists flow into however many columns the pane can hold, which is
+   what makes a letter of the index read like a page rather than a queue. */
+.browse-columns {
+  columns: 11rem;
+  column-gap: 1.4rem;
+  margin-top: 0.4rem;
+}
+.browse-entry {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-size: 0.86rem;
+  font-family: var(--serif);
+  text-align: left;
+  color: var(--ink);
+  background: none;
+  border: 0;
+  padding: 0.12rem 0.2rem;
+  border-radius: 3px;
+  cursor: pointer;
+  break-inside: avoid;
+  overflow-wrap: anywhere;
+}
+.browse-entry:hover { background: var(--accent-soft); color: var(--accent); }
+.browse-entry:focus-visible { outline: 2px solid var(--focus); outline-offset: -1px; }
+
+.browse-genera {
+  columns: 15rem;
+  column-gap: 1.6rem;
+  margin-top: 0.4rem;
+}
+.browse-genus { break-inside: avoid; margin: 0 0 1rem; }
+.browse-genus-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.15rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 0.15rem;
+}
+.browse-species .browse-entry { padding-left: 0.5rem; }
+
 /* ------------------------------------------------------------------- scan */
 /* The scanned line, shown on request. The frame clips a single `<img>` of the
    whole leaf; app/js/scan.js scales and offsets it so the entry's slice of the
@@ -536,3 +646,12 @@ h3.section {
   }
   .masthead h1 span { display: none; }
 }
+
+/* A genus heading that is itself an entry in the book: it links, but it must
+   still read as the heading of the block, not as one of the species under it. */
+.browse-genus-name .browse-entry {
+  font: inherit;
+  padding: 0;
+  color: inherit;
+}
+.browse-genus-name .browse-entry:hover { background: none; color: var(--accent); text-decoration: underline; }

@@ -1,6 +1,7 @@
 import { Search, foldMap } from './search.js';
 import { initScan, scanFigure, scanAvailable, revealScans } from './scan.js';
 import { initOffline } from './offline.js';
+import { initBrowse, browseIndex, browseLetter, browseLanguage, browseFamily } from './browse.js';
 
 const el = (id) => document.getElementById(id);
 const app = el('app');
@@ -22,6 +23,7 @@ async function boot() {
   data = await res.json();
   search = new Search(data);
   initScan(data.meta && data.meta.scan);
+  initBrowse(data, show);
 
   fillFilters();
   restoreTheme();
@@ -234,10 +236,20 @@ function show(kind, id) {
   el('detail').focus({ preventScroll: true });
 }
 
+const BROWSE_VIEWS = {
+  letter: browseLetter,
+  lang: browseLanguage,
+  family: browseFamily,
+};
+
 function renderDetail() {
   const box = el('detail-inner');
   box.replaceChildren();
   if (!current) return box.append(placeholder());
+  if (current.kind === 'browse') {
+    const view = BROWSE_VIEWS[current.view];
+    return box.append(view ? view(current.key) : browseIndex());
+  }
   box.append(current.kind === 'name' ? nameView(data.names[current.id]) : taxonView(data.taxa[current.id]));
 }
 
@@ -533,7 +545,13 @@ function wire() {
     try { localStorage.setItem('theme', next); } catch { /* private mode */ }
   });
 
-  el('about').addEventListener('click', () => { current = null; renderDetail(); app.classList.add('detail-open'); });
+  el('about').addEventListener('click', () => {
+    location.hash = '';
+    current = null;
+    renderDetail();
+    app.classList.add('detail-open');
+  });
+  el('browse').addEventListener('click', () => { location.hash = 'browse'; });
 
   window.addEventListener('hashchange', () => { applyRoute(); renderDetail(); });
   window.addEventListener('keydown', (e) => {
@@ -543,7 +561,18 @@ function wire() {
 }
 
 function applyRoute() {
-  const m = /^#(name|taxon)\/(\d+)$/.exec(location.hash);
+  const hash = location.hash;
+
+  // #browse, or #browse/<view>/<key>. The key is a letter, a dialect code or a
+  // family name, so it is percent-encoded on the way in.
+  if (hash === '#browse' || hash.startsWith('#browse/')) {
+    const [, view, ...rest] = hash.slice('#browse'.length).split('/');
+    current = { kind: 'browse', view: view || null, key: decodeURIComponent(rest.join('/') || '') };
+    app.classList.add('detail-open');
+    return;
+  }
+
+  const m = /^#(name|taxon)\/(\d+)$/.exec(hash);
   if (!m) { current = null; return; }
   const id = Number(m[2]);
   const pool = m[1] === 'name' ? data.names : data.taxa;

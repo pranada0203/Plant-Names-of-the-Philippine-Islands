@@ -44,7 +44,17 @@ const SHELL_FILES = [
   'js/search.js',
   'js/scan.js',
   'js/offline.js',
+  'js/browse.js',
 ];
+
+/**
+ * The genus as it should be shown and grouped by: one initial capital.
+ * Botanical convention, and the only form that groups reliably.
+ */
+function displayGenus(name) {
+  const word = String(name || '').trim().split(/\s+/)[0] || '';
+  return word ? word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() : '';
+}
 
 /** Match key for a scientific name: genus + epithet, case and accent folded. */
 function taxonKey(name) {
@@ -169,7 +179,11 @@ function main() {
       name: e.nameDisplay,
       printed: e.name,
       authority: e.authority,
-      genus: e.genus,
+      // From the display binomial, not from the parse's own `genus`. That one
+      // carries whatever case the page was set in -- ARENGA beside Calamus
+      // beside CorypHa -- which is invisible until something tries to group by
+      // it, and then Palmae has nineteen genera holding no species each.
+      genus: displayGenus(e.nameDisplay),
       family: e.family,
       familySource: e.familySource,
       notes: e.notes,
@@ -210,7 +224,7 @@ function main() {
         (words[1] ? ' ' + words[1].toLowerCase() : ''),
       printed: name,
       authority: null,
-      genus: words[0].toUpperCase(),
+      genus: displayGenus(words[0]),
       family: null,
       familySource: null,
       notes: null,

@@ -26,7 +26,7 @@
  * on, and the unscoped call cheerfully answered a navigation with a different
  * application's cached index.html.
  */
-const VERSION = '2b7819c43311';
+const VERSION = 'dd29da87dff4';
 
 const SHELL = `shell-${VERSION}`;
 const DATA = `data-${VERSION}`;
@@ -41,6 +41,7 @@ const SHELL_FILES = [
   './js/search.js',
   './js/scan.js',
   './js/offline.js',
+  './js/browse.js',
   './manifest.webmanifest',
   './assets/icon-192.png',
   './assets/icon-512.png',

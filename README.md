@@ -43,6 +43,11 @@ each entry was printed on and the app crops the leaf to it on request — 100% o
 Part I's lines and 98.5% of Part II's blocks. A reader who doubts a reading does
 not have to take the transcription's word for it.
 
+**It can be browsed, not only searched.** A **Browse** button opens an index of
+the book: the alphabet with a count on every letter, the twelve languages
+Merrill could identify, and all 147 families — each family showing its genera
+with their species beneath.
+
 **Search knows how Merrill spelled.** He records on page 9 that *e*/*i*, *o*/*u*
 and *i*/*y* are interchangeable in his sources, so a search for `dungon` returns
 DÚÑGON, DONGÓN and DUÑGÚN — three spellings of one tree — each labelled with why

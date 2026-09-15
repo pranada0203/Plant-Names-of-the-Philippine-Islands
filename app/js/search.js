@@ -61,6 +61,18 @@ export function foldMap(s) {
 }
 
 /**
+ * The letter a name files under in an A-Z index.
+ *
+ * Accents are stripped, so ABAR and ABAR-with-an-acute file together -- 107
+ * headwords begin with an accented letter, and comparing the printed initial
+ * directly left every one of them unreachable from the A-Z filter. N-tilde
+ * files under N, which is not a simplification but what Merrill does: his own
+ * index runs NENENU, NGALUY, NGANGAITA, NIGUI, NILAD.
+ */
+export const initialOf = (name) =>
+  String(name).normalize('NFD').replace(/[̀-ͯ]/g, '').charAt(0).toUpperCase();
+
+/**
  * Merrill's own spelling variation, collapsed.
  *
  * He says so himself, on page 9: "there is a great variation in the spelling of
@@ -251,13 +263,13 @@ export class Search {
       // silently passing it would defeat the point of the filter.
       if (minConfidence !== null && !(n.confidence >= minConfidence)) return false;
       if (dialect && !n.dialects.includes(dialect)) return false;
-      if (letter && !n.name.startsWith(letter)) return false;
+      if (letter && initialOf(n.name) !== letter) return false;
       if (family && !n.taxa.some((t) => this.data.taxa[t.id].family === family)) return false;
       return true;
     }
     const t = this.data.taxa[r.id];
     if (family && t.family !== family) return false;
-    if (letter && !t.name.toUpperCase().startsWith(letter)) return false;
+    if (letter && initialOf(t.name) !== letter) return false;
     if (dialect) {
       const names = t.names.map((i) => this.data.names[i]);
       if (!names.some((n) => n.dialects.includes(dialect))) return false;

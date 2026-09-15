@@ -1,7 +1,7 @@
 # Roadmap
 
-Ordered by what unblocks the most. Sections 0, 1, 2, 4 and 6 are done; what
-is left is browsing and modern nomenclature.
+Ordered by what unblocks the most. Everything here is done except section 5,
+modern nomenclature, which is a separate dataset and a separate decision.
 
 ## 0. Text quality — done
 
@@ -53,14 +53,30 @@ What is left is ranking rather than recall — a plant matched in the descriptio
 sorts below every name match, which is right for "timber" and arguably wrong
 for a query that is obviously prose.
 
-## 3. Browse, not just search
+## 3. Browse — done
 
-A dictionary is for browsing. Missing:
+A **Browse** button in the masthead opens an index of the whole book: the
+alphabet with a count on every letter, the twelve languages Merrill could
+identify, and all 147 families. Each opens its own page, and each of those is a
+URL, so the browser's own back button works through them.
 
-- A–Z index that feels like flipping pages.
-- Browse by family, and by genus within family.
-- Browse by language — "every Bicol name in the book" is a genuinely
-  interesting view and the data supports it today.
+- **A–Z.** Each letter is a page of names in flowing columns — the shape an
+  index has in print. This turned up a bug in the existing A–Z *filter*, which
+  compared the printed initial directly: 107 headwords begin with an accented
+  letter, so ÁBAR was not under A and none of them were reachable. A files 416
+  names now, not 357. Ñ files under N, which is not a simplification but what
+  Merrill does — his own index runs NENÉNU, ÑGÁLUY, ÑGAÑGAÍTA, NÍGUI, NILÁD.
+- **By family, and by genus within it.** Palmae shows 19 genera with their
+  species beneath, and where the book gives a genus its own entry — "ARECA.
+  (Palmae.) Tall palms..." — the heading *is* that entry rather than a repeat of
+  it in the list below.
+- **By language.** Every Bicol name, all 199 of them, and so on.
+
+Grouping by genus needed the `genus` field fixed first: it carried whatever case
+the page was set in — ARENGA beside Calamus beside CorypHa — which is invisible
+until something tries to group by it, and then Palmae has nineteen genera
+holding no species each. It is derived from the display binomial now, and 38
+case-duplicate genera collapsed.
 
 ## 4. Offline — done
 
