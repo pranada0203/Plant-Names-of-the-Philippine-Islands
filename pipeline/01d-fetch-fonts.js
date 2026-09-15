@@ -3,13 +3,16 @@
 /**
  * Stage 1d (optional) - fetch the text face and vendor it into the app.
  *
- * The app sets Merrill's dictionary in Libre Caslon Text. Caslon is the book
- * face of English and American printing through the nineteenth century and
- * into the twentieth, which is the tradition the 1903 printing belongs to, and
- * the Text cut is the one drawn for small sizes rather than for display -- it
- * holds up at the 16px a dictionary is actually read at, where EB Garamond and
- * Crimson Pro both go thin. It was also the smallest of the three: 76 KB for
- * roman, italic and bold against 111 and 112.
+ * The app sets Merrill's dictionary in Source Serif 4: even in colour, no
+ * mannerism, and an italic restrained enough to carry several thousand
+ * binomials without the page sparkling. It replaced Libre Caslon Text, whose
+ * high stroke contrast and calligraphic italic were too busy at the 16px a
+ * dictionary is actually read at.
+ *
+ * Its roman is a VARIABLE font, which is why it costs less than the face it
+ * replaced despite being a bigger design: one 50 KB file covers every weight
+ * from body text to heading, where Caslon needed a separate cut for each. With
+ * a 20 KB italic beside it that is 69 KB against Caslon's 76.
  *
  * WHY THE FILES ARE COMMITTED RATHER THAN LINKED
  *
@@ -43,14 +46,23 @@ const https = require('https');
 
 const OUT = path.join(__dirname, '..', 'app', 'assets', 'fonts');
 
-// Weights the stylesheet actually asks for. There is deliberately no bold
-// italic: the only italics in the app are scientific names, which are never
-// set bold in botanical writing, so nothing would use it.
-const FAMILY = 'Libre Caslon Text';
-const SPEC = 'Libre+Caslon+Text:ital,wght@0,400;0,700;1,400';
+// Two different requests, deliberately, because the app wants two different
+// things from the two styles.
+//
+// The roman is asked for as a RANGE, `400..700`. That is what makes Google
+// serve the variable file: one 50 KB download covering every weight from the
+// body text to the headings, instead of a separate cut per weight.
+//
+// The italic is asked for at 400 and nothing else, which gets a 20 KB static
+// cut instead of the 50 KB variable italic. The only italics in this app are
+// scientific names, and botanical writing never sets a binomial bold -- so the
+// other 30 KB would buy weights no rule could ever use. Raising a weight on an
+// italic here will get a synthetic slant, and the fix is to not do that.
+const FAMILY = 'Source Serif 4';
+const SPEC = 'Source+Serif+4:ital,wght@0,400..700;1,400';
 
 // The licence, from the family's own directory in the google/fonts repository.
-const LICENCE = 'https://raw.githubusercontent.com/google/fonts/main/ofl/librecaslontext/OFL.txt';
+const LICENCE = 'https://raw.githubusercontent.com/google/fonts/main/ofl/sourceserif4/OFL.txt';
 
 // Google serves woff2 only to a browser it recognises; with Node's default
 // agent it answers with the ttf stylesheet instead, which is four times the
@@ -105,9 +117,39 @@ function parseFaces(css) {
   return faces;
 }
 
-/** `librecaslontext-400-italic.woff2` -- readable in a directory listing. */
+/**
+ * `sourceserif4-roman.woff2` -- readable in a directory listing.
+ *
+ * Named by style rather than by weight, which is only safe because SPEC asks
+ * for exactly one file per style; assertOneFilePerStyle() below enforces that.
+ * Naming by weight instead would be actively dangerous with a variable face:
+ * Google answers a request for two weights of one VF with two @font-face
+ * blocks pointing at the SAME url, and a weight-based name would write those
+ * identical bytes out twice under different names -- 50 KB of duplicate font
+ * shipped, precached and preloaded, with nothing to show it.
+ */
 const fileNameFor = (f) =>
-  `${FAMILY.toLowerCase().replace(/\s+/g, '')}-${f.weight}-${f.style}.woff2`;
+  `${FAMILY.toLowerCase().replace(/[^a-z0-9]+/g, '')}-` +
+  `${f.style === 'italic' ? 'italic' : 'roman'}.woff2`;
+
+/**
+ * Fail loudly rather than silently overwrite. If a future SPEC asks for two
+ * static cuts of one style, both would want the same filename and the second
+ * would land on top of the first.
+ */
+function assertOneFilePerStyle(faces) {
+  const seen = new Map();
+  for (const f of faces) {
+    const name = fileNameFor(f);
+    if (seen.has(name) && seen.get(name) !== f.url) {
+      throw new Error(
+        `SPEC asks for more than one ${f.style} file, which this naming cannot ` +
+        `express. Ask for the style as a weight range so Google serves one ` +
+        `variable file, or give fileNameFor() a weight to work with.`);
+    }
+    seen.set(name, f.url);
+  }
+}
 
 /**
  * Write only when the bytes differ. A font that has not changed keeps its
@@ -128,20 +170,37 @@ async function main() {
   const faces = parseFaces(css).filter((f) => IS_LATIN(f.range));
   if (!faces.length) throw new Error('no latin subset in the stylesheet Google returned');
 
+  assertOneFilePerStyle(faces);
   console.log(`${FAMILY} - ${faces.length} cuts, latin subset only`);
 
   let total = 0;
   let changed = 0;
   const written = [];
+  const seenUrls = new Set();
   for (const f of faces) {
+    if (seenUrls.has(f.url)) continue;   // one variable file, two declarations
+    seenUrls.add(f.url);
     const buf = await get(f.url);
     const name = fileNameFor(f);
     const wrote = writeIfChanged(path.join(OUT, name), buf);
     total += buf.length;
     if (wrote) changed++;
     written.push({ name, style: f.style, weight: f.weight, range: f.range, bytes: buf.length });
-    console.log(`  ${name.padEnd(36)} ${String(f.weight).padEnd(4)} ${f.style.padEnd(7)} ` +
+    console.log(`  ${name.padEnd(36)} ${String(f.weight).padEnd(8)} ${f.style.padEnd(7)} ` +
       `${(buf.length / 1024).toFixed(1).padStart(6)} KB${wrote ? '' : '  (unchanged)'}`);
+  }
+
+  // Sweep out the previous family. Without this, changing FAMILY leaves the old
+  // woff2 files sitting in the directory: committed, precached by a stale entry
+  // in one of the two SHELL_FILES lists if anyone forgets to update it, and
+  // served to readers for ever. Only this script's own output is touched.
+  const keep = new Set(written.map((w) => w.name));
+  for (const f of fs.readdirSync(OUT)) {
+    if (f.endsWith('.woff2') && !keep.has(f)) {
+      fs.unlinkSync(path.join(OUT, f));
+      changed++;
+      console.log(`  removed ${f} (not part of ${FAMILY})`);
+    }
   }
 
   const licence = await get(LICENCE);

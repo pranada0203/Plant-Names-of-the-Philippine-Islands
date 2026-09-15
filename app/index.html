@@ -18,12 +18,12 @@
 <!-- The text face, ahead of the stylesheet that asks for it. Without these the
      browser cannot discover a font until it has parsed the CSS, matched a rule
      and laid out the text, which is three round trips of fallback type on the
-     screen. 76 KB once; the worker serves them from cache afterwards.
+     screen. 69 KB once, and the roman is variable, so those two files cover
+     every weight the page uses; the worker serves them from cache afterwards.
      `crossorigin` is required even same-origin -- fonts are fetched in CORS
      mode, and a preload without it is fetched a second time and wasted. -->
-<link rel="preload" href="assets/fonts/librecaslontext-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/librecaslontext-400-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/librecaslontext-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/sourceserif4-roman.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/sourceserif4-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/app.css">
 </head>
 <body>

@@ -57,9 +57,8 @@ const SHELL_FILES = [
   'assets/apple-touch-icon.png',
   'assets/favicon.svg',
   'assets/favicon-32.png',
-  'assets/fonts/librecaslontext-400-normal.woff2',
-  'assets/fonts/librecaslontext-400-italic.woff2',
-  'assets/fonts/librecaslontext-700-normal.woff2',
+  'assets/fonts/sourceserif4-roman.woff2',
+  'assets/fonts/sourceserif4-italic.woff2',
 ];
 
 /**

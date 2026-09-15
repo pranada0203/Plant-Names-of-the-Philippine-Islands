@@ -26,7 +26,7 @@
  * on, and the unscoped call cheerfully answered a navigation with a different
  * application's cached index.html.
  */
-const VERSION = '4147be8b7c1d';
+const VERSION = '649f68a18e1e';
 
 const SHELL = `shell-${VERSION}`;
 const DATA = `data-${VERSION}`;
@@ -50,9 +50,8 @@ const SHELL_FILES = [
   './assets/favicon-32.png',
   // The text face. Precached rather than fetched on demand: a dictionary
   // opened offline should look like itself, not fall back to Georgia.
-  './assets/fonts/librecaslontext-400-normal.woff2',
-  './assets/fonts/librecaslontext-400-italic.woff2',
-  './assets/fonts/librecaslontext-700-normal.woff2',
+  './assets/fonts/sourceserif4-roman.woff2',
+  './assets/fonts/sourceserif4-italic.woff2',
 ];
 
 const isData = (url) => url.pathname.endsWith('/data/dictionary.json');

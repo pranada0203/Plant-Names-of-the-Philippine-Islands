@@ -103,10 +103,11 @@ npm run serve
 Then open <http://localhost:5173>. There is no bundler and no dependencies —
 the app is static files and the pipeline is plain Node. The one thing the app
 does not draw itself is its text face, and that is vendored rather than linked:
-`app/assets/fonts/` holds three woff2 files of Libre Caslon Text (76 KB, SIL
-OFL, licence included), fetched by `npm run fonts` and served from the repo, so
-the page has no third party in its critical path and still looks like itself
-offline.
+`app/assets/fonts/` holds two woff2 files of Source Serif 4 (69 KB, SIL OFL,
+licence included), fetched by `npm run fonts` and served from the repo, so the
+page has no third party in its critical path and still looks like itself
+offline. The roman is a variable font, so one file covers every weight the
+stylesheet uses.
 
 `npm run build` needs `pdftotext` (poppler) on PATH. If you only want to run the
 app, `app/data/dictionary.json` is already committed.
@@ -205,7 +206,10 @@ shows both.
   Google already cuts each face into unicode-range subsets, and the whole book
   fits in one of them — every character in the payload is ASCII or Latin-1 — so
   the `latin` file is taken as-is. That is what keeps a webfont from becoming a
-  build step. Both precache lists, `app/sw.js` and `SHELL_FILES` in
+  build step. The roman is requested as a weight *range* so Google serves the
+  variable file; the italic is requested at 400 alone, because a binomial is
+  never set bold and the variable italic's extra 30 KB would buy weights no
+  rule could use. Both precache lists, `app/sw.js` and `SHELL_FILES` in
   `pipeline/03-build-index.js`, must name every file it writes; the build warns
   when they drift.
 - **The design is the book's.** Two strands of naming, coloured apart: native
