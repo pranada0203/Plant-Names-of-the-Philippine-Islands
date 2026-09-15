@@ -162,6 +162,7 @@ Supporting tools:
 | `pipeline/verify-boxes.js` (`npm run verify-boxes`) | Checks every scan box really sits on its own line |
 | `pipeline/make-icons.js` (`npm run icons`) | Draws the app icons and the favicon |
 | `pipeline/01d-fetch-fonts.js` (`npm run fonts`) | Vendors the text face into `app/assets/fonts/` |
+| `pipeline/make-share-card.js` (`npm run share-card`) | Draws the Facebook share card, `docs/merrill1903-facebook.pptx` |
 
 Stages 1b, 1c and 1d are the only ones that touch the network; everything downstream
 works without it, just with no confidence scores. 1d is needed only when the text face
@@ -213,7 +214,10 @@ shows both.
   ids behind the URLs someone is looking at.
 - **The icons are drawn by code** (`npm run icons`), not pasted in as binaries
   nobody can regenerate. `pipeline/lib/png.js` is a 60-line PNG writer over
-  Node's own zlib.
+  Node's own zlib, and `pipeline/lib/zip.js` is the same idea for the share
+  card: a .pptx is a ZIP of XML, so `npm run share-card` writes both directly
+  rather than taking a dependency. Its figures are read from the built payload,
+  so the card cannot claim a count the dictionary no longer has.
 - **The font is vendored, not linked, and not subset by us** (`npm run fonts`).
   Google already cuts each face into unicode-range subsets, and the whole book
   fits in one of them — every character in the payload is ASCII or Latin-1 — so

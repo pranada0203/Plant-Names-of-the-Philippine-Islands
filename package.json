@@ -11,6 +11,7 @@
     "verify-boxes": "node pipeline/verify-boxes.js",
     "icons": "node pipeline/make-icons.js",
     "fonts": "node pipeline/01d-fetch-fonts.js",
+    "share-card": "node pipeline/make-share-card.js",
     "build": "npm run extract && npm run fetch-ia && npm run parse && npm run index && npm run audit",
     "serve": "node pipeline/serve.js",
     "fetch-ia": "node pipeline/01b-fetch-ia.js",
