@@ -825,8 +825,34 @@ h3.section::after {
 }
 
 .tp-hint { font-family: var(--serif); font-size: 1.02rem; line-height: 1.6; color: var(--ink); margin: 0 0 1.4rem; }
+
+/* What is wrong with the edition, said plainly on the page that introduces it.
+   Each one leads with the claim in ink and explains itself underneath, so a
+   reader skimming gets the four headlines and nothing important hides in the
+   middle of a paragraph. */
+.caveats {
+  list-style: none;
+  margin: 0 0 1.6rem;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+  max-width: 36em;
+}
+.caveats li {
+  font-family: var(--serif);
+  font-size: 0.97rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--rule);
+  padding-left: 0.9rem;
+}
+/* The first caveat is the one with consequences outside this page. */
+.caveats li:first-child { border-left-color: var(--flag); }
+.caveats b { color: var(--ink); font-weight: 700; }
 .tp-hint em { color: var(--botanic); font-style: italic; }
-.tp-note { font-size: 0.8rem; line-height: 1.6; color: var(--ink-faint); margin: 0; max-width: 32rem; }
+.tp-note { font-size: 0.8rem; line-height: 1.6; color: var(--ink-faint); margin: 0; max-width: 34em; }
+.tp-note a { color: var(--sapang); }
+.tp-note a:hover { text-decoration-thickness: 2px; }
 
 /* ------------------------------------------------------------- update bar */
 /* Shown only when a new build has been downloaded and is waiting. It is a

@@ -528,37 +528,99 @@ function source(where, printed) {
  * The front door, which is also what the About button opens.
  *
  * There is no entry to show here, so it shows the book: the title page it is
- * standing in for, and then the size of what was got off it. The counts are
- * read from the payload rather than written into the copy, because they move
- * every time the pipeline runs.
+ * standing in for, then the size of what was got off it, then what is wrong
+ * with it.
+ *
+ * Every figure comes out of the payload. None of it is written into the copy,
+ * because a caveat that quietly stops being true is worse than no caveat: the
+ * browse page spent several builds claiming counts that had already moved, and
+ * these are the numbers a reader would be relying on.
  */
 function placeholder() {
   const c = data.meta.counts;
+  const prov = data.meta.provenance;
+  const parse = prov.parse;
+
+  // Names Merrill printed in both halves of the book, and how many of those
+  // the two halves disagree about. This is the honest measure of the
+  // transcription: a name that reads differently in Part I and Part II has at
+  // least one reading wrong, and nothing here can say which.
+  const bothHalves = prov.linkedFromPartII + prov.namesOnlyInPartII;
+  const unmatched = prov.namesOnlyInPartII;
+  const unmatchedPct = (unmatched / bothHalves * 100).toFixed(1);
+
+  // Plants named in Part I that the scientific index never describes.
+  const stubs = data.taxa.reduce((n, t) => n + (t.fromPartII ? 0 : 1), 0);
+
+  const num = (n) => n.toLocaleString();
+  const archive = `https://archive.org/details/${data.meta.scan.item}`;
+
   const d = document.createElement('div');
   d.className = 'placeholder';
   d.innerHTML = `
     <div class="titlepage">
       <p class="tp-eyebrow">A searchable edition of</p>
-      <h2>A Dictionary of the Plant Names of the Philippine Islands</h2>
-      <p class="tp-author">Elmer D. Merrill, Botanist</p>
+      <h2>${data.meta.title}</h2>
+      <p class="tp-author">${data.meta.author}, Botanist</p>
       <p class="tp-imprint">Bureau of Government Laboratories<br>
          Department of the Interior<br>
-         Manila &middot; 1903</p>
+         Manila &middot; ${data.meta.published}</p>
 
       <div class="tp-rule"><span>&#10087;</span></div>
 
       <dl class="tp-stats">
-        <dt>Native names</dt><dd>${c.names.toLocaleString()}</dd>
-        <dt>Plants</dt><dd>${c.taxa.toLocaleString()}</dd>
+        <dt>Native names</dt><dd>${num(c.names)}</dd>
+        <dt>Plants</dt><dd>${num(c.taxa)}</dd>
         <dt>Families</dt><dd>${c.families}</dd>
-        <dt>Cross-references</dt><dd>${c.links.toLocaleString()}</dd>
+        <dt>Cross-references</dt><dd>${num(c.links)}</dd>
       </dl>
 
-      <p class="tp-hint">Search a native name — <em>anahao</em>, <em>abaca</em> —
+      <p class="tp-hint">Search a native name &mdash; <em>anahao</em>, <em>abaca</em> &mdash;
          or a scientific one: <em>Musa</em>, <em>Ficus</em>.</p>
-      <p class="tp-note">Text is transcribed from a scan of the 1903 printing and
-         has not been fully proofread. Every entry shows the page it came from and
-         the raw line it was read from, so you can check it against the original.</p>
+
+      <h3 class="section">Before you rely on this</h3>
+      <ul class="caveats">
+        <li>
+          <b>It is not a field guide.</b> Merrill records what plants were used
+          for &mdash; timber, fibre, dye, medicine &mdash; but this is a word
+          list, not a guide to telling one plant from another. Do not use it to
+          identify, forage, or treat anything.
+        </li>
+        <li>
+          <b>The botany is ${data.meta.published}&rsquo;s.</b> The scientific
+          names are as Merrill wrote them. A great many have since been folded
+          into other names or moved to another genus, and nothing here is
+          matched against currently accepted ones.
+        </li>
+        <li>
+          <b>It is transcribed, and not fully proofread.</b> Of the
+          ${num(bothHalves)} names Merrill prints in both halves of the book,
+          ${num(unmatched)} &mdash; ${unmatchedPct}% &mdash; do not agree
+          between the two, so at least one of the two readings is wrong.
+          ${parse.partI.unparsedLines} lines could not be parsed at all and
+          ${parse.partI.flagged} entries carry a warning; ${num(stubs)} plants
+          are named but never described. Every entry shows the page it came from
+          and the raw line it was read from, so any reading can be checked
+          against the original.
+        </li>
+        <li>
+          <b>It is a colonial document.</b> Published by the Bureau of
+          Government Laboratories under the American administration in Manila.
+          The language labels are Merrill&rsquo;s own and incomplete &mdash; he
+          could not identify the language of many names, and uses some
+          abbreviations the book never explains &mdash; and the spellings are
+          his era&rsquo;s, not modern orthography.
+        </li>
+      </ul>
+
+      <h3 class="section">Source</h3>
+      <p class="tp-note">
+        ${data.meta.rights} Page images are served by the Internet Archive from
+        <a href="${archive}" target="_blank" rel="noopener">${data.meta.scan.item}</a>.
+        This edition is a personal project and is not affiliated with, nor
+        endorsed by, the Internet Archive or any government body, herbarium or
+        university.
+      </p>
     </div>`;
   return d;
 }
