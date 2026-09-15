@@ -81,9 +81,14 @@ function backLink() {
 export function browseIndex() {
   const f = document.createDocumentFragment();
   f.append(h('h2', 'browse-title', 'Browse the dictionary'));
+  // The counts come from the payload, not from the sentence: they change every
+  // time the pipeline runs, and a number written into the copy goes stale
+  // silently -- as these two did.
+  const c = data.meta.counts;
   f.append(h('p', 'browse-lede',
-    'Merrill recorded 4,391 native names for 1,669 plants. These are the ways ' +
-    'into that, short of knowing what you are looking for.'));
+    `Merrill recorded ${c.names.toLocaleString()} native names for ` +
+    `${c.taxa.toLocaleString()} plants. These are the ways into that, short of ` +
+    'knowing what you are looking for.'));
 
   f.append(h('h3', 'section', 'By letter'));
   const az = h('div', 'browse-az');
@@ -121,7 +126,9 @@ export function browseLetter(letter) {
   f.append(backLink());
   const group = byLetter().find((g) => g.letter === letter);
   const ids = group ? group.ids : [];
-  f.append(h('h2', 'browse-title', letter));
+  // A single letter set at heading size looks like a mistake. This is the
+  // initial at the head of a section of the index, so it is set as one.
+  f.append(h('h2', 'browse-title browse-initial', letter));
   f.append(h('p', 'browse-lede', `${ids.length.toLocaleString()} name${ids.length === 1 ? '' : 's'}`));
 
   const cols = h('div', 'browse-columns');

@@ -131,7 +131,10 @@ function renderResults(results, total) {
       }
     } else {
       const t = data.taxa[r.id];
-      head.style.fontStyle = 'italic';
+      // A plant, not a word: the row joins the botanical strand and is set in
+      // italic and green, so the two halves of the book are told apart before
+      // anything is read.
+      head.classList.add('sci');
       // A note match is a match on the description, not on the name, so the
       // name is left alone and the description carries the mark instead.
       head.append(r.via === 'note' ? t.name : highlight(t.name, r.at, r.len));
@@ -140,6 +143,10 @@ function renderResults(results, total) {
       tag.textContent = 'species';
       tag.style.fontStyle = 'normal';
       head.append(tag);
+      // The sub-line under a name is a binomial and is set as one. Under a
+      // plant it is a family or a line of Merrill's prose, neither of which is
+      // a scientific name -- so it is marked as prose and set upright.
+      sub.classList.add('prose');
       if (r.via === 'note') sub.append(snippet(t.notes, r.at, r.len));
       else sub.textContent = t.family || (t.notes ? t.notes.slice(0, 70) : '—');
     }
@@ -270,6 +277,7 @@ function nameView(n) {
 
   const head = document.createElement('div');
   head.className = 'entry-head';
+  head.append(eyebrow('Native name'));
   const h = document.createElement('h2');
   h.textContent = n.name;
   head.append(h);
@@ -350,6 +358,7 @@ function taxonView(t) {
 
   const head = document.createElement('div');
   head.className = 'entry-head';
+  head.append(eyebrow('Scientific name'));
   const h = document.createElement('h2');
   h.className = 'sci';
   h.textContent = t.name;
@@ -449,6 +458,18 @@ function scanSection(sightings, printed) {
   return d;
 }
 
+/**
+ * The line above a headword saying which of the book's two halves it comes
+ * from. A reader arriving on ABÁNG-ABÁNG and a reader arriving on Oroxylum
+ * indicum are looking at pages of different kinds, and the layout alone does
+ * not say so.
+ */
+function eyebrow(text) {
+  const p = document.createElement('p');
+  p.className = 'entry-kind';
+  p.textContent = text;
+  return p;
+}
 function tag(text, warn = false) {
   const s = document.createElement('span');
   s.className = warn ? 'tag warn' : 'tag';
@@ -503,26 +524,42 @@ function source(where, printed) {
   return d;
 }
 
+/**
+ * The front door, which is also what the About button opens.
+ *
+ * There is no entry to show here, so it shows the book: the title page it is
+ * standing in for, and then the size of what was got off it. The counts are
+ * read from the payload rather than written into the copy, because they move
+ * every time the pipeline runs.
+ */
 function placeholder() {
   const c = data.meta.counts;
   const d = document.createElement('div');
   d.className = 'placeholder';
   d.innerHTML = `
-    <h2>A Dictionary of the Plant Names of the Philippine Islands</h2>
-    <p>Elmer D. Merrill, Botanist. Bureau of Government Laboratories,
-       Department of the Interior, Manila, 1903.</p>
-    <p>Search a native name (<em>anahao</em>, <em>abaca</em>) or a scientific one
-       (<em>Musa</em>, <em>Ficus</em>).</p>
-    <dl>
-      <dt>Native names</dt><dd>${c.names.toLocaleString()}</dd>
-      <dt>Plants</dt><dd>${c.taxa.toLocaleString()}</dd>
-      <dt>Families</dt><dd>${c.families}</dd>
-      <dt>Cross-references</dt><dd>${c.links.toLocaleString()}</dd>
-    </dl>
-    <p style="margin-top:1.5rem;font-size:0.85rem">
-      Text is transcribed from a scan of the 1903 printing and has not been fully
-      proofread. Every entry shows the page it came from and the raw line it was
-      read from, so you can check it against the original.</p>`;
+    <div class="titlepage">
+      <p class="tp-eyebrow">A searchable edition of</p>
+      <h2>A Dictionary of the Plant Names of the Philippine Islands</h2>
+      <p class="tp-author">Elmer D. Merrill, Botanist</p>
+      <p class="tp-imprint">Bureau of Government Laboratories<br>
+         Department of the Interior<br>
+         Manila &middot; 1903</p>
+
+      <div class="tp-rule"><span>&#10087;</span></div>
+
+      <dl class="tp-stats">
+        <dt>Native names</dt><dd>${c.names.toLocaleString()}</dd>
+        <dt>Plants</dt><dd>${c.taxa.toLocaleString()}</dd>
+        <dt>Families</dt><dd>${c.families}</dd>
+        <dt>Cross-references</dt><dd>${c.links.toLocaleString()}</dd>
+      </dl>
+
+      <p class="tp-hint">Search a native name — <em>anahao</em>, <em>abaca</em> —
+         or a scientific one: <em>Musa</em>, <em>Ficus</em>.</p>
+      <p class="tp-note">Text is transcribed from a scan of the 1903 printing and
+         has not been fully proofread. Every entry shows the page it came from and
+         the raw line it was read from, so you can check it against the original.</p>
+    </div>`;
   return d;
 }
 
@@ -594,8 +631,11 @@ function restoreTheme() {
 
 boot().catch((err) => {
   el('detail-inner').innerHTML =
-    `<div class="placeholder"><h2>Could not load the dictionary</h2><p>${err.message}</p>
-     <p>Run <code>npm run build</code> to regenerate <code>app/data/dictionary.json</code>,
-     and serve this folder over HTTP rather than opening the file directly.</p></div>`;
+    `<div class="placeholder"><div class="titlepage">
+     <h2>Could not load the dictionary</h2>
+     <p class="tp-hint">${err.message}</p>
+     <p class="tp-note">Run <code>npm run build</code> to regenerate
+     <code>app/data/dictionary.json</code>, and serve this folder over HTTP rather
+     than opening the file directly.</p></div></div>`;
   app.classList.add('detail-open');
 });

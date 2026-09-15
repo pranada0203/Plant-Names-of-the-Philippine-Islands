@@ -1,60 +1,106 @@
+/* ==========================================================================
+   Plant Names of the Philippine Islands — 1903
+   --------------------------------------------------------------------------
+   The design brief is the book. A colonial-era botanical dictionary is a
+   working document: a herbarium sheet, a determination slip, a page of index.
+   So the surfaces here are mount board and slip card rather than "background"
+   and "surface", the rules are the double rules of a title page, and the type
+   does the work that colour usually does on the web.
+
+   Two strands of naming run through every screen, and they are coloured apart
+   so a reader can tell them at a glance without reading a word:
+
+     the vernacular strand   ink and tannin brown   ÁBAR, ABÁNG-ABÁNG
+     the botanical strand    herbarium green        Oroxylum indicum L.
+
+   Everything is a custom property, and the palette is stated three times: the
+   light default, the dark preference, and the dark override. THOSE THREE MUST
+   BE KEPT IN STEP — a token added to one and missed in another falls back to
+   the light value and quietly breaks the other theme.
+   ========================================================================== */
+
 /* ------------------------------------------------------------------ tokens */
 :root {
   color-scheme: light dark;
 
-  --ink: #1c1a17;
-  --ink-soft: #5a544c;
-  --ink-faint: #8c8479;
-  --paper: #faf7f2;
-  --panel: #ffffff;
-  --rule: #e2dbd0;
-  --rule-soft: #efe9e0;
-  --accent: #6b4f2a;
-  --accent-soft: #f0e6d6;
-  --mark: #f3dfb4;
-  --flag: #9a5b2c;
-  --flag-bg: #fbefe2;
-  --focus: #3c6e8f;
+  /* Ink. Warm blacks, never neutral grey: neutral grey on cream reads as a
+     printing fault rather than as ink. */
+  --ink: #22201a;
+  --ink-soft: #5d5547;
+  --ink-faint: #8c8374;
+
+  /* Three grounds, doing three different jobs. The old stylesheet had two
+     doing three, which is why the slips in the entry body were invisible --
+     they were filled with the very colour they sat on. */
+  --paper: #f5efe3;        /* the mount board: the reading ground */
+  --paper-lift: #faf5ec;   /* the wash at the top of the sheet */
+  --panel: #fdfaf4;        /* chrome: masthead, the list column */
+  --card: #fbf6ec;         /* a slip laid on the board */
+
+  --rule: #dcd1bd;
+  --rule-soft: #ece3d3;
+
+  --accent: #7a4e23;       /* iron-gall / tannin brown */
+  --accent-soft: #f1e5d1;
+  --botanic: #3f5b41;      /* herbarium green: the scientific strand */
+  --botanic-soft: #e4ebe2;
+
+  --mark: #f0dcae;
+  --flag: #92501f;
+  --flag-bg: #f7e9d8;
+  --focus: #2f6b8f;
+
+  --shadow: 0 1px 2px rgb(60 44 20 / 0.05), 0 8px 24px -12px rgb(60 44 20 / 0.22);
 
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-  --pane: 22rem;
-  --radius: 6px;
+  --pane: 23rem;
+  --radius: 5px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ink: #ece6dc;
-    --ink-soft: #b3ab9e;
-    --ink-faint: #857d71;
-    --paper: #171614;
-    --panel: #201e1b;
-    --rule: #35322d;
-    --rule-soft: #2a2724;
-    --accent: #d7b280;
-    --accent-soft: #322a1e;
-    --mark: #4d3c1c;
-    --flag: #d9a36a;
-    --flag-bg: #2e2519;
-    --focus: #7fb0cd;
+    --ink: #ece5d7;
+    --ink-soft: #aea593;
+    --ink-faint: #7f7767;
+    --paper: #13120f;
+    --paper-lift: #1a1814;
+    --panel: #1b1a16;
+    --card: #201e19;
+    --rule: #383328;
+    --rule-soft: #2a2721;
+    --accent: #d9b47f;
+    --accent-soft: #2f2718;
+    --botanic: #93b28e;
+    --botanic-soft: #20261f;
+    --mark: #57431d;
+    --flag: #dca66d;
+    --flag-bg: #31261a;
+    --focus: #82b3d0;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.7);
   }
 }
 
 :root[data-theme="dark"] {
-  --ink: #ece6dc;
-  --ink-soft: #b3ab9e;
-  --ink-faint: #857d71;
-  --paper: #171614;
-  --panel: #201e1b;
-  --rule: #35322d;
-  --rule-soft: #2a2724;
-  --accent: #d7b280;
-  --accent-soft: #322a1e;
-  --mark: #4d3c1c;
-  --flag: #d9a36a;
-  --flag-bg: #2e2519;
-  --focus: #7fb0cd;
+  --ink: #ece5d7;
+  --ink-soft: #aea593;
+  --ink-faint: #7f7767;
+  --paper: #13120f;
+  --paper-lift: #1a1814;
+  --panel: #1b1a16;
+  --card: #201e19;
+  --rule: #383328;
+  --rule-soft: #2a2721;
+  --accent: #d9b47f;
+  --accent-soft: #2f2718;
+  --botanic: #93b28e;
+  --botanic-soft: #20261f;
+  --mark: #57431d;
+  --flag: #dca66d;
+  --flag-bg: #31261a;
+  --focus: #82b3d0;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.7);
 }
 
 /* ------------------------------------------------------------------- reset */
@@ -62,15 +108,53 @@
 html, body { height: 100%; }
 body {
   margin: 0;
-  background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
+  /* A sheet is lit from above. One radial wash, one paint, no image. */
+  background:
+    radial-gradient(90rem 45rem at 50% -14rem, var(--paper-lift), transparent 72%)
+    var(--paper);
 }
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 button { font: inherit; color: inherit; }
+
+/* Both of this app's columns scroll, so the scrollbars are part of the page
+   whether or not they were designed. Left alone they are wide grey slabs that
+   sit on the cream like machinery; a hairline in the rule colour reads as the
+   edge of the sheet. `scrollbar-color` covers Firefox; the ::-webkit- rules
+   cover the rest and are ignored where they are not understood. */
+.results, .detail {
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+}
+.results::-webkit-scrollbar, .detail::-webkit-scrollbar { width: 10px; height: 10px; }
+.results::-webkit-scrollbar-track, .detail::-webkit-scrollbar-track { background: transparent; }
+.results::-webkit-scrollbar-thumb, .detail::-webkit-scrollbar-thumb {
+  background: var(--rule);
+  border-radius: 999px;
+  /* Drawn inside a transparent border so the bar reads as a thin line with
+     air around it rather than as a block filling the gutter. */
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+.results::-webkit-scrollbar-thumb:hover, .detail::-webkit-scrollbar-thumb:hover { background: var(--ink-faint); background-clip: content-box; }
+
+/* The labels that carry the archival voice: letterspaced capitals, small, set
+   in the sans so they read as apparatus rather than as text. */
+.tag, .kind, .why, .doubt, h3.section, .masthead h1 span,
+.scan figcaption, .browse-count, .taxon-list .fam, .entry-kind {
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+}
+
+/* Old-style figures wherever the serif is doing book work: 1903 should sit on
+   the line the way it does in the printing, not stand up like a heading. */
+.notes, .taxon-list, .results .headword, .entry-head h2, .browse-entry,
+.titlepage, .browse-title { font-variant-numeric: oldstyle-nums; }
 
 /* ------------------------------------------------------------------ layout */
 .app {
@@ -79,10 +163,13 @@ button { font: inherit; color: inherit; }
   height: 100dvh;
 }
 
+/* The masthead is a running head, so it is set like one: the title in the
+   book's own serif, the imprint line beneath it in capitals, and the double
+   rule that says "title page" faster than any amount of styling. */
 .masthead {
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 3px double var(--rule);
   background: var(--panel);
-  padding: 0.7rem max(1rem, env(safe-area-inset-left)) 0.7rem max(1rem, env(safe-area-inset-right));
+  padding: 0.75rem max(1.1rem, env(safe-area-inset-left)) 0.7rem max(1.1rem, env(safe-area-inset-right));
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -90,19 +177,19 @@ button { font: inherit; color: inherit; }
 }
 .masthead h1 {
   font-family: var(--serif);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   font-weight: 600;
   margin: 0;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.015em;
+  line-height: 1.25;
 }
 .masthead h1 span {
   display: block;
-  font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: 0.63rem;
   font-weight: 400;
   color: var(--ink-faint);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-top: 0.22rem;
 }
 .masthead .spacer { flex: 1; }
 
@@ -110,12 +197,14 @@ button { font: inherit; color: inherit; }
   background: none;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
-  padding: 0.35rem 0.6rem;
+  padding: 0.34rem 0.7rem;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
   color: var(--ink-soft);
+  transition: border-color 0.12s, color 0.12s, background-color 0.12s;
 }
-.icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+.icon-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 
 .body {
   display: grid;
@@ -132,100 +221,125 @@ button { font: inherit; color: inherit; }
   background: var(--panel);
 }
 
-.searchbar { padding: 0.75rem; border-bottom: 1px solid var(--rule-soft); }
+.searchbar { padding: 0.8rem 0.8rem 0.65rem; }
 .searchbar input {
   width: 100%;
   font: inherit;
-  padding: 0.55rem 0.7rem;
+  font-size: 0.95rem;
+  padding: 0.55rem 0.75rem;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   background: var(--paper);
   color: var(--ink);
+  transition: border-color 0.12s, box-shadow 0.12s;
 }
 .searchbar input::placeholder { color: var(--ink-faint); }
+.searchbar input:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
 
 .filters {
   display: flex;
   gap: 0.4rem;
-  padding: 0 0.75rem 0.6rem;
+  padding: 0 0.8rem 0.65rem;
   flex-wrap: wrap;
-  border-bottom: 1px solid var(--rule-soft);
+  align-items: center;
+  border-bottom: 1px solid var(--rule);
 }
 .filters select {
   font: inherit;
-  font-size: 0.85rem;
-  padding: 0.3rem 0.4rem;
+  font-size: 0.8rem;
+  padding: 0.28rem 0.4rem;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   background: var(--paper);
-  color: var(--ink);
+  color: var(--ink-soft);
   max-width: 100%;
 }
+.filters select:hover { border-color: var(--accent); }
 .toggle {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  font-size: 0.8rem;
+  gap: 0.35rem;
+  font-size: 0.78rem;
   color: var(--ink-soft);
   cursor: pointer;
   white-space: nowrap;
 }
 .toggle input { accent-color: var(--accent); margin: 0; }
 
-/* How far the OCR engine trusted its own reading of a headword. */
+/* How far the OCR engine trusted its own reading of a headword. A warning,
+   so unlike the other metadata labels it keeps a tinted field around it. */
 .conf {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--flag);
   background: var(--flag-bg);
   border-radius: 999px;
-  padding: 0.1rem 0.55rem;
+  padding: 0.12rem 0.6rem;
   white-space: nowrap;
 }
 .results .doubt {
-  font-size: 0.62rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.58rem;
   color: var(--flag);
   margin-left: 0.4rem;
-  vertical-align: 0.12em;
+  vertical-align: 0.14em;
 }
 
 .count {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
   color: var(--ink-faint);
-  padding: 0.15rem 0 0;
+  padding: 0.2rem 0 0;
   width: 100%;
 }
 
 .results { overflow-y: auto; margin: 0; padding: 0; list-style: none; -webkit-overflow-scrolling: touch; }
-.results li { border-bottom: 1px solid var(--rule-soft); }
+.results li + li { border-top: 1px solid var(--rule-soft); }
 .results button {
   display: block;
   width: 100%;
   text-align: left;
   background: none;
   border: 0;
-  padding: 0.6rem 0.75rem;
+  /* The left padding leaves room for the marker on the current row, so the
+     text does not shift sideways when the reader picks an entry. */
+  padding: 0.55rem 0.8rem 0.6rem 0.8rem;
   cursor: pointer;
+  box-shadow: inset 3px 0 0 transparent;
+  transition: background-color 0.1s, box-shadow 0.1s;
 }
-.results button:hover { background: var(--accent-soft); }
-.results button[aria-current="true"] { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
+.results button:hover { background: var(--card); }
+.results button[aria-current="true"] {
+  background: var(--accent-soft);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
 .results .headword {
   font-family: var(--serif);
   font-size: 1rem;
-  letter-spacing: 0.02em;
+  /* The headwords are printed in capitals, and capitals need the extra
+     tracking that lower case does not. */
+  letter-spacing: 0.045em;
+  line-height: 1.3;
   /* A name listed in three languages carries the tag "Tagalog/Visayan/Pampangan",
      which no engine breaks on its own and which pushed the whole results column
      six pixels wide -- enough for a horizontal scrollbar under the list. */
   overflow-wrap: anywhere;
 }
+.results .headword.sci { font-style: italic; color: var(--botanic); letter-spacing: 0; }
+/* The determination under the headword is a scientific name, so it is set as
+   one: green, italic, in the serif -- not as grey sans caption text. */
 .results .sub {
-  font-size: 0.78rem;
-  color: var(--ink-faint);
-  margin-top: 0.1rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--botanic);
+  margin-top: 0.12rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -241,95 +355,175 @@ button { font: inherit; color: inherit; }
   border-radius: 2px;
 }
 .results .sub mark { font-weight: 600; color: var(--ink-soft); }
+/* A family name or a line of Merrill's prose, which the green italic would be
+   claiming is a scientific name. */
+.results .sub.prose {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
 
 /* Why a result is in the list when the reader could not otherwise tell: shown
    for a spelling variant, a one-letter difference, or a match in the prose. */
 .results .why {
-  font-size: 0.62rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  font-size: 0.58rem;
   color: var(--ink-faint);
   margin-left: 0.4rem;
-  vertical-align: 0.12em;
+  vertical-align: 0.14em;
   font-style: normal;
-  font-family: var(--sans);
 }
 
+/* The language a name belongs to, and whether a row is a plant rather than a
+   word. Borderless: at two hundred rows, two hundred little boxes read as
+   machinery. Letterspaced capitals carry it without drawing a frame. */
 .results .kind {
-  font-size: 0.62rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 0.58rem;
   color: var(--accent);
-  border: 1px solid var(--rule);
-  border-radius: 3px;
-  padding: 0 0.25rem;
-  margin-left: 0.4rem;
-  vertical-align: 0.12em;
+  margin-left: 0.45rem;
+  vertical-align: 0.14em;
+  white-space: nowrap;
 }
 
 /* ------------------------------------------------------------------ detail */
 .detail {
   overflow-y: auto;
-  padding: 1.75rem max(1.25rem, env(safe-area-inset-right)) 4rem max(1.25rem, env(safe-area-inset-left));
+  padding: 2.4rem max(1.5rem, env(safe-area-inset-right)) 5rem max(1.5rem, env(safe-area-inset-left));
 }
-.detail-inner { max-width: 44rem; margin: 0 auto; }
+.detail-inner { max-width: 46rem; margin: 0 auto; }
 
-.entry-head { border-bottom: 1px solid var(--rule); padding-bottom: 0.9rem; margin-bottom: 1.1rem; }
+/* The specimen label: what kind of thing this is, then the name itself, then
+   its particulars, then the double rule that closes the label off from the
+   body of the entry. */
+.entry-head {
+  border-bottom: 3px double var(--rule);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+.entry-kind {
+  font-size: 0.62rem;
+  color: var(--ink-faint);
+  margin: 0 0 0.45rem;
+}
 .entry-head h2 {
   font-family: var(--serif);
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  margin: 0 0 0.3rem;
+  font-size: clamp(1.7rem, 4.4vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.12;
+  margin: 0 0 0.6rem;
   letter-spacing: 0.02em;
   overflow-wrap: anywhere;
 }
-.entry-head h2.sci { font-style: italic; }
-.meta { font-size: 0.85rem; color: var(--ink-soft); display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.entry-head h2.sci { font-style: italic; color: var(--botanic); letter-spacing: 0; }
+.meta { font-size: 0.85rem; color: var(--ink-soft); display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: baseline; }
 
+/* Ordinary particulars recede to a ruled caption; only a warning keeps a
+   field around it, so that the one label a reader must not miss is the one
+   label that is coloured. */
 .tag {
-  font-size: 0.72rem;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  padding: 0.1rem 0.55rem;
+  font-size: 0.65rem;
   color: var(--ink-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 0.15rem;
   white-space: nowrap;
 }
-.tag.warn { color: var(--flag); background: var(--flag-bg); border-color: transparent; }
+.tag.warn {
+  color: var(--flag);
+  background: var(--flag-bg);
+  border-bottom: 0;
+  border-radius: 999px;
+  padding: 0.12rem 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  font-size: 0.7rem;
+  white-space: normal;
+}
 
+/* A section heading in a monograph is a label with a rule running off it to
+   the margin. The rule is the ::after, so it takes whatever width is left. */
 h3.section {
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.66rem;
   color: var(--ink-faint);
-  margin: 1.6rem 0 0.6rem;
+  margin: 2.1rem 0 0.75rem;
   font-weight: 600;
 }
+h3.section::after {
+  content: "";
+  flex: 1;
+  height: 0;
+  border-top: 1px solid var(--rule-soft);
+}
 
-.notes { font-family: var(--serif); font-size: 1.02rem; line-height: 1.65; }
+.notes {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.68;
+  /* A measure, not a column width. Merrill's notes are prose and want the
+     sixty-odd characters prose has wanted since the incunabula. */
+  max-width: 36em;
+}
 
-.taxon-list, .name-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.taxon-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+/* A determination slip: green edge on the left, the binomial set as a
+   binomial, the family in capitals, the note beneath. */
 .taxon-list li {
   border: 1px solid var(--rule-soft);
-  border-radius: var(--radius);
-  padding: 0.6rem 0.75rem;
-  background: var(--paper);
+  border-left: 2px solid var(--botanic);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.7rem 0.9rem 0.75rem;
+  background: var(--card);
 }
-.taxon-list .sci { font-family: var(--serif); font-style: italic; font-size: 1.05rem; }
-.taxon-list .auth { font-style: normal; color: var(--ink-faint); font-size: 0.85rem; }
-.taxon-list .fam { font-size: 0.78rem; color: var(--ink-soft); margin-top: 0.15rem; }
-.taxon-list .note { font-size: 0.88rem; color: var(--ink-soft); margin-top: 0.35rem; line-height: 1.5; }
+.taxon-list .sci {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.12rem;
+  color: var(--botanic);
+  line-height: 1.25;
+}
+.taxon-list .auth {
+  font-family: var(--serif);
+  font-style: normal;
+  color: var(--ink-faint);
+  font-size: 0.82rem;
+}
+.taxon-list .fam {
+  font-size: 0.63rem;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+}
+.taxon-list .note {
+  font-family: var(--serif);
+  font-size: 0.93rem;
+  color: var(--ink-soft);
+  margin-top: 0.45rem;
+  line-height: 1.6;
+  max-width: 40em;
+}
 
-.chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .chip {
-  border: 1px solid var(--rule);
-  background: var(--paper);
+  font-family: var(--serif);
+  border: 1px solid var(--rule-soft);
+  background: var(--card);
   border-radius: var(--radius);
-  padding: 0.2rem 0.5rem;
-  font-size: 0.85rem;
+  padding: 0.22rem 0.55rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
   cursor: pointer;
+  transition: border-color 0.12s, color 0.12s, background-color 0.12s;
 }
-.chip:hover { border-color: var(--accent); color: var(--accent); }
-.chip .dia { color: var(--ink-faint); font-size: 0.75rem; margin-left: 0.25rem; }
+.chip:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.chip .dia {
+  font-family: var(--sans);
+  color: var(--ink-faint);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-left: 0.35rem;
+}
 /* The scanner was guessing at this word: underline it the way a spell-checker
    would, so the reader is not told a garbled string is a plant name. */
 .chip.doubtful {
@@ -338,26 +532,112 @@ h3.section {
   color: var(--ink-soft);
 }
 
+/* The provenance line. Every entry ends by showing its own working: the page
+   of the 1903 printing, and the raw line the scanner read. */
 .source {
-  margin-top: 2rem;
-  border-top: 1px solid var(--rule-soft);
-  padding-top: 0.8rem;
-  font-size: 0.78rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.9rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
   color: var(--ink-faint);
 }
 .source code {
   display: block;
-  font-size: 0.78rem;
-  background: var(--panel);
-  border: 1px solid var(--rule-soft);
-  border-radius: var(--radius);
-  padding: 0.5rem 0.6rem;
-  margin-top: 0.4rem;
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  background: var(--card);
+  border-left: 2px solid var(--rule);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.55rem 0.75rem;
+  margin-top: 0.5rem;
   overflow-x: auto;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+  letter-spacing: 0;
   color: var(--ink-soft);
 }
+
+/* -------------------------------------------------------------- title page */
+/* The front door, which is also the About screen. It is the one place with no
+   entry to show, so it shows the book instead -- set as the title page it is
+   standing in for. */
+.placeholder { color: var(--ink-soft); }
+.titlepage { max-width: 34rem; padding-top: 1rem; }
+.tp-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-faint);
+  margin: 0 0 0.9rem;
+}
+.titlepage h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 4.6vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin: 0 0 1.1rem;
+  text-wrap: balance;
+}
+.tp-author {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  color: var(--ink);
+  margin: 0 0 0.35rem;
+}
+.tp-imprint {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  line-height: 1.85;
+  color: var(--ink-faint);
+  margin: 0;
+}
+/* A printer's rule: a hairline with a lozenge on it. Pure type, no asset. */
+.tp-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 1.8rem 0;
+  color: var(--rule);
+}
+.tp-rule::before, .tp-rule::after { content: ""; flex: 1; border-top: 1px solid currentColor; }
+.tp-rule span { font-size: 0.6rem; color: var(--ink-faint); letter-spacing: 0.3em; }
+
+.tp-stats {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0;
+  margin: 0 0 1.8rem;
+  max-width: 24rem;
+}
+.tp-stats dt {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--ink-soft);
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.tp-stats dd {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-variant-numeric: lining-nums tabular-nums;
+  text-align: right;
+  color: var(--ink);
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.tp-hint { font-family: var(--serif); font-size: 1.02rem; line-height: 1.6; color: var(--ink); margin: 0 0 1.4rem; }
+.tp-hint em { color: var(--botanic); font-style: italic; }
+.tp-note { font-size: 0.8rem; line-height: 1.6; color: var(--ink-faint); margin: 0; max-width: 32rem; }
 
 /* ------------------------------------------------------------- update bar */
 /* Shown only when a new build has been downloaded and is waiting. It is a
@@ -378,7 +658,7 @@ h3.section {
   background: var(--panel);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
-  box-shadow: 0 6px 20px rgb(0 0 0 / 0.18);
+  box-shadow: var(--shadow);
 }
 .update-bar span { flex: 1 1 auto; }
 .update-bar button {
@@ -407,104 +687,132 @@ h3.section {
 
 .browse-title {
   font-family: var(--serif);
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: 600;
-  margin: 0.2rem 0 0.3rem;
+  letter-spacing: 0.015em;
+  line-height: 1.15;
+  margin: 0.2rem 0 0.5rem;
 }
-.browse-lede { color: var(--ink-soft); font-size: 0.9rem; margin: 0 0 1.4rem; max-width: 38rem; }
-.browse-foot { color: var(--ink-faint); font-size: 0.76rem; margin: 0.5rem 0 0; max-width: 38rem; }
+/* One letter of the A-Z. A section initial, not a heading. */
+.browse-initial {
+  font-size: 4.5rem;
+  line-height: 0.9;
+  letter-spacing: 0;
+  color: var(--accent);
+  margin: 0 0 0.1rem;
+}
+.browse-lede { font-family: var(--serif); color: var(--ink-soft); font-size: 1rem; line-height: 1.6; margin: 0 0 1.8rem; max-width: 34em; }
+.browse-initial + .browse-lede {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+}
+.browse-foot { color: var(--ink-faint); font-size: 0.76rem; margin: 0.6rem 0 0; max-width: 38rem; }
 
 .browse-back {
   display: inline-block;
-  font-size: 0.78rem;
+  font-family: var(--sans);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: var(--accent);
   text-decoration: none;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
-.browse-back:hover { text-decoration: underline; }
+.browse-back:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-/* A–Z: square tiles, because the alphabet is the one index whose shape the
+/* A-Z: index tabs, because the alphabet is the one index whose shape the
    reader already knows. */
 .browse-az {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(3.6rem, 1fr));
-  gap: 0.4rem;
+  grid-template-columns: repeat(auto-fill, minmax(3.4rem, 1fr));
+  gap: 0.35rem;
 }
 .browse-letter {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.1rem;
-  padding: 0.5rem 0.2rem;
+  gap: 0.15rem;
+  padding: 0.6rem 0.2rem 0.5rem;
   font-family: var(--serif);
-  font-size: 1.2rem;
+  font-size: 1.35rem;
+  line-height: 1;
   color: var(--ink);
   text-decoration: none;
-  background: var(--panel);
+  background: var(--card);
   border: 1px solid var(--rule-soft);
-  border-radius: var(--radius);
+  border-top: 2px solid var(--rule);
+  border-radius: 0 0 var(--radius) var(--radius);
+  transition: border-color 0.12s, background-color 0.12s, color 0.12s;
 }
-.browse-letter:hover { border-color: var(--accent); background: var(--accent-soft); }
-.browse-letter .browse-count { font-family: var(--sans); font-size: 0.66rem; color: var(--ink-faint); }
+.browse-letter:hover { border-color: var(--accent); border-top-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.browse-count { font-family: var(--sans); font-size: 0.6rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
 
 .browse-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 .browse-chip {
   display: inline-flex;
   align-items: baseline;
-  gap: 0.35rem;
-  padding: 0.25rem 0.55rem;
+  gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
   font-size: 0.84rem;
   color: var(--ink);
   text-decoration: none;
-  background: var(--panel);
+  background: var(--card);
   border: 1px solid var(--rule-soft);
   border-radius: 999px;
+  transition: border-color 0.12s, background-color 0.12s, color 0.12s;
 }
-.browse-chip:hover { border-color: var(--accent); background: var(--accent-soft); }
-.browse-chip .browse-count { font-size: 0.7rem; color: var(--ink-faint); }
+.browse-chip:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 
 /* The long lists flow into however many columns the pane can hold, which is
    what makes a letter of the index read like a page rather than a queue. */
 .browse-columns {
   columns: 11rem;
-  column-gap: 1.4rem;
-  margin-top: 0.4rem;
+  column-gap: 1.6rem;
+  margin-top: 0.5rem;
 }
 .browse-entry {
   display: block;
   width: 100%;
   font: inherit;
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   font-family: var(--serif);
+  letter-spacing: 0.02em;
   text-align: left;
   color: var(--ink);
   background: none;
   border: 0;
-  padding: 0.12rem 0.2rem;
+  padding: 0.13rem 0.25rem;
   border-radius: 3px;
   cursor: pointer;
   break-inside: avoid;
   overflow-wrap: anywhere;
 }
+.browse-entry.sci { font-style: italic; color: var(--botanic); }
 .browse-entry:hover { background: var(--accent-soft); color: var(--accent); }
+.browse-entry.sci:hover { background: var(--botanic-soft); color: var(--botanic); }
 .browse-entry:focus-visible { outline: 2px solid var(--focus); outline-offset: -1px; }
 
 .browse-genera {
   columns: 15rem;
-  column-gap: 1.6rem;
-  margin-top: 0.4rem;
+  column-gap: 1.8rem;
+  margin-top: 0.5rem;
 }
-.browse-genus { break-inside: avoid; margin: 0 0 1rem; }
+.browse-genus { break-inside: avoid; margin: 0 0 1.1rem; }
 .browse-genus-name {
-  font-size: 0.95rem;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-style: italic;
   font-weight: 600;
-  margin: 0 0 0.15rem;
-  color: var(--ink);
+  margin: 0 0 0.2rem;
+  color: var(--botanic);
   border-bottom: 1px solid var(--rule-soft);
-  padding-bottom: 0.15rem;
+  padding-bottom: 0.2rem;
 }
-.browse-species .browse-entry { padding-left: 0.5rem; }
+.browse-species .browse-entry { padding-left: 0.6rem; }
 
 /* ------------------------------------------------------------------- scan */
 /* The scanned line, shown on request. The frame clips a single `<img>` of the
@@ -513,19 +821,23 @@ h3.section {
    a 40-pixel line strip and the whole page. */
 
 .scan-block {
-  margin-top: 1.6rem;
+  margin-top: 2.2rem;
   border-top: 1px solid var(--rule-soft);
-  padding-top: 0.8rem;
+  padding-top: 0.9rem;
 }
 .scan-block > summary {
   cursor: pointer;
-  font-size: 0.8rem;
+  font-family: var(--sans);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: var(--accent);
   width: fit-content;
 }
+.scan-block > summary:hover { text-decoration: underline; text-underline-offset: 3px; }
 .scan-block > summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 
-.scan { margin: 0.8rem 0 0; }
+.scan { margin: 1rem 0 0; }
 
 /* The frame must have no border and no padding. Its own box is the containing
    block that the image's `top` and `left` percentages resolve against, and
@@ -538,18 +850,20 @@ h3.section {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius);
-  box-shadow: inset 0 0 0 1px var(--rule);
+  box-shadow: inset 0 0 0 1px var(--rule), var(--shadow);
   /* The scan's own paper, so a slow-loading leaf does not flash a dark or
      white rectangle at a reader who chose the other theme. */
   background: #efe9df;
 }
 .scan-frame.loading::after {
-  content: "Loading the scan6";
+  content: "Loading the scan…";
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
-  font: 0.75rem var(--sans);
+  font: 0.7rem var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: #6b6257;
 }
 .scan-frame img {
@@ -583,34 +897,33 @@ h3.section {
   max-height: min(70vh, 38rem);
 }
 
+/* A plate caption: the citation on the left, the controls on the right. */
 .scan figcaption {
   display: flex;
   align-items: baseline;
-  gap: 0.7rem;
-  margin-top: 0.4rem;
-  font-size: 0.74rem;
+  gap: 0.8rem;
+  margin-top: 0.55rem;
+  font-size: 0.62rem;
   color: var(--ink-faint);
 }
 .scan-where { margin-right: auto; }
 .scan figcaption a { color: var(--ink-faint); }
+.scan figcaption a:hover { color: var(--accent); }
 
 .scan-toggle {
-  font: inherit;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
   color: var(--accent);
   background: none;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
-  padding: 0.15rem 0.5rem;
+  padding: 0.2rem 0.55rem;
   cursor: pointer;
 }
-.scan-toggle:hover { border-color: var(--accent); }
+.scan-toggle:hover { border-color: var(--accent); background: var(--accent-soft); }
 .scan-toggle:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-
-.placeholder { color: var(--ink-faint); max-width: 34rem; }
-.placeholder h2 { font-family: var(--serif); color: var(--ink); font-weight: 600; font-size: 1.3rem; }
-.placeholder dl { display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 1rem; font-size: 0.9rem; }
-.placeholder dt { color: var(--ink-soft); }
-.placeholder dd { margin: 0; }
 
 .back { display: none; }
 
@@ -623,8 +936,10 @@ h3.section {
     position: fixed;
     inset: 0;
     z-index: 10;
-    background: var(--paper);
-    padding-top: 3.5rem;
+    background:
+      radial-gradient(60rem 30rem at 50% -8rem, var(--paper-lift), transparent 72%)
+      var(--paper);
+    padding-top: 4.4rem;
   }
   .app.detail-open .detail { display: block; }
   .app.detail-open .back {
@@ -635,7 +950,7 @@ h3.section {
     top: 0;
     left: 0;
     right: 0;
-    height: 3.5rem;
+    height: 3.4rem;
     z-index: 11;
     padding: 0 1rem;
     background: var(--panel);
@@ -645,6 +960,7 @@ h3.section {
     justify-content: flex-start;
   }
   .masthead h1 span { display: none; }
+  .browse-columns { columns: 9rem; }
 }
 
 /* A genus heading that is itself an entry in the book: it links, but it must
@@ -655,3 +971,9 @@ h3.section {
   color: inherit;
 }
 .browse-genus-name .browse-entry:hover { background: none; color: var(--accent); text-decoration: underline; }
+
+/* Motion here is only ever a hint that something is interactive. A reader who
+   has asked for less of it loses nothing by having none. */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
