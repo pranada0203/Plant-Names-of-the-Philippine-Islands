@@ -238,6 +238,69 @@ consistently: two headwords in the whole book contain a `k`, so a c/k rule would
 cost precision and earn nothing, and `ñ` needs no rule because stripping the
 tilde already turns his `ñg` into the `ng` a reader would type.
 
+## What the grammar was throwing away
+
+70 Part I lines failed to parse. Most were scan debris, but **30 were real
+entries** the grammar rejected over punctuation:
+
+```
+Captiao, V., T.- Cynomorium philippinense Blanco.
+Hincte-cALAso, T. * Beaumontia.
+Motoroe1o, T., V., Pamp.~ Urena sinuata L.
+.ManaBanaBA, T. Duabanga moluccana Blume.
+Ma.arsis, T. Malaisia tortuosa Blanco.
+Dam6-Hia; T. Mimosa pudica L.
+```
+
+A hyphen the printer left after "T.", an asterisk, a tilde, a period dropped
+into the middle of a word, a semicolon where the comma should be, a rule
+fragment at the head of the line. Four changes -- strip leading debris, accept
+`;` and `.` as the separator before a dialect, allow one period inside a
+headword when a letter follows it, and tolerate a run of marks between the
+dialect and the genus -- recovered **29 of the 30**, and the one left behind has
+a headword the scan reads as "31706".
+
+The tolerance for debris is granted *only* after a dialect or a place. Granted
+everywhere it is destructive: with no dialect on the line, "AGAS-As. Scolopia"
+splits at the hyphen into a headword AGAS and a dialect "As.", and 58
+hyphenated headwords came apart that way on the first attempt. A hyphen in a
+bare headword is part of the word; a hyphen after "T." is dirt. That is what
+the lookbehind in `BRIDGE` encodes.
+
+Widening the grammar changes what the scanner is deemed to have read, which
+strands every correction keyed to the old reading -- five of them, reported
+rather than silently dropped. `pipeline/rekey-corrections.js` re-derives the
+keys from the transcriptions already on disk. Measured against the parse before
+the change: **29 entries gained, none lost and none altered.**
+
+## The dialect markers
+
+Merrill names the language of a plant name with an abbreviation, and the scan
+destroyed 100 of them. `Il.` accounts for most: the `l` is the letter this scan
+loses most often, and it comes back as `I]`, `ll`, `II`, `Ll`, `Dl`, `Ul`, `It`,
+`I1`, `1]`, `[Il]` and plain `1`. `T.` arrives as `IT.`, `TI.`, `FT.`; `V.` as
+`VY.`; `Z.` as `Zamb.`, which is not damage at all -- Merrill writes `Z.` on
+page 9 and `Zamb.` on page 110.
+
+Each mapping is a glyph confusion with exactly one possible target, checked
+against the page rather than inferred. Page 110 settles `IT.` and `TI.` in one
+go: it prints TAÑGÍSAN three times, each `T.`, and the scan gives a different
+mangling each time. **One marker is still unreadable**, `[].` on page 87.
+
+Four are not damage and are not guessed at. `C.`, `P.`, `A.` and `F.` are
+printed in the book and appear nowhere in the list of abbreviations Merrill
+gives on page 9:
+
+```
+DUÑGURÚÑGUT, C. Citrus hystrix DC.        (page 60)
+ALIBÁNBAN, P., T. Bauhinia blancoi Baker. (page 14)
+```
+
+`C.` is most likely Cagayan, which he abbreviates `Cag.` everywhere else. But
+"most likely" is not a reading, and these carry their own flag --
+`dialect-undocumented`, not `dialect-unrecognised` -- so that the distinction
+between *the scan failed* and *the book never said* survives in the data.
+
 ## What is still wrong
 
 **188 of 1,669 taxa exist only because Part I names them.** The third pass cut

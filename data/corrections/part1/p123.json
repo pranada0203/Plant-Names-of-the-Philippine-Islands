@@ -127,7 +127,7 @@
   },
   {
    "page": 123,
-   "was": "TTUMPONE-ASO, 'T",
+   "was": "TTUMPONE-ASO",
    "headword": "Túmbong-áso"
   },
   {
@@ -174,6 +174,11 @@
    "page": 123,
    "was": "TUNCO-TUNCO",
    "headword": "Túnco-túnco"
+  },
+  {
+   "page": 123,
+   "was": "TONCUTT-LANGUIT",
+   "headword": "Túncut-láñguit"
   },
   {
    "page": 123,

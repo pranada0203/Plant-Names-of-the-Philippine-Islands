@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-15T00:41:42.725Z",
+  "generated": "2026-09-15T00:54:05.488Z",
   "ocrConfidence": {
     "description": "OCR confidence by how the word is set on the page (uncorrected entries only)",
-    "corrected": 5000,
-    "stillAsScanned": 9,
+    "corrected": 5027,
+    "stillAsScanned": 11,
     "smallCapsHeadwords": {
-      "n": 9,
+      "n": 11,
       "median": 66,
-      "underFifty": 4,
-      "underFiftyPercent": 44.4
+      "underFifty": 5,
+      "underFiftyPercent": 45.5
     },
     "romanScientificNames": {
       "n": 1479,
@@ -16,6 +16,12 @@
       "underFifty": 52
     },
     "worstReadings": [
+      {
+        "read_as": "BisLor",
+        "confidence": 0,
+        "page": 42,
+        "line": "Bis.Lor, T. Eugenia."
+      },
       {
         "read_as": "Buyén",
         "confidence": 0,
@@ -53,6 +59,12 @@
         "line": "Anto, V. Amorphophalus campanulatus Blume."
       },
       {
+        "read_as": "Aptyo",
+        "confidence": 82,
+        "page": 27,
+        "line": "Aptyo.(Paragua). Callicarpa."
+      },
+      {
         "read_as": "Man",
         "confidence": 89,
         "page": 91,
@@ -75,10 +87,10 @@
   "crossHalfCheck": {
     "description": "Native names printed in Part II, looked up in Part I",
     "total": 3349,
-    "matchedExactly": 1575,
-    "matchedWithinOneLetter": 980,
-    "unmatched": 794,
-    "unmatchedPercent": 23.7
+    "matchedExactly": 1582,
+    "matchedWithinOneLetter": 982,
+    "unmatched": 785,
+    "unmatchedPercent": 23.4
   },
   "implausibleHeadwords": {
     "description": "Part I headwords with no vowels or impossible consonant runs",

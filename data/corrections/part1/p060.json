@@ -260,6 +260,12 @@
   },
   {
    "page": 60,
+   "was": "COMIMPÉT",
+   "headword": "Comimpól",
+   "ocrConfidence": 0
+  },
+  {
+   "page": 60,
    "was": "COMMONSIT",
    "headword": "Commonsíl"
   },

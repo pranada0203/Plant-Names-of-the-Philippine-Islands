@@ -239,13 +239,39 @@ const LOC = N.DIALECT_RE;
  * canonicalising afterwards recovers those lines instead of discarding them.
  * Capped at five letters so it can never swallow the genus that follows.
  */
-const LOC_SLOT = '(?:Sp\\.\\s*-?\\s*Fil|[A-Za-z\\[\\]|][A-Za-z\\[\\]|]{0,4})';
+const LOC_SLOT = '(?:Sp\\.\\s*-?\\s*Fil|[A-Za-z0-9\\[\\]|\'][A-Za-z0-9\\[\\]|\']{0,4})';
+
+/**
+ * What sits between the dialect and the genus.
+ *
+ * Normally one space. But the scan leaves debris there -- the printer's rule, a
+ * stray asterisk, a hyphen from a broken line: "T.- Cynomorium", "T.* Boletus",
+ * "Pamp.~ Urena", "V..Parameria", "(Tayabas) ?%. Calamus".
+ *
+ * That tolerance is allowed *only* after a dialect or a place, which is what
+ * the lookbehind enforces. Granted unconditionally it is destructive: with no
+ * dialect on the line, "AGAS-As. Scolopia" splits at the hyphen into a headword
+ * AGAS and a dialect "As.", and 58 hyphenated headwords come apart that way.
+ * A hyphen in a bare headword is part of the word; a hyphen after "T." is dirt.
+ */
+const BRIDGE =
+  '(?:(?<=[.:)])\\s*[.:]?[\\s\\-*~%?=+.,;\']+' +   // after a dialect or place
+  '|\\s*[.:]*\\s+)';                   // otherwise: a space, after any full stops
+
+/** One dialect slot, for pulling `locs` apart again after the match. */
+const LOC_TOKEN = new RegExp(LOC_SLOT + '\\s*[.:]\\??', 'g');
 
 const PART_I_ENTRY = new RegExp(
-  '^(?<head>[^.;()]{2,60}?)' +                             // headword (small caps in print)
-  '(?<locs>(?:\\s*,\\s*' + LOC_SLOT + '\\s*[.:]\\??)+)?' + // ", T., V."
-  '(?:\\s*\\((?<place>[^)]{1,40})\\)\\s*\\.?)?' +          // " (Cagayan)."
-  '\\s*[.:]?\\s+' +
+  // A period inside the headword is allowed only when a letter follows it. The
+  // scan drops one into the middle of a word ("Ma.arsis", "Mo.dvin",
+  // "Comimpe.t"), but a period followed by a space is the one that *ends* the
+  // headword, and that distinction is what stops this swallowing the name.
+  '^(?<head>(?:[^.;()]|\\.(?=[A-Za-zÀ-ÿ])){2,60}?)' +      // headword (small caps in print)
+  // The separator before a dialect is a comma in print; the scan also produces
+  // a semicolon or a period -- "Dam6-Hia; T.", "MaracArios. Z."
+  '(?<locs>(?:\\s*[,;.]\\s*' + LOC_SLOT + '\\s*[.:]\\??)+)?' + // ", T., V."
+  '(?:\\s*[.:]?\\s*\\((?<place>[^)]{1,40})\\)\\s*\\.?)?' +  // " (Cagayan)."
+  BRIDGE +
   // The scientific name must LOOK like one: a Titlecase genus. Without this the
   // lazy headword stops at the first space and the rest of a multi-word name is
   // swallowed into the taxon -- "AMORES SECOS, Sp.-Fil. Chrysopogon aciculatus"
@@ -273,7 +299,10 @@ function parsePartI(pages, range, conf) {
   const issues = [];
   for (let p = range[0]; p <= range[1]; p++) {
     for (const rawLine of pages[p].lines) {
-      const line = N.repairOcr(rawLine);
+      // Rule fragments and stray marks collect at the head of a line. They are
+      // no part of the first headword, and left in place they stop the line
+      // parsing at all: ".ManaBanaBA, T. Duabanga moluccana Blume."
+      const line = N.repairOcr(rawLine).replace(/^[\s.,;:'"*~-]+/, '');
       if (!line || FURNITURE.test(line)) continue;
 
       const m = PART_I_ENTRY.exec(line);
@@ -285,15 +314,29 @@ function parsePartI(pages, range, conf) {
       // Scan marks -- rule fragments, stray quotes, the printer's hanging
       // hyphen -- cling to the front and back of headwords. They are not part
       // of the name, and left alone they sort ahead of the whole alphabet.
-      const head = N.squash(g.head).replace(/^[^A-Za-zÀ-ÿ]+/, '').replace(/[^A-Za-zÀ-ÿ]+$/, '');
+      // A period inside the word is always the scan's, never Merrill's: no
+      // plant name in the book contains one. The grammar has to tolerate it to
+      // read the line at all ("Ma.arsis"); the headword should not keep it.
+      const head = N.squash(g.head)
+        .replace(/\.(?=[A-Za-zÀ-ÿ])/g, '')
+        .replace(/^[^A-Za-zÀ-ÿ]+/, '').replace(/[^A-Za-zÀ-ÿ]+$/, '');
       if (!head) {
         issues.push({ part: 1, page: p + 1, text: line });
         continue;
       }
 
-      const locTokens = (g.locs || '').split(',').map((s) => s.trim()).filter(Boolean);
+      // Matched, not split. The separator is now any of ", ; ." and "Sp.-Fil."
+      // contains two of those itself, so splitting on them tears it in half --
+      // and leaves the separator glued to the next token, which then matches
+      // nothing. Pulling each slot out by the same pattern that accepted it
+      // cannot disagree with the grammar.
+      const locTokens = (g.locs || '').match(LOC_TOKEN) || [];
       const dialects = locTokens.map(N.canonicalDialect).filter(Boolean);
-      const dialectsUnknown = locTokens.filter((t) => !N.canonicalDialect(t));
+      const unresolved = locTokens.filter((t) => !N.canonicalDialect(t));
+      // Two different problems, kept apart: a marker the scan destroyed, and a
+      // marker the book prints but never defines. Only the first is ours.
+      const dialectsUndocumented = unresolved.filter(N.isUndocumentedDialect);
+      const dialectsUnknown = unresolved.filter((t) => !N.isUndocumentedDialect(t));
 
       // "Vitex negundo L.--Vitex obovata Thunb." lists two species for one name.
       const taxa = N.squash(g.sci)
@@ -306,13 +349,14 @@ function parsePartI(pages, range, conf) {
         headRaw: head,
         dialects,
         dialectsUnknown: dialectsUnknown.length ? dialectsUnknown : undefined,
+        dialectsUndocumented: dialectsUndocumented.length ? dialectsUndocumented : undefined,
         place: g.place ? N.squash(g.place) : null,
         taxa,
         page: p + 1,
         printedPage: conf && conf.printed ? conf.printed.get(p + 1) || null : null,
         confidence: lookupConfidence(conf, p + 1, head),
         raw: line,
-        flags: qualityFlags(head, taxa, dialectsUnknown)
+        flags: qualityFlags(head, taxa, dialectsUnknown, dialectsUndocumented)
           .concat(g.scinoise ? ['taxon-noise'] : []),
       });
     }
@@ -325,11 +369,13 @@ function parsePartI(pages, range, conf) {
  * Mixed case in a headword is NOT a flag: the original sets headwords in small
  * caps, which OCRs as arbitrary case ("AniBionG") while the letters stay right.
  */
-function qualityFlags(head, taxa, unknownDialects) {
+function qualityFlags(head, taxa, unknownDialects, undocumentedDialects) {
   const f = [];
   if (N.ACCENT_SUSPECT.test(head)) f.push('accent-lost');
   if (/[^A-Za-zÀ-ÿ\-' ]/.test(head)) f.push('glyph-damage');
   if (unknownDialects && unknownDialects.length) f.push('dialect-unrecognised');
+  // Not a defect in the reading: the book itself never says what this means.
+  if (undocumentedDialects && undocumentedDialects.length) f.push('dialect-undocumented');
   if (!taxa.length || taxa.some((t) => !/^[A-Z][a-zé]/.test(t))) f.push('taxon-suspect');
   return f;
 }
@@ -898,4 +944,8 @@ function main() {
     report.partII.withFamily + ' with family, ' + families.length + ' families');
 }
 
-main();
+// Run as a stage, or require as a library. The second is what lets the entry
+// grammar be tested against real failing lines instead of reasoned about.
+if (require.main === module) main();
+
+module.exports = { PART_I_ENTRY, LOC_SLOT, FURNITURE, parsePartI, findSections };

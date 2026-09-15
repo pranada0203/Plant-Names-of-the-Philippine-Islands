@@ -765,9 +765,8 @@
  {
   "headword": "ADGÁO",
   "headRaw": "Adgáo",
-  "dialects": [],
-  "dialectsUnknown": [
-   "VY."
+  "dialects": [
+   "V"
   ],
   "place": null,
   "taxa": [
@@ -777,9 +776,7 @@
   "printedPage": "11",
   "confidence": 100,
   "raw": "ApGAo, VY. Premna vestita Schauer.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "APGAO",
   "corrected": true,
   "box": [
@@ -1162,9 +1159,8 @@
  {
   "headword": "ÁGAY",
   "headRaw": "Ágay",
-  "dialects": [],
-  "dialectsUnknown": [
-   "FT."
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -1174,9 +1170,7 @@
   "printedPage": "12",
   "confidence": 100,
   "raw": "A@ay, FT. Phyllanthus.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "A@AY",
   "corrected": true,
   "box": [
@@ -3674,7 +3668,7 @@
   "dialects": [
    "T"
   ],
-  "dialectsUnknown": [
+  "dialectsUndocumented": [
    "P."
   ],
   "place": null,
@@ -3686,7 +3680,7 @@
   "confidence": 100,
   "raw": "ALIBANBAN, P., T. Bauhinia blancoi Baker.",
   "flags": [
-   "dialect-unrecognised"
+   "dialect-undocumented"
   ],
   "ocrHeadword": "ALIBANBAN",
   "corrected": true,
@@ -4036,9 +4030,8 @@
  {
   "headword": "ALIMÍQUEN",
   "headRaw": "Alimíquen",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -4048,9 +4041,7 @@
   "printedPage": "14",
   "confidence": 100,
   "raw": "ALIMiQUEN, I]. Musa paradisiaea L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "ALIMIQUEN",
   "corrected": true,
   "box": [
@@ -4063,9 +4054,8 @@
  {
   "headword": "ALÍNAO",
   "headRaw": "Alínao",
-  "dialects": [],
-  "dialectsUnknown": [
-   "Il.?"
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -4075,9 +4065,7 @@
   "printedPage": "14",
   "confidence": 100,
   "raw": "ALinao, Il.? Calamus rhomboideus Blume.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "ALINAO",
   "corrected": true,
   "box": [
@@ -5156,9 +5144,7 @@
   "printedPage": "15",
   "confidence": 100,
   "raw": "ALUSIMANG, V. 'Trianthema.",
-  "flags": [
-   "taxon-noise"
-  ],
+  "flags": [],
   "ocrHeadword": "ALUSIMANG",
   "corrected": true,
   "box": [
@@ -6009,7 +5995,7 @@
   "page": 24,
   "printedPage": "16",
   "confidence": 100,
-  "raw": "* AmMtyon. Melodorum fulgens Hook. f. and Th.",
+  "raw": "AmMtyon. Melodorum fulgens Hook. f. and Th.",
   "flags": [],
   "ocrHeadword": "AMMTYON",
   "corrected": true,
@@ -8323,7 +8309,7 @@
   "page": 26,
   "printedPage": "18",
   "confidence": 100,
-  "raw": "' ANTEN, Il. Canarium luzonicum Miq.",
+  "raw": "ANTEN, Il. Canarium luzonicum Miq.",
   "flags": [],
   "ocrHeadword": "ANTEN",
   "corrected": true,
@@ -9565,6 +9551,26 @@
   ]
  },
  {
+  "headword": "APTYO",
+  "headRaw": "Aptyo",
+  "dialects": [],
+  "place": "Paragua",
+  "taxa": [
+   "Callicarpa"
+  ],
+  "page": 27,
+  "printedPage": "19",
+  "confidence": 82,
+  "raw": "Aptyo.(Paragua). Callicarpa.",
+  "flags": [],
+  "box": [
+   0.057,
+   0.638,
+   0.355,
+   0.019
+  ]
+ },
+ {
   "headword": "APÚYOT",
   "headRaw": "Apúyot",
   "dialects": [
@@ -9733,9 +9739,8 @@
  {
   "headword": "ARANDÓN",
   "headRaw": "Arandón",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -9745,9 +9750,7 @@
   "printedPage": "19",
   "confidence": 100,
   "raw": "ARANDON, I]. Wikstroemia ovata Mey.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "ARANDON",
   "corrected": true,
   "box": [
@@ -10064,9 +10067,8 @@
  {
   "headword": "ARÍMAI",
   "headRaw": "Arímai",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -10076,9 +10078,7 @@
   "printedPage": "20",
   "confidence": 100,
   "raw": "Arimal, I]. Boehmeria nivea Hook. et Arn.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "ARIMAL",
   "corrected": true,
   "box": [
@@ -10262,9 +10262,8 @@
  {
   "headword": "ARÓMA",
   "headRaw": "Aróma",
-  "dialects": [],
-  "dialectsUnknown": [
-   "T:"
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -10274,9 +10273,7 @@
   "printedPage": "20",
   "confidence": 100,
   "raw": "Aroma, T: Acasia farnesiana Willd.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "AROMA",
   "corrected": true,
   "box": [
@@ -11047,9 +11044,8 @@
  {
   "headword": "ÁUA",
   "headRaw": "Áua",
-  "dialects": [],
-  "dialectsUnknown": [
-   "ll."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -11059,9 +11055,7 @@
   "printedPage": "20",
   "confidence": 100,
   "raw": "Ava, ll. Musa.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "AVA",
   "corrected": true,
   "box": [
@@ -13060,9 +13054,8 @@
  {
   "headword": "BÁGAR",
   "headRaw": "Bágar",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -13072,9 +13065,7 @@
   "printedPage": "22",
   "confidence": 100,
   "raw": "BAGaAR, I]. Anisoptera.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BAGAAR",
   "corrected": true,
   "box": [
@@ -13302,9 +13293,8 @@
  {
   "headword": "BAGBÁG",
   "headRaw": "Bagbág",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -13314,9 +13304,7 @@
   "printedPage": "22",
   "confidence": 100,
   "raw": "BacpAg, I]. Erythrina indica L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BACPAG",
   "corrected": true,
   "box": [
@@ -13726,9 +13714,8 @@
  {
   "headword": "BAGÓ-OEN",
   "headRaw": "Bagó-oen",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -13738,9 +13725,7 @@
   "printedPage": "23",
   "confidence": 100,
   "raw": "BaGo-oEen, I]. Parkia roxburghii, G. Don.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BAGO-OEEN",
   "corrected": true,
   "box": [
@@ -13823,9 +13808,8 @@
  {
   "headword": "BAGÚEN",
   "headRaw": "Bagúen",
-  "dialects": [],
-  "dialectsUnknown": [
-   "ll."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -13835,9 +13819,7 @@
   "printedPage": "23",
   "confidence": 100,
   "raw": "Baaten, ll. Parkia roxburghii G. Don.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BAATEN",
   "corrected": true,
   "box": [
@@ -14064,9 +14046,8 @@
  {
   "headword": "BÁGUIT",
   "headRaw": "Báguit",
-  "dialects": [],
-  "dialectsUnknown": [
-   "B:"
+  "dialects": [
+   "B"
   ],
   "place": null,
   "taxa": [
@@ -14076,9 +14057,7 @@
   "printedPage": "23",
   "confidence": 100,
   "raw": "BAguit, B: Tristillatia australasica A. Rich.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BAGUIT",
   "corrected": true,
   "box": [
@@ -14900,9 +14879,8 @@
  {
   "headword": "BALACBÁC",
   "headRaw": "Balacbác",
-  "dialects": [],
-  "dialectsUnknown": [
-   "T.?"
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -14912,9 +14890,7 @@
   "printedPage": "24",
   "confidence": 100,
   "raw": "BaracsBAc, T.? Jussiaea suffruticosa Linn.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BARACSBAC",
   "corrected": true,
   "box": [
@@ -15141,9 +15117,8 @@
  {
   "headword": "BALÁI-LAMÓC",
   "headRaw": "Balái-lamóc",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -15153,9 +15128,7 @@
   "printedPage": "24",
   "confidence": 100,
   "raw": "BaLAI-LAMOoc, I]. Crataeva religiosa Forst.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BALAI-LAMOOC",
   "corrected": true,
   "box": [
@@ -15597,7 +15570,8 @@
   "headRaw": "Balásin",
   "dialects": [
    "T",
-   "V"
+   "V",
+   "Pamp"
   ],
   "place": null,
   "taxa": [
@@ -15611,7 +15585,7 @@
   "ocrHeadword": "BALASIN",
   "corrected": true,
   "ocrTaxa": [
-   "Pamp. Anamirta coceculus W. and A"
+   "Anamirta coceculus W. and A"
   ],
   "taxaCorrected": true,
   "box": [
@@ -15860,9 +15834,8 @@
  {
   "headword": "BALÁY-NAMÚC",
   "headRaw": "Baláy-namúc",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -15872,9 +15845,7 @@
   "printedPage": "25",
   "confidence": 100,
   "raw": "BavAy-NAMUc, I]. Crataeva religiosa Vorst.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BAVAY-NAMUC",
   "corrected": true,
   "box": [
@@ -18706,7 +18677,8 @@
   "headRaw": "Banabá",
   "dialects": [
    "T",
-   "V"
+   "V",
+   "Mang"
   ],
   "place": null,
   "taxa": [
@@ -18720,7 +18692,7 @@
   "ocrHeadword": "BANAS",
   "corrected": true,
   "ocrTaxa": [
-   "Mang. Lagerstroemia speciosa Pers"
+   "Lagerstroemia speciosa Pers"
   ],
   "taxaCorrected": true,
   "box": [
@@ -18903,9 +18875,8 @@
  {
   "headword": "BANÁGO",
   "headRaw": "Banágo",
-  "dialects": [],
-  "dialectsUnknown": [
-   "T.?"
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -18915,9 +18886,7 @@
   "printedPage": "27",
   "confidence": 100,
   "raw": "BanAoo, T.? Diplodiscus?.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BANAOO",
   "corrected": true,
   "box": [
@@ -21237,9 +21206,8 @@
  {
   "headword": "BÁQUIN-BAQUÍT",
   "headRaw": "Báquin-baquít",
-  "dialects": [],
-  "dialectsUnknown": [
-   "Ll."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -21249,9 +21217,7 @@
   "printedPage": "29",
   "confidence": 100,
   "raw": "BAQuIN-BAQUIT, Ll. Helicteres spicata Colinb.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BAQUIN-BAQUIT",
   "corrected": true,
   "box": [
@@ -21591,9 +21557,8 @@
  {
   "headword": "BÁREN",
   "headRaw": "Báren",
-  "dialects": [],
-  "dialectsUnknown": [
-   "V:"
+  "dialects": [
+   "V"
   ],
   "place": null,
   "taxa": [
@@ -21603,9 +21568,7 @@
   "printedPage": "30",
   "confidence": 100,
   "raw": "BAREN, V: Pandanus dubius Spreng.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BAREN",
   "corrected": true,
   "box": [
@@ -21968,9 +21931,8 @@
  {
   "headword": "BASÁR-BASÁR",
   "headRaw": "Basár-basár",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -21980,9 +21942,7 @@
   "printedPage": "30",
   "confidence": 100,
   "raw": "BasAr-BASAR, I]. Loranthus.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BASAR-BASAR",
   "corrected": true,
   "box": [
@@ -22019,9 +21979,8 @@
  {
   "headword": "BÁSENG",
   "headRaw": "Báseng",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -22031,9 +21990,7 @@
   "printedPage": "30",
   "confidence": 100,
   "raw": "BAsENG, I]. Zingiber officinale Linn.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BASENG",
   "corrected": true,
   "box": [
@@ -24383,9 +24340,8 @@
  {
   "headword": "BICÁCAO",
   "headRaw": "Bicácao",
-  "dialects": [],
-  "dialectsUnknown": [
-   "IT."
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -24395,9 +24351,7 @@
   "printedPage": "32",
   "confidence": 100,
   "raw": "BicAcao, IT. Setaria italica Beauv.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BICACAO",
   "corrected": true,
   "box": [
@@ -24420,7 +24374,7 @@
   "page": 40,
   "printedPage": "32",
   "confidence": 100,
-  "raw": "'Bicax, Il. Rhamnus.",
+  "raw": "Bicax, Il. Rhamnus.",
   "flags": [],
   "ocrHeadword": "BICAX",
   "corrected": true,
@@ -24482,7 +24436,9 @@
  {
   "headword": "BIGÁ",
   "headRaw": "Bigá",
-  "dialects": [],
+  "dialects": [
+   "T"
+  ],
   "place": null,
   "taxa": [
    "Homalomena"
@@ -24492,7 +24448,7 @@
   "confidence": 100,
   "raw": "BicA, 'T. Homalomena.",
   "flags": [],
-  "ocrHeadword": "BICA, 'T",
+  "ocrHeadword": "BICA",
   "corrected": true,
   "box": [
    0.096,
@@ -24985,9 +24941,7 @@
   "printedPage": "33",
   "confidence": 23,
   "raw": "Bitis (Zamboanga). 'Trewia.",
-  "flags": [
-   "taxon-noise"
-  ],
+  "flags": [],
   "box": [
    0.069,
    0.261,
@@ -26104,9 +26058,7 @@
   "printedPage": "34",
   "confidence": 100,
   "raw": "BrrvdGc, T. -Hlaeocarpus.",
-  "flags": [
-   "taxon-noise"
-  ],
+  "flags": [],
   "ocrHeadword": "BRRVDGC",
   "corrected": true,
   "box": [
@@ -26229,6 +26181,28 @@
    0.093,
    0.349,
    0.303,
+   0.019
+  ]
+ },
+ {
+  "headword": "BISLOR",
+  "headRaw": "BisLor",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
+   "Eugenia"
+  ],
+  "page": 42,
+  "printedPage": "34",
+  "confidence": 0,
+  "raw": "Bis.Lor, T. Eugenia.",
+  "flags": [],
+  "box": [
+   0.094,
+   0.367,
+   0.239,
    0.019
   ]
  },
@@ -26617,9 +26591,8 @@
  {
   "headword": "BITNÓNG",
   "headRaw": "Bitnóng",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -26629,9 +26602,7 @@
   "printedPage": "34",
   "confidence": 100,
   "raw": "BITNONG, I]. Kleinhovia hospita L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BITNONG",
   "corrected": true,
   "box": [
@@ -28944,9 +28915,8 @@
  {
   "headword": "BÓTA-BÓTA",
   "headRaw": "Bóta-bóta",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -28956,9 +28926,7 @@
   "printedPage": "36",
   "confidence": 100,
   "raw": "Bora-BoTa, I]. Melastoma obvolutum Jack.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BORA-BOTA",
   "corrected": true,
   "box": [
@@ -29401,9 +29369,8 @@
  {
   "headword": "BUÁS",
   "headRaw": "Buás",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -29413,9 +29380,7 @@
   "printedPage": "37",
   "confidence": 100,
   "raw": "BuAs, I]. Malotus philippinensis Muell. Arg.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BUAS",
   "corrected": true,
   "box": [
@@ -29566,9 +29531,8 @@
  {
   "headword": "BUCÁCAO",
   "headRaw": "Bucácao",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -29578,9 +29542,7 @@
   "printedPage": "37",
   "confidence": 100,
   "raw": "BucAcao, I]. Setaria italica Beauv.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BUCACAO",
   "corrected": true,
   "box": [
@@ -30875,9 +30837,8 @@
  {
   "headword": "BULAUÍSAN",
   "headRaw": "Bulauísan",
-  "dialects": [],
-  "dialectsUnknown": [
-   "Dl."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -30887,9 +30848,7 @@
   "printedPage": "38",
   "confidence": 100,
   "raw": "BuLAvISAN, Dl. Vitex.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BULAVISAN",
   "corrected": true,
   "box": [
@@ -32481,10 +32440,8 @@
   "headword": "BÚYO",
   "headRaw": "Búyo",
   "dialects": [
-   "V"
-  ],
-  "dialectsUnknown": [
-   "IT."
+   "V",
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -32494,9 +32451,7 @@
   "printedPage": "39",
   "confidence": 100,
   "raw": "Boyo, V., IT. Piper betle L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "BOYO",
   "corrected": true,
   "box": [
@@ -35966,9 +35921,7 @@
   "printedPage": "42",
   "confidence": 100,
   "raw": "GALAN-UM-oUAC, V. 'Trichosanthes globosa Blume.",
-  "flags": [
-   "taxon-noise"
-  ],
+  "flags": [],
   "ocrHeadword": "GALAN-UM-OUAC",
   "corrected": true,
   "box": [
@@ -36270,9 +36223,8 @@
  {
   "headword": "CAL-AUÍTIT",
   "headRaw": "Cal-auítit",
-  "dialects": [],
-  "dialectsUnknown": [
-   "ll."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -36282,9 +36234,7 @@
   "printedPage": "43",
   "confidence": 100,
   "raw": "Cat-Auitit, ll. Terminalia.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "CAT-AUITIT",
   "corrected": true,
   "box": [
@@ -37362,9 +37312,8 @@
  {
   "headword": "CALÓO",
   "headRaw": "Calóo",
-  "dialects": [],
-  "dialectsUnknown": [
-   "VY."
+  "dialects": [
+   "V"
   ],
   "place": null,
   "taxa": [
@@ -37374,9 +37323,7 @@
   "printedPage": "44",
   "confidence": 100,
   "raw": "CaxLoo, VY. Abrus precatorius L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "CAXLOO",
   "corrected": true,
   "box": [
@@ -38986,9 +38933,8 @@
  {
   "headword": "CAMANTIRÍS",
   "headRaw": "Camantirís",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -38998,9 +38944,7 @@
   "printedPage": "45",
   "confidence": 100,
   "raw": "CAMANTIRIS, I]. Pithecolobium dulce Benth.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "CAMANTIRIS",
   "corrected": true,
   "box": [
@@ -40296,9 +40240,8 @@
  {
   "headword": "CANDARÓMA",
   "headRaw": "Candaróma",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -40308,9 +40251,7 @@
   "printedPage": "46",
   "confidence": 100,
   "raw": "CanpAROMA, I]. Cinnamomum pauciflorum Nees.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "CANPAROMA",
   "corrected": true,
   "box": [
@@ -41441,9 +41382,8 @@
  {
   "headword": "CÁPAS-SÁÑGLAY",
   "headRaw": "Cápas-sáñglay",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -41453,9 +41393,7 @@
   "printedPage": "47",
   "confidence": 100,
   "raw": "CAPAS-SANGLAY, I]. Ceiba pentandra Gaertn.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "CAPAS-SANGLAY",
   "corrected": true,
   "box": [
@@ -41606,6 +41544,31 @@
    0.829,
    0.495,
    0.018
+  ]
+ },
+ {
+  "headword": "CAPÚLAO",
+  "headRaw": "Capúlao",
+  "dialects": [
+   "V",
+   "T"
+  ],
+  "place": null,
+  "taxa": [
+   "Cynomorium philippinense Blanco"
+  ],
+  "page": 55,
+  "printedPage": "47",
+  "confidence": 100,
+  "raw": "Captiao, V., T.- Cynomorium philippinense Blanco.",
+  "flags": [],
+  "ocrHeadword": "CAPTIAO",
+  "corrected": true,
+  "box": [
+   0.07,
+   0.846,
+   0.581,
+   0.019
   ]
  },
  {
@@ -42133,10 +42096,8 @@
   "headword": "CARISQUÍS",
   "headRaw": "Carisquís",
   "dialects": [
-   "T"
-  ],
-  "dialectsUnknown": [
-   "I]."
+   "T",
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -42146,9 +42107,7 @@
   "printedPage": "48",
   "confidence": 100,
   "raw": "Carisquis, T., I]. Albizzia julibrissin Durazz.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "CARISQUIS",
   "corrected": true,
   "box": [
@@ -42518,9 +42477,8 @@
  {
   "headword": "CASÁBANG",
   "headRaw": "Casábang",
-  "dialects": [],
-  "dialectsUnknown": [
-   "Ul."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -42530,9 +42488,7 @@
   "printedPage": "48",
   "confidence": 100,
   "raw": "CasABaAnG, Ul. Zanthoxylum oxyphyllum Edgw.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "CASABAANG",
   "corrected": true,
   "box": [
@@ -43737,7 +43693,7 @@
   "page": 57,
   "printedPage": "49",
   "confidence": 100,
-  "raw": "'CATBALONGA. Strychnos ignatii Berg.",
+  "raw": "CATBALONGA. Strychnos ignatii Berg.",
   "flags": [],
   "ocrHeadword": "CATBALONGA",
   "corrected": true,
@@ -43872,9 +43828,8 @@
  {
   "headword": "CATELÁNA",
   "headRaw": "Catelána",
-  "dialects": [],
-  "dialectsUnknown": [
-   "T.?"
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -43884,9 +43839,7 @@
   "printedPage": "49",
   "confidence": 100,
   "raw": "CaTELANA, T.? Diospyros.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "CATELANA",
   "corrected": true,
   "box": [
@@ -45938,9 +45891,8 @@
  {
   "headword": "CILIÑGÍWA",
   "headRaw": "Ciliñgíwa",
-  "dialects": [],
-  "dialectsUnknown": [
-   "VY."
+  "dialects": [
+   "V"
   ],
   "place": null,
   "taxa": [
@@ -45950,9 +45902,7 @@
   "printedPage": "51",
   "confidence": 100,
   "raw": "Cininciwa, VY. Averrhoa bilimbi L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "CININCIWA",
   "corrected": true,
   "box": [
@@ -47178,6 +47128,30 @@
   ]
  },
  {
+  "headword": "COMIMPÓL",
+  "headRaw": "Comimpól",
+  "dialects": [
+   "V"
+  ],
+  "place": null,
+  "taxa": [
+   "Hyptage madablota Gaertn"
+  ],
+  "page": 60,
+  "printedPage": "52",
+  "confidence": 100,
+  "raw": "Comimpé.t, V. Hyptage madablota Gaertn.",
+  "flags": [],
+  "ocrHeadword": "COMIMPÉT",
+  "corrected": true,
+  "box": [
+   0.104,
+   0.821,
+   0.48,
+   0.019
+  ]
+ },
+ {
   "headword": "COMMONSÍL",
   "headRaw": "Commonsíl",
   "dialects": [
@@ -47619,7 +47593,7 @@
   "page": 61,
   "printedPage": "53",
   "confidence": 100,
-  "raw": "' Cosinpic. Erythrina indica L.",
+  "raw": "Cosinpic. Erythrina indica L.",
   "flags": [],
   "ocrHeadword": "COSINPIC",
   "corrected": true,
@@ -47983,7 +47957,8 @@
   "headRaw": "Cucubítan",
   "dialects": [
    "T",
-   "V"
+   "V",
+   "Pamp"
   ],
   "place": null,
   "taxa": [
@@ -47997,7 +47972,7 @@
   "ocrHeadword": "CUCUBITAN",
   "corrected": true,
   "ocrTaxa": [
-   "Pamp. Trichosanthes anguina L"
+   "Trichosanthes anguina L"
   ],
   "taxaCorrected": true,
   "box": [
@@ -48458,7 +48433,9 @@
  {
   "headword": "CULIÁO",
   "headRaw": "Culiáo",
-  "dialects": [],
+  "dialects": [
+   "Il"
+  ],
   "place": null,
   "taxa": [
    "Cureuma longa Linn. i"
@@ -49002,9 +48979,8 @@
  {
   "headword": "CÚNIG",
   "headRaw": "Cúnig",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -49014,9 +48990,7 @@
   "printedPage": "54",
   "confidence": 100,
   "raw": "Conte, I]. Cureuma longa Linn.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "CONTE",
   "corrected": true,
   "box": [
@@ -49054,10 +49028,8 @@
   "headword": "CÚPANG",
   "headRaw": "Cúpang",
   "dialects": [
-   "T"
-  ],
-  "dialectsUnknown": [
-   "ll."
+   "T",
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -49067,9 +49039,7 @@
   "printedPage": "54",
   "confidence": 100,
   "raw": "Cupane, T., ll. Parkia roxburghii G. Don.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "CUPANE",
   "corrected": true,
   "box": [
@@ -49174,6 +49144,30 @@
   ]
  },
  {
+  "headword": "CURAGDÁ",
+  "headRaw": "Curagdá",
+  "dialects": [
+   "V"
+  ],
+  "place": null,
+  "taxa": [
+   "Pamp"
+  ],
+  "page": 62,
+  "printedPage": "54",
+  "confidence": 100,
+  "raw": "CuragpA, V., Pamp.",
+  "flags": [],
+  "ocrHeadword": "CURAGPA",
+  "corrected": true,
+  "box": [
+   0.106,
+   0.64,
+   0.521,
+   0.02
+  ]
+ },
+ {
   "headword": "CURCANÉLA",
   "headRaw": "Curcanéla",
   "dialects": [],
@@ -49198,9 +49192,8 @@
  {
   "headword": "CURRIBUETBUÉT",
   "headRaw": "Curribuetbuét",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -49210,9 +49203,7 @@
   "printedPage": "54",
   "confidence": 100,
   "raw": "CURRIBUETBUET, I]. Tabernaemontana pandacaqui Poir.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "CURRIBUETBUET",
   "corrected": true,
   "box": [
@@ -51271,6 +51262,30 @@
   ]
  },
  {
+  "headword": "DAMÓ-HÍA",
+  "headRaw": "Damó-hía",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
+   "Mimosa pudica L"
+  ],
+  "page": 64,
+  "printedPage": "56",
+  "confidence": 100,
+  "raw": "Dam6-Hia; T. Mimosa pudica L.",
+  "flags": [],
+  "ocrHeadword": "DAM6-HIA",
+  "corrected": true,
+  "box": [
+   0.093,
+   0.56,
+   0.371,
+   0.019
+  ]
+ },
+ {
   "headword": "DAMÓNG-DÁGAT",
   "headRaw": "Damóng-dágat",
   "dialects": [
@@ -51395,9 +51410,8 @@
  {
   "headword": "DAMORTÍS",
   "headRaw": "Damortís",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -51407,9 +51421,7 @@
   "printedPage": "56",
   "confidence": 100,
   "raw": "Damortis, I]. Pithecolobium dulce Benth.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "DAMORTIS",
   "corrected": true,
   "box": [
@@ -51714,9 +51726,8 @@
  {
   "headword": "DAÑGLÍ",
   "headRaw": "Dañglí",
-  "dialects": [],
-  "dialectsUnknown": [
-   "[Il]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -51726,9 +51737,7 @@
   "printedPage": "56",
   "confidence": 100,
   "raw": "Dane, [Il]. Vitex trifolia L. f.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "DANE",
   "corrected": true,
   "box": [
@@ -51787,9 +51796,8 @@
  {
   "headword": "DAÑGLÍN",
   "headRaw": "Dañglín",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -51799,9 +51807,7 @@
   "printedPage": "57",
   "confidence": 100,
   "raw": "Danciin, I]. Dipterocarpus.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "DANCIIN",
   "corrected": true,
   "box": [
@@ -52097,10 +52103,8 @@
   "headword": "DÁO",
   "headRaw": "Dáo",
   "dialects": [
-   "T"
-  ],
-  "dialectsUnknown": [
-   "VY."
+   "T",
+   "V"
   ],
   "place": null,
   "taxa": [
@@ -52110,9 +52114,7 @@
   "printedPage": "57",
   "confidence": 100,
   "raw": "DAo, T., VY. Dracontomelum mangifera Blume.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "DAO",
   "corrected": true,
   "box": [
@@ -52125,9 +52127,8 @@
  {
   "headword": "DÁO",
   "headRaw": "Dáo",
-  "dialects": [],
-  "dialectsUnknown": [
-   "VY."
+  "dialects": [
+   "V"
   ],
   "place": null,
   "taxa": [
@@ -52137,9 +52138,7 @@
   "printedPage": "57",
   "confidence": 100,
   "raw": "DAo, VY. Zingiber zerumbet Rose.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "DAO",
   "corrected": true,
   "box": [
@@ -53463,6 +53462,28 @@
   ]
  },
  {
+  "headword": "DIGTÁN",
+  "headRaw": "Digtán",
+  "dialects": [],
+  "place": "Tayabas",
+  "taxa": [
+   "Calamus mollis Blanco"
+  ],
+  "page": 66,
+  "printedPage": "58",
+  "confidence": 100,
+  "raw": "DictAN (Tayabas) ?%. Calamus mollis Blanco.",
+  "flags": [],
+  "ocrHeadword": "DICTAN",
+  "corrected": true,
+  "box": [
+   0.091,
+   0.495,
+   0.517,
+   0.019
+  ]
+ },
+ {
   "headword": "DÍIS",
   "headRaw": "Díis",
   "dialects": [
@@ -53661,7 +53682,7 @@
   "page": 66,
   "printedPage": "58",
   "confidence": 100,
-  "raw": "-DiLan-BuTIQU{. Dentella repens L.",
+  "raw": "DiLan-BuTIQU{. Dentella repens L.",
   "flags": [],
   "ocrHeadword": "DILAN-BUTIQU",
   "corrected": true,
@@ -53985,9 +54006,8 @@
  {
   "headword": "DÍLIG",
   "headRaw": "Dílig",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -53997,9 +54017,7 @@
   "printedPage": "58",
   "confidence": 100,
   "raw": "Dixie, I]. Canthium confertum Korth.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "DIXIE",
   "corrected": true,
   "box": [
@@ -54106,9 +54124,8 @@
  {
   "headword": "DINGLÁS",
   "headRaw": "Dinglás",
-  "dialects": [],
-  "dialectsUnknown": [
-   "T.?"
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -54118,9 +54135,7 @@
   "printedPage": "59",
   "confidence": 100,
   "raw": "DineiAs, T.? Terminalia.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "DINEIAS",
   "corrected": true,
   "box": [
@@ -54249,9 +54264,8 @@
  {
   "headword": "DIRÁN",
   "headRaw": "Dirán",
-  "dialects": [],
-  "dialectsUnknown": [
-   "ll."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -54261,9 +54275,7 @@
   "printedPage": "59",
   "confidence": 100,
   "raw": "DrrdAn, ll. Zizyphus.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "DRRDAN",
   "corrected": true,
   "box": [
@@ -54836,6 +54848,30 @@
    0.666,
    0.542,
    0.019
+  ]
+ },
+ {
+  "headword": "DOLÓNTAS",
+  "headRaw": "Dolóntas",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
+   "Chrysanthemum indicum L"
+  ],
+  "page": 67,
+  "printedPage": "59",
+  "confidence": 100,
+  "raw": "Dotontas, T.- Chrysanthemum indicum L.",
+  "flags": [],
+  "ocrHeadword": "DOTONTAS",
+  "corrected": true,
+  "box": [
+   0.082,
+   0.683,
+   0.481,
+   0.018
   ]
  },
  {
@@ -56151,7 +56187,7 @@
   "headword": "DUÑGURÚÑGUT",
   "headRaw": "Duñgurúñgut",
   "dialects": [],
-  "dialectsUnknown": [
+  "dialectsUndocumented": [
    "C."
   ],
   "place": null,
@@ -56163,7 +56199,7 @@
   "confidence": 100,
   "raw": "DuNGURGNGUT, C. Citrus hystrix DC.",
   "flags": [
-   "dialect-unrecognised"
+   "dialect-undocumented"
   ],
   "ocrHeadword": "DUNGURGNGUT",
   "corrected": true,
@@ -56631,7 +56667,8 @@
   "dialects": [
    "Cag",
    "T",
-   "V"
+   "V",
+   "Pamp"
   ],
   "place": null,
   "taxa": [
@@ -56645,7 +56682,7 @@
   "ocrHeadword": "GABI",
   "corrected": true,
   "ocrTaxa": [
-   "Pamp. Colocasia antiquorum Schott"
+   "Colocasia antiquorum Schott"
   ],
   "taxaCorrected": true,
   "box": [
@@ -56970,7 +57007,9 @@
  {
   "headword": "GÁBY-NA-SINIBÓYAS",
   "headRaw": "Gáby-na-sinibóyas",
-  "dialects": [],
+  "dialects": [
+   "T"
+  ],
   "place": null,
   "taxa": [
    "Colocasia antiquorum Schott"
@@ -56980,7 +57019,7 @@
   "confidence": 100,
   "raw": "GABY-NA-SINIBOYAS, T'. Colocasia antiquorum Schott.",
   "flags": [],
-  "ocrHeadword": "GABY-NA-SINIBOYAS, T",
+  "ocrHeadword": "GABY-NA-SINIBOYAS",
   "corrected": true,
   "box": [
    0.075,
@@ -58213,9 +58252,8 @@
  {
   "headword": "GÓGONG BISÁYA",
   "headRaw": "Gógong bisáya",
-  "dialects": [],
-  "dialectsUnknown": [
-   "T.?"
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -58225,9 +58263,7 @@
   "printedPage": "62",
   "confidence": 100,
   "raw": "GOcGonG BISAYA, T.? Aglaia grandis Miq.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "GOCGONG BISAYA",
   "corrected": true,
   "box": [
@@ -61500,7 +61536,8 @@
   "headRaw": "Hanmababáo",
   "dialects": [
    "T",
-   "V"
+   "V",
+   "Pamp"
   ],
   "place": null,
   "taxa": [
@@ -61514,7 +61551,7 @@
   "ocrHeadword": "HANMABABAO",
   "corrected": true,
   "ocrTaxa": [
-   "Pamp. Connarus. Blanco"
+   "Connarus. Blanco"
   ],
   "taxaCorrected": true,
   "box": [
@@ -61956,9 +61993,8 @@
  {
   "headword": "HIBIÓC",
   "headRaw": "Hibióc",
-  "dialects": [],
-  "dialectsUnknown": [
-   "Vis."
+  "dialects": [
+   "V"
   ],
   "place": null,
   "taxa": [
@@ -61968,9 +62004,7 @@
   "printedPage": "66",
   "confidence": 100,
   "raw": "Hre16c, Vis. Arenga saccharifera Lab.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "HRE16C",
   "corrected": true,
   "box": [
@@ -62559,6 +62593,30 @@
   ]
  },
  {
+  "headword": "HINGÚE-CALÁBO",
+  "headRaw": "Hingúe-calábo",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
+   "Beaumontia"
+  ],
+  "page": 74,
+  "printedPage": "66",
+  "confidence": 100,
+  "raw": "Hincte-cALAso, T. * Beaumontia.",
+  "flags": [],
+  "ocrHeadword": "HINCTE-CALASO",
+  "corrected": true,
+  "box": [
+   0.096,
+   0.63,
+   0.372,
+   0.019
+  ]
+ },
+ {
   "headword": "HIÑGUÉN",
   "headRaw": "Hiñguén",
   "dialects": [
@@ -63127,9 +63185,8 @@
  {
   "headword": "HUAMPÍT",
   "headRaw": "Huampít",
-  "dialects": [],
-  "dialectsUnknown": [
-   "T.?"
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -63139,9 +63196,7 @@
   "printedPage": "67",
   "confidence": 100,
   "raw": "Huampit, T.? Clausena wampi Oliy.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "HUAMPIT",
   "corrected": true,
   "box": [
@@ -64582,7 +64637,8 @@
   "headRaw": "Is-ís",
   "dialects": [
    "T",
-   "V"
+   "V",
+   "Pamp"
   ],
   "place": null,
   "taxa": [
@@ -64596,7 +64652,7 @@
   "ocrHeadword": "IS-IS",
   "corrected": true,
   "ocrTaxa": [
-   "Pamp. Ficus aspera L?"
+   "Ficus aspera L?"
   ],
   "taxaCorrected": true,
   "box": [
@@ -66139,6 +66195,32 @@
   ]
  },
  {
+  "headword": "LAGVÁY",
+  "headRaw": "Lagváy",
+  "dialects": [
+   "T",
+   "V",
+   "Pamp"
+  ],
+  "place": null,
+  "taxa": [
+   "Colocasia antiquorum Schott"
+  ],
+  "page": 77,
+  "printedPage": "69",
+  "confidence": 100,
+  "raw": "LaavAy, T., V., Pamp. - Colocasia antiquorum Schott.",
+  "flags": [],
+  "ocrHeadword": "LAAVAY",
+  "corrected": true,
+  "box": [
+   0.07,
+   0.884,
+   0.592,
+   0.019
+  ]
+ },
+ {
   "headword": "LÁHA?",
   "headRaw": "Láha?",
   "dialects": [],
@@ -66307,10 +66389,8 @@
   "headRaw": "Lambayóng",
   "dialects": [
    "T",
-   "B"
-  ],
-  "dialectsUnknown": [
-   "II."
+   "B",
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -66320,9 +66400,7 @@
   "printedPage": "70",
   "confidence": 100,
   "raw": "Lampayone,T., B., II. Tpomoea pes-caprae Roth.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "LAMPAYONE",
   "corrected": true,
   "ocrTaxa": [
@@ -66412,7 +66490,7 @@
   "headword": "LAMÍSI",
   "headRaw": "Lamísi",
   "dialects": [],
-  "dialectsUnknown": [
+  "dialectsUndocumented": [
    "C."
   ],
   "place": null,
@@ -66424,7 +66502,7 @@
   "confidence": 100,
   "raw": "Lamisi, C. Wrightia ovata A. DC.",
   "flags": [
-   "dialect-unrecognised"
+   "dialect-undocumented"
   ],
   "ocrHeadword": "LAMISI",
   "corrected": true,
@@ -67013,9 +67091,8 @@
  {
   "headword": "LAÑGCÁ",
   "headRaw": "Lañgcá",
-  "dialects": [],
-  "dialectsUnknown": [
-   "ll."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -67025,9 +67102,7 @@
   "printedPage": "70",
   "confidence": 100,
   "raw": "Lanaca, ll. Artocarpus integrifolia L. f.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "LANACA",
   "corrected": true,
   "box": [
@@ -68012,7 +68087,9 @@
  {
   "headword": "LAOCPÁO",
   "headRaw": "Laocpáo",
-  "dialects": [],
+  "dialects": [
+   "Cag"
+  ],
   "place": null,
   "taxa": [
    "Vernonia arborea Ham"
@@ -68025,7 +68102,7 @@
   "ocrHeadword": "LAOCPAO",
   "corrected": true,
   "ocrTaxa": [
-   "Cag..Vernonia arborea Ham"
+   "Vernonia arborea Ham"
   ],
   "taxaCorrected": true,
   "box": [
@@ -68038,9 +68115,8 @@
  {
   "headword": "LAPNÉI",
   "headRaw": "Lapnéi",
-  "dialects": [],
-  "dialectsUnknown": [
-   "Zamb."
+  "dialects": [
+   "Z"
   ],
   "place": null,
   "taxa": [
@@ -68050,9 +68126,7 @@
   "printedPage": "71",
   "confidence": 100,
   "raw": "LAPNEI, Zamb. Calamus albus Pers.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "LAPNEI",
   "corrected": true,
   "box": [
@@ -68066,7 +68140,7 @@
   "headword": "LAPNÍS",
   "headRaw": "Lapnís",
   "dialects": [],
-  "dialectsUnknown": [
+  "dialectsUndocumented": [
    "C."
   ],
   "place": null,
@@ -68078,7 +68152,7 @@
   "confidence": 100,
   "raw": "Lapnis, C. Boehmeria nivea. H. and A.",
   "flags": [
-   "dialect-unrecognised"
+   "dialect-undocumented"
   ],
   "ocrHeadword": "LAPNIS",
   "corrected": true,
@@ -68543,6 +68617,30 @@
   ],
   "place": null,
   "taxa": [
+   "Nymphaea stellata Willd"
+  ],
+  "page": 80,
+  "printedPage": "72",
+  "confidence": 100,
+  "raw": "LAuas, T., Nymphaea stellata Willd.",
+  "flags": [],
+  "ocrHeadword": "LAUAS",
+  "corrected": true,
+  "box": [
+   0.092,
+   0.147,
+   0.411,
+   0.02
+  ]
+ },
+ {
+  "headword": "LÁUAS",
+  "headRaw": "Láuas",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
    "Limnanthemum cristatum Griseb"
   ],
   "page": 80,
@@ -68708,9 +68806,8 @@
  {
   "headword": "LÁYO",
   "headRaw": "Láyo",
-  "dialects": [],
-  "dialectsUnknown": [
-   "B:"
+  "dialects": [
+   "B"
   ],
   "place": null,
   "taxa": [
@@ -68720,9 +68817,7 @@
   "printedPage": "72",
   "confidence": 100,
   "raw": "LAyo, B: Alyxia odorata Wall.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "LAYO",
   "corrected": true,
   "box": [
@@ -69636,6 +69731,31 @@
   ]
  },
  {
+  "headword": "LIMÁ-LIMÁ",
+  "headRaw": "Limá-limá",
+  "dialects": [
+   "V",
+   "Pamp"
+  ],
+  "place": null,
+  "taxa": [
+   "Heptapleurium caudatum Vidal"
+  ],
+  "page": 81,
+  "printedPage": "73",
+  "confidence": 100,
+  "raw": "Lim4-timA, T. V., Pamp. Heptapleurium caudatum Vidal.",
+  "flags": [],
+  "ocrHeadword": "LIM4-TIMA, T",
+  "corrected": true,
+  "box": [
+   0.078,
+   0.125,
+   0.646,
+   0.02
+  ]
+ },
+ {
   "headword": "LIMÁNG-SÚGAT",
   "headRaw": "Limáng-súgat",
   "dialects": [],
@@ -69708,9 +69828,8 @@
  {
   "headword": "LIMOLÍMO",
   "headRaw": "Limolímo",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -69720,9 +69839,7 @@
   "printedPage": "73",
   "confidence": 100,
   "raw": "Limoxtimo, I]. Vitex.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "LIMOXTIMO",
   "corrected": true,
   "box": [
@@ -71390,9 +71507,8 @@
  {
   "headword": "LOLOQUÍSEN",
   "headRaw": "Loloquísen",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -71402,9 +71518,7 @@
   "printedPage": "74",
   "confidence": 100,
   "raw": "Lotoquisen, I. Limnanthemum cristatum Griseb.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "LOTOQUISEN",
   "corrected": true,
   "box": [
@@ -72141,9 +72255,8 @@
  {
   "headword": "LUGÓ",
   "headRaw": "Lugó",
-  "dialects": [],
-  "dialectsUnknown": [
-   "ll."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -72153,9 +72266,7 @@
   "printedPage": "75",
   "confidence": 100,
   "raw": "Lueo, ll. Terminalia catappa L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "LUEO",
   "corrected": true,
   "box": [
@@ -72270,7 +72381,7 @@
   "page": 83,
   "printedPage": "75",
   "confidence": 100,
-  "raw": "- LumAwnat, T. Homonoia riparia Lour.",
+  "raw": "LumAwnat, T. Homonoia riparia Lour.",
   "flags": [],
   "ocrHeadword": "LUMAWNAT",
   "corrected": true,
@@ -72662,7 +72773,7 @@
   "headword": "LÚPID",
   "headRaw": "Lúpid",
   "dialects": [],
-  "dialectsUnknown": [
+  "dialectsUndocumented": [
    "A."
   ],
   "place": null,
@@ -72674,7 +72785,7 @@
   "confidence": 100,
   "raw": "Ltprp, A. Bauhinia.",
   "flags": [
-   "dialect-unrecognised"
+   "dialect-undocumented"
   ],
   "ocrHeadword": "LTPRP",
   "corrected": true,
@@ -73974,7 +74085,9 @@
  {
   "headword": "MÁDANG",
   "headRaw": "Mádang",
-  "dialects": [],
+  "dialects": [
+   "T"
+  ],
   "place": null,
   "taxa": [
    "Litsea magnifica B. and H"
@@ -73984,7 +74097,7 @@
   "confidence": 100,
   "raw": "MApANnG, 'T. Litsea magnifica B. and H.",
   "flags": [],
-  "ocrHeadword": "MAPANNG, 'T",
+  "ocrHeadword": "MAPANNG",
   "corrected": true,
   "box": [
    0.098,
@@ -74187,7 +74300,7 @@
   "headword": "MAGALÁYAO",
   "headRaw": "Magaláyao",
   "dialects": [],
-  "dialectsUnknown": [
+  "dialectsUndocumented": [
    "C."
   ],
   "place": null,
@@ -74199,7 +74312,7 @@
   "confidence": 100,
   "raw": "MagarAyao, C. Afzelia rhomboidea Vidal.",
   "flags": [
-   "dialect-unrecognised"
+   "dialect-undocumented"
   ],
   "ocrHeadword": "MAGARAYAO",
   "corrected": true,
@@ -74245,7 +74358,7 @@
   "page": 85,
   "printedPage": "77",
   "confidence": 100,
-  "raw": "- MAGARAPALA, T. Terminalia.",
+  "raw": "MAGARAPALA, T. Terminalia.",
   "flags": [],
   "ocrHeadword": "MAGARAPALA",
   "corrected": true,
@@ -75592,6 +75705,30 @@
   ]
  },
  {
+  "headword": "MALABANABÁ",
+  "headRaw": "Malabanabá",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
+   "Duabanga moluccana Blume"
+  ],
+  "page": 86,
+  "printedPage": "78",
+  "confidence": 100,
+  "raw": "ManaBanaBA, T. Duabanga moluccana Blume.",
+  "flags": [],
+  "ocrHeadword": "MANABANABA",
+  "corrected": true,
+  "box": [
+   0.078,
+   0.359,
+   0.533,
+   0.019
+  ]
+ },
+ {
   "headword": "MALABÁÑGAO",
   "headRaw": "Malabáñgao",
   "dialects": [
@@ -76373,6 +76510,30 @@
   ]
  },
  {
+  "headword": "MALACACÁO",
+  "headRaw": "Malacacáo",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
+   "Sterculia"
+  ],
+  "page": 87,
+  "printedPage": "79",
+  "confidence": 100,
+  "raw": "Manacacao, T. ~ Sterculia.",
+  "flags": [],
+  "ocrHeadword": "MANACACAO",
+  "corrected": true,
+  "box": [
+   0.069,
+   0.104,
+   0.301,
+   0.021
+  ]
+ },
+ {
   "headword": "MALACÁDIOS",
   "headRaw": "Malacádios",
   "dialects": [
@@ -76827,9 +76988,8 @@
  {
   "headword": "MALACAMÓTE",
   "headRaw": "Malacamóte",
-  "dialects": [],
-  "dialectsUnknown": [
-   "IT."
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -76839,9 +76999,7 @@
   "printedPage": "79",
   "confidence": 100,
   "raw": "Maracamorte, IT. Beddomea lizonensis Vidal.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "MARACAMORTE",
   "corrected": true,
   "box": [
@@ -76873,6 +77031,30 @@
    0.47,
    0.511,
    0.019
+  ]
+ },
+ {
+  "headword": "MALACÁRIOS",
+  "headRaw": "Malacários",
+  "dialects": [
+   "Z"
+  ],
+  "place": null,
+  "taxa": [
+   "Desmodium umbellatum DC"
+  ],
+  "page": 87,
+  "printedPage": "79",
+  "confidence": 100,
+  "raw": "MaracArios. Z. Desmodium umbellatum DC.",
+  "flags": [],
+  "ocrHeadword": "MARACARIOS",
+  "corrected": true,
+  "box": [
+   0.07,
+   0.487,
+   0.515,
+   0.016
   ]
  },
  {
@@ -77328,9 +77510,8 @@
  {
   "headword": "MALADOSDÓS",
   "headRaw": "Maladosdós",
-  "dialects": [],
-  "dialectsUnknown": [
-   "VY."
+  "dialects": [
+   "V"
   ],
   "place": null,
   "taxa": [
@@ -77340,9 +77521,7 @@
   "printedPage": "79",
   "confidence": 100,
   "raw": "Maxapospoés, VY. Erianthemum bicolor Schrank.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "MAXAPOSPOÉS",
   "corrected": true,
   "box": [
@@ -77873,6 +78052,30 @@
    0.097,
    0.391,
    0.242,
+   0.018
+  ]
+ },
+ {
+  "headword": "MALAISÍS",
+  "headRaw": "Malaisís",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
+   "Malaisia tortuosa Blanco"
+  ],
+  "page": 88,
+  "printedPage": "80",
+  "confidence": 100,
+  "raw": "Ma.arsis, T. Malaisia tortuosa Blanco.",
+  "flags": [],
+  "ocrHeadword": "MAARSIS",
+  "corrected": true,
+  "box": [
+   0.097,
+   0.408,
+   0.459,
    0.018
   ]
  },
@@ -81078,7 +81281,9 @@
  {
   "headword": "MALUNÁL-UÑGÁYAM",
   "headRaw": "Malunál-uñgáyam",
-  "dialects": [],
+  "dialects": [
+   "T"
+  ],
   "place": null,
   "taxa": [
    "Dalbergia"
@@ -81088,7 +81293,7 @@
   "confidence": 100,
   "raw": "MALUNAL-UNGAYAM, 'IT. Dalbergia.",
   "flags": [],
-  "ocrHeadword": "MALUNAL-UNGAYAM, 'IT",
+  "ocrHeadword": "MALUNAL-UNGAYAM",
   "corrected": true,
   "box": [
    0.06,
@@ -82993,7 +83198,8 @@
   "dialects": [
    "T",
    "B",
-   "V"
+   "V",
+   "Pamp"
   ],
   "place": null,
   "taxa": [
@@ -83007,7 +83213,7 @@
   "ocrHeadword": "MANUNEAT",
   "corrected": true,
   "ocrTaxa": [
-   "Pamp. Samadera indica Gaertn"
+   "Samadera indica Gaertn"
   ],
   "taxaCorrected": true,
   "box": [
@@ -83476,9 +83682,8 @@
  {
   "headword": "MARASAGÁT",
   "headRaw": "Marasagát",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -83488,9 +83693,7 @@
   "printedPage": "85",
   "confidence": 100,
   "raw": "MArRASAGAT, I]. Vitex.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "MARRASAGAT",
   "corrected": true,
   "box": [
@@ -85138,9 +85341,8 @@
  {
   "headword": "MOLÁUIN-ÁSO",
   "headRaw": "Moláuin-áso",
-  "dialects": [],
-  "dialectsUnknown": [
-   "IT."
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -85150,9 +85352,7 @@
   "printedPage": "86",
   "confidence": 100,
   "raw": "MordAuin-Aso, IT. Premna nauseosa Blanco.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "MORDAUIN-ASO",
   "corrected": true,
   "box": [
@@ -85218,6 +85418,30 @@
   ],
   "place": null,
   "taxa": [
+   "Vitex negundo L"
+  ],
+  "page": 94,
+  "printedPage": "86",
+  "confidence": 100,
+  "raw": "Mo.dvin, T. Vitex negundo L.",
+  "flags": [],
+  "ocrHeadword": "MODVIN",
+  "corrected": true,
+  "box": [
+   0.102,
+   0.807,
+   0.363,
+   0.019
+  ]
+ },
+ {
+  "headword": "MOLÁVIN",
+  "headRaw": "Molávin",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
    "Vitex littoralis Decne"
   ],
   "page": 94,
@@ -85232,6 +85456,32 @@
    0.825,
    0.413,
    0.016
+  ]
+ },
+ {
+  "headword": "MOLOPÓLO",
+  "headRaw": "Molopólo",
+  "dialects": [
+   "T",
+   "V",
+   "Pamp"
+  ],
+  "place": null,
+  "taxa": [
+   "Urena sinuata L"
+  ],
+  "page": 94,
+  "printedPage": "86",
+  "confidence": 100,
+  "raw": "Motoroé1o, T., V., Pamp.~ Urena sinuata L.",
+  "flags": [],
+  "ocrHeadword": "MOTOROÉ1O",
+  "corrected": true,
+  "box": [
+   0.102,
+   0.842,
+   0.501,
+   0.019
   ]
  },
  {
@@ -86179,6 +86429,30 @@
   ]
  },
  {
+  "headword": "NAMACPÁCAN",
+  "headRaw": "Namacpácan",
+  "dialects": [
+   "Il"
+  ],
+  "place": null,
+  "taxa": [
+   "Ochrocarpus pentapetalus Blanco"
+  ],
+  "page": 95,
+  "printedPage": "87",
+  "confidence": 100,
+  "raw": "NAMACPACAN, I1.? Ochrocarpus pentapetalus Blanco.",
+  "flags": [],
+  "ocrHeadword": "NAMACPACAN",
+  "corrected": true,
+  "box": [
+   0.084,
+   0.739,
+   0.599,
+   0.019
+  ]
+ },
+ {
   "headword": "NÁME",
   "headRaw": "Náme",
   "dialects": [],
@@ -86342,6 +86616,31 @@
    0.86,
    0.55,
    0.019
+  ]
+ },
+ {
+  "headword": "NARANGÍTAS",
+  "headRaw": "Narangítas",
+  "dialects": [
+   "T",
+   "V"
+  ],
+  "place": null,
+  "taxa": [
+   "Citrus aurantium Hook. f"
+  ],
+  "page": 95,
+  "printedPage": "87",
+  "confidence": 100,
+  "raw": "NARANGiITAS, T'., V. Citrus aurantium Hook. f.",
+  "flags": [],
+  "ocrHeadword": "NARANGIITAS",
+  "corrected": true,
+  "box": [
+   0.085,
+   0.877,
+   0.528,
+   0.018
   ]
  },
  {
@@ -86818,6 +87117,30 @@
    0.083,
    0.404,
    0.434,
+   0.018
+  ]
+ },
+ {
+  "headword": "NÍOG",
+  "headRaw": "Níog",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
+   "Cz 0., B:, VV. Cocos nuetfera 1,"
+  ],
+  "page": 96,
+  "printedPage": "88",
+  "confidence": 100,
+  "raw": "Nioeg, 'T.; Cz 0., B:, VV. Cocos nuetfera 1,",
+  "flags": [],
+  "ocrHeadword": "NIOEG",
+  "corrected": true,
+  "box": [
+   0.083,
+   0.421,
+   0.478,
    0.018
   ]
  },
@@ -87399,9 +87722,8 @@
  {
   "headword": "ÓGOB",
   "headRaw": "Ógob",
-  "dialects": [],
-  "dialectsUnknown": [
-   "B.?"
+  "dialects": [
+   "B"
   ],
   "place": null,
   "taxa": [
@@ -87411,9 +87733,7 @@
   "printedPage": "88",
   "confidence": 100,
   "raw": "6cos, B.? Artocarpus incisa L. f.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "COS",
   "corrected": true,
   "box": [
@@ -87949,9 +88269,8 @@
  {
   "headword": "OÓÑGON",
   "headRaw": "Oóñgon",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -87961,9 +88280,7 @@
   "printedPage": "89",
   "confidence": 100,
   "raw": "OO6NGoN, I]. Bruguiera gymnorrhiza Lam.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "OO6NGON",
   "corrected": true,
   "box": [
@@ -88403,9 +88720,8 @@
  {
   "headword": "ÓVAI-NA-PAÑGLÁO",
   "headRaw": "Óvai-na-pañgláo",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -88415,9 +88731,7 @@
   "printedPage": "89",
   "confidence": 100,
   "raw": "OVAI-NA-PANGLAO, I]. Naravelia.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "OVAI-NA-PANGLAO",
   "corrected": true,
   "box": [
@@ -88502,9 +88816,8 @@
  {
   "headword": "PAANBALIVÍS",
   "headRaw": "Paanbalivís",
-  "dialects": [],
-  "dialectsUnknown": [
-   "T.?"
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -88514,9 +88827,7 @@
   "printedPage": "89",
   "confidence": 100,
   "raw": "PAANBALIVis, T.? Boerhaavia repens L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PAANBALIVIS",
   "corrected": true,
   "box": [
@@ -88575,9 +88886,8 @@
  {
   "headword": "PACÁC",
   "headRaw": "Pacác",
-  "dialects": [],
-  "dialectsUnknown": [
-   "ll."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -88587,9 +88897,7 @@
   "printedPage": "90",
   "confidence": 100,
   "raw": "Paco, ll. Artocarpus camansi Blanco.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PACO",
   "corrected": true,
   "box": [
@@ -90456,7 +90764,7 @@
   "page": 99,
   "printedPage": "91",
   "confidence": 100,
-  "raw": "' Paria, V. Momordica balsamina L.",
+  "raw": "Paria, V. Momordica balsamina L.",
   "flags": [],
   "ocrHeadword": "PARIA",
   "corrected": true,
@@ -90481,9 +90789,7 @@
   "printedPage": "91",
   "confidence": 100,
   "raw": "PautAvan, V. 'Tinospora crispa Miers.",
-  "flags": [
-   "taxon-noise"
-  ],
+  "flags": [],
   "ocrHeadword": "PAUTAVAN",
   "corrected": true,
   "box": [
@@ -91463,9 +91769,8 @@
  {
   "headword": "PALUÑGÁPOY",
   "headRaw": "Paluñgápoy",
-  "dialects": [],
-  "dialectsUnknown": [
-   "ll."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -91476,7 +91781,6 @@
   "confidence": 100,
   "raw": "PaLuNGAPoy, ll. WHeritiera littoralis Dry.",
   "flags": [
-   "dialect-unrecognised",
    "taxon-noise"
   ],
   "ocrHeadword": "PALUNGAPOY",
@@ -91539,9 +91843,8 @@
  {
   "headword": "PAMALATAGUÉN",
   "headRaw": "Pamalataguén",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -91551,9 +91854,7 @@
   "printedPage": "92",
   "confidence": 100,
   "raw": "PAMALATAGUEN, I]. Amoora.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PAMALATAGUEN",
   "corrected": true,
   "box": [
@@ -91686,9 +91987,8 @@
  {
   "headword": "PAMITAÓGUEN",
   "headRaw": "Pamitaóguen",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -91698,9 +91998,7 @@
   "printedPage": "92",
   "confidence": 100,
   "raw": "PAMITAOGUEN, I]. Calophyllum inophyllum L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PAMITAOGUEN",
   "corrected": true,
   "box": [
@@ -91737,7 +92035,9 @@
  {
   "headword": "PAMITLAÍN",
   "headRaw": "Pamitlaín",
-  "dialects": [],
+  "dialects": [
+   "Il"
+  ],
   "place": null,
   "taxa": [
    "Calophyllum ingphyllum L"
@@ -91783,9 +92083,8 @@
  {
   "headword": "PAMITLATÍN",
   "headRaw": "Pamitlatín",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -91795,9 +92094,7 @@
   "printedPage": "92",
   "confidence": 100,
   "raw": "PamiTLAtTin, I]. Ochrocarpus pentapetalus Blanco.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PAMITLATTIN",
   "corrected": true,
   "box": [
@@ -91810,9 +92107,8 @@
  {
   "headword": "PAMLOMBÓYEN",
   "headRaw": "Pamlombóyen",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -91822,9 +92118,7 @@
   "printedPage": "92",
   "confidence": 100,
   "raw": "PAMLOMBOYEN, I]. Eugenia.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PAMLOMBOYEN",
   "corrected": true,
   "box": [
@@ -92212,6 +92506,31 @@
   ]
  },
  {
+  "headword": "PANALAYÁPIN",
+  "headRaw": "Panalayápin",
+  "dialects": [
+   "T",
+   "Il"
+  ],
+  "place": null,
+  "taxa": [
+   "Champereia griffithii Planch"
+  ],
+  "page": 101,
+  "printedPage": "93",
+  "confidence": 100,
+  "raw": "PANALAYAPIN, T., 1. Champereia griffithii Planch.",
+  "flags": [],
+  "ocrHeadword": "PANALAYAPIN",
+  "corrected": true,
+  "box": [
+   0.081,
+   0.25,
+   0.579,
+   0.019
+  ]
+ },
+ {
   "headword": "PANALIÑGÁEN",
   "headRaw": "Panaliñgáen",
   "dialects": [],
@@ -92415,9 +92734,7 @@
   "printedPage": "93",
   "confidence": 100,
   "raw": "PanAvAn, V. 'Tinospora crispa Miers.",
-  "flags": [
-   "taxon-noise"
-  ],
+  "flags": [],
   "ocrHeadword": "PANAVAN",
   "corrected": true,
   "box": [
@@ -93124,9 +93441,8 @@
  {
   "headword": "PAÑGLANCAÉN",
   "headRaw": "Pañglancaén",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -93136,9 +93452,7 @@
   "printedPage": "94",
   "confidence": 100,
   "raw": "PANGLANCAEN, I]. Gelonium glomerulatum Hassk.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PANGLANCAEN",
   "corrected": true,
   "box": [
@@ -93431,9 +93745,8 @@
  {
   "headword": "PANNILTASQUÍN",
   "headRaw": "Panniltasquín",
-  "dialects": [],
-  "dialectsUnknown": [
-   "II."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -93443,9 +93756,7 @@
   "printedPage": "94",
   "confidence": 100,
   "raw": "PANNILTASQUIN, II. Calophyllum.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PANNILTASQUIN",
   "corrected": true,
   "box": [
@@ -93458,9 +93769,8 @@
  {
   "headword": "PANNIRIÉN",
   "headRaw": "Pannirién",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -93470,9 +93780,7 @@
   "printedPage": "94",
   "confidence": 100,
   "raw": "PANNIRIEN, I]. Tacca pinnatifida Forst.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PANNIRIEN",
   "corrected": true,
   "box": [
@@ -93698,9 +94006,8 @@
  {
   "headword": "PÁO",
   "headRaw": "Páo",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -93710,9 +94017,7 @@
   "printedPage": "94",
   "confidence": 100,
   "raw": "PAo, I]. Mangifera longipes Griff.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PAO",
   "corrected": true,
   "box": [
@@ -94059,9 +94364,8 @@
  {
   "headword": "PARÁCAN",
   "headRaw": "Parácan",
-  "dialects": [],
-  "dialectsUnknown": [
-   "It."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -94071,9 +94375,7 @@
   "printedPage": "94",
   "confidence": 100,
   "raw": "ParAcan, It. Rhizophora mucronata Lam.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PARACAN",
   "corrected": true,
   "box": [
@@ -94301,7 +94603,9 @@
  {
   "headword": "PARÍA",
   "headRaw": "Paría",
-  "dialects": [],
+  "dialects": [
+   "Il"
+  ],
   "place": null,
   "taxa": [
    "Momordica balsamina L"
@@ -94834,7 +95138,7 @@
   "page": 103,
   "printedPage": "95",
   "confidence": 100,
-  "raw": "' PAsic, V. Buchanania lucida Blume.",
+  "raw": "PAsic, V. Buchanania lucida Blume.",
   "flags": [],
   "ocrHeadword": "PASIC",
   "corrected": true,
@@ -95669,6 +95973,30 @@
   ]
  },
  {
+  "headword": "PÁYONG-PAYÓÑGAN",
+  "headRaw": "Páyong-payóñgan",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
+   "Boletus"
+  ],
+  "page": 104,
+  "printedPage": "96",
+  "confidence": 100,
+  "raw": "PAYONG-PAYONGAN, T.* Boletus.",
+  "flags": [],
+  "ocrHeadword": "PAYONG-PAYONGAN",
+  "corrected": true,
+  "box": [
+   0.091,
+   0.323,
+   0.363,
+   0.019
+  ]
+ },
+ {
   "headword": "PAYPÁYSI",
   "headRaw": "Paypáysi",
   "dialects": [
@@ -96103,9 +96431,8 @@
  {
   "headword": "PILÁPIL",
   "headRaw": "Pilápil",
-  "dialects": [],
-  "dialectsUnknown": [
-   "T.?"
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -96115,9 +96442,7 @@
   "printedPage": "96",
   "confidence": 100,
   "raw": "PrtApit, T.? Scolopia.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PRTAPIT",
   "corrected": true,
   "box": [
@@ -96319,9 +96644,8 @@
  {
   "headword": "PILÍPOG",
   "headRaw": "Pilípog",
-  "dialects": [],
-  "dialectsUnknown": [
-   "VY."
+  "dialects": [
+   "V"
   ],
   "place": null,
   "taxa": [
@@ -96331,9 +96655,7 @@
   "printedPage": "96",
   "confidence": 100,
   "raw": "Pitivoc, VY. Cocos nucifera Linn.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "PITIVOC",
   "corrected": true,
   "box": [
@@ -97216,9 +97538,7 @@
   "printedPage": "97",
   "confidence": 100,
   "raw": "Pocorrécor, V., Pamp. 'Trichosanthes anguina L.",
-  "flags": [
-   "taxon-noise"
-  ],
+  "flags": [],
   "ocrHeadword": "POCORRÉCOR",
   "corrected": true,
   "box": [
@@ -97873,9 +98193,7 @@
   "printedPage": "98",
   "confidence": 100,
   "raw": "Pucortcor, V., Pamp. 'Trichosanthes anguina L.",
-  "flags": [
-   "taxon-noise"
-  ],
+  "flags": [],
   "ocrHeadword": "PUCORTCOR",
   "corrected": true,
   "box": [
@@ -98543,9 +98861,8 @@
  {
   "headword": "QUETQUÉT",
   "headRaw": "Quetquét",
-  "dialects": [],
-  "dialectsUnknown": [
-   "lg."
+  "dialects": [
+   "Ig"
   ],
   "place": null,
   "taxa": [
@@ -98555,9 +98872,7 @@
   "printedPage": "98",
   "confidence": 100,
   "raw": "QuEetTaQubt, lg. Deutzia pulchra Vidal.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "QUEETTAQUBT",
   "corrected": true,
   "box": [
@@ -99009,9 +99324,7 @@
   "printedPage": "99",
   "confidence": 100,
   "raw": "QuinaNAyaAn, T. -Musa paradisiaca L. var.",
-  "flags": [
-   "taxon-noise"
-  ],
+  "flags": [],
   "ocrHeadword": "QUINANAYAAN",
   "corrected": true,
   "box": [
@@ -99883,9 +100196,8 @@
  {
   "headword": "SABÁ",
   "headRaw": "Sabá",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -99895,9 +100207,7 @@
   "printedPage": "100",
   "confidence": 100,
   "raw": "Sapa, I]. Musa sapientum L. var.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "SAPA",
   "corrected": true,
   "box": [
@@ -101150,9 +101460,7 @@
   "printedPage": "101",
   "confidence": 100,
   "raw": "SaGuNYATE, V. 'Tectona grandis L. f.",
-  "flags": [
-   "taxon-noise"
-  ],
+  "flags": [],
   "ocrHeadword": "SAGUNYATE",
   "corrected": true,
   "box": [
@@ -103398,7 +103706,7 @@
   "page": 111,
   "printedPage": "103",
   "confidence": 100,
-  "raw": "~San-AntoOnto. Bauhinia tomentosa Linn.",
+  "raw": "San-AntoOnto. Bauhinia tomentosa Linn.",
   "flags": [],
   "ocrHeadword": "SAN-ANTOONTO",
   "corrected": true,
@@ -104084,10 +104392,8 @@
   "headword": "SAPÁNG",
   "headRaw": "Sapáng",
   "dialects": [
-   "T"
-  ],
-  "dialectsUnknown": [
-   "I]."
+   "T",
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -104097,9 +104403,7 @@
   "printedPage": "103",
   "confidence": 100,
   "raw": "SapAne, T., I]. Caesalpinia sappan L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "SAPANE",
   "corrected": true,
   "box": [
@@ -104538,6 +104842,30 @@
   ]
  },
  {
+  "headword": "SARANG-PUTÍ",
+  "headRaw": "Sarang-putí",
+  "dialects": [
+   "V"
+  ],
+  "place": null,
+  "taxa": [
+   "Euonymus"
+  ],
+  "page": 112,
+  "printedPage": "104",
+  "confidence": 100,
+  "raw": "SARANG-PUTI, V. *Euonymus.",
+  "flags": [],
+  "ocrHeadword": "SARANG-PUTI",
+  "corrected": true,
+  "box": [
+   0.078,
+   0.244,
+   0.331,
+   0.018
+  ]
+ },
+ {
   "headword": "SARÁSA",
   "headRaw": "Sarása",
   "dialects": [
@@ -104824,9 +105152,8 @@
  {
   "headword": "SAUSAÚOLI",
   "headRaw": "Sausaúoli",
-  "dialects": [],
-  "dialectsUnknown": [
-   "T.?"
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -104836,9 +105163,7 @@
   "printedPage": "104",
   "confidence": 100,
   "raw": "Sausavuoi, T.? Cupania.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "SAUSAVUOI",
   "corrected": true,
   "box": [
@@ -104937,7 +105262,7 @@
   "page": 112,
   "printedPage": "104",
   "confidence": 100,
-  "raw": "' Sayfcan, T. Portulaca oleracea L.",
+  "raw": "Sayfcan, T. Portulaca oleracea L.",
   "flags": [],
   "ocrHeadword": "SAYFCAN",
   "corrected": true,
@@ -106399,6 +106724,30 @@
   ]
  },
  {
+  "headword": "SÓOB-CABÁYO",
+  "headRaw": "Sóob-cabáyo",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
+   "Hyptis suaveolens Poir"
+  ],
+  "page": 113,
+  "printedPage": "105",
+  "confidence": 100,
+  "raw": "So6os-caBAyo, T.- Hyptis suaveolens Poir.",
+  "flags": [],
+  "ocrHeadword": "SO6OS-CABAYO",
+  "corrected": true,
+  "box": [
+   0.082,
+   0.776,
+   0.467,
+   0.019
+  ]
+ },
+ {
   "headword": "SOROGSÓROG",
   "headRaw": "Sorogsórog",
   "dialects": [
@@ -106542,9 +106891,8 @@
  {
   "headword": "SÚCAO",
   "headRaw": "Súcao",
-  "dialects": [],
-  "dialectsUnknown": [
-   "ll."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -106554,9 +106902,7 @@
   "printedPage": "105",
   "confidence": 100,
   "raw": "Stcao, ll. Nelumbium speciosum L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "STCAO",
   "corrected": true,
   "box": [
@@ -107768,7 +108114,7 @@
   "headword": "TAGPÁ",
   "headRaw": "Tagpá",
   "dialects": [],
-  "dialectsUnknown": [
+  "dialectsUndocumented": [
    "C."
   ],
   "place": null,
@@ -107780,7 +108126,7 @@
   "confidence": 100,
   "raw": "Tagpd, C. Pterocarpus.",
   "flags": [
-   "dialect-unrecognised"
+   "dialect-undocumented"
   ],
   "ocrHeadword": "TAGPD",
   "corrected": true,
@@ -107861,6 +108207,30 @@
    0.208,
    0.319,
    0.018
+  ]
+ },
+ {
+  "headword": "TAGÚC-TAGÚC",
+  "headRaw": "Tagúc-tagúc",
+  "dialects": [
+   "V"
+  ],
+  "place": null,
+  "taxa": [
+   "Parameria philippinensis Radlk"
+  ],
+  "page": 115,
+  "printedPage": "107",
+  "confidence": 100,
+  "raw": "Tagto-ractc, V..Parameria philippinensis Radlk.",
+  "flags": [],
+  "ocrHeadword": "TAGTO-RACTC",
+  "corrected": true,
+  "box": [
+   0.091,
+   0.224,
+   0.572,
+   0.019
   ]
  },
  {
@@ -108335,7 +108705,7 @@
   "headword": "TAHÍT-LABÚYOC",
   "headRaw": "Tahít-labúyoc",
   "dialects": [],
-  "dialectsUnknown": [
+  "dialectsUndocumented": [
    "F."
   ],
   "place": null,
@@ -108347,7 +108717,7 @@
   "confidence": 100,
   "raw": "Tanit-LaBtyoc, F. Allaenthus.",
   "flags": [
-   "dialect-unrecognised"
+   "dialect-undocumented"
   ],
   "ocrHeadword": "TANIT-LABTYOC",
   "corrected": true,
@@ -108744,9 +109114,8 @@
  {
   "headword": "TALANCÁO",
   "headRaw": "Talancáo",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -108756,9 +109125,7 @@
   "printedPage": "107",
   "confidence": 100,
   "raw": "TALANCAO,I]. Plumbago zeylanica L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "TALANCAO",
   "corrected": true,
   "box": [
@@ -109605,9 +109972,8 @@
  {
   "headword": "TALÓLONG",
   "headRaw": "Talólong",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -109617,9 +109983,7 @@
   "printedPage": "108",
   "confidence": 100,
   "raw": "TaLétone, I]. Cudrania javanensis Trec.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "TALÉTONE",
   "corrected": true,
   "box": [
@@ -111205,9 +111569,8 @@
  {
   "headword": "TAÑGÍSAN",
   "headRaw": "Tañgísan",
-  "dialects": [],
-  "dialectsUnknown": [
-   "IT."
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -111217,9 +111580,7 @@
   "printedPage": "110",
   "confidence": 100,
   "raw": "Tancisan, IT. Terminalia.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "TANCISAN",
   "corrected": true,
   "box": [
@@ -111232,9 +111593,8 @@
  {
   "headword": "TAÑGISAN",
   "headRaw": "Tañgisan",
-  "dialects": [],
-  "dialectsUnknown": [
-   "TI."
+  "dialects": [
+   "T"
   ],
   "place": null,
   "taxa": [
@@ -111244,9 +111604,7 @@
   "printedPage": "110",
   "confidence": 100,
   "raw": "TANGISAN, TI. Uvaria.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "TANGISAN",
   "corrected": true,
   "box": [
@@ -111685,11 +112043,34 @@
   ]
  },
  {
+  "headword": "TAOINTAOÍN",
+  "headRaw": "Taointaoín",
+  "dialects": [
+   "Il"
+  ],
+  "place": null,
+  "taxa": [
+   "Aristolochia tagala Cham"
+  ],
+  "page": 118,
+  "printedPage": "110",
+  "confidence": 100,
+  "raw": "TaornTaoin; Il. Aristolochia tagala Cham.",
+  "flags": [],
+  "ocrHeadword": "TAORNTAOIN",
+  "corrected": true,
+  "box": [
+   0.071,
+   0.556,
+   0.487,
+   0.021
+  ]
+ },
+ {
   "headword": "TAPÁ-LAÓ",
   "headRaw": "Tapá-laó",
-  "dialects": [],
-  "dialectsUnknown": [
-   "Zamb."
+  "dialects": [
+   "Z"
   ],
   "place": null,
   "taxa": [
@@ -111699,9 +112080,7 @@
   "printedPage": "110",
   "confidence": 100,
   "raw": "TapA-LAd, Zamb. Pinus mereusii J. and de V.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "TAPA-LAD",
   "corrected": true,
   "box": [
@@ -112472,9 +112851,8 @@
  {
   "headword": "TARTARÁO",
   "headRaw": "Tartaráo",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -112484,9 +112862,7 @@
   "printedPage": "111",
   "confidence": 100,
   "raw": "TarTARAO, I]. Quisqualis indica L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "TARTARAO",
   "corrected": true,
   "box": [
@@ -112715,9 +113091,8 @@
  {
   "headword": "TAVATAVANGSÍNA",
   "headRaw": "Tavatavangsína",
-  "dialects": [],
-  "dialectsUnknown": [
-   "I]."
+  "dialects": [
+   "Il"
   ],
   "place": null,
   "taxa": [
@@ -112727,9 +113102,7 @@
   "printedPage": "111",
   "confidence": 100,
   "raw": "TAVATAVANGSINA, I]. Ricinus communis L.",
-  "flags": [
-   "dialect-unrecognised"
-  ],
+  "flags": [],
   "ocrHeadword": "TAVATAVANGSINA",
   "corrected": true,
   "box": [
@@ -114779,6 +115152,28 @@
    0.358,
    0.376,
    0.018
+  ]
+ },
+ {
+  "headword": "TIPÍG",
+  "headRaw": "Tipíg",
+  "dialects": [],
+  "place": null,
+  "taxa": [
+   "Ficus"
+  ],
+  "page": 121,
+  "printedPage": "113",
+  "confidence": 100,
+  "raw": "Tipie.. Ficus.",
+  "flags": [],
+  "ocrHeadword": "TIPIE",
+  "corrected": true,
+  "box": [
+   0.07,
+   0.375,
+   0.162,
+   0.016
   ]
  },
  {
@@ -116952,7 +117347,9 @@
  {
   "headword": "TÚMBONG-ÁSO",
   "headRaw": "Túmbong-áso",
-  "dialects": [],
+  "dialects": [
+   "T"
+  ],
   "place": null,
   "taxa": [
    "Morinda bracteata Roxb"
@@ -116962,7 +117359,7 @@
   "confidence": 100,
   "raw": "TtUmpone-Aso, 'T. Morinda bracteata Roxb.",
   "flags": [],
-  "ocrHeadword": "TTUMPONE-ASO, 'T",
+  "ocrHeadword": "TTUMPONE-ASO",
   "corrected": true,
   "box": [
    0.078,
@@ -117096,7 +117493,8 @@
   "headRaw": "Túnas",
   "dialects": [
    "T",
-   "V"
+   "V",
+   "Pamp"
   ],
   "place": null,
   "taxa": [
@@ -117110,7 +117508,7 @@
   "ocrHeadword": "TUNAS",
   "corrected": true,
   "ocrTaxa": [
-   "Pamp. Nymphaea lotus Linn"
+   "Nymphaea lotus Linn"
   ],
   "taxaCorrected": true,
   "box": [
@@ -117189,6 +117587,30 @@
    0.079,
    0.517,
    0.298,
+   0.018
+  ]
+ },
+ {
+  "headword": "TÚNCUT-LÁÑGUIT",
+  "headRaw": "Túncut-láñguit",
+  "dialects": [
+   "T"
+  ],
+  "place": null,
+  "taxa": [
+   "Tacca"
+  ],
+  "page": 123,
+  "printedPage": "115",
+  "confidence": 100,
+  "raw": "ToncutT-LANGUIT, T. Tacca.",
+  "flags": [],
+  "ocrHeadword": "TONCUTT-LANGUIT",
+  "corrected": true,
+  "box": [
+   0.061,
+   0.535,
+   0.342,
    0.018
   ]
  },
@@ -118610,7 +119032,7 @@
   "page": 124,
   "printedPage": "116",
   "confidence": 100,
-  "raw": "'Gas, Il. Mallotus philippinensis Muell. Arg.",
+  "raw": "Gas, Il. Mallotus philippinensis Muell. Arg.",
   "flags": [],
   "ocrHeadword": "GAS",
   "corrected": true,

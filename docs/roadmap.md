@@ -116,8 +116,12 @@ whole set from the stored transcriptions.
 
 ## Known rough edges in what exists
 
-- 70 Part I lines still fail to parse (`data/issues.json`); most are lines the
-  scan mangled past recognition, but they are worth a read.
+- 37 Part I lines still fail to parse (`data/issues.json`). 35 are scan debris
+  -- "Le", "o4", "is)" -- and 2 are real entries the text layer cannot give up:
+  one whose headword reads "31706", one whose genus lost its capital.
+- One dialect marker is still unreadable (`[].` on page 87) and 8 use
+  abbreviations the book never defines: C., P., A., F. Those are left
+  unresolved rather than guessed at; see source-quality.md.
 - Part II: one family spelling still unresolved (`Cebu`, which is a province and
   not a family at all) and 17 entries carry no family.
 - Some Part II blocks absorb the page's running head or a stray marginal
