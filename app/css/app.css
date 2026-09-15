@@ -469,7 +469,17 @@ button { font: inherit; color: inherit; }
   width: 100%;
 }
 
-.results { overflow-y: auto; margin: 0; padding: 0; list-style: none; -webkit-overflow-scrolling: touch; }
+/* The bottom inset matters once the app is installed: standalone, the list
+   scrolls to the physical edge of the screen and the home indicator sits on top
+   of the last entry. Padding inside the scroller, so the last row can be
+   scrolled clear of it rather than being permanently half-covered. */
+.results {
+  overflow-y: auto;
+  margin: 0;
+  padding: 0 0 env(safe-area-inset-bottom);
+  list-style: none;
+  -webkit-overflow-scrolling: touch;
+}
 .results li + li { border-top: 1px solid var(--rule-soft); }
 .results button {
   display: block;
@@ -561,7 +571,11 @@ button { font: inherit; color: inherit; }
 /* ------------------------------------------------------------------ detail */
 .detail {
   overflow-y: auto;
-  padding: 2.4rem max(1.5rem, env(safe-area-inset-right)) 5rem max(1.5rem, env(safe-area-inset-left));
+  padding:
+    2.4rem
+    max(1.5rem, env(safe-area-inset-right))
+    calc(5rem + env(safe-area-inset-bottom))
+    max(1.5rem, env(safe-area-inset-left));
 }
 .detail-inner { max-width: 46rem; margin: 0 auto; }
 

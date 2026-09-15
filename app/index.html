@@ -12,11 +12,26 @@
      indigo rather than the paper behind the page. -->
 <meta name="theme-color" content="#24395c" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1b2c47" media="(prefers-color-scheme: dark)">
+<!-- Last, and with no media query: the first MATCHING tag wins, so the two
+     above still decide it in any browser that understands `media`. This one is
+     for the browsers that skip a tag whose media attribute they cannot parse,
+     and would otherwise tint their chrome with nothing at all. -->
+<meta name="theme-color" content="#24395c">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-title" content="Plant Names">
+<!-- Added to the home screen, iOS runs the app standalone and reserves the
+     status bar for itself, painting it with the manifest's background_color --
+     which is why the top of the screen was a band of paper above the masthead.
+     `black-translucent` gives the page that space instead: the viewport becomes
+     the whole screen, `env(safe-area-inset-top)` starts reporting the real
+     inset, and the masthead's padding fills it with dye. The status bar's own
+     text is drawn white, which is what the indigo underneath wants.
+     The style tag is only honoured when the capable tag is present. -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <!-- The text face, ahead of the stylesheet that asks for it. Without these the
      browser cannot discover a font until it has parsed the CSS, matched a rule
      and laid out the text, which is three round trips of fallback type on the

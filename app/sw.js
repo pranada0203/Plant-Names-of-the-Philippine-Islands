@@ -26,7 +26,7 @@
  * on, and the unscoped call cheerfully answered a navigation with a different
  * application's cached index.html.
  */
-const VERSION = 'f8e3927d9a31';
+const VERSION = '4106567bff7e';
 
 const SHELL = `shell-${VERSION}`;
 const DATA = `data-${VERSION}`;
