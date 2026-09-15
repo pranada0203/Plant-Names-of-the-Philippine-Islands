@@ -12,10 +12,16 @@
  *
  * The art sits inside the central 66% of the canvas, so the same file serves as
  * a `maskable` icon: Android crops installed icons to whatever shape the launcher
- * uses, and anything outside a circle of 80% of the width can be cut away.
+ * uses, and anything outside a circle of 80% of the width can be cut away. The
+ * indigo runs to all four edges, which is what a maskable icon wants -- crop it
+ * to a circle, a squircle or a teardrop and the ground simply continues.
  *
- * Colours are the app's own light-theme tokens, so the installed icon and the
- * page it opens are the same object.
+ * Colours are the masthead's, not the page's: the tile is the dye and the leaf
+ * is what is reversed out of it, so the installed icon and the bar at the top of
+ * the app are recognisably the same object. It is also the higher-contrast way
+ * round -- cream on indigo is 9.9:1, where the old red leaf on cream was 6.6:1,
+ * and at 32 pixels a favicon is mostly asking to be told apart from its
+ * neighbours in a row of tabs.
  */
 const fs = require('fs');
 const path = require('path');
@@ -24,9 +30,13 @@ const { encodePng } = require('./lib/png');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'app', 'assets');
 
-const PAPER = [0xf6, 0xf1, 0xe6];   // --paper
-const ACCENT = [0x9b, 0x2d, 0x36];  // --sapang, the red dyewood
-const RIB = [0xf6, 0xe6, 0xe3];     // --sapang-wash, knocked out of the leaf
+// The names are the roles, not the hues: GROUND is the tile, MARK is the leaf
+// drawn on it, and RIB is knocked back out of the leaf. RIB is the ground's own
+// colour, so a vein reads as a gap in the leaf rather than a line painted over
+// it -- the same trick as before, with the light and dark ends swapped.
+const GROUND = [0x24, 0x39, 0x5c];  // --tayum, the indigo tile
+const MARK = [0xf3, 0xed, 0xe0];    // --on-dye, the leaf
+const RIB = [0x24, 0x39, 0x5c];     // --tayum again, knocked out of the leaf
 
 // Leaf geometry, as fractions of the canvas. The lens between two circles of
 // radius R centred at (0, +/-C) in the leaf's own frame: half-length is
@@ -38,6 +48,8 @@ const HALF_LEN = Math.sqrt(R * R - C * C);
 
 const RIB_W = 0.011;      // midrib half-thickness
 const VEIN_W = 0.008;
+const VEIN_REACH = 0.62;  // of the leaf's half-width where the vein ends
+const MIDRIB_END = 0.80;  // of the half-length; the rest of the tip stays solid
 const STEM_W = 0.013;
 const STEM_LEN = 0.12;
 
@@ -71,22 +83,30 @@ function sample(x, y) {
   const base = -HALF_LEN;
   if (!inLeaf) {
     const d = distToSegment(u, v, base, 0, base - STEM_LEN, 0);
-    return d <= STEM_W ? ACCENT : null;
+    return d <= STEM_W ? MARK : null;
   }
 
   // Midrib. It stops short of the tip: the leaf is narrower than the rib there,
   // so running it all the way dissolves the point into the background and the
   // silhouette loses the one feature that makes it a leaf rather than an eye.
-  if (distToSegment(u, v, -HALF_LEN, 0, HALF_LEN * 0.86, 0) <= RIB_W) return RIB;
+  if (distToSegment(u, v, -HALF_LEN, 0, HALF_LEN * MIDRIB_END, 0) <= RIB_W) return RIB;
 
   // Four pairs of veins, leaving the midrib towards the tip. Each one ends at
   // a fixed fraction of the leaf's half-width *where it ends*, not where it
   // starts, which is what keeps it inside: the outline is a lens and so convex,
-  // so a segment between two interior points is wholly interior. Sizing by the
-  // starting half-width instead put the last pair outside the tip, and a vein
-  // in the knockout colour reaching the edge notches the silhouette -- at 32
-  // pixels the shape then stops reading as a leaf at all.
-  const step = (2 * HALF_LEN) / 5.6;
+  // so a segment between two interior points is wholly interior.
+  //
+  // That is necessary but not sufficient, and the difference used to be
+  // invisible. A vein is a stroke, so it reaches VEIN_W beyond its own
+  // endpoint, and near the tip the lens narrows faster than the veins shorten:
+  // at the old spacing the fourth pair ended where the leaf was thinner than
+  // the stroke, and cut clean across the point. It went unnoticed for as long
+  // as the knockout was near enough to the background to be lost against it --
+  // once the tile became indigo, the same overrun read as a notch out of the
+  // leaf with a detached speck beyond it. The spacing below gives every pair
+  // room; the guard makes a future one that does not fail visibly instead of
+  // silently.
+  const step = (2 * HALF_LEN) / 6.5;
   for (let i = 1; i <= 4; i++) {
     const from = -HALF_LEN + i * step;
     // Leaning well forward, about 28 degrees off the midrib. At 45 degrees the
@@ -95,11 +115,12 @@ function sample(x, y) {
     // eye stops seeing which end is the tip.
     const tx = from + step * 1.5;
     const halfW = Math.sqrt(Math.max(0, R * R - tx * tx)) - C;
+    if (halfW * VEIN_REACH + VEIN_W > halfW) continue;   // no room: skip the pair
     for (const side of [1, -1]) {
-      if (distToSegment(u, v, from, 0, tx, side * halfW * 0.62) <= VEIN_W) return RIB;
+      if (distToSegment(u, v, from, 0, tx, side * halfW * VEIN_REACH) <= VEIN_W) return RIB;
     }
   }
-  return ACCENT;
+  return MARK;
 }
 
 /** Render at `scale` times the size and box-filter down, for clean edges. */
@@ -112,7 +133,7 @@ function render(size, scale = 4) {
     const y = (by + 0.5) / big - 0.5;
     for (let bx = 0; bx < big; bx++) {
       const x = (bx + 0.5) / big - 0.5;
-      const c = sample(x, y) || PAPER;
+      const c = sample(x, y) || GROUND;
       const i = (Math.floor(by / scale) * size + Math.floor(bx / scale)) * 3;
       acc[i] += c[0];
       acc[i + 1] += c[1];
@@ -136,13 +157,13 @@ function svg() {
   };
   const r = (R * 64).toFixed(2);
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Leaf">
-  <rect width="64" height="64" fill="#f6f1e6"/>
+  <rect width="64" height="64" fill="#24395c"/>
   <path d="M ${P(-HALF_LEN, 0)} A ${r} ${r} 0 0 1 ${P(HALF_LEN, 0)} A ${r} ${r} 0 0 1 ${P(-HALF_LEN, 0)} Z"
-        fill="#9b2d36"/>
+        fill="#f3ede0"/>
   <path d="M ${P(-HALF_LEN - STEM_LEN, 0)} L ${P(HALF_LEN, 0)}"
-        stroke="#9b2d36" stroke-width="${(STEM_W * 2 * 64).toFixed(2)}" stroke-linecap="round"/>
-  <path d="M ${P(-HALF_LEN, 0)} L ${P(HALF_LEN * 0.86, 0)}"
-        stroke="#f6e6e3" stroke-width="${(RIB_W * 2 * 64).toFixed(2)}" stroke-linecap="round"/>
+        stroke="#f3ede0" stroke-width="${(STEM_W * 2 * 64).toFixed(2)}" stroke-linecap="round"/>
+  <path d="M ${P(-HALF_LEN, 0)} L ${P(HALF_LEN * MIDRIB_END, 0)}"
+        stroke="#24395c" stroke-width="${(RIB_W * 2 * 64).toFixed(2)}" stroke-linecap="round"/>
 </svg>
 `;
 }
