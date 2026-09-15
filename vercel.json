@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "echo 'Nothing to build. The app is static files and app/data/dictionary.json is committed; regenerating it needs pdftotext and a fetch from the Internet Archive, which is a job for a person at a keyboard. See README.'",
+  "outputDirectory": "app"
+}

@@ -112,6 +112,18 @@ stylesheet uses.
 `npm run build` needs `pdftotext` (poppler) on PATH. If you only want to run the
 app, `app/data/dictionary.json` is already committed.
 
+### Deploying
+
+`vercel.json` says the whole of it: there is no build, and `app/` is the site.
+That matters because this repository's `package.json` *does* have a `build`
+script, and a host that finds it and runs it will fail — `npm run build`
+regenerates the payload from the scanned PDF and needs `pdftotext`, which no
+build image has. The config exists so no dashboard setting has to be remembered.
+
+GitHub Pages is the canonical address and deploys itself from
+`.github/workflows/pages.yml`. Anywhere else is a mirror, and says so: every
+page carries a `<link rel="canonical">` pointing back at Pages.
+
 ## Layout
 
 ```
