@@ -129,16 +129,29 @@ self.addEventListener('fetch', (event) => {
 
   if (url.origin !== location.origin) return;
 
-  // Navigation: try the network first so a deployed update is seen promptly,
-  // and fall back to the cached page when there is no network.
+  // Navigation, from the same cache as everything else.
+  //
+  // This used to go to the network first, so that a deployed update would be
+  // seen promptly. It tore the shell in half. Every other asset below is served
+  // cache-first out of `shell-<version>`, and a newly installed worker WAITS --
+  // by design, so the payload is never swapped under a reader mid-session. So
+  // between a deploy and the reader accepting it, the page was assembled from
+  // two different builds: index.html straight off the network, app.css and the
+  // modules out of the previous version's cache. New markup, old stylesheet.
+  // It showed up as icons that were supposed to be hidden, rendering as raw
+  // black SVG, because the rules that styled them were in a file the reader did
+  // not have yet.
+  //
+  // The precache is the unit of versioning, and it only works if the whole
+  // shell is served from one generation of it. Updates still arrive promptly:
+  // the browser revalidates sw.js on navigation, the new worker installs, and
+  // the page offers the reload that swaps all of it over at once.
   if (request.mode === 'navigate') {
-    event.respondWith(
-      fetch(request).catch(async () => {
-        const cache = await caches.open(SHELL);
-        return (await cache.match('./index.html', { ignoreSearch: true })) ||
-               Response.error();
-      })
-    );
+    event.respondWith((async () => {
+      const cache = await caches.open(SHELL);
+      return (await cache.match('./index.html', { ignoreSearch: true })) ||
+             fetch(request);
+    })());
     return;
   }
 
