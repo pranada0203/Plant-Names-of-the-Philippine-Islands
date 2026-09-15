@@ -1,0 +1,47 @@
+# Publish the web app to GitHub Pages.
+#
+# There is nothing to build. The app is static files and the payload it reads,
+# `app/data/dictionary.json`, is committed -- so this uploads `app/` as it
+# stands. Regenerating it needs `pdftotext` and a fetch from the Internet
+# Archive, which is a job for a person at a keyboard, not for every push.
+#
+# Every path in the app is relative, so it serves correctly from the project
+# subpath Pages gives it (…github.io/Plant-Names-of-the-Philippine-Islands/)
+# without any rewriting. The service worker's scope follows the same subpath.
+name: Deploy to Pages
+
+on:
+  push:
+    branches: [master]
+    # Only when something the site actually serves has changed. The pipeline
+    # and the docs are most of this repository and none of it is published.
+    paths:
+      - 'app/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it: a half-published site
+# is worse than a slightly stale one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -253,10 +253,15 @@ function renderDetail() {
   box.append(current.kind === 'name' ? nameView(data.names[current.id]) : taxonView(data.taxa[current.id]));
 }
 
+// Every flag the parser can set needs wording here. Without it the raw slug is
+// shown to the reader, and "taxon-noise" means nothing to anyone outside this
+// repository.
 const FLAG_TEXT = {
   'accent-lost': 'an accent in this word could not be read from the scan',
   'glyph-damage': 'the scan produced characters that are not letters',
-  'dialect-unrecognised': 'the language abbreviation did not match Merrill’s list',
+  'dialect-unrecognised': 'the language abbreviation could not be read from the scan',
+  'dialect-undocumented': 'the book abbreviates the language here but never says what it stands for',
+  'taxon-noise': 'a stray mark was attached to the scientific name and removed',
   'taxon-suspect': 'the scientific name may be misread',
 };
 
