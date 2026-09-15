@@ -1,0 +1,42 @@
+# What not to upload to Vercel.
+#
+# This repository is a pipeline that happens to contain a static site: 18 MB
+# tracked, of which the site is 2.2 MB. The rest is the 12 MB scanned PDF and
+# the intermediate JSON the pipeline writes on the way to the payload, none of
+# which the deployment reads -- `vercel.json` serves `app/` and runs no build.
+#
+# TWO THINGS ABOUT THE SYNTAX, BOTH OF WHICH HAVE ALREADY BITTEN:
+#
+# 1. Every pattern is anchored with a leading slash, and must be. These are
+#    gitignore patterns: an unanchored `data/` matches a directory of that name
+#    at ANY depth, which would take `app/data/` with it -- and
+#    app/data/dictionary.json is the whole dictionary. The site would deploy
+#    and then fail to load, with nothing in the build log to say why.
+#
+# 2. A `#` only begins a comment at the START of a line. A trailing comment is
+#    part of the pattern, so `/source/   # the PDF` silently matches nothing.
+#    Keep every note on its own line, as below.
+
+# the scanned PDF, 12 MB
+/source/
+
+# parse output and diagnostics. NOT app/data, which is the payload.
+/data/
+
+# the build tooling; the deployment runs none of it
+/pipeline/
+
+# source assessment, data model, roadmap, README screenshot
+/docs/
+
+# the GitHub Pages workflow
+/.github/
+
+# scratch (gitignored anyway)
+/.tmp/
+
+/README.md
+/LICENSE
+
+# kept out so nothing can mistake this for a Node project to build
+/package.json
