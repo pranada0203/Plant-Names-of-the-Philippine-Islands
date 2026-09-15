@@ -10,13 +10,11 @@
    Two strands of naming run through every screen, and they are coloured apart
    so a reader can tell them at a glance without reading a word:
 
-     the vernacular strand   ink and tannin brown   ÁBAR, ABÁNG-ABÁNG
-     the botanical strand    herbarium green        Oroxylum indicum L.
+     the vernacular strand   ink on the tan sheet    ÁBAR, ABÁNG-ABÁNG
+     the botanical strand    herbarium green         Oroxylum indicum L.
 
-   Everything is a custom property, and the palette is stated three times: the
-   light default, the dark preference, and the dark override. THOSE THREE MUST
-   BE KEPT IN STEP — a token added to one and missed in another falls back to
-   the light value and quietly breaks the other theme.
+   The colour around them is not invented: it is taken from four dye plants the
+   dictionary itself records. See the token block below, which names them.
    ========================================================================== */
 
 /* ------------------------------------------------------------------- face */
@@ -67,37 +65,81 @@
 }
 
 /* ------------------------------------------------------------------ tokens */
+/* The palette is cited, not chosen. Merrill records four plants for the dyes
+   they yield, and those four are the colour system -- each with a native name,
+   a binomial and a page in this very dictionary:
+
+     TAYUM      Indigofera             p.157  "the source of the dye indigo"
+     SAPANG     Caesalpinia sappan L.  p.131  "the red wood ... yields an important dye"
+     APIAPI     Avicennia officinalis  p.127  "the bark is used in dyeing"
+     BUSILI     Bruguiera              p.130  "useful for tans and dyes"
+
+   One job each, and no borrowing -- that is what makes it an identity rather
+   than decoration:
+
+     tayum    the frame, never the content. Masthead, back bar. Where the app
+              ends and the book begins; nothing in the reading area wears it.
+     sapang   action and position. Links, hover, the row you are standing on.
+     apiapi   attention, at two strengths: `mark` is a search hit, `flag` a
+              reading the scanner was unsure of.
+     busili   everything not saying anything. Paper, cards and rules are steps
+              of the mangrove tan -- the only source of neutral here. No grey
+              is mixed in from outside it.
+
+   Green is the one colour that is not a dye, and it is reserved for scientific
+   names. The dyes colour the apparatus; green is the living thing the whole
+   book points at. The moment green lands on something that is not a plant, the
+   strand system stops working.
+
+   The palette is stated three times: the light default, the dark preference,
+   and the dark override. THOSE THREE MUST BE KEPT IN STEP -- a token added to
+   one and missed in another falls back to the light value and quietly breaks
+   the other theme. */
 :root {
   color-scheme: light dark;
 
-  /* Ink. Warm blacks, never neutral grey: neutral grey on cream reads as a
-     printing fault rather than as ink. */
-  --ink: #22201a;
-  --ink-soft: #5d5547;
-  --ink-faint: #8c8374;
+  /* ink. `--ink-faint` carries the letterspaced capitals -- language tags, page
+     citations, section labels -- which are small, so it is set to clear 4.5:1
+     on the paper rather than to look faint. It measured 3.3:1 before. */
+  --ink: #1f1d19;
+  --ink-soft: #5b5348;
+  --ink-faint: #726a5c;
 
-  /* Three grounds, doing three different jobs. The old stylesheet had two
-     doing three, which is why the slips in the entry body were invisible --
-     they were filled with the very colour they sat on. */
-  --paper: #f5efe3;        /* the mount board: the reading ground */
-  --paper-lift: #faf5ec;   /* the wash at the top of the sheet */
-  --panel: #fdfaf4;        /* chrome: masthead, the list column */
-  --card: #fbf6ec;         /* a slip laid on the board */
+  /* busili -- the mangrove tan, in four steps */
+  --paper: #f6f1e6;        /* the mount board: the reading ground */
+  --paper-lift: #fbf7ee;   /* the wash at the top of the sheet */
+  --panel: #fdfaf3;        /* the list column */
+  --card: #fbf6eb;         /* a slip laid on the board */
+  --rule: #dbd0bb;
+  --rule-soft: #ebe3d3;
 
-  --rule: #dcd1bd;
-  --rule-soft: #ece3d3;
+  /* tayum -- indigo. The chrome, and the only ground type is reversed out of. */
+  --tayum: #24395c;
+  --tayum-deep: #16243a;
+  --on-dye: #f3ede0;
+  --on-dye-soft: #c2cddd;
+  --on-dye-line: rgb(255 255 255 / 0.28);
+  --on-dye-fill: rgb(255 255 255 / 0.10);
 
-  --accent: #7a4e23;       /* iron-gall / tannin brown */
-  --accent-soft: #f1e5d1;
-  --botanic: #3f5b41;      /* herbarium green: the scientific strand */
+  /* sapang -- the red dyewood. Accent.
+     The wash is the dye mixed into the paper, 9% of one into the other, rather
+     than a pink picked by eye: anything neutral-leaning reads as a web tint on
+     a sheet this warm. */
+  --sapang: #9b2d36;
+  --sapang-wash: #eedfd6;
+
+  /* apiapi -- attention, at two strengths */
+  --mark: #f5e3b4;
+  --flag: #7a4e18;
+  --flag-bg: #f7ecd8;
+
+  /* the plant itself */
+  --botanic: #3d5a41;
   --botanic-soft: #e4ebe2;
 
-  --mark: #f0dcae;
-  --flag: #92501f;
-  --flag-bg: #f7e9d8;
-  --focus: #2f6b8f;
+  --focus: #3c6e9f;
 
-  --shadow: 0 1px 2px rgb(60 44 20 / 0.05), 0 8px 24px -12px rgb(60 44 20 / 0.22);
+  --shadow: 0 1px 2px rgb(30 24 12 / 0.05), 0 8px 24px -12px rgb(30 24 12 / 0.28);
 
   /* The fallbacks still matter: they are what a reader sees for the one paint
      before the woff2 lands, and what they keep if it never does. Palatino and
@@ -113,44 +155,74 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --ink: #ece5d7;
-    --ink-soft: #aea593;
-    --ink-faint: #7f7767;
-    --paper: #13120f;
-    --paper-lift: #1a1814;
-    --panel: #1b1a16;
-    --card: #201e19;
-    --rule: #383328;
-    --rule-soft: #2a2721;
-    --accent: #d9b47f;
-    --accent-soft: #2f2718;
-    --botanic: #93b28e;
-    --botanic-soft: #20261f;
-    --mark: #57431d;
-    --flag: #dca66d;
-    --flag-bg: #31261a;
-    --focus: #82b3d0;
+    --ink-soft: #aca492;
+    --ink-faint: #8a8271;
+
+    --paper: #121210;
+    --paper-lift: #1a1815;
+    --panel: #1a1916;
+    --card: #201e1a;
+    --rule: #363127;
+    --rule-soft: #29261f;
+
+    /* The indigo goes deeper rather than lighter: on a night sheet the masthead
+       should still read as the darkest thing on the page, not glow at it. */
+    --tayum: #1b2c47;
+    --tayum-deep: #0f1a2b;
+    --on-dye: #eae3d4;
+    --on-dye-soft: #9aa9bf;
+    --on-dye-line: rgb(255 255 255 / 0.22);
+    --on-dye-fill: rgb(255 255 255 / 0.08);
+
+    --sapang: #d98a88;
+    --sapang-wash: #33211f;
+
+    --mark: #55431c;
+    --flag: #d9b45f;
+    --flag-bg: #302614;
+
+    --botanic: #92b08d;
+    --botanic-soft: #1e241e;
+
+    --focus: #8fb0da;
+
     --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.7);
   }
 }
 
 :root[data-theme="dark"] {
   --ink: #ece5d7;
-  --ink-soft: #aea593;
-  --ink-faint: #7f7767;
-  --paper: #13120f;
-  --paper-lift: #1a1814;
-  --panel: #1b1a16;
-  --card: #201e19;
-  --rule: #383328;
-  --rule-soft: #2a2721;
-  --accent: #d9b47f;
-  --accent-soft: #2f2718;
-  --botanic: #93b28e;
-  --botanic-soft: #20261f;
-  --mark: #57431d;
-  --flag: #dca66d;
-  --flag-bg: #31261a;
-  --focus: #82b3d0;
+  --ink-soft: #aca492;
+  --ink-faint: #8a8271;
+
+  --paper: #121210;
+  --paper-lift: #1a1815;
+  --panel: #1a1916;
+  --card: #201e1a;
+  --rule: #363127;
+  --rule-soft: #29261f;
+
+  /* The indigo goes deeper rather than lighter: on a night sheet the masthead
+     should still read as the darkest thing on the page, not glow at it. */
+  --tayum: #1b2c47;
+  --tayum-deep: #0f1a2b;
+  --on-dye: #eae3d4;
+  --on-dye-soft: #9aa9bf;
+  --on-dye-line: rgb(255 255 255 / 0.22);
+  --on-dye-fill: rgb(255 255 255 / 0.08);
+
+  --sapang: #d98a88;
+  --sapang-wash: #33211f;
+
+  --mark: #55431c;
+  --flag: #d9b45f;
+  --flag-bg: #302614;
+
+  --botanic: #92b08d;
+  --botanic-soft: #1e241e;
+
+  --focus: #8fb0da;
+
   --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.7);
 }
 
@@ -214,12 +286,14 @@ button { font: inherit; color: inherit; }
   height: 100dvh;
 }
 
-/* The masthead is a running head, so it is set like one: the title in the
-   book's own serif, the imprint line beneath it in capitals, and the double
-   rule that says "title page" faster than any amount of styling. */
+/* The masthead is the frame: the one band of dye on the page, and the only
+   ground type is reversed out of. The rule beneath it is sappan red, the
+   selvedge of a dyed cloth -- it replaces the double rule the panel version
+   needed, because an edge between indigo and paper needs no help being read. */
 .masthead {
-  border-bottom: 3px double var(--rule);
-  background: var(--panel);
+  border-bottom: 3px solid var(--sapang);
+  background: var(--tayum);
+  color: var(--on-dye);
   padding: 0.75rem max(1.1rem, env(safe-area-inset-left)) 0.7rem max(1.1rem, env(safe-area-inset-right));
   display: flex;
   gap: 1rem;
@@ -238,7 +312,7 @@ button { font: inherit; color: inherit; }
   display: block;
   font-size: 0.63rem;
   font-weight: 400;
-  color: var(--ink-faint);
+  color: var(--on-dye-soft);
   letter-spacing: 0.16em;
   margin-top: 0.22rem;
 }
@@ -255,7 +329,19 @@ button { font: inherit; color: inherit; }
   color: var(--ink-soft);
   transition: border-color 0.12s, color 0.12s, background-color 0.12s;
 }
-.icon-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.icon-btn:hover { border-color: var(--sapang); color: var(--sapang); background: var(--sapang-wash); }
+
+/* On the dye, the sheet's rule and ink colours would be invisible, so the
+   controls are drawn in the ground's own light instead. The two `--on-dye-*`
+   tokens are translucent white: the masthead is a dark indigo in BOTH themes,
+   so one value works for both and cannot drift out of step. */
+.masthead .icon-btn { border-color: var(--on-dye-line); color: var(--on-dye); }
+.masthead .icon-btn:hover {
+  border-color: var(--on-dye);
+  background: var(--on-dye-fill);
+  color: var(--on-dye);
+}
+.masthead :focus-visible { outline-color: var(--on-dye); }
 
 .body {
   display: grid;
@@ -287,8 +373,8 @@ button { font: inherit; color: inherit; }
 .searchbar input::placeholder { color: var(--ink-faint); }
 .searchbar input:focus-visible {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
+  border-color: var(--sapang);
+  box-shadow: 0 0 0 3px var(--sapang-wash);
 }
 
 .filters {
@@ -309,7 +395,7 @@ button { font: inherit; color: inherit; }
   color: var(--ink-soft);
   max-width: 100%;
 }
-.filters select:hover { border-color: var(--accent); }
+.filters select:hover { border-color: var(--sapang); }
 .toggle {
   display: flex;
   align-items: center;
@@ -319,7 +405,7 @@ button { font: inherit; color: inherit; }
   cursor: pointer;
   white-space: nowrap;
 }
-.toggle input { accent-color: var(--accent); margin: 0; }
+.toggle input { accent-color: var(--sapang); margin: 0; }
 
 /* How far the OCR engine trusted its own reading of a headword. A warning,
    so unlike the other metadata labels it keeps a tinted field around it. */
@@ -367,8 +453,8 @@ button { font: inherit; color: inherit; }
 }
 .results button:hover { background: var(--card); }
 .results button[aria-current="true"] {
-  background: var(--accent-soft);
-  box-shadow: inset 3px 0 0 var(--accent);
+  background: var(--sapang-wash);
+  box-shadow: inset 3px 0 0 var(--sapang);
 }
 .results .headword {
   font-family: var(--serif);
@@ -433,7 +519,7 @@ button { font: inherit; color: inherit; }
    machinery. Letterspaced capitals carry it without drawing a frame. */
 .results .kind {
   font-size: 0.58rem;
-  color: var(--accent);
+  color: var(--sapang);
   margin-left: 0.45rem;
   vertical-align: 0.14em;
   white-space: nowrap;
@@ -571,7 +657,7 @@ h3.section::after {
   cursor: pointer;
   transition: border-color 0.12s, color 0.12s, background-color 0.12s;
 }
-.chip:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.chip:hover { border-color: var(--sapang); color: var(--sapang); background: var(--sapang-wash); }
 .chip .dia {
   font-family: var(--sans);
   color: var(--ink-faint);
@@ -725,9 +811,9 @@ h3.section::after {
   border-radius: var(--radius);
   border: 1px solid var(--rule);
   background: none;
-  color: var(--accent);
+  color: var(--sapang);
 }
-.update-bar button:hover { border-color: var(--accent); }
+.update-bar button:hover { border-color: var(--sapang); }
 .update-bar button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 #update-dismiss { color: var(--ink-faint); border-color: transparent; }
 
@@ -754,7 +840,7 @@ h3.section::after {
   font-size: 4.5rem;
   line-height: 0.9;
   letter-spacing: 0;
-  color: var(--accent);
+  color: var(--sapang);
   margin: 0 0 0.1rem;
 }
 .browse-lede { font-family: var(--serif); color: var(--ink-soft); font-size: 1rem; line-height: 1.6; margin: 0 0 1.8rem; max-width: 34em; }
@@ -773,7 +859,7 @@ h3.section::after {
   font-size: 0.64rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--accent);
+  color: var(--sapang);
   text-decoration: none;
   margin-bottom: 1.2rem;
 }
@@ -804,7 +890,7 @@ h3.section::after {
   border-radius: 0 0 var(--radius) var(--radius);
   transition: border-color 0.12s, background-color 0.12s, color 0.12s;
 }
-.browse-letter:hover { border-color: var(--accent); border-top-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.browse-letter:hover { border-color: var(--sapang); border-top-color: var(--sapang); background: var(--sapang-wash); color: var(--sapang); }
 .browse-count { font-family: var(--sans); font-size: 0.6rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
 
 .browse-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
@@ -821,7 +907,7 @@ h3.section::after {
   border-radius: 999px;
   transition: border-color 0.12s, background-color 0.12s, color 0.12s;
 }
-.browse-chip:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.browse-chip:hover { border-color: var(--sapang); background: var(--sapang-wash); color: var(--sapang); }
 
 /* The long lists flow into however many columns the pane can hold, which is
    what makes a letter of the index read like a page rather than a queue. */
@@ -848,7 +934,7 @@ h3.section::after {
   overflow-wrap: anywhere;
 }
 .browse-entry.sci { font-style: italic; color: var(--botanic); }
-.browse-entry:hover { background: var(--accent-soft); color: var(--accent); }
+.browse-entry:hover { background: var(--sapang-wash); color: var(--sapang); }
 .browse-entry.sci:hover { background: var(--botanic-soft); color: var(--botanic); }
 .browse-entry:focus-visible { outline: 2px solid var(--focus); outline-offset: -1px; }
 
@@ -887,7 +973,7 @@ h3.section::after {
   font-size: 0.64rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--accent);
+  color: var(--sapang);
   width: fit-content;
 }
 .scan-block > summary:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -964,21 +1050,21 @@ h3.section::after {
 }
 .scan-where { margin-right: auto; }
 .scan figcaption a { color: var(--ink-faint); }
-.scan figcaption a:hover { color: var(--accent); }
+.scan figcaption a:hover { color: var(--sapang); }
 
 .scan-toggle {
   font-family: var(--sans);
   font-size: 0.62rem;
   text-transform: uppercase;
   letter-spacing: 0.11em;
-  color: var(--accent);
+  color: var(--sapang);
   background: none;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   padding: 0.2rem 0.55rem;
   cursor: pointer;
 }
-.scan-toggle:hover { border-color: var(--accent); background: var(--accent-soft); }
+.scan-toggle:hover { border-color: var(--sapang); background: var(--sapang-wash); }
 .scan-toggle:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
 .back { display: none; }
@@ -998,6 +1084,8 @@ h3.section::after {
     padding-top: 4.4rem;
   }
   .app.detail-open .detail { display: block; }
+  /* The back bar stands where the masthead does, so it wears what the masthead
+     wears: this is the frame, not the sheet. */
   .app.detail-open .back {
     display: flex;
     align-items: center;
@@ -1009,12 +1097,15 @@ h3.section::after {
     height: 3.4rem;
     z-index: 11;
     padding: 0 1rem;
-    background: var(--panel);
-    border-bottom: 1px solid var(--rule);
+    background: var(--tayum);
+    color: var(--on-dye);
+    border: 0;
+    border-bottom: 3px solid var(--sapang);
     border-radius: 0;
     width: 100%;
     justify-content: flex-start;
   }
+  .app.detail-open .back:hover { background: var(--tayum-deep); color: var(--on-dye); }
   .masthead h1 span { display: none; }
   .browse-columns { columns: 9rem; }
 }
@@ -1026,7 +1117,7 @@ h3.section::after {
   padding: 0;
   color: inherit;
 }
-.browse-genus-name .browse-entry:hover { background: none; color: var(--accent); text-decoration: underline; }
+.browse-genus-name .browse-entry:hover { background: none; color: var(--sapang); text-decoration: underline; }
 
 /* Motion here is only ever a hint that something is interactive. A reader who
    has asked for less of it loses nothing by having none. */

@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Leaf">
-  <rect width="64" height="64" fill="#f5efe3"/>
+  <rect width="64" height="64" fill="#f6f1e6"/>
   <path d="M 14.70 19.89 A 28.03 28.03 0 0 1 49.30 44.11 A 28.03 28.03 0 0 1 14.70 19.89 Z"
-        fill="#7a4e23"/>
+        fill="#9b2d36"/>
   <path d="M 8.41 15.48 L 49.30 44.11"
-        stroke="#7a4e23" stroke-width="1.66" stroke-linecap="round"/>
+        stroke="#9b2d36" stroke-width="1.66" stroke-linecap="round"/>
   <path d="M 14.70 19.89 L 46.88 42.42"
-        stroke="#f1e5d1" stroke-width="1.41" stroke-linecap="round"/>
+        stroke="#f6e6e3" stroke-width="1.41" stroke-linecap="round"/>
 </svg>

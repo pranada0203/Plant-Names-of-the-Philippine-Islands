@@ -24,9 +24,9 @@ const { encodePng } = require('./lib/png');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'app', 'assets');
 
-const PAPER = [0xf5, 0xef, 0xe3];   // --paper
-const ACCENT = [0x7a, 0x4e, 0x23];  // --accent
-const RIB = [0xf1, 0xe5, 0xd1];     // --accent-soft, knocked out of the leaf
+const PAPER = [0xf6, 0xf1, 0xe6];   // --paper
+const ACCENT = [0x9b, 0x2d, 0x36];  // --sapang, the red dyewood
+const RIB = [0xf6, 0xe6, 0xe3];     // --sapang-wash, knocked out of the leaf
 
 // Leaf geometry, as fractions of the canvas. The lens between two circles of
 // radius R centred at (0, +/-C) in the leaf's own frame: half-length is
@@ -136,13 +136,13 @@ function svg() {
   };
   const r = (R * 64).toFixed(2);
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Leaf">
-  <rect width="64" height="64" fill="#f5efe3"/>
+  <rect width="64" height="64" fill="#f6f1e6"/>
   <path d="M ${P(-HALF_LEN, 0)} A ${r} ${r} 0 0 1 ${P(HALF_LEN, 0)} A ${r} ${r} 0 0 1 ${P(-HALF_LEN, 0)} Z"
-        fill="#7a4e23"/>
+        fill="#9b2d36"/>
   <path d="M ${P(-HALF_LEN - STEM_LEN, 0)} L ${P(HALF_LEN, 0)}"
-        stroke="#7a4e23" stroke-width="${(STEM_W * 2 * 64).toFixed(2)}" stroke-linecap="round"/>
+        stroke="#9b2d36" stroke-width="${(STEM_W * 2 * 64).toFixed(2)}" stroke-linecap="round"/>
   <path d="M ${P(-HALF_LEN, 0)} L ${P(HALF_LEN * 0.86, 0)}"
-        stroke="#f1e5d1" stroke-width="${(RIB_W * 2 * 64).toFixed(2)}" stroke-linecap="round"/>
+        stroke="#f6e6e3" stroke-width="${(RIB_W * 2 * 64).toFixed(2)}" stroke-linecap="round"/>
 </svg>
 `;
 }

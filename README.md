@@ -212,9 +212,16 @@ shows both.
   rule could use. Both precache lists, `app/sw.js` and `SHELL_FILES` in
   `pipeline/03-build-index.js`, must name every file it writes; the build warns
   when they drift.
-- **The design is the book's.** Two strands of naming, coloured apart: native
-  names in ink and tannin brown, scientific names in herbarium green. Double
-  rules, letterspaced capitals for apparatus, a measure on the prose.
+- **The palette is cited, not chosen.** Merrill records four plants for the dyes
+  they yield, and those four are the colour system — indigo (*Indigofera*,
+  TÁYUM, p. 157), red (*Caesalpinia sappan*, SAPÁNG, p. 131), ochre
+  (*Avicennia officinalis*, APIÁPI, p. 127) and mangrove tan (*Bruguiera*,
+  BUSÍLI, p. 130). Each has one job and does not borrow: indigo is the frame,
+  sappan is action and position, ochre is attention, and the tan is every
+  neutral on the sheet. Green is the one colour that is not a dye and is
+  reserved for scientific names — the dyes colour the apparatus, green is the
+  living thing the book points at. The token block in `app/css/app.css` names
+  the plants, so the stylesheet says where each colour came from.
 - **Honesty over polish.** Where the scan is doubtful the app says so, on the
   entry, rather than presenting a confident wrong answer.
 - **Corrections are data, not edits.** Hand-read entries live in
