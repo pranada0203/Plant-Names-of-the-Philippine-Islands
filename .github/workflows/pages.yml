@@ -10,6 +10,9 @@
 # without any rewriting. The service worker's scope follows the same subpath.
 name: Deploy to Pages
 
+# Pages must be switched on in the repository first -- Settings, Pages, Source:
+# GitHub Actions. Until it is, `configure-pages` fails and takes the job with
+# it, which is exactly what the first run of this workflow did.
 on:
   push:
     branches: [master]

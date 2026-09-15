@@ -7,6 +7,15 @@ Bureau of Government Laboratories, Department of the Interior, Manila, 1903
 This repository turns the scanned 1903 publication into a searchable web app
 that works on desktop and mobile.
 
+**[Open the dictionary →](https://pranada0203.github.io/Plant-Names-of-the-Philippine-Islands/)**
+
+![The app: a search for "dungon" returning three spellings of one tree, the entry
+for DUNGON with Merrill's notes, and the two scanned lines it was read from.](docs/screenshot.png)
+
+A search for `dungon` returns DÚÑGON, DONGÓN and DUÑGÚN — three spellings of one
+*Heritiera littoralis*, each labelled with why it is there — and every entry can
+show the scanned line it was transcribed from.
+
 ## Where things stand
 
 **Every field the book prints has been transcribed by eye from the page images**
