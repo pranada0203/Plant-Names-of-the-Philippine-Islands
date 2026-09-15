@@ -35,7 +35,13 @@ const IMAGE_BASE = 'https://archive.org/download/dictionaryofplan00merr/page/n{l
 /**
  * The app's own files, whose contents go into the service worker's version.
  * Keep in step with SHELL_FILES in app/sw.js: a file the worker precaches but
- * this list omits would be served stale for ever after it changed.
+ * this list omits would be served stale for ever after it changed. The check in
+ * stampServiceWorker() compares the two lists and says so when they drift.
+ *
+ * Everything the worker precaches belongs here, the icons and the font files
+ * included. They are committed files that change when the pipeline regenerates
+ * them or a new font is vendored, and a precached file outside the hash is
+ * exactly the stale-for-ever case this list exists to prevent.
  */
 const SHELL_FILES = [
   'index.html',
@@ -46,6 +52,14 @@ const SHELL_FILES = [
   'js/scan.js',
   'js/offline.js',
   'js/browse.js',
+  'assets/icon-192.png',
+  'assets/icon-512.png',
+  'assets/apple-touch-icon.png',
+  'assets/favicon.svg',
+  'assets/favicon-32.png',
+  'assets/fonts/librecaslontext-400-normal.woff2',
+  'assets/fonts/librecaslontext-400-italic.woff2',
+  'assets/fonts/librecaslontext-700-normal.woff2',
 ];
 
 /**
@@ -126,7 +140,7 @@ function stampServiceWorker(payload) {
   // worker serves from cache would never be invalidated when it changed --
   // silently, and only for readers who had already visited.
   const declared = [...src.matchAll(/'\.\/([^']+)'/g)].map((m) => m[1])
-    .filter((f) => !f.startsWith('assets/'));
+    .filter((f) => f !== '');   // './' is the start URL, not a file on disk
   const missing = declared.filter((f) => !SHELL_FILES.includes(f));
   if (missing.length) {
     console.log(`!  app/sw.js precaches ${missing.join(', ')}, which the version ` +

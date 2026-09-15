@@ -101,7 +101,12 @@ npm run serve
 ```
 
 Then open <http://localhost:5173>. There is no bundler and no dependencies —
-the app is static files and the pipeline is plain Node.
+the app is static files and the pipeline is plain Node. The one thing the app
+does not draw itself is its text face, and that is vendored rather than linked:
+`app/assets/fonts/` holds three woff2 files of Libre Caslon Text (76 KB, SIL
+OFL, licence included), fetched by `npm run fonts` and served from the repo, so
+the page has no third party in its critical path and still looks like itself
+offline.
 
 `npm run build` needs `pdftotext` (poppler) on PATH. If you only want to run the
 app, `app/data/dictionary.json` is already committed.
@@ -113,7 +118,8 @@ source/     the scanned PDF (do not edit)
 pipeline/   PDF -> text -> structured entries -> app payload
 data/       intermediate and diagnostic JSON (data/raw/ is gitignored)
 app/        the web app: static HTML, CSS, ES modules (js/scan.js is the page-image
-            viewer, sw.js the offline cache, assets/ the generated icons)
+            viewer, sw.js the offline cache, assets/ the generated icons and the
+            vendored text face)
 docs/       source assessment, data model, roadmap
 ```
 
@@ -142,9 +148,11 @@ Supporting tools:
 | `pipeline/rekey-corrections.js` | Re-derives every correction after a parser change |
 | `pipeline/verify-boxes.js` (`npm run verify-boxes`) | Checks every scan box really sits on its own line |
 | `pipeline/make-icons.js` (`npm run icons`) | Draws the app icons and the favicon |
+| `pipeline/01d-fetch-fonts.js` (`npm run fonts`) | Vendors the text face into `app/assets/fonts/` |
 
-Stages 1b and 1c are the only ones that touch the network; everything downstream works
-without it, just with no confidence scores.
+Stages 1b, 1c and 1d are the only ones that touch the network; everything downstream
+works without it, just with no confidence scores. 1d is needed only when the text face
+changes — the woff2 files are committed.
 
 ### What the parser has to cope with
 
@@ -193,6 +201,16 @@ shows both.
 - **The icons are drawn by code** (`npm run icons`), not pasted in as binaries
   nobody can regenerate. `pipeline/lib/png.js` is a 60-line PNG writer over
   Node's own zlib.
+- **The font is vendored, not linked, and not subset by us** (`npm run fonts`).
+  Google already cuts each face into unicode-range subsets, and the whole book
+  fits in one of them — every character in the payload is ASCII or Latin-1 — so
+  the `latin` file is taken as-is. That is what keeps a webfont from becoming a
+  build step. Both precache lists, `app/sw.js` and `SHELL_FILES` in
+  `pipeline/03-build-index.js`, must name every file it writes; the build warns
+  when they drift.
+- **The design is the book's.** Two strands of naming, coloured apart: native
+  names in ink and tannin brown, scientific names in herbarium green. Double
+  rules, letterspaced capitals for apparatus, a measure on the prose.
 - **Honesty over polish.** Where the scan is doubtful the app says so, on the
   entry, rather than presenting a confident wrong answer.
 - **Corrections are data, not edits.** Hand-read entries live in

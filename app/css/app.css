@@ -19,6 +19,57 @@
    the light value and quietly breaks the other theme.
    ========================================================================== */
 
+/* ------------------------------------------------------------------- face */
+/* Libre Caslon Text, vendored by pipeline/01d-fetch-fonts.js and precached by
+   the service worker. Caslon is the book face of English and American printing
+   through the nineteenth century into the twentieth, which is the tradition the
+   1903 printing belongs to, and the Text cut is the one drawn for small sizes.
+   76 KB for all three, because the whole book fits in the `latin` subset:
+   every character in the payload is ASCII or Latin-1.
+
+   The unicode-range is Google's own, carried through from the subset these
+   files were cut to (see app/assets/fonts/fonts.json), so a page with nothing
+   Latin on it still skips the download.
+
+   There is no bold italic. The only italics here are scientific names, which
+   botanical writing never sets bold -- so `.entry-head h2.sci` and the genus
+   headings are weight 400 on purpose. Do not raise them: with no 700 italic to
+   load, the browser would slant and smear the roman instead.
+
+   `swap` rather than `block`: a dictionary that shows nothing until a font
+   arrives is worse than one that reflows once. After the first visit the
+   worker serves these from cache and there is no swap at all. */
+@font-face {
+  font-family: "Libre Caslon Text";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/librecaslontext-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Libre Caslon Text";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/librecaslontext-400-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Libre Caslon Text";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/librecaslontext-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ------------------------------------------------------------------ tokens */
 :root {
   color-scheme: light dark;
@@ -52,7 +103,11 @@
 
   --shadow: 0 1px 2px rgb(60 44 20 / 0.05), 0 8px 24px -12px rgb(60 44 20 / 0.22);
 
-  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  /* The fallbacks still matter: they are what a reader sees for the one paint
+     before the woff2 lands, and what they keep if it never does. Palatino and
+     Georgia are the closest old-style faces already on a machine. */
+  --serif: "Libre Caslon Text", "Iowan Old Style", "Palatino Linotype", Palatino,
+           Georgia, "Times New Roman", serif;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --pane: 23rem;
@@ -151,10 +206,12 @@ button { font: inherit; color: inherit; }
   letter-spacing: 0.11em;
 }
 
-/* Old-style figures wherever the serif is doing book work: 1903 should sit on
-   the line the way it does in the printing, not stand up like a heading. */
-.notes, .taxon-list, .results .headword, .entry-head h2, .browse-entry,
-.titlepage, .browse-title { font-variant-numeric: oldstyle-nums; }
+/* No old-style figures here, and no `font-variant-numeric: oldstyle-nums`
+   rule: Libre Caslon Text ships lining figures only -- checked, `onum` and
+   `smcp` are both absent, and asking for small caps gets a synthetic one the
+   browser scales out of the capitals. The declaration would have been a no-op
+   in the loaded face and live only in the fallbacks, which is worse than not
+   having it: the figures would change shape when the woff2 arrived. */
 
 /* ------------------------------------------------------------------ layout */
 .app {
@@ -178,7 +235,7 @@ button { font: inherit; color: inherit; }
 .masthead h1 {
   font-family: var(--serif);
   font-size: 1.08rem;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
   letter-spacing: 0.015em;
   line-height: 1.25;
@@ -354,7 +411,10 @@ button { font: inherit; color: inherit; }
   box-shadow: inset 0 -0.45em 0 var(--mark);
   border-radius: 2px;
 }
-.results .sub mark { font-weight: 600; color: var(--ink-soft); }
+/* On a binomial the underline alone marks the match: turning it grey and bold
+   would be undoing the very thing that says it is a scientific name. Only the
+   upright prose sub-line takes the extra weight. */
+.results .sub.prose mark { font-weight: 600; color: var(--ink); }
 /* A family name or a line of Merrill's prose, which the green italic would be
    claiming is a scientific name. */
 .results .sub.prose {
@@ -408,13 +468,15 @@ button { font: inherit; color: inherit; }
 .entry-head h2 {
   font-family: var(--serif);
   font-size: clamp(1.7rem, 4.4vw, 2.4rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.12;
   margin: 0 0 0.6rem;
   letter-spacing: 0.02em;
   overflow-wrap: anywhere;
 }
-.entry-head h2.sci { font-style: italic; color: var(--botanic); letter-spacing: 0; }
+/* Weight 400, not the 700 the roman headword carries: there is no bold italic
+   in the family, and a binomial is not set bold anyway. */
+.entry-head h2.sci { font-style: italic; font-weight: 400; color: var(--botanic); letter-spacing: 0; }
 .meta { font-size: 0.85rem; color: var(--ink-soft); display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: baseline; }
 
 /* Ordinary particulars recede to a ruled caption; only a warning keeps a
@@ -575,7 +637,7 @@ h3.section::after {
 .titlepage h2 {
   font-family: var(--serif);
   font-size: clamp(1.7rem, 4.6vw, 2.5rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: var(--ink);
@@ -628,7 +690,7 @@ h3.section::after {
   margin: 0;
   font-family: var(--serif);
   font-size: 1.05rem;
-  font-variant-numeric: lining-nums tabular-nums;
+  font-variant-numeric: tabular-nums;
   text-align: right;
   color: var(--ink);
   padding: 0.45rem 0;
@@ -688,7 +750,7 @@ h3.section::after {
 .browse-title {
   font-family: var(--serif);
   font-size: 1.9rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.015em;
   line-height: 1.15;
   margin: 0.2rem 0 0.5rem;
@@ -806,7 +868,7 @@ h3.section::after {
   font-family: var(--serif);
   font-size: 1rem;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0 0 0.2rem;
   color: var(--botanic);
   border-bottom: 1px solid var(--rule-soft);
