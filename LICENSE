@@ -1,0 +1,38 @@
+MIT License
+
+Copyright (c) 2026 pranada0203
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+This licence covers the pipeline, the web application and the documentation in
+this repository — the code that reads the book and presents it.
+
+It does not cover the book. Elmer D. Merrill's *A Dictionary of the Plant Names
+of the Philippine Islands* (Bureau of Government Laboratories, Department of the
+Interior, Manila, 1903, Publication No. 8) is in the public domain, as is the
+scan of it distributed by the Internet Archive as `dictionaryofplan00merr`.
+Nothing here places any restriction on either.
+
+The transcriptions in `data/corrections/` are readings of a public-domain text
+and are offered on the same terms as the text itself: use them freely. Please
+keep the attribution to Merrill and the Bureau of Government Laboratories on
+any derivative, not because this licence requires it, but because the work is
+his.

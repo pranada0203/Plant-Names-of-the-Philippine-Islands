@@ -15,6 +15,7 @@ const path = require('path');
 const crypto = require('crypto');
 const N = require('./lib/normalize');
 const { NearIndex } = require('./lib/fuzzy');
+const WRITE = require('./lib/write');
 
 const ROOT = path.join(__dirname, '..');
 const DATA = path.join(ROOT, 'data');
@@ -406,10 +407,11 @@ function main() {
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const out = path.join(OUT_DIR, 'dictionary.json');
-  const body = JSON.stringify(payload);
-  fs.writeFileSync(out, body);
+  // `built` keeps its previous value when nothing else changed, so a rebuild
+  // that alters no data leaves these files -- and `git status` -- untouched.
+  const body = WRITE.writeJson(fs, out, payload, { stamp: 'meta.built' });
   stampServiceWorker(payload);
-  fs.writeFileSync(path.join(DATA, 'build-report.json'), JSON.stringify(payload.meta, null, 2));
+  WRITE.writeJson(fs, path.join(DATA, 'build-report.json'), payload.meta, { stamp: 'built', space: 2 });
 
   const kb = (fs.statSync(out).size / 1024).toFixed(0);
   const c = payload.meta.counts;

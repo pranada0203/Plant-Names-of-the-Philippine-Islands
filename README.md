@@ -187,5 +187,10 @@ shows both.
 
 ## Licence and attribution
 
-The 1903 text is in the public domain. Please keep the attribution to Merrill
-and the Bureau of Government Laboratories on any derivative.
+The code — pipeline, app and docs — is MIT licensed; see [LICENSE](LICENSE).
+
+The book is not the code's to license. Merrill's 1903 text is in the public
+domain, as is the Internet Archive's scan of it, and the transcriptions in
+`data/corrections/` are readings of that text offered on the same terms. Please
+keep the attribution to Merrill and the Bureau of Government Laboratories on any
+derivative — not because the licence demands it, but because the work is his.

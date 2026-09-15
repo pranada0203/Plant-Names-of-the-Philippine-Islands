@@ -20,6 +20,7 @@ const fs = require('fs');
 const path = require('path');
 const N = require('./lib/normalize');
 const { NearIndex } = require('./lib/fuzzy');
+const WRITE = require('./lib/write');
 
 const ROOT = path.join(__dirname, '..');
 
@@ -123,7 +124,7 @@ function main() {
     sampleOrphans: orphans.slice(0, 40),
   };
 
-  fs.writeFileSync(path.join(ROOT, 'data', 'audit.json'), JSON.stringify(audit, null, 2));
+  WRITE.writeJson(fs, path.join(ROOT, 'data', 'audit.json'), audit, { stamp: 'generated', space: 2 });
 
   if (typeface) {
     const sc = typeface.smallCapsHeadwords;

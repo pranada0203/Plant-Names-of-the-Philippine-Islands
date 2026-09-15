@@ -23,6 +23,7 @@ const TAX = require('./lib/taxonomy');
 const HOCR = require('./lib/hocr');
 const CORR = require('./lib/corrections');
 const ALIGN = require('./lib/align');
+const WRITE = require('./lib/write');
 
 const ROOT = path.join(__dirname, '..');
 const IN = path.join(ROOT, 'data', 'raw', 'pages.json');
@@ -888,7 +889,7 @@ function main() {
       return acc;
     }, {}),
   };
-  fs.writeFileSync(path.join(OUT_DIR, 'parse-report.json'), JSON.stringify(report, null, 2));
+  WRITE.writeJson(fs, path.join(OUT_DIR, 'parse-report.json'), report, { stamp: 'generated', space: 2 });
 
   console.log('Part I  pp.' + report.partI.pdfPages.join('-') + '  ' +
     I.entries.length + ' entries, ' + I.issues.length + ' unparsed lines, ' + flagged + ' flagged');
