@@ -17,6 +17,30 @@ A search for `dungon` returns DÚÑGON, DONGÓN and DUÑGÚN — three spellings
 *Heritiera littoralis*, each labelled with why it is there — and every entry can
 show the scanned line it was transcribed from.
 
+## Before you rely on this
+
+- **It is not a field guide.** Merrill records what plants were used for —
+  timber, fibre, dye, medicine — but this is a word list, not a guide to telling
+  one plant from another. Do not use it to identify, forage, or treat anything.
+- **The botany is 1903's.** The scientific names are as Merrill wrote them. A
+  great many have since been folded into other names or moved to another genus,
+  and nothing here is matched against currently accepted ones. That mapping is
+  the one thing on the roadmap that was never built.
+- **It is transcribed, and not fully proofread.** Roughly a quarter of the names
+  Merrill prints in *both* halves of the book do not agree between the two, so
+  at least one of the two readings is wrong — the measured figures are in
+  [Where things stand](#where-things-stand) below. Every entry shows the page it
+  came from and the raw line it was read from, so any reading can be checked
+  against the original.
+- **It is a colonial document.** Published by the Bureau of Government
+  Laboratories under the American administration in Manila. The language labels
+  are Merrill's own and incomplete — he could not identify the language of many
+  names, and uses some abbreviations the book never explains — and the spellings
+  are his era's, not modern orthography.
+
+The same four are on the app's About page, where the figures are read from the
+build rather than written into the copy, so they cannot quietly go stale.
+
 ## Where things stand
 
 **Every field the book prints has been transcribed by eye from the page images**
@@ -255,3 +279,9 @@ domain, as is the Internet Archive's scan of it, and the transcriptions in
 `data/corrections/` are readings of that text offered on the same terms. Please
 keep the attribution to Merrill and the Bureau of Government Laboratories on any
 derivative — not because the licence demands it, but because the work is his.
+
+Page images are fetched from the Internet Archive's copy of the scan, item
+[`dictionaryofplan00merr`](https://archive.org/details/dictionaryofplan00merr),
+at the moment a reader asks to see one. This edition is a personal project. It
+is not affiliated with, nor endorsed by, the Internet Archive or any government
+body, herbarium or university.
