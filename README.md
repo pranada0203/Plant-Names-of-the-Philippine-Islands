@@ -8,6 +8,7 @@ This repository turns the scanned 1903 publication into a searchable web app
 that works on desktop and mobile.
 
 **[Open the dictionary →](https://pranada0203.github.io/Plant-Names-of-the-Philippine-Islands/)**
+— the canonical address. Any other deployment is a mirror of it.
 
 ![The app: a search for "dungon" returning three spellings of one tree, the entry
 for DUNGON with Merrill's notes, and the two scanned lines it was read from.](docs/screenshot.png)
@@ -167,8 +168,14 @@ shows both.
 
 ## Design notes
 
-- **No build step.** ES modules, one JSON payload, plain CSS. It can be hosted
-  on any static host, including GitHub Pages.
+- **No build step.** ES modules, one JSON payload, plain CSS. `app/` is the
+  whole site and every path in it is relative, so it serves from a domain root
+  or a project subpath without rewriting. It is published to GitHub Pages by
+  `.github/workflows/pages.yml` on any push that changes `app/`, and that
+  address — `pranada0203.github.io/Plant-Names-of-the-Philippine-Islands` — is
+  the canonical one. It will run on any other static host just as well, but a
+  second live copy is a separate origin with its own service-worker cache, so
+  readers who bookmark a mirror will not see updates made here.
 - **The payload is one file** (~1.9 MB, ~350 KB gzipped). Fine for now; if it
   grows, split the search index from the entry bodies.
 - **The page images are not in this repository.** 183 leaves is 82 MB, and the
