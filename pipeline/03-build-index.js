@@ -82,6 +82,13 @@ function taxonKey(name) {
 function splitTaxonString(s) {
   const tokens = s.replace(/\s*\.\s*$/, '').split(/\s+/).filter(Boolean);
   if (!tokens.length) return null;
+  // A comma after the genus means what follows is not an epithet but prose:
+  // Merrill writes "Goniothalamus, and other arborescent species of Anonaceae"
+  // where he means the genus and no more. Taking two words gives a plant called
+  // "Goniothalamus, and".
+  if (/,$/.test(tokens[0])) {
+    return { name: tokens[0].replace(/,$/, ''), authority: null };
+  }
   // A lone genus ("Metroxylon") has no epithet to take.
   const hasEpithet = tokens.length > 1 && /^[a-zé]/.test(tokens[1]);
   const take = hasEpithet ? 2 : 1;

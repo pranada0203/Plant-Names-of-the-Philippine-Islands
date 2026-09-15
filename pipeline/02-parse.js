@@ -730,6 +730,7 @@ function joinBlock(lines) {
 
 function parsePartIIBlock(block) {
   const text = joinBlock(block.lines);
+
   const fam = findFamily(text);
 
   // "A. ASPERA L." - an abbreviated genus. Consume it before any sentence split,
@@ -845,6 +846,30 @@ function main() {
     for (const s of resII.stale.slice(0, 5)) {
       console.log('          stale: p.' + s.page + ' "' + s.was + '" -> "' + s.name + '"');
     }
+  }
+
+  // Scan fragments that became entries: a block that is one word and nothing
+  // else -- no family, no note, no native names. A real Part II entry always
+  // carries something after its name, because that is what the entry is for.
+  //
+  // This runs *after* the corrections, which is the whole point. The same shape
+  // occurs legitimately where the scan destroyed a real line and a transcription
+  // rescued it: page 136 reads "San-Antonio." and is really "B. tomentosa".
+  // Dropped before corrections, that entry goes too; dropped after, a claimed
+  // line has already been repaired and only the unclaimed ones fall away.
+  //
+  // They are not merely noise in the index. A lone token has two capitals in
+  // its first word often enough to read as a genus heading, and a genus heading
+  // resets the open genus below -- so "PipaV:" sat between SEMECARPUS and its
+  // own "?. PERROTTETII", and eight native names ended up pointing at a plant
+  // called "Pipav: perrottetii".
+  const fragment = (e) => !/\s/.test(e.raw.trim()) && !e.corrected &&
+    !e.family && !e.notes && !(e.vernaculars && e.vernaculars.length);
+  const fragments = II.entries.filter(fragment);
+  if (fragments.length) {
+    II.entries = II.entries.filter((e) => !fragment(e));
+    console.log('        ' + fragments.length + ' Part II fragment(s) dropped: ' +
+      fragments.map((e) => 'p.' + e.page + ' "' + e.name + '"').join(', '));
   }
 
   // The book abbreviates repeated genera ("A. ASPERA" under ACHYRANTHES) and

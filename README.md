@@ -33,8 +33,8 @@ other, and by how many headwords are words no Philippine language could produce:
 | Cross-half agreement, exact | 21.1% | 46.9% | 47.4% | **47.2%** |
 | Cross-half, unreconcilable | 51.9% | 24.5% | 23.3% | **23.4%** |
 | Impossible headwords | 175 | 0 | 0 | **0** |
-| Distinct taxa | 2,149 | 2,102 | 1,709 | **1,672** |
-| Stub taxa (Part I only) | — | — | 283 | **191** |
+| Distinct taxa | 2,149 | 2,102 | 1,709 | **1,666** |
+| Stub taxa (Part I only) | — | — | 283 | **189** |
 
 The taxon count *fell* because it had been inflated: *Pterocarpus indicus* also
 existed as "Prerocarpus rnpicus", *Hopea plagata* as both "Hopea palagata" and
@@ -68,7 +68,7 @@ that about.
 and the payload, so after one visit the dictionary needs no network at all; the
 page images it keeps separately, because the 1903 scan will not change.
 
-191 taxa still exist only because Part I names them and Part II does not. Most
+189 taxa still exist only because Part I names them and Part II does not. Most
 are not misreadings: they are Merrill's own inconsistent spelling (*Livinstonia*
 / *Livistonia* / *Livistona*, *Jasminum sambac* and "Jasseminum sambac" on
 adjacent lines) or plants the scientific index simply omits. See
@@ -80,13 +80,13 @@ Current extraction, from `npm run build`:
 | | |
 |---|---|
 | Native names | 4,414 |
-| Plants (taxa) | 1,672 |
+| Plants (taxa) | 1,666 |
 | Plant families | 147 |
-| Name → plant links | 5,242 |
+| Name → plant links | 5,238 |
 | Taxa with Merrill's notes | 1,009 |
-| Taxa with a family | 1,464 |
+| Taxa with a family | 1,465 |
 | Entries corrected from the page images | 5,984 |
-| Entries located on the page images | 6,496 |
+| Entries located on the page images | 6,492 |
 | Lines the parser could not read | 37 |
 
 ## Quick start

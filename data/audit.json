@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-15T00:54:05.488Z",
+  "generated": "2026-09-15T01:18:12.077Z",
   "ocrConfidence": {
     "description": "OCR confidence by how the word is set on the page (uncorrected entries only)",
     "corrected": 5027,
@@ -11,9 +11,9 @@
       "underFiftyPercent": 45.5
     },
     "romanScientificNames": {
-      "n": 1479,
+      "n": 1477,
       "median": 100,
-      "underFifty": 52
+      "underFifty": 50
     },
     "worstReadings": [
       {

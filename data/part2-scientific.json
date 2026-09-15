@@ -23544,29 +23544,7 @@
    0.071,
    0.53,
    0.763,
-   0.021
-  ]
- },
- {
-  "name": "Catuit,-T",
-  "authority": null,
-  "family": null,
-  "familyRaw": null,
-  "familySource": null,
-  "unresolvedFamily": null,
-  "notes": null,
-  "vernaculars": [],
-  "page": 157,
-  "raw": "Catuit,-T.",
-  "confidence": null,
-  "printedPage": "147",
-  "genus": "Catuit,-T",
-  "nameDisplay": "Catuit,-t",
-  "box": [
-   0.119,
-   0.55,
-   0.12,
-   0.017
+   0.037
   ]
  },
  {
@@ -43030,29 +43008,7 @@
    0.095,
    0.224,
    0.536,
-   0.018
-  ]
- },
- {
-  "name": "TInoyaban",
-  "authority": null,
-  "family": null,
-  "familyRaw": null,
-  "familySource": null,
-  "unresolvedFamily": null,
-  "notes": null,
-  "vernaculars": [],
-  "page": 182,
-  "raw": "TInoyaban.",
-  "confidence": 23,
-  "printedPage": "172",
-  "genus": "TInoyaban",
-  "nameDisplay": "Tinoyaban",
-  "box": [
-   0.144,
-   0.242,
-   0.116,
-   0.019
+   0.036
   ]
  },
  {
@@ -43457,29 +43413,7 @@
    0.094,
    0.623,
    0.832,
-   0.033
-  ]
- },
- {
-  "name": "Dapo-Mariposa",
-  "authority": null,
-  "family": null,
-  "familyRaw": null,
-  "familySource": null,
-  "unresolvedFamily": null,
-  "notes": null,
-  "vernaculars": [],
-  "page": 182,
-  "raw": "Dapo-Mariposa.",
-  "confidence": null,
-  "printedPage": "172",
-  "genus": "Dapo-Mariposa",
-  "nameDisplay": "Dapo-mariposa",
-  "box": [
-   0.142,
-   0.658,
-   0.182,
-   0.019
+   0.054
   ]
  },
  {
@@ -50701,37 +50635,15 @@
    0.079,
    0.529,
    0.629,
-   0.019
+   0.036
   ]
  },
  {
-  "name": "PipaV:",
-  "authority": null,
-  "family": null,
-  "familyRaw": null,
-  "familySource": null,
-  "unresolvedFamily": null,
-  "notes": null,
-  "vernaculars": [],
-  "page": 191,
-  "raw": "PipaV:",
-  "confidence": 4,
-  "printedPage": "181",
-  "genus": "PipaV:",
-  "nameDisplay": "Pipav:",
-  "box": [
-   0.128,
-   0.544,
-   0.1,
-   0.02
-  ]
- },
- {
-  "name": "PipaV: perrottetii",
+  "name": "SEMECARPUS perrottetii",
   "authority": "March",
-  "family": null,
+  "family": "Anacardiaceae",
   "familyRaw": null,
-  "familySource": null,
+  "familySource": "inherited",
   "unresolvedFamily": null,
   "notes": null,
   "vernaculars": [
@@ -50803,8 +50715,8 @@
   "ocrName": "?. PERROTTETIT",
   "corrected": true,
   "abbreviated": "S. perrottetii",
-  "genus": "PipaV:",
-  "nameDisplay": "Pipav: perrottetii",
+  "genus": "SEMECARPUS",
+  "nameDisplay": "Semecarpus perrottetii",
   "box": [
    0.079,
    0.561,

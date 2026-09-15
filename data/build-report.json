@@ -792,18 +792,18 @@
       ]
     }
   },
-  "built": "2026-09-15T00:54:04.968Z",
+  "built": "2026-09-15T01:18:34.481Z",
   "counts": {
     "names": 4414,
-    "taxa": 1672,
+    "taxa": 1666,
     "taxaWithNotes": 1009,
-    "taxaWithFamily": 1464,
+    "taxaWithFamily": 1465,
     "families": 147,
-    "links": 5242
+    "links": 5238
   },
   "provenance": {
     "parse": {
-      "generated": "2026-09-15T00:54:04.470Z",
+      "generated": "2026-09-15T01:18:00.786Z",
       "pages": 209,
       "corrections": {
         "partI": {
@@ -831,9 +831,9 @@
           127,
           201
         ],
-        "entries": 1481,
+        "entries": 1477,
         "unparsedBlocks": 0,
-        "withFamily": 1464,
+        "withFamily": 1465,
         "withNotes": 1009,
         "families": 147,
         "unmatchedFamilies": [
@@ -848,7 +848,7 @@
           "noPage": 0
         },
         "partII": {
-          "located": 1459,
+          "located": 1455,
           "unlocated": 22,
           "noPage": 0
         }
