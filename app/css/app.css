@@ -244,6 +244,14 @@ body {
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 button { font: inherit; color: inherit; }
 
+/* The browser's own `[hidden] { display: none }` lives in the user-agent
+   stylesheet, which ANY author rule outranks. `.update-bar` sets `display:
+   flex`, so the update bar ignored its own `hidden` attribute and sat on the
+   screen from a reader's very first visit, announcing an update that did not
+   exist -- and its Later button, which also just sets `hidden`, did nothing.
+   Anything toggled with `el.hidden` needs this line to mean what it says. */
+[hidden] { display: none !important; }
+
 /* Both of this app's columns scroll, so the scrollbars are part of the page
    whether or not they were designed. Left alone they are wide grey slabs that
    sit on the cream like machinery; a hairline in the rule colour reads as the
@@ -294,7 +302,18 @@ button { font: inherit; color: inherit; }
   border-bottom: 3px solid var(--sapang);
   background: var(--tayum);
   color: var(--on-dye);
-  padding: 0.75rem max(1.1rem, env(safe-area-inset-left)) 0.7rem max(1.1rem, env(safe-area-inset-right));
+  /* The viewport is `viewport-fit=cover`, so the page runs under the status bar
+     and the notch. The dye should run under them too -- that is what makes the
+     bar read as the top of the app rather than as a stripe below a gap -- so
+     the inset is padding here, not margin: the background fills it and only the
+     content is pushed clear.
+     The left and right insets were also the wrong way round, which a notched
+     phone only shows in landscape. */
+  padding:
+    max(0.75rem, env(safe-area-inset-top))
+    max(1.1rem, env(safe-area-inset-right))
+    0.7rem
+    max(1.1rem, env(safe-area-inset-left));
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -330,6 +349,20 @@ button { font: inherit; color: inherit; }
   transition: border-color 0.12s, color 0.12s, background-color 0.12s;
 }
 .icon-btn:hover { border-color: var(--sapang); color: var(--sapang); background: var(--sapang-wash); }
+
+/* The mark inside a control. Hidden at desk width, where the word is the
+   label; the phone rules below swap the two over. */
+.icon-btn { display: inline-flex; align-items: center; gap: 0.4rem; }
+.icon-btn .ico {
+  display: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* On the dye, the sheet's rule and ink colours would be invisible, so the
    controls are drawn in the ground's own light instead. The two `--on-dye-*`
@@ -1081,7 +1114,7 @@ h3.section::after {
     background:
       radial-gradient(60rem 30rem at 50% -8rem, var(--paper-lift), transparent 72%)
       var(--paper);
-    padding-top: 4.4rem;
+    padding-top: calc(4.4rem + env(safe-area-inset-top));
   }
   .app.detail-open .detail { display: block; }
   /* The back bar stands where the masthead does, so it wears what the masthead
@@ -1094,9 +1127,13 @@ h3.section::after {
     top: 0;
     left: 0;
     right: 0;
-    height: 3.4rem;
+    height: calc(3.4rem + env(safe-area-inset-top));
     z-index: 11;
-    padding: 0 1rem;
+    padding:
+      env(safe-area-inset-top)
+      max(1rem, env(safe-area-inset-right))
+      0
+      max(1rem, env(safe-area-inset-left));
     background: var(--tayum);
     color: var(--on-dye);
     border: 0;
@@ -1106,7 +1143,41 @@ h3.section::after {
     justify-content: flex-start;
   }
   .app.detail-open .back:hover { background: var(--tayum-deep); color: var(--on-dye); }
+  /* A phone cannot hold a four-word title and three words of chrome on one
+     line, and letting them wrap put the controls on a second row under the
+     name, which reads as an afterthought. So the controls become marks: three
+     squares on the same line as the title, which is then free to take the two
+     lines it needs. Nothing is moved off the masthead -- Browse and About are
+     how a reader gets anywhere from a cold start. */
+  .masthead {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+  .masthead h1 {
+    font-size: 0.98rem;
+    min-width: 0;          /* a flex item will not shrink below its text without this */
+  }
   .masthead h1 span { display: none; }
+
+  .icon-btn .ico { display: block; }
+  .icon-btn {
+    padding: 0.45rem;
+    flex: none;
+  }
+  /* Kept for the accessible name and for anyone browsing with images off, out
+     of the way of the layout. */
+  .icon-btn span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
   .browse-columns { columns: 9rem; }
 }
 

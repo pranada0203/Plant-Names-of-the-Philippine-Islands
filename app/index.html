@@ -34,9 +34,33 @@
   <header class="masthead">
     <h1>Plant Names of the Philippine Islands<span>Merrill · 1903</span></h1>
     <div class="spacer"></div>
-    <button class="icon-btn" id="browse" type="button">Browse</button>
-    <button class="icon-btn" id="about" type="button">About</button>
-    <button class="icon-btn" id="theme" type="button" aria-label="Toggle colour theme">Theme</button>
+    <!-- Each control carries both a word and a mark. The word is the label on a
+         wide screen; on a phone it is hidden visually and the mark stands in,
+         because three words of chrome beside a four-word title is more than the
+         line can hold. `aria-label` is on the button either way, so the
+         accessible name never depends on which of the two is showing. -->
+    <button class="icon-btn" id="browse" type="button" aria-label="Browse the dictionary">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 6.6C10.4 5.1 8.4 4.6 4 4.6v12.8c4.4 0 6.4.5 8 2 1.6-1.5 3.6-2 8-2V4.6c-4.4 0-6.4.5-8 2z"/>
+        <path d="M12 6.6v12.8"/>
+      </svg>
+      <span>Browse</span>
+    </button>
+    <button class="icon-btn" id="about" type="button" aria-label="About this edition">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="8.4"/>
+        <path d="M12 11.2v5.2"/>
+        <circle cx="12" cy="7.9" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      <span>About</span>
+    </button>
+    <button class="icon-btn" id="theme" type="button" aria-label="Toggle colour theme">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="8.4"/>
+        <path d="M12 3.6a8.4 8.4 0 0 0 0 16.8z" fill="currentColor" stroke="none"/>
+      </svg>
+      <span>Theme</span>
+    </button>
   </header>
 
   <div class="body">
